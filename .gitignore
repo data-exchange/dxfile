@@ -48,7 +48,8 @@ Thumbs.db
 *.pyc
 build
 dist
-docs/build
+docs/_build
+doc/_build
 *egg-info
 *.egg
 .settings

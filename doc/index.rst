@@ -1,8 +1,10 @@
 .. title:: DXfile
 
-`DXfile <https://github.com/data-exchange/dxfile>`_ is an open-sourced Python
-package to write data exchange hdf5 files at the Advanced
-Photon Source.
+=======
+Welcome=======
+
+This is the Data Exchange file format web site, `DXfile <https://github.com/data-exchange/dxfile>`_ for short. The DXfile web site provides:
+    - The definition of the scientific data exchange    - A python interface for writing scientific data exchange files    - XML attribute files for writing scientific data exchange file with the EPICS Area Detector HDF plug in
 
 This guide is maintained on 
 `GitHub <https://github.com/data-exchange/dxchange/tree/master/doc>`_.
@@ -13,7 +15,7 @@ This guide is maintained on
    source/about
    source/design
    source/definitions
-   source/corereference
+   source/reference
    source/xraytomography
    source/install
    source/api

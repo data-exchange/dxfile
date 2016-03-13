@@ -1,12 +1,13 @@
 Examples
 ========
 
-This section contains various DQuality examples. Please make sure the installation :ref:`pre-requisite-reference-label` are met.
+This section contains example on how to use DXfile and how to configure aread detector to generate Data Exchange files.
 
 
 .. toctree::
 
    demo/doc.code
+   demo/doc.areadetector
 
 .. automodule:: dxfile
    :members:

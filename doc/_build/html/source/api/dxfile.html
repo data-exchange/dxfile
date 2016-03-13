@@ -1,0 +1,1237 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>dxfile &mdash; DXfile 0.0.2 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="DXfile 0.0.2 documentation" href="../../index.html"/>
+        <link rel="up" title="API reference" href="../api.html"/>
+        <link rel="next" title="Examples" href="../demo.html"/>
+        <link rel="prev" title="API reference" href="../api.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+          <a href="../../index.html" class="fa fa-home"> DXfile</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design.html">Design</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../design.html#hdf5">HDF5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design.html#root-level-structure">Root Level Structure</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../definitions.html">Definition</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../definitions.html#color-code">Color code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../definitions.html#imaging">Imaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../definitions.html#multidimensional-data">Multidimensional data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../corereference.html">Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../corereference.html#top-level-root">Top level (root)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../corereference.html#exchange">Exchange</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../corereference.html#measurement">Measurement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../corereference.html#provenance">Provenance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../xraytomography.html">X-ray Tomography</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../xraytomography.html#data-structure">Data Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xraytomography.html#scans">Scans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xraytomography.html#groups">Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xraytomography.html#data-processing">Data Processing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Install</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../install.html#installing-from-source">Installing from source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../install.html#installing-from-conda-binstar-coming-soon">Installing from Conda/Binstar (coming soon)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../install.html#updating-the-installation-coming-soon">Updating the installation (coming soon)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">dxfile</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../demo.html">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../demo/doc.code.html">Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../credits.html">Credits</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../credits.html#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../appendix.html#default-units-for-data-exchange-entries">Default units for Data Exchange entries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix.html#geometry">Geometry</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">DXfile</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../api.html">API reference</a> &raquo;</li>
+      
+    <li><code class="docutils literal"><span class="pre">dxfile</span></code></li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../../_sources/source/api/dxfile.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="module-dxfile.dxtomo">
+<span id="dxfile"></span><h1><a class="reference internal" href="../demo.html#module-dxfile" title="dxfile"><code class="xref py py-mod docutils literal"><span class="pre">dxfile</span></code></a><a class="headerlink" href="#module-dxfile.dxtomo" title="Permalink to this headline">¶</a></h1>
+<p>Subclasses the h5py module for interacting with Data Exchange files.</p>
+<p class="rubric"><strong>Functions:</strong></p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#dxfile.dxtomo.Entry" title="dxfile.dxtomo.Entry"><code class="xref py py-obj docutils literal"><span class="pre">Entry</span></code></a>(**kwargs)</td>
+<td>Interact with Data Exchange files.</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="dxfile.dxtomo.File">
+<code class="descclassname">dxfile.dxtomo.</code><code class="descname">File</code><a class="headerlink" href="#dxfile.dxtomo.File" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="dxfile.dxtomo.Entry">
+<em class="property">class </em><code class="descclassname">dxfile.dxtomo.</code><code class="descname">Entry</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/dxfile/dxtomo.html#Entry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dxfile.dxtomo.Entry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Interact with Data Exchange files.</p>
+<dl class="method">
+<dt id="dxfile.dxtomo.Entry._entry_definitions">
+<code class="descname">_entry_definitions</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/dxfile/dxtomo.html#Entry._entry_definitions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dxfile.dxtomo.Entry._entry_definitions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Contains the archetypes for Data Exchange file entries.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dxfile.dxtomo.Entry._generate_classes">
+<code class="descname">_generate_classes</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/dxfile/dxtomo.html#Entry._generate_classes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dxfile.dxtomo.Entry._generate_classes" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method is used to turn the Entry._entry_definitions into generate_classes
+which can be instantitated for hold data.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="dxfile.dxtomo.Entry.acquisition">
+<em class="property">class </em><code class="descname">acquisition</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#dxfile.dxtomo.Entry.acquisition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.acquisition.angular_step">
+<code class="descname">angular_step</code><em class="property"> = {'units': 'degree', 'docstring': 'Rotation axis angular step used during data collection.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.acquisition.angular_step" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.acquisition.comment">
+<code class="descname">comment</code><em class="property"> = {'units': 'text', 'docstring': 'comment', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.acquisition.comment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.acquisition.docstring">
+<code class="descname">docstring</code><em class="property"> = 'Tomography specific tag to store scan parameters.'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.acquisition.docstring" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.acquisition.end_date">
+<code class="descname">end_date</code><em class="property"> = {'units': 'text', 'docstring': 'Date and time measurement ends.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.acquisition.end_date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.acquisition.entry_name">
+<code class="descname">entry_name</code><em class="property"> = 'acquisition'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.acquisition.entry_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.acquisition.image_date">
+<code class="descname">image_date</code><em class="property"> = {'units': 'time', 'docstring': 'Vector containing the date/time each image was acquired in iso 8601..', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.acquisition.image_date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.acquisition.image_exposure_time">
+<code class="descname">image_exposure_time</code><em class="property"> = {'units': None, 'docstring': 'Vector containin for each image the the measured exposure time in 1e-7 seconds (0.1us)', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.acquisition.image_exposure_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.acquisition.image_is_complete">
+<code class="descname">image_is_complete</code><em class="property"> = {'units': None, 'docstring': 'Vector containin for each image the boolen status of: is any pixel data missing?', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.acquisition.image_is_complete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.acquisition.image_number">
+<code class="descname">image_number</code><em class="property"> = {'units': None, 'docstring': 'Vector containin for each image the the image serial number as assigned by the camera. Unique for each individual scan. Always starts at 0.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.acquisition.image_number" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.acquisition.image_theta">
+<code class="descname">image_theta</code><em class="property"> = {'units': 'degree', 'docstring': 'Vector containing the rotary stage angular position read from the encoder at each image.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.acquisition.image_theta" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.acquisition.mode">
+<code class="descname">mode</code><em class="property"> = {'units': 'text', 'docstring': 'Scan mode: continuos or stop-go.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.acquisition.mode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.acquisition.number_of_darks">
+<code class="descname">number_of_darks</code><em class="property"> = {'units': None, 'docstring': 'Number of dark images.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.acquisition.number_of_darks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.acquisition.number_of_flats">
+<code class="descname">number_of_flats</code><em class="property"> = {'units': None, 'docstring': 'Number of flat/white images.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.acquisition.number_of_flats" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.acquisition.number_of_projections">
+<code class="descname">number_of_projections</code><em class="property"> = {'units': None, 'docstring': 'Number of projections.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.acquisition.number_of_projections" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.acquisition.root">
+<code class="descname">root</code><em class="property"> = '/measurement/instrument'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.acquisition.root" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.acquisition.rotation_end_angle">
+<code class="descname">rotation_end_angle</code><em class="property"> = {'units': 'degree', 'docstring': 'Position of rotation axis at the start of the data collection.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.acquisition.rotation_end_angle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.acquisition.rotation_start_angle">
+<code class="descname">rotation_start_angle</code><em class="property"> = {'units': 'degree', 'docstring': 'Position of rotation axis at the end of data collection.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.acquisition.rotation_start_angle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.acquisition.sample_image_shift_x">
+<code class="descname">sample_image_shift_x</code><em class="property"> = {'units': 'pixels', 'docstring': 'Vector containing the shift of the sample axis x at each projection on the detector plane.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.acquisition.sample_image_shift_x" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.acquisition.sample_image_shift_y">
+<code class="descname">sample_image_shift_y</code><em class="property"> = {'units': 'pixels', 'docstring': 'Vector containing the shift of the sample axis y at each projection on the detector plane.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.acquisition.sample_image_shift_y" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.acquisition.sample_in">
+<code class="descname">sample_in</code><em class="property"> = {'units': 'mm', 'docstring': 'Position of the sample axis (x or y) used for taking the sample out of the beam during data collection.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.acquisition.sample_in" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.acquisition.sample_out">
+<code class="descname">sample_out</code><em class="property"> = {'units': 'mm', 'docstring': 'Position of the sample axis (x or y) used for taking the sample out of the beam during the flat field data collection.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.acquisition.sample_out" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.acquisition.sample_position_x">
+<code class="descname">sample_position_x</code><em class="property"> = {'units': 'mm', 'docstring': 'Vector containing the position of the sample axis x at each projection image collection.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.acquisition.sample_position_x" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.acquisition.sample_position_y">
+<code class="descname">sample_position_y</code><em class="property"> = {'units': 'mm', 'docstring': 'Vector containing the position of the sample axis y at each projection image collection.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.acquisition.sample_position_y" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.acquisition.sample_position_z">
+<code class="descname">sample_position_z</code><em class="property"> = {'units': 'mm', 'docstring': 'Vector containing the position of the sample axis z at each projection image collection.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.acquisition.sample_position_z" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.acquisition.scan_date">
+<code class="descname">scan_date</code><em class="property"> = {'units': None, 'docstring': 'Vector containin for each image the wall date/time at start of scan in iso 8601.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.acquisition.scan_date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.acquisition.scan_index">
+<code class="descname">scan_index</code><em class="property"> = {'units': None, 'docstring': 'Vector containin for each image the identifier assigned by beamline controls to each individual series of images or scan.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.acquisition.scan_index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.acquisition.start_date">
+<code class="descname">start_date</code><em class="property"> = {'units': 'text', 'docstring': 'Date and time measurement starts.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.acquisition.start_date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.acquisition.time_stamp">
+<code class="descname">time_stamp</code><em class="property"> = {'units': None, 'docstring': 'Vector containin for each image the relative time since scan_date in 1e-7 seconds.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.acquisition.time_stamp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="dxfile.dxtomo.Entry.amplifier">
+<em class="property">class </em><code class="descclassname">Entry.</code><code class="descname">amplifier</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#dxfile.dxtomo.Entry.amplifier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.amplifier.current">
+<code class="descname">current</code><em class="property"> = {'units': 'text', 'docstring': 'The current recorded by the amplifier.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.amplifier.current" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.amplifier.docstring">
+<code class="descname">docstring</code><em class="property"> = 'Amplifier settings.'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.amplifier.docstring" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.amplifier.entry_name">
+<code class="descname">entry_name</code><em class="property"> = 'amplifier'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.amplifier.entry_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.amplifier.gain">
+<code class="descname">gain</code><em class="property"> = {'units': 'text', 'docstring': 'Amplifier gain setting', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.amplifier.gain" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.amplifier.gain_units">
+<code class="descname">gain_units</code><em class="property"> = {'units': 'text', 'docstring': 'Amplifier gain units', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.amplifier.gain_units" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.amplifier.name">
+<code class="descname">name</code><em class="property"> = {'units': 'text', 'docstring': 'Name of the amplifier.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.amplifier.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.amplifier.root">
+<code class="descname">root</code><em class="property"> = '/measurement/instrument'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.amplifier.root" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="dxfile.dxtomo.Entry.attenuator">
+<em class="property">class </em><code class="descclassname">Entry.</code><code class="descname">attenuator</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#dxfile.dxtomo.Entry.attenuator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.attenuator.attenuator_transmission">
+<code class="descname">attenuator_transmission</code><em class="property"> = {'units': 'None', 'docstring': 'The nominal amount of the beam that gets through (transmitted intensity)/(incident intensity)', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.attenuator.attenuator_transmission" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.attenuator.distance">
+<code class="descname">distance</code><em class="property"> = {'units': 'm', 'docstring': 'Distance from the sample', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.attenuator.distance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.attenuator.docstring">
+<code class="descname">docstring</code><em class="property"> = 'X-ray beam attenuator.'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.attenuator.docstring" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.attenuator.entry_name">
+<code class="descname">entry_name</code><em class="property"> = 'attenuator'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.attenuator.entry_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.attenuator.root">
+<code class="descname">root</code><em class="property"> = '/measurement/instrument'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.attenuator.root" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.attenuator.thickness">
+<code class="descname">thickness</code><em class="property"> = {'units': 'm', 'docstring': 'Thickness of attenuator along beam direction', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.attenuator.thickness" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.attenuator.type">
+<code class="descname">type</code><em class="property"> = {'units': 'text', 'docstring': 'Type or composition of attenuator', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.attenuator.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.data">
+<code class="descclassname">Entry.</code><code class="descname">data</code><a class="headerlink" href="#dxfile.dxtomo.Entry.data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="dxfile.dxtomo.Entry.detector">
+<em class="property">class </em><code class="descclassname">Entry.</code><code class="descname">detector</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#dxfile.dxtomo.Entry.detector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.detector.actual_pixel_size_x">
+<code class="descname">actual_pixel_size_x</code><em class="property"> = {'units': 'm', 'docstring': 'Pixel size on the sample plane (m).', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.detector.actual_pixel_size_x" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.detector.actual_pixel_size_y">
+<code class="descname">actual_pixel_size_y</code><em class="property"> = {'units': 'm', 'docstring': 'Pixel size on the sample plane (m).', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.detector.actual_pixel_size_y" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.detector.basis_vectors">
+<code class="descname">basis_vectors</code><em class="property"> = {'units': 'fps', 'docstring': 'A matrix with the basis vectors of the detector data.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.detector.basis_vectors" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.detector.binning_x">
+<code class="descname">binning_x</code><em class="property"> = {'units': 'pixels', 'docstring': 'If the data are collected binning the detector x binning and y binning store the binning factor.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.detector.binning_x" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.detector.binning_y">
+<code class="descname">binning_y</code><em class="property"> = {'units': 'dimensionless', 'docstring': 'If the data are collected binning the detector x binning and y binning store the binning factor.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.detector.binning_y" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.detector.bit_depth">
+<code class="descname">bit_depth</code><em class="property"> = {'units': 'dimensionless', 'docstring': 'The detector ADC bit depth.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.detector.bit_depth" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.detector.corner_position">
+<code class="descname">corner_position</code><em class="property"> = {'units': 'fps', 'docstring': 'The x, y and z coordinates of the corner of the first data element.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.detector.corner_position" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.detector.counts_per_joule">
+<code class="descname">counts_per_joule</code><em class="property"> = {'units': 'counts', 'docstring': 'Number of counts recorded per each joule of energy received by the detector', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.detector.counts_per_joule" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.detector.delay_time">
+<code class="descname">delay_time</code><em class="property"> = {'units': 's', 'docstring': 'Detector delay time (s). This is used in combination with a mechanical shutter.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.detector.delay_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.detector.dimension_x">
+<code class="descname">dimension_x</code><em class="property"> = {'units': 'pixels', 'docstring': 'The detector horiz. dimension.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.detector.dimension_x" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.detector.dimension_y">
+<code class="descname">dimension_y</code><em class="property"> = {'units': 'text', 'docstring': 'The detector vertical dimension.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.detector.dimension_y" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.detector.docstring">
+<code class="descname">docstring</code><em class="property"> = 'X-ray detector.'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.detector.docstring" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.detector.entry_name">
+<code class="descname">entry_name</code><em class="property"> = 'detector'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.detector.entry_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.detector.exposure_time">
+<code class="descname">exposure_time</code><em class="property"> = {'units': 's', 'docstring': 'The set detector exposure time (s).', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.detector.exposure_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.detector.frame_rate">
+<code class="descname">frame_rate</code><em class="property"> = {'units': 'fps', 'docstring': 'The detector frame rate (fps).', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.detector.frame_rate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.detector.manufacturer">
+<code class="descname">manufacturer</code><em class="property"> = {'units': 'text', 'docstring': 'The detector manufacturer.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.detector.manufacturer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.detector.model">
+<code class="descname">model</code><em class="property"> = {'units': 'text', 'docstring': 'The detector model', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.detector.model" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.detector.operating_temperature">
+<code class="descname">operating_temperature</code><em class="property"> = {'units': 'dimensionless', 'docstring': 'The detector operating temperature (K).', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.detector.operating_temperature" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.detector.output_data">
+<code class="descname">output_data</code><em class="property"> = {'units': 'text', 'docstring': 'String HDF5 path to the exchange group where the detector output data is located.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.detector.output_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.detector.pixel_size_x">
+<code class="descname">pixel_size_x</code><em class="property"> = {'units': 'm', 'docstring': 'Physical detector pixel size (m).', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.detector.pixel_size_x" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.detector.pixel_size_y">
+<code class="descname">pixel_size_y</code><em class="property"> = {'units': 'm', 'docstring': 'Physical detector pixel size (m).', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.detector.pixel_size_y" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.detector.root">
+<code class="descname">root</code><em class="property"> = '/measurement/instrument'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.detector.root" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.detector.serial_number">
+<code class="descname">serial_number</code><em class="property"> = {'units': 'text', 'docstring': 'The detector serial number.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.detector.serial_number" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.detector.stabilization_time">
+<code class="descname">stabilization_time</code><em class="property"> = {'units': 's', 'docstring': 'Detector delay time (s). This is used during stop and go data collection to allow the sample to stabilize.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.detector.stabilization_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.exchange">
+<code class="descclassname">Entry.</code><code class="descname">exchange</code><a class="headerlink" href="#dxfile.dxtomo.Entry.exchange" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="dxfile.dxtomo.Entry.experiment">
+<em class="property">class </em><code class="descclassname">Entry.</code><code class="descname">experiment</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#dxfile.dxtomo.Entry.experiment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.experiment.activity">
+<code class="descname">activity</code><em class="property"> = {'units': 'text', 'docstring': 'Proposal scheduler id. For the APS this is the beamline scheduler activity id.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.experiment.activity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.experiment.docstring">
+<code class="descname">docstring</code><em class="property"> = 'This provides references to facility ids for the proposal, scheduled activity, and safety form.'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.experiment.docstring" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.experiment.entry_name">
+<code class="descname">entry_name</code><em class="property"> = 'experiment'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.experiment.entry_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.experiment.proposal">
+<code class="descname">proposal</code><em class="property"> = {'units': 'text', 'docstring': 'Proposal reference number. For the APS this is the General User Proposal number.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.experiment.proposal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.experiment.root">
+<code class="descname">root</code><em class="property"> = '/measurement/sample'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.experiment.root" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.experiment.safety">
+<code class="descname">safety</code><em class="property"> = {'units': 'text', 'docstring': 'Safety reference document. For the APS this is the Experiment Safety Approval Form number.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.experiment.safety" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="dxfile.dxtomo.Entry.experimenter">
+<em class="property">class </em><code class="descclassname">Entry.</code><code class="descname">experimenter</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#dxfile.dxtomo.Entry.experimenter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.experimenter.address">
+<code class="descname">address</code><em class="property"> = {'units': 'text', 'docstring': 'User address.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.experimenter.address" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.experimenter.affiliation">
+<code class="descname">affiliation</code><em class="property"> = {'units': 'text', 'docstring': 'User affiliation.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.experimenter.affiliation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.experimenter.docstring">
+<code class="descname">docstring</code><em class="property"> = 'Description of a single experimenter.'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.experimenter.docstring" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.experimenter.email">
+<code class="descname">email</code><em class="property"> = {'units': 'text', 'docstring': 'User email address.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.experimenter.email" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.experimenter.entry_name">
+<code class="descname">entry_name</code><em class="property"> = 'experimenter'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.experimenter.entry_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.experimenter.facility_user_id">
+<code class="descname">facility_user_id</code><em class="property"> = {'units': 'text', 'docstring': 'User badge number.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.experimenter.facility_user_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.experimenter.name">
+<code class="descname">name</code><em class="property"> = {'units': 'text', 'docstring': 'User name.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.experimenter.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.experimenter.phone">
+<code class="descname">phone</code><em class="property"> = {'units': 'text', 'docstring': 'User phone number.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.experimenter.phone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.experimenter.role">
+<code class="descname">role</code><em class="property"> = {'units': 'text', 'docstring': 'User role.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.experimenter.role" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.experimenter.root">
+<code class="descname">root</code><em class="property"> = '/measurement/sample'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.experimenter.root" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="dxfile.dxtomo.Entry.geometry">
+<em class="property">class </em><code class="descclassname">Entry.</code><code class="descname">geometry</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#dxfile.dxtomo.Entry.geometry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.geometry.docstring">
+<code class="descname">docstring</code><em class="property"> = 'The general position and orientation of a component'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.geometry.docstring" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.geometry.entry_name">
+<code class="descname">entry_name</code><em class="property"> = 'geometry'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.geometry.entry_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.geometry.root">
+<code class="descname">root</code><em class="property"> = '/measurement/sample'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.geometry.root" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="dxfile.dxtomo.Entry.instrument">
+<em class="property">class </em><code class="descclassname">Entry.</code><code class="descname">instrument</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#dxfile.dxtomo.Entry.instrument" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.instrument.comment">
+<code class="descname">comment</code><em class="property"> = {'units': 'text', 'docstring': 'comment', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.instrument.comment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.instrument.docstring">
+<code class="descname">docstring</code><em class="property"> = 'All relevant beamline components status at the beginning of a measurement'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.instrument.docstring" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.instrument.entry_name">
+<code class="descname">entry_name</code><em class="property"> = 'instrument'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.instrument.entry_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.instrument.name">
+<code class="descname">name</code><em class="property"> = {'units': 'text', 'docstring': 'Name of the instrument.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.instrument.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.instrument.root">
+<code class="descname">root</code><em class="property"> = '/measurement'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.instrument.root" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="dxfile.dxtomo.Entry.interferometer">
+<em class="property">class </em><code class="descclassname">Entry.</code><code class="descname">interferometer</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#dxfile.dxtomo.Entry.interferometer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.interferometer.docstring">
+<code class="descname">docstring</code><em class="property"> = 'Tomography specific tag to store interferometer parameters.'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.interferometer.docstring" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.interferometer.entry_name">
+<code class="descname">entry_name</code><em class="property"> = 'interferometer'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.interferometer.entry_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.interferometer.grid_end">
+<code class="descname">grid_end</code><em class="property"> = {'units': 'mm', 'docstring': 'Interferometer grid end.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.interferometer.grid_end" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.interferometer.grid_start">
+<code class="descname">grid_start</code><em class="property"> = {'units': 'mm', 'docstring': 'Interferometer grid start.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.interferometer.grid_start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.interferometer.number_of_grid_periods">
+<code class="descname">number_of_grid_periods</code><em class="property"> = {'units': None, 'docstring': 'Interferometer number of grid periods.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.interferometer.number_of_grid_periods" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.interferometer.number_of_grid_steps">
+<code class="descname">number_of_grid_steps</code><em class="property"> = {'units': None, 'docstring': 'Interferometer number of grid steps.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.interferometer.number_of_grid_steps" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.interferometer.root">
+<code class="descname">root</code><em class="property"> = '/measurement/instrument/setup/'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.interferometer.root" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="dxfile.dxtomo.Entry.monochromator">
+<em class="property">class </em><code class="descclassname">Entry.</code><code class="descname">monochromator</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#dxfile.dxtomo.Entry.monochromator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.monochromator.docstring">
+<code class="descname">docstring</code><em class="property"> = 'X-ray beam monochromator.'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.monochromator.docstring" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.monochromator.energy">
+<code class="descname">energy</code><em class="property"> = {'units': 'J', 'docstring': 'Peak of the spectrum that the monochromator selects. Since units is not defined this field is in J and corresponds to 10 keV', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.monochromator.energy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.monochromator.energy_error">
+<code class="descname">energy_error</code><em class="property"> = {'units': 'J', 'docstring': 'Standard deviation of the spectrum that the monochromator selects. Since units is not defined this field is in J.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.monochromator.energy_error" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.monochromator.entry_name">
+<code class="descname">entry_name</code><em class="property"> = 'monochromator'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.monochromator.entry_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.monochromator.mono_stripe">
+<code class="descname">mono_stripe</code><em class="property"> = {'units': 'text', 'docstring': 'Type of multilayer coating or crystal.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.monochromator.mono_stripe" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.monochromator.root">
+<code class="descname">root</code><em class="property"> = '/measurement/instrument'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.monochromator.root" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.monochromator.type">
+<code class="descname">type</code><em class="property"> = {'units': 'text', 'docstring': 'Multilayer type.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.monochromator.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="dxfile.dxtomo.Entry.objective">
+<em class="property">class </em><code class="descclassname">Entry.</code><code class="descname">objective</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#dxfile.dxtomo.Entry.objective" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.objective.docstring">
+<code class="descname">docstring</code><em class="property"> = 'microscope objective lenses used.'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.objective.docstring" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.objective.entry_name">
+<code class="descname">entry_name</code><em class="property"> = 'objective'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.objective.entry_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.objective.magnification">
+<code class="descname">magnification</code><em class="property"> = {'units': 'dimensionless', 'docstring': 'Lens specified magnification', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.objective.magnification" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.objective.manufacturer">
+<code class="descname">manufacturer</code><em class="property"> = {'units': 'text', 'docstring': 'Lens manufacturer', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.objective.manufacturer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.objective.model">
+<code class="descname">model</code><em class="property"> = {'units': 'text', 'docstring': 'Lens model.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.objective.model" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.objective.numerical_aperture">
+<code class="descname">numerical_aperture</code><em class="property"> = {'units': 'dimensionless', 'docstring': 'The numerical aperture (N.A.) is a measure of the light-gathering characteristics of the lens.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.objective.numerical_aperture" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.objective.root">
+<code class="descname">root</code><em class="property"> = '/measurement/instrument/detector'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.objective.root" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="dxfile.dxtomo.Entry.orientation">
+<em class="property">class </em><code class="descclassname">Entry.</code><code class="descname">orientation</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#dxfile.dxtomo.Entry.orientation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.orientation.distances">
+<code class="descname">distances</code><em class="property"> = {'units': 'm', 'docstring': 'Calling the local unit vectors (x0; y0; z0) and the reference unit vectors (x; y; z)the six numbers will be [x0 . x; x0 . y; x0 . z; y0 . x; y0 . y; y0 . z] where &quot;.&quot;&quot; is the scalar dotproduct (cosine of the angle between the unit vectors).', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.orientation.distances" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.orientation.docstring">
+<code class="descname">docstring</code><em class="property"> = 'This is the description for the orientation of a component.'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.orientation.docstring" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.orientation.entry_name">
+<code class="descname">entry_name</code><em class="property"> = 'orientation'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.orientation.entry_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.orientation.root">
+<code class="descname">root</code><em class="property"> = '/exchange/geometry'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.orientation.root" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.roi">
+<code class="descclassname">Entry.</code><code class="descname">roi</code><a class="headerlink" href="#dxfile.dxtomo.Entry.roi" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">roi_1</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="dxfile.dxtomo.Entry.sample">
+<em class="property">class </em><code class="descclassname">Entry.</code><code class="descname">sample</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#dxfile.dxtomo.Entry.sample" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.sample.chemical_formula">
+<code class="descname">chemical_formula</code><em class="property"> = {'units': 'text', 'docstring': 'Sample chemical formula using the CIF format.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.sample.chemical_formula" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.sample.comment">
+<code class="descname">comment</code><em class="property"> = {'units': 'text', 'docstring': 'comment', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.sample.comment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.sample.concentration">
+<code class="descname">concentration</code><em class="property"> = {'units': 'kgm^-3', 'docstring': 'Mass/volume.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.sample.concentration" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.sample.description">
+<code class="descname">description</code><em class="property"> = {'units': 'text', 'docstring': 'Description of the sample.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.sample.description" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.sample.docstring">
+<code class="descname">docstring</code><em class="property"> = 'The sample measured.'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.sample.docstring" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.sample.entry_name">
+<code class="descname">entry_name</code><em class="property"> = 'sample'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.sample.entry_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.sample.environment">
+<code class="descname">environment</code><em class="property"> = {'units': 'text', 'docstring': 'Sample environment.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.sample.environment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.sample.mass">
+<code class="descname">mass</code><em class="property"> = {'units': 'kg', 'docstring': 'Mass of the sample.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.sample.mass" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.sample.name">
+<code class="descname">name</code><em class="property"> = {'units': 'text', 'docstring': 'Descriptive name of the sample.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.sample.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.sample.position">
+<code class="descname">position</code><em class="property"> = {'units': 'text', 'docstring': 'Sample position in the sample changer/robot.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.sample.position" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.sample.preparation_date">
+<code class="descname">preparation_date</code><em class="property"> = {'units': 'text', 'docstring': 'Date and time the sample was prepared.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.sample.preparation_date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.sample.pressure">
+<code class="descname">pressure</code><em class="property"> = {'units': 'kPa', 'docstring': 'Sample pressure.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.sample.pressure" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.sample.root">
+<code class="descname">root</code><em class="property"> = '/measurement'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.sample.root" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.sample.temperature">
+<code class="descname">temperature</code><em class="property"> = {'units': 'kelvin', 'docstring': 'Sample temperature.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.sample.temperature" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.sample.temperature_set">
+<code class="descname">temperature_set</code><em class="property"> = {'units': 'kelvin', 'docstring': 'Sample temperature set point.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.sample.temperature_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.sample.thickness">
+<code class="descname">thickness</code><em class="property"> = {'units': 'm', 'docstring': 'Sample thickness.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.sample.thickness" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="dxfile.dxtomo.Entry.scintillator">
+<em class="property">class </em><code class="descclassname">Entry.</code><code class="descname">scintillator</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#dxfile.dxtomo.Entry.scintillator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.scintillator.docstring">
+<code class="descname">docstring</code><em class="property"> = 'microscope objective lenses used.'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.scintillator.docstring" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.scintillator.entry_name">
+<code class="descname">entry_name</code><em class="property"> = 'scintillator'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.scintillator.entry_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.scintillator.manufacturer">
+<code class="descname">manufacturer</code><em class="property"> = {'units': 'text', 'docstring': 'Scintillator Manufacturer.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.scintillator.manufacturer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.scintillator.name">
+<code class="descname">name</code><em class="property"> = {'units': 'dimensionless', 'docstring': 'Scintillator name.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.scintillator.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.scintillator.root">
+<code class="descname">root</code><em class="property"> = '/measurement/instrument/detector'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.scintillator.root" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.scintillator.scintillating_thickness">
+<code class="descname">scintillating_thickness</code><em class="property"> = {'units': 'dimensionless', 'docstring': 'Scintillator thickness.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.scintillator.scintillating_thickness" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.scintillator.serial_number">
+<code class="descname">serial_number</code><em class="property"> = {'units': 'text', 'docstring': 'Scintillator serial number.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.scintillator.serial_number" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.scintillator.substrate_thickness">
+<code class="descname">substrate_thickness</code><em class="property"> = {'units': 'dimensionless', 'docstring': 'Scintillator substrate thickness.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.scintillator.substrate_thickness" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="dxfile.dxtomo.Entry.setup">
+<em class="property">class </em><code class="descclassname">Entry.</code><code class="descname">setup</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#dxfile.dxtomo.Entry.setup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.setup.docstring">
+<code class="descname">docstring</code><em class="property"> = 'Tomography specific tag to store motor positions that are static during data collection.'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.setup.docstring" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.setup.entry_name">
+<code class="descname">entry_name</code><em class="property"> = 'setup'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.setup.entry_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.setup.root">
+<code class="descname">root</code><em class="property"> = '/measurement/instrument'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.setup.root" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.setup.sample_x">
+<code class="descname">sample_x</code><em class="property"> = {'units': 'mm', 'docstring': 'Position of the X stage under the rotary motor.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.setup.sample_x" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.setup.sample_xx">
+<code class="descname">sample_xx</code><em class="property"> = {'units': 'mm', 'docstring': 'Position of the X stage on top of the rotary motor.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.setup.sample_xx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.setup.sample_y">
+<code class="descname">sample_y</code><em class="property"> = {'units': 'mm', 'docstring': 'Position of the Y stage under the rotary motor.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.setup.sample_y" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.setup.sample_z">
+<code class="descname">sample_z</code><em class="property"> = {'units': 'mm', 'docstring': 'Position of the Z stage under the rotary motor.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.setup.sample_z" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.setup.sample_zz">
+<code class="descname">sample_zz</code><em class="property"> = {'units': 'mm', 'docstring': 'Position of the Z stage on top of the rotary motor.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.setup.sample_zz" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="dxfile.dxtomo.Entry.shutter">
+<em class="property">class </em><code class="descclassname">Entry.</code><code class="descname">shutter</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#dxfile.dxtomo.Entry.shutter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.shutter.docstring">
+<code class="descname">docstring</code><em class="property"> = 'The shutter being used'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.shutter.docstring" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.shutter.entry_name">
+<code class="descname">entry_name</code><em class="property"> = 'shutter'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.shutter.entry_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.shutter.name">
+<code class="descname">name</code><em class="property"> = {'units': 'text', 'docstring': 'Name of the shutter.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.shutter.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.shutter.root">
+<code class="descname">root</code><em class="property"> = '/measurement/instrument'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.shutter.root" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.shutter.status">
+<code class="descname">status</code><em class="property"> = {'units': 'text', 'docstring': '&quot;OPEN&quot; or &quot;CLOSED&quot; or &quot;NORMAL&quot;', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.shutter.status" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.simulation">
+<code class="descclassname">Entry.</code><code class="descname">simulation</code><a class="headerlink" href="#dxfile.dxtomo.Entry.simulation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="dxfile.dxtomo.Entry.source">
+<em class="property">class </em><code class="descclassname">Entry.</code><code class="descname">source</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#dxfile.dxtomo.Entry.source" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.source.beam_intensity_incident">
+<code class="descname">beam_intensity_incident</code><em class="property"> = {'units': 'phs^-1', 'docstring': 'Incident beam intensity in (photons per s).', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.source.beam_intensity_incident" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.source.beam_intensity_transmitted">
+<code class="descname">beam_intensity_transmitted</code><em class="property"> = {'units': 'phs^-1', 'docstring': 'Transmitted beam intensity (photons per s).', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.source.beam_intensity_transmitted" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.source.beamline">
+<code class="descname">beamline</code><em class="property"> = {'units': 'text', 'docstring': 'Name of the beamline.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.source.beamline" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.source.current">
+<code class="descname">current</code><em class="property"> = {'units': 'A', 'docstring': 'Electron beam current (A).', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.source.current" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.source.datetime">
+<code class="descname">datetime</code><em class="property"> = {'units': 'text', 'docstring': 'Date and time source was measured.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.source.datetime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.source.docstring">
+<code class="descname">docstring</code><em class="property"> = 'The light source being used'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.source.docstring" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.source.energy">
+<code class="descname">energy</code><em class="property"> = {'units': 'J', 'docstring': 'Characteristic photon energy of the source (J). For an APS bending magnet this is 30 keV or 4.807e-15 J.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.source.energy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.source.entry_name">
+<code class="descname">entry_name</code><em class="property"> = 'source'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.source.entry_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.source.mode">
+<code class="descname">mode</code><em class="property"> = {'units': 'text', 'docstring': 'top-up', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.source.mode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.source.name">
+<code class="descname">name</code><em class="property"> = {'units': 'text', 'docstring': 'Name of the facility.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.source.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.source.pulse_energy">
+<code class="descname">pulse_energy</code><em class="property"> = {'units': 'J', 'docstring': 'Sum of the energy of all the photons in the pulse (J).', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.source.pulse_energy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.source.pulse_width">
+<code class="descname">pulse_width</code><em class="property"> = {'units': 's', 'docstring': 'Duration of the pulse (s).', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.source.pulse_width" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.source.root">
+<code class="descname">root</code><em class="property"> = '/measurement/instrument'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.source.root" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="dxfile.dxtomo.Entry.translation">
+<em class="property">class </em><code class="descclassname">Entry.</code><code class="descname">translation</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#dxfile.dxtomo.Entry.translation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.translation.distances">
+<code class="descname">distances</code><em class="property"> = {'units': 'm', 'docstring': 'x,y,zcomponents of translation.', 'value': None}</em><a class="headerlink" href="#dxfile.dxtomo.Entry.translation.distances" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.translation.docstring">
+<code class="descname">docstring</code><em class="property"> = 'This is the description for the general spatial location of a component.'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.translation.docstring" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.translation.entry_name">
+<code class="descname">entry_name</code><em class="property"> = 'translation'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.translation.entry_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dxfile.dxtomo.Entry.translation.root">
+<code class="descname">root</code><em class="property"> = '/exchange/geometry'</em><a class="headerlink" href="#dxfile.dxtomo.Entry.translation.root" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../demo.html" class="btn btn-neutral float-right" title="Examples">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../api.html" class="btn btn-neutral" title="API reference"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Argonne National Laboratory.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.0.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

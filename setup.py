@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='dxfile',
-    author='David Vine',
+    author='David Vine, Francesco De Carlo',
     packages=find_packages(),
     version='0.3',
     description = 'Write data exchange files.',

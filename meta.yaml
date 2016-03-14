@@ -1,9 +1,9 @@
 package:
   name: dxfile
-  version: '0.3.1'
+  version: '0.3.2'
 
 source:
-  path: src
+  path: dxfile
   
 build:
   number: 0
@@ -24,10 +24,7 @@ test:
     - dxfile.dxtomo
 
 about:
-  home: http://dataexchange.readthedocs.org
+  home: http://dxfile.readthedocs.org
   license: BSD
-  summary: 'Reader/Writer for Data Exchange files.'
+  summary: 'Definition and Writer for Data Exchange files.'
 
-# See
-# http://docs.continuum.io/conda/build.html for
-# more information about meta.yaml

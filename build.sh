@@ -1,6 +1,6 @@
 #!/bin/bash
-cp -r $RECIPE_DIR/src src
-cd src
+cp -r $RECIPE_DIR/dxfile dxfile
+cp $RECIPE_DIR/setup.py .
 
 $PYTHON setup.py install
 

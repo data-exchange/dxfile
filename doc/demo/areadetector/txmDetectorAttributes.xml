@@ -85,6 +85,7 @@
     <Attribute name="CrlY"                type="EPICS_PV" source="32idb:m28.VAL"                dbrtype="DBR_DOUBLE"/>
     <Attribute name="CrlPitch"            type="EPICS_PV" source="32idb:m26.VAL"                dbrtype="DBR_DOUBLE"/>
     <Attribute name="CrlYaw"              type="EPICS_PV" source="32idb:m27.VAL"                dbrtype="DBR_DOUBLE"/>
+    <Attribute name="CrlTableY"           type="EPICS_PV" source="32idb:tblUp.Y"                dbrtype="DBR_DOUBLE"/>
     <Attribute name="CrlXDial"            type="EPICS_PV" source="32idb:m32.DVAL"               dbrtype="DBR_DOUBLE"/>
     <Attribute name="CrlYDial"            type="EPICS_PV" source="32idb:m28.DVAL"               dbrtype="DBR_DOUBLE"/>
     <Attribute name="CrlPitchDial"        type="EPICS_PV" source="32idb:m26.DVAL"               dbrtype="DBR_DOUBLE"/>

@@ -138,9 +138,41 @@
             <dataset name="dcm_flag_dial" source="ndattribute" ndattribute="DCMFlagDial" when="OnFileClose"> 
               <attribute name="units_dial" source="constant" value="mm" type="string"></attribute>
             </dataset>
-
           </group><!-- /setup -->
         </group><!-- /monochromator -->
+
+        <group name="crl">
+          <dataset name="type" source="constant" value="Compound Reflective Lenses" type="string" when="OnFileClose"></dataset>        
+          <group name="setup">
+            <dataset name="crl_x" source="ndattribute" ndattribute="CrlX" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string"></attribute>
+            </dataset>
+            <dataset name="crl_y" source="ndattribute" ndattribute="CrlY" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string"></attribute>
+            </dataset>
+            <dataset name="crl_pitch" source="ndattribute" ndattribute="CrlPitch" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string"></attribute>
+            </dataset>
+            <dataset name="crl_yaw" source="ndattribute" ndattribute="CrlYaw" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string"></attribute>
+            </dataset>
+            <dataset name="crl_table_y" source="ndattribute" ndattribute="CrlTableY" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string"></attribute>
+            </dataset>
+            <dataset name="crl_x_dial" source="ndattribute" ndattribute="CrlXDial" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string"></attribute>
+            </dataset>
+            <dataset name="crl_y_dial" source="ndattribute" ndattribute="CrlYDial" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string"></attribute>
+            </dataset>
+            <dataset name="crl_pitch_dial" source="ndattribute" ndattribute="CrlPitchDial" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string"></attribute>
+            </dataset>
+            <dataset name="crl_yaw_dial" source="ndattribute" ndattribute="CrlYawDial" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string"></attribute>
+            </dataset>
+          </group><!-- /setup -->
+        </group><!-- /crl -->
 
         <group name="txm">
           <group name="setup">
@@ -181,31 +213,6 @@
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
             <dataset name="beam_stop_y_dial" source="ndattribute" ndattribute="BeamStopYDial" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string"></attribute>
-            </dataset>
-
-            <dataset name="crl_x" source="ndattribute" ndattribute="CrlX" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string"></attribute>
-            </dataset>
-            <dataset name="crl_y" source="ndattribute" ndattribute="CrlY" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string"></attribute>
-            </dataset>
-            <dataset name="crl_pitch" source="ndattribute" ndattribute="CrlPitch" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string"></attribute>
-            </dataset>
-            <dataset name="crl_yaw" source="ndattribute" ndattribute="CrlYaw" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string"></attribute>
-            </dataset>
-            <dataset name="crl_x_dial" source="ndattribute" ndattribute="CrlXDial" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string"></attribute>
-            </dataset>
-            <dataset name="crl_y_dial" source="ndattribute" ndattribute="CrlYDial" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string"></attribute>
-            </dataset>
-            <dataset name="crl_pitch_dial" source="ndattribute" ndattribute="CrlPitchDial" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string"></attribute>
-            </dataset>
-            <dataset name="crl_yaw_dial" source="ndattribute" ndattribute="CrlYawDial" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
 

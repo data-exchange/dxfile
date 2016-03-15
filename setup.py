@@ -6,8 +6,8 @@ setup(
     name='dxfile',
     author='David Vine, Francesco De Carlo',
     packages=find_packages(),
-    version='0.3',
-    description = 'Write data exchange files.',
+    version=open('VERSION').read().strip(),
+    description = 'Reader/Writer for Data Exchange files.',
     license='BSD',
     platforms='Any'
 )

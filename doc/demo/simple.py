@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-.. module:: demo.py
+.. module:: simple.py
    :platform: Unix
    :synopsis: Generate test files in data exchange.
 
@@ -17,7 +17,8 @@ import dxfile.dxtomo as dx
 import numpy as np
 import datetime
 import os
-import time 
+import time
+ 
 def main():
 
     fname = './demo.h5'

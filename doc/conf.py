@@ -280,8 +280,7 @@ texinfo_documents = [
   project+u' Documentation',
   Argonne, 
   project, 
-  'Data Quality: APS Data Quality.',
-  'Miscellaneous'),
+  'Scientific Data Exchange'),
 ]
 
 # Documents to append as an appendix to all manuals.

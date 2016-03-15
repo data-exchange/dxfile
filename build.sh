@@ -1,7 +1,4 @@
 #!/bin/bash
-cp -r $RECIPE_DIR/src src
-cd src
-
 $PYTHON setup.py install
 
 # Add more build steps here, if they are necessary.

@@ -11,13 +11,6 @@ Exchange format for X-ray Tomography. We begin with the extensions to
 the exchange and instrument groups, and then describe the tomography
 process groups.
 
-A series of tomographic data sets are typically collected changing the
-instrument status (energy, detector or optics position) or changing the
-sample status (position, environment etc.). Figure :ref:`MinimalTomo2`,
-:ref:`MinimalTomo3` and :ref:`MinimalTomo4` show the content of files
-changing the sample temperature, the X-ray source energy and
-detector-sample distance.
-
 Data Structure
 ============== 
 
@@ -54,11 +47,33 @@ optimized for sinogram read *y:theta:x*. As no units are specified the data is a
    where H5DSattach_scale is unavailable)
 
 
-Scans
-=====
+Series
+^^^^^^
+
+A series of tomographic measurements, when relevant, can be stored in
+the same file appending _N to the measurement tag. 
+A series of tomographic data sets are typically collected changing the
+instrument status (energy, detector or optics position); changing the
+sample status (position, environment etc.). Figure :ref:`MinimalTomo2`,
+:ref:`MinimalTomo3` and :ref:`MinimalTomo4` show the content of files
+changing the sample temperature, the X-ray source energy and
+detector-sample distance.
+In nano tomography experiments, for example, the detector field of view is 
+often smaller than the sample. To collect a complete tomographic data set, 
+it is necessary to raster the sample across the field of view moving its x
+and y location. Figure :ref:`NanoTomo1` shows a file from a nano
+tomography experiment when the sample rasters through the field of view.
+
+There are limits to this approach, as one clearly does not want to have
+hundreds of measurement groups in a file (or multiple files) where most
+of the metadata is the same. For measurements where there are many
+“positioner” values (aka a “scan”), it is more sensible to add
+dimension(s) to the exchange dataset, and describe the “positioner”
+values as dimension scales. This is a judgement left to the user.
 
 Temperature
-~~~~~~~~~~~
+^^^^^^^^^^^
+
 .. _MinimalTomo2:
 
 .. figure:: figures/dx_MinimalTomo2.png
@@ -70,7 +85,7 @@ Temperature
    temperatures (100 and 200 Celsius)
 
 Energy
-~~~~~~
+^^^^^^
 .. _MinimalTomo3:
 
 .. figure:: figures/dx_MinimalTomo3.png
@@ -82,7 +97,8 @@ Energy
    (10 and 20 keV)
 
 Detector-sample
-~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^
+
 .. _MinimalTomo4:
 
 .. figure:: figures/dx_MinimalTomo4.png
@@ -95,23 +111,8 @@ Detector-sample
    dataset to associate the detector with the exchange group generated
    from the acquisition
 
-Series
+Raster
 ~~~~~~
-
-A series of tomographic measurements, when relevant, can be stored in
-the same file appending _N to the measurement tag. In nano
-tomography experiments, for example, the detector field of view is often
-smaller than the sample. To collect a complete tomographic data set, it
-is necessary to raster the sample across the field of view moving its x
-and y location. Figure :ref:`NanoTomo1` shows a file from a nano
-tomography experiment when the sample rasters through the field of view.
-
-There are limits to this approach, as one clearly does not want to have
-hundreds of measurement groups in a file (or multiple files) where most
-of the metadata is the same. For measurements where there are many
-“positioner” values (aka a “scan”), it is more sensible to add
-dimension(s) to the exchange dataset, and describe the “positioner”
-values as dimension scales. This is a judgement left to the user.
 
 .. _NanoTomo1:
 

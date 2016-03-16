@@ -124,9 +124,14 @@ Raster
    Diagram of a file with 4 tomographic data sets from a nano tomography
    experiment
 
-Groups
-======
+Top level (root)================This node represents the top level of the HDF5 file and holds somegeneral information about the file.+---------------+----------------+-----------------------------------------+|    Member     |      Type      |              Example                    |
++===============+================+=========================================+|**implements** | string dataset | **exchange**:*measurement*:*provenance* |+---------------+----------------+-----------------------------------------+|**exchange**   |    group       |                                         |
++---------------+----------------+-----------------------------------------+|*measurement*  |    group       |                                         |+---------------+----------------+-----------------------------------------+| *provenance*  |    group       |                                         |+---------------+----------------+-----------------------------------------+**implements**    |     | A colon separated list that shows which components are present in      the file. The only **mandatory** component is **exchange**. A more      general Data Exchange file also contains *measurement* and      *provenance* information, if so these will be declared in **implements**      as **exchange**:*measurement*:*provenance***exchange** or **exchange_N**    |     | The data taken from measurements or processing. Dimension      descriptors within the group may also serve to describe      “positioner” values involved in a scan. 
 
+*measurement* or *measurement_N*    |     | Description of the sample and instrument as configured for the      measurement. This group is appropriate for relatively static      metadata. For measurements where there are many “positioner”      values (aka a “scan”), it is more sensible to add dimension(s) to      the exchange dataset, and describe the “positioner” values as      dimension scales rather than record the data via multiple matching      *measurement* and **exchange** groups. This is a judgement left to      the user.
+
+*provenance*    |     | The Provenance group describes all process steps that have been      applied to the data.
+      
 Exchange
 --------
 
@@ -397,6 +402,10 @@ stored in this class.
 +----------------------------------------------+----------------------------------+----------------------------------+
 |    serial_number                             | string dataset                   |       "1234XW2"                  |  
 +----------------------------------------------+----------------------------------+----------------------------------+
+|    firmware_version                          | string dataset                   |       "3.7.9"                    |  
++----------------------------------------------+----------------------------------+----------------------------------+
+|    software_version                          | string dataset                   |       "1.3.14"                   |  
++----------------------------------------------+----------------------------------+----------------------------------+
 |    bit_depth                                 |      integer                     |      12                          |     
 +----------------------------------------------+----------------------------------+----------------------------------+
 |    pixel_size_x                              |      float                       |      6.7e-6                      |
@@ -531,19 +540,18 @@ ROI
 Group describing the region of interest (ROI) of the image actually
 collected, if smaller than the full CCD.
 
-
 +----------------+----------------+-----------------+
 |     Member     |      Type      |      Example    |
 +================+================+=================+
 |    name        | string dataset | "center third"  | 
 +----------------+----------------+-----------------+
-|    x1          | integer        |      256        |   
+|   min_x        | integer        |      256        |   
 +----------------+----------------+-----------------+
-|    y1          | integer        |      256        |
+|  size_x        | integer        |      256        |
 +----------------+----------------+-----------------+
-|    x2          | integer        |      1792       |
+|   min_y        | integer        |      1792       |
 +----------------+----------------+-----------------+
-|    y2          | integer        |      1792       |
+|  size_y        | integer        |      1792       |
 +----------------+----------------+-----------------+
 
 Table: ROI Group Members

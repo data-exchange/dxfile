@@ -48,7 +48,7 @@ optimized for sinogram read *y:theta:x*. As no units are specified the data is a
 
 
 Series
-^^^^^^
+------
 
 A series of tomographic measurements, when relevant, can be stored in
 the same file appending _N to the measurement tag. 
@@ -72,7 +72,7 @@ dimension(s) to the exchange dataset, and describe the “positioner”
 values as dimension scales. This is a judgement left to the user.
 
 Temperature
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 .. _MinimalTomo2:
 
@@ -85,7 +85,7 @@ Temperature
    temperatures (100 and 200 Celsius)
 
 Energy
-^^^^^^
+~~~~~~
 .. _MinimalTomo3:
 
 .. figure:: figures/dx_MinimalTomo3.png
@@ -97,7 +97,7 @@ Energy
    (10 and 20 keV)
 
 Detector-sample
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 .. _MinimalTomo4:
 
@@ -128,7 +128,7 @@ Groups
 ======
 
 Exchange
-~~~~~~~~
+--------
 
 In X-ray tomography, the 3D arrays representing the most basic version
 of the data include projections, dark, and white fields. It is
@@ -229,7 +229,7 @@ data_shift_x, data_shift_y
 .. _instrument:
 
 Instrument
-~~~~~~~~~~
+----------
 
 The instrument group for X-ray tomography introduces an extended
 detector group definition adding definitions for and . The extended
@@ -260,7 +260,7 @@ Table: Instrument Group for Tomography
 .. _setup:
 
 Setup
-^^^^^
+~~~~~
 
 Logging instrument and beamline component setup parameters (static setup values) 
 is not defined by Data Exchange because is specific and different for each instrument
@@ -332,7 +332,7 @@ Table: Instrument Acquisition Group for Tomography
 .. _interferometer: 
 
 Interferometer
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 This group stores the interferometer parameters.
 
@@ -377,7 +377,7 @@ number_of_grid_steps
 .. _detector:
 
 Detector
-^^^^^^^^
+~~~~~~~~
 
 This class holds information about the detector used during the
 experiment. If more than one detector are used they will be all listed
@@ -524,7 +524,7 @@ geometry
 .. _roi:
 
 ROI
-```
+^^^
 
 Group describing the region of interest (ROI) of the image actually
 collected, if smaller than the full CCD.
@@ -565,7 +565,7 @@ y2
 .. _objective:
 
 Objective
-`````````
+^^^^^^^^^
 
 Group describing the microscope objective lenses used.
 
@@ -606,7 +606,7 @@ numerical_aperture
 .. _scintillator:
 
 Scintillator
-````````````
+^^^^^^^^^^^^
 
 Group describing the visible light scintillator coupled to the CCD
 camera objective lens.

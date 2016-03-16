@@ -248,8 +248,6 @@ instrument group is as shown in Table.
 +----------------------------------------------+----------------------+-------------------------------+
 |                   monochromator              |       group          | same as core                  |
 +----------------------------------------------+----------------------+-------------------------------+
-|                  acquisition_                |       group          | new                           |
-+----------------------------------------------+----------------------+-------------------------------+
 |                  detector_                   |       group          | extended from core            |
 +----------------------------------------------+----------------------+-------------------------------+
 |                  setup_                      |       group          | new                           |
@@ -269,11 +267,15 @@ group under each beamline component and leaves each facility free to store what
 is relevant for each component (list of motor positions etc.). 
 Ideally each component in the instrument list (source, shutter, attenuator etc.) should have
 included its setup group. For setup values not associated with a specific beamline component
-a  *setup* group in the instrument group should be created.
+a  *setup* group in the instrument group should be created. For tomography we also recommend
+to log acquisition setup parameters (static setup values) under the instrument/setup tag.
+
 
 +----------------------------------------------+----------------------------------+----------------------------------+
 |     Member                                   |      Type                        |            Example               |
 +==============================================+==================================+==================================+
+|     acquisition_                             |       group                      |                                  |
++----------------------------------------------+----------------------------------+----------------------------------+
 |     motor_x                                  |      float                       |       -10.107                    |
 +----------------------------------------------+----------------------------------+----------------------------------+
 |     motor_y                                  |      float                       |       -17.900                    |
@@ -290,7 +292,7 @@ Table: Setup Group Members
 .. _acquisition:
 
 Acquisition
-~~~~~~~~~~~
+^^^^^^^^^^^
 
 Logging acquisition setup parameters (static setup values) is not defined by Data Exchange 
 because is specific and different for each instrument and beamline.

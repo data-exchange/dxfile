@@ -259,7 +259,8 @@ Table: Instrument Group for Tomography
 .. _setup:
 
 Setup
-~~~~~
+^^^^^
+
 Logging instrument and beamline component setup parameters (static setup values) 
 is not defined by Data Exchange because is specific and different for each instrument
 and beamline. To capture this information Data Exchange requires to set a *setup* 
@@ -288,7 +289,8 @@ Table: Setup Group Members
 .. _acquisition:
 
 Acquisition
-~~~~~~~~~~~
+^^^^^^^^^^^
+
 Logging acquisition setup parameters (static setup values) is not defined by Data Exchange 
 because is specific and different for each instrument and beamline.
 In the table below we present the implementation adopted by the Swiss Light Source and
@@ -329,7 +331,7 @@ Table: Instrument Acquisition Group for Tomography
 .. _interferometer: 
 
 Interferometer
-~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^
 
 This group stores the interferometer parameters.
 
@@ -374,7 +376,7 @@ number_of_grid_steps
 .. _detector:
 
 Detector
-~~~~~~~~
+^^^^^^^^
 
 This class holds information about the detector used during the
 experiment. If more than one detector are used they will be all listed
@@ -521,7 +523,7 @@ geometry
 .. _roi:
 
 ROI
-^^^
+```
 
 Group describing the region of interest (ROI) of the image actually
 collected, if smaller than the full CCD.
@@ -562,7 +564,7 @@ y2
 .. _objective:
 
 Objective
-^^^^^^^^^
+`````````
 
 Group describing the microscope objective lenses used.
 
@@ -603,7 +605,7 @@ numerical_aperture
 .. _scintillator:
 
 Scintillator
-^^^^^^^^^^^^
+````````````
 
 Group describing the visible light scintillator coupled to the CCD
 camera objective lens.
@@ -653,7 +655,7 @@ substrate_thickness
 .. _geometry:
 
 Geometry
-^^^^^^^^
+````````
 
 This class holds the position and orientation of a component for
 tomography.
@@ -738,7 +740,7 @@ orientation. The third row can be recovered by using the fact that the
 basis vectors are orthonormal.
 
 Data Processing
-===============
+~~~~~~~~~~~~~~~
 
 This section documents a set of process descriptions for tomography data
 movement and processing. These process description groups are used in a
@@ -746,7 +748,7 @@ data processing pipeline - each group provides the metadata for one
 stage in the pipeline.
 
 Sinogram
-~~~~~~~~
+^^^^^^^^
 
 The sinogram process description group contains metadata required to
 generate sinograms from projection data. The input data is a projection
@@ -784,7 +786,7 @@ output_data
     | Reference to the exchange group that will contain the sinogram ordered output data.
 
 Ring Removal
-~~~~~~~~~~~~
+^^^^^^^^^^^^
 
 The ring removal process description group contains information required
 to run a ring_removal processing step.
@@ -825,7 +827,7 @@ output_data
     | coefficient
 
 Reconstruction
-~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^
 
 The Reconstruction process description group contains metadata required
 to run a tomography reconstruction. The specific algorithm is described
@@ -1013,7 +1015,7 @@ analytic_processed_number_of_steps
    
     
 Gridftp
-~~~~~~~
+^^^^^^^
 
 The gridftp process description group contains metadata required to
 transfer data between two gridftp endpoints. This assumes a third party
@@ -1050,7 +1052,7 @@ dest_URL
     | A gsiftp URL for the destination of the transfer.
 
 Export
-~~~~~~
+^^^^^^
 
 The export process description group contains metadata required to
 extract and convert data from a Data Exchange (HDF5) file into another

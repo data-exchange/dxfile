@@ -133,7 +133,7 @@ Top level (root)================This node represents the top level of the HDF
 *provenance*    |     | The Provenance group describes all process steps that have been      applied to the data.
       
 Exchange
---------
+========
 
 In X-ray tomography, the 3D arrays representing the most basic version
 of the data include projections, dark, and white fields. It is
@@ -233,6 +233,7 @@ data_shift_x, data_shift_y
 
 .. _instrument:
 
+Measurement===========
 Instrument
 ----------
 

@@ -23,20 +23,7 @@ instrument    |     | The instrument used to collect this data.
 
 sample    |     | The sample measured.
 
-description    |     | Measurement description.Setup
-~~~~~
-
-Logging instrument and beamline component setup parameters (static setup values) 
-is not defined by Data Exchange because is specific and different for each instrument
-and beamline. To capture this information Data Exchange requires to set a *setup* 
-group under each beamline component and leaves each facility free to store what 
-is relevant for each component (list of motor positions etc.). 
-Ideally each component in the instrument list (source, shutter, attenuator etc.) should have
-included its setup group. For setup values not associated with a specific beamline component
-a  *setup* group in the instrument group should be created.
-+----------------------------------------------+----------------------------------+----------------------------------+|     Member                                   |      Type                        |            Example               |
-+==============================================+==================================+==================================+|    sample_x                                  |      float                       |      -10.107                     |+----------------------------------------------+----------------------------------+----------------------------------+|    sample_y                                  |      float                       |       -17.900                    |+----------------------------------------------+----------------------------------+----------------------------------+|    sample_z                                  |      float                       |      -5.950                      |+----------------------------------------------+----------------------------------+----------------------------------+|    sample_xx                                 |      float                       |      -1.559                      |+----------------------------------------------+----------------------------------+----------------------------------+|    sample_zz                                 |      float                       |      1.307                       |+----------------------------------------------+----------------------------------+----------------------------------+Table: Setup Group Members
-
+description    |     | Measurement description.
 Instrument~~~~~~~~~~The instrument group stores all relevant beamline components status atthe beginning of a measurement. While all these fields are optional, ifyou do intend to include them they should appear within this parentageof groups.
 
 +---------------------------------------------+-------------------------+-------------------------+|                    Member                   |           Type          |         Example         |
@@ -57,6 +44,20 @@ detector_N    |     | The detectors that compose the instrument.
 .. _setup:
 
 .. _source:
+
+Setup
+^^^^^
+
+Logging instrument and beamline component setup parameters (static setup values) 
+is not defined by Data Exchange because is specific and different for each instrument
+and beamline. To capture this information Data Exchange requires to set a *setup* 
+group under each beamline component and leaves each facility free to store what 
+is relevant for each component (list of motor positions etc.). 
+Ideally each component in the instrument list (source, shutter, attenuator etc.) should have
+included its setup group. For setup values not associated with a specific beamline component
+a  *setup* group in the instrument group should be created.
++----------------------------------------------+----------------------------------+----------------------------------+|     Member                                   |      Type                        |            Example               |
++==============================================+==================================+==================================+|    sample_x                                  |      float                       |      -10.107                     |+----------------------------------------------+----------------------------------+----------------------------------+|    sample_y                                  |      float                       |       -17.900                    |+----------------------------------------------+----------------------------------+----------------------------------+|    sample_z                                  |      float                       |      -5.950                      |+----------------------------------------------+----------------------------------+----------------------------------+|    sample_xx                                 |      float                       |      -1.559                      |+----------------------------------------------+----------------------------------+----------------------------------+|    sample_zz                                 |      float                       |      1.307                       |+----------------------------------------------+----------------------------------+----------------------------------+Table: Setup Group Members
 
 Source^^^^^^Class describing the light source being used.
 +-----------------------------+--------------------------------+---------------------------+| Member                      |     Type                       |     Example               |+=============================+================================+===========================+

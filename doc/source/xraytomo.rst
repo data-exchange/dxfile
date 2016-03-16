@@ -290,7 +290,7 @@ Table: Setup Group Members
 .. _acquisition:
 
 Acquisition
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 Logging acquisition setup parameters (static setup values) is not defined by Data Exchange 
 because is specific and different for each instrument and beamline.

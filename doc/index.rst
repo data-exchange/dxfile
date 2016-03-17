@@ -16,8 +16,7 @@ This guide is maintained on
    :maxdepth: 1
    
    source/about
-   source/design
-   source/definitions
+   source/introduction
    source/reference
    source/xraytomo
    source/install

@@ -121,34 +121,41 @@ data_shift_x, data_shift_y
 .. _instrument:
 
 Measurement===========
-Instrument
-----------
 
-The instrument group for X-ray tomography introduces an extended
-detector group definition adding definitions for and . The extended
-instrument group is as shown in Table.
+This group holds sample and instrument information. These groups aredesigned to hold relatively static data about the sample and instrumentconfiguration at the time of the measurement. Rapidly changing*positioner* values (aka scan) are better represented in the exchangegroup dataset.+---------------+----------------------+------------------------+|    Member     |      Type            |     Example            |
++===============+======================+========================+|   instrument  |      group           |                        |+---------------+----------------------+------------------------+|    sample     |      group           |                        |
++---------------+----------------------+------------------------+|  description  |   string attribute   | "Tomography of a rock” |
++---------------+----------------------+------------------------+Table: Measurement Group Members
 
-+----------------------------------------------+----------------------+-------------------------------+
-|                   Member                     |      Type            |            Example            |
-+==============================================+======================+===============================+
-|                   name                       |       string dataset | "XSD/2-BM"                    |
-+----------------------------------------------+----------------------+-------------------------------+
-|                   source                     |       group          | same as core                  |
-+----------------------------------------------+----------------------+-------------------------------+
-|                   shutter_N                  |       group          | same as core                  |
-+----------------------------------------------+----------------------+-------------------------------+
-|                   attenuator_N               |       group          | same as core                  |
-+----------------------------------------------+----------------------+-------------------------------+
-|                   monochromator              |       group          | same as core                  |
-+----------------------------------------------+----------------------+-------------------------------+
-|                  detector_                   |       group          | extended from core            |
-+----------------------------------------------+----------------------+-------------------------------+
-|                  setup_                      |       group          | new                           |
-+----------------------------------------------+----------------------+-------------------------------+
+instrument    |     | The instrument used to collect this data.
+
+sample    |     | The sample measured.
+
+description    |     | Measurement description.
+
+Instrument----------The instrument group stores all relevant beamline components status atthe beginning of a measurement. While all these fields are optional, ifyou do intend to include them they should appear within this parentageof groups.
+
++---------------------------------------------+-------------------------+-------------------------+|                    Member                   |           Type          |         Example         |
++=============================================+=========================+=========================+
+|                   name                      |       string dataset    | "XSD/2-BM"              |+---------------------------------------------+-------------------------+-------------------------+|                   source_                   |          group          |                         |+---------------------------------------------+-------------------------+-------------------------+|                   shutter_                  |          group          |                         |+---------------------------------------------+-------------------------+-------------------------+|                   attenuator_               |          group          |                         |+---------------------------------------------+-------------------------+-------------------------+|                   monochromator_            |          group          |                         |+---------------------------------------------+-------------------------+-------------------------+|                   capacitive_sensors_       |          group          |                         |+---------------------------------------------+-------------------------+-------------------------+|                   detector_                 |          group          |                         |+---------------------------------------------+-------------------------+-------------------------+
+|                   set-up_                   |          group          |                         |+---------------------------------------------+-------------------------+-------------------------+
 
 Table: Instrument Group for Tomography
 
-.. _setup:
+name    |     | Name of the instrument.
+
+source    |     | The source used by the instrument.
+
+shutter    |     | The shutter(s) used by the instrument.
+
+attenuator    |     | The attenuators that are part of the instrument.
+
+monochromator    |     | The monochromator used by the instrument.
+
+capacitive_sensor    |     | The capacitive_sensors used to monitor for example the sample      position during data collection.
+
+detector    |     | The detectors that compose the instrument.
+.. _set-up:
 
 Setup
 ~~~~~
@@ -218,12 +225,76 @@ Advanced Photon Source.
 +----------------------------------------------+----------------------------------+----------------------------------+
 |    type                                      | string                           |      dpc_tomography              |
 +----------------------------------------------+----------------------------------+----------------------------------+
-|    setup_                                    | string                           |      dpc_tomography              |
-+----------------------------------------------+----------------------------------+----------------------------------+
 
 Table: Instrument Acquisition Group for Tomography
 
 
+.. _source:
+
+Source~~~~~~Class describing the light source being used.
++-----------------------------+--------------------------------+---------------------------+| Member                      |     Type                       |     Example               |+=============================+================================+===========================+
+| name                        |     string dataset             |     “APS”                 |+-----------------------------+--------------------------------+---------------------------+| datetime                    |     string dataset (ISO 8601)  |     “2011-07-15T15:10Z”   |+-----------------------------+--------------------------------+---------------------------+| beamline                    |     string dataset             |     “2-BM”                |+-----------------------------+--------------------------------+---------------------------+| current                     |     float dataset              |     0.094                 |+-----------------------------+--------------------------------+---------------------------+| energy                      |     float dataset              |     4.807e-15             |+-----------------------------+--------------------------------+---------------------------+| pulse_energy                |     float dataset              |     1.602e-15             |+-----------------------------+--------------------------------+---------------------------+| pulse_width                 |     float dataset              |     15e-11                |+-----------------------------+--------------------------------+---------------------------+| mode                        |     string dataset             |     “TOPUP”               |+-----------------------------+--------------------------------+---------------------------+| beam_intensity_incident     |     float dataset              |     55.93                 |+-----------------------------+--------------------------------+---------------------------+| beam_intensity_transmitted  |     float dataset              |     100.0                 |+-----------------------------+--------------------------------+---------------------------+| geometry_                   |     group                      |                           |+-----------------------------+--------------------------------+---------------------------+| setup_                      |     group                      |                           |+-----------------------------+--------------------------------+---------------------------+Table: table_source
+
+
+name    |     | Name of the facility.
+datetime    |     | Date and time source was measured.
+beamline    |     | Name of the beamline.
+current    |     | Electron beam current (A).
+energy    |     | Characteristic photon energy of the source (J). For an APS bending      magnet this is 30 keV or 4.807e-15 J.
+pulse_energy    |     | Sum of the energy of all the photons in the pulse (J).
+pulse_width    |     | Duration of the pulse (s).
+mode    |     | Beam mode: TOP-UP.
+beam_intensity_incident    |     | Incident beam intensity in (photons per s).
+beam_intensity_transmitted    |     | Transmitted beam intensity (photons per s).
+
+.. _shutter:
+
+Shutter~~~~~~~
+Class describing the shutter being used.+--------------------+-------------------------+-------------------------------+|      Member        |           Type          |         Example               |
++====================+=========================+===============================+
+|       name         |     string dataset      |     “Front End Shutter 1      |+--------------------+-------------------------+-------------------------------+|      status        |     string dataset      |     “OPEN”                    |+--------------------+-------------------------+-------------------------------+|       geometry_    |        group            |                               |+--------------------+-------------------------+-------------------------------+
+|       setup_       |        group            |                               |+--------------------+-------------------------+-------------------------------+
+Table: Shutter Group Members
+
+name
+    |     | Shutter name.status
+    |     | “OPEN” or “CLOSED”
+
+.. _attenuator:
+Attenuator~~~~~~~~~~This class describes the beamline attenuator(s) used during datacollection. If more than one attenuators are used they will be named asattenuator_1, attenuator_2 etc.
+
++---------------------------+-------------------------+-------------------------------+|      Member               |           Type          |         Example               |
++===========================+=========================+===============================+
+| thickness                 |     float dataset       |     1e-3                      |+---------------------------+-------------------------+-------------------------------+| attenuator_transmission   |     float dataset       |     unit-less                 |+---------------------------+-------------------------+-------------------------------+| type                      |     string dataset      |     “Al”                      |+---------------------------+-------------------------+-------------------------------+| geometry_                 |     group               |                               |+---------------------------+-------------------------+-------------------------------+| setup_                    |     group               |                               |+---------------------------+-------------------------+-------------------------------+Table: Attenuator Group Members
+
+
+thickness     |     | Thickness of attenuator along beam direction.
+attenuator_transmission    |     | The nominal amount of the beam that gets through (transmitted      intensity)/(incident intensity).
+type    |     | Type or composition of attenuator.
+
+.. _monochromator:
+Monochromator~~~~~~~~~~~~~
+Define the monochromator used in the instrument.+--------------------+-------------------------+-------------------------------+|      Member        |           Type          |         Example               |
++====================+=========================+===============================+
+| type               |     string dataset      |     “Multilayer”              |+--------------------+-------------------------+-------------------------------+| energy             |     float dataset       |     1.602e-15                 |+--------------------+-------------------------+-------------------------------+| energy_error       |     float dataset       |     1.602e-17                 |+--------------------+-------------------------+-------------------------------+| mono_stripe        |     string dataset      |     “Ru/C”                    |+--------------------+-------------------------+-------------------------------+| geometry_          |     group               |                               |+--------------------+-------------------------+-------------------------------+| setup_             |     group               |                               |+--------------------+-------------------------+-------------------------------+Table: Monochromator Group Members
+
+type    |     | Multilayer type.
+energy    |     | Peak of the spectrum that the monochromator selects. Since units      is not defined this field is in J and corresponds to 10 keV.
+energy_error    |     | Standard deviation of the spectrum that the monochromator selects.      Since units is not defined this field is in J.
+mono_stripe    |     | Type of multilayer coating or crystal.
+.. _capacitive_sensors:
+
+Capacitive Sensors~~~~~~~~~~~~~~~~~~Define the capacitive sensors used in the instrument.+--------------------+-------------------------+-------------------------------+|      Member        |           Type          |         Example               |
++====================+=========================+===============================+
+| name               |     string dataset      |     “Capacitive Sensors”      |+--------------------+-------------------------+-------------------------------+| gain               |     float dataset       |     1.602e-15                 |+--------------------+-------------------------+-------------------------------+| shift_x            |     float dataset       |     vector of float           |+--------------------+-------------------------+-------------------------------+| shift_y            |     float dataset       |     vector of float           |+--------------------+-------------------------+-------------------------------+| shift_z            |     float dataset       |     vector of float           |+--------------------+-------------------------+-------------------------------+
+| geometry_          |     group               |                               |+--------------------+-------------------------+-------------------------------+
+| setup_             |     group               |                               |+--------------------+-------------------------+-------------------------------+
+Table: Capacitive Sensors Group Membersname
+    |     | Capacitive Sensors name.
+
+gain    |     | Capacitive Sensors gain in V/m.
+    
+shift_x, shift_y, shift_z    |     | vectors containing for each scan point the position monitored by      the capacitive sensor.
 .. _interferometer: 
 
 Interferometer
@@ -545,13 +616,69 @@ substrate_thickness
     | 
     | Scintillator substrate thickness.
 
+
+.. _setup:
+
+Setup
+^^^^^
+
+Logging instrument and beamline component setup parameters (static setup values) 
+is not defined by Data Exchange because is specific and different for each instrument
+and beamline. To capture this information Data Exchange requires to set a *setup* 
+group under each beamline component and leaves each facility free to store what 
+is relevant for each component (list of motor positions etc.). 
+Ideally each component in the instrument list (source, shutter, attenuator etc.) should have
+included its setup group. For setup values not associated with a specific beamline component
+a  *setup* group in the instrument group should be created.
+
++----------------------------------------------+----------------------------------+----------------------------------+|     Member                                   |      Type                        |            Example               |
++==============================================+==================================+==================================+|    sample_x                                  |      float                       |      -10.107                     |+----------------------------------------------+----------------------------------+----------------------------------+|    sample_y                                  |      float                       |       -17.900                    |+----------------------------------------------+----------------------------------+----------------------------------+|    sample_z                                  |      float                       |      -5.950                      |+----------------------------------------------+----------------------------------+----------------------------------+|    sample_xx                                 |      float                       |      -1.559                      |+----------------------------------------------+----------------------------------+----------------------------------+|    sample_zz                                 |      float                       |      1.307                       |+----------------------------------------------+----------------------------------+----------------------------------+
+
+Sample------This group holds basic information about the sample, its geometry,properties, the sample owner (user) and sample proposal information.While all these fields are optional, if you do intend to include themthey should appear within this parentage of groups.
+
++-------------------------------------+------------------------------------+-----------------------------+|    Member                           |                 Type               |          Example            |
++=====================================+====================================+=============================+
+|         name                        |     string dataset                 |      "cells sample 1"       |    +-------------------------------------+------------------------------------+-----------------------------+|     description                     |     string dataset                 |      "malaria cells"        |   +-------------------------------------+------------------------------------+-----------------------------+|    preparation_date                 |  string dataset (ISO 8601)         |  "2012-07-31T21:15:22+0600" |    +-------------------------------------+------------------------------------+-----------------------------+|    chemical_formula                 | string dataset (abbr. CIF format)  |     "(Cd 2+)3,  2(H2 O)"    |   +-------------------------------------+------------------------------------+-----------------------------+|          mass                       |     float dataset                  |              0.25           |+-------------------------------------+------------------------------------+-----------------------------+|    concentration                    |     float dataset                  |              0.4            |+-------------------------------------+------------------------------------+-----------------------------+|    environment                      |     string dataset                 |             "air"           |  +-------------------------------------+------------------------------------+-----------------------------+|    temperature                      |     float dataset                  |             25.4            |+-------------------------------------+------------------------------------+-----------------------------+|    temperature_set                  |     float dataset                  |             26.0            |+-------------------------------------+------------------------------------+-----------------------------+|    pressure                         |     float dataset                  |           101325            | +-------------------------------------+------------------------------------+-----------------------------+|    thickness                        |     float dataset                  |            0.001            |+-------------------------------------+------------------------------------+-----------------------------+|    position                         |     string dataset                 |  "2D"  APS robot coord.     |+-------------------------------------+------------------------------------+-----------------------------+|    geometry_                        |            group                   |                             |+-------------------------------------+------------------------------------+-----------------------------+|    setup_                           |            group                   |                             |+-------------------------------------+------------------------------------+-----------------------------+|    experiment_                      |            group                   |                             |+-------------------------------------+------------------------------------+-----------------------------+|    experimenter_                    |            group                   |                             |+-------------------------------------+------------------------------------+-----------------------------+Table: Sample Group Members
+
+name    |     | Descriptive name of the sample.
+
+description    |     | Description of the sample.preparation_date
+    |     | Date and time the sample was prepared.
+
+chemical_formula    |     | Sample chemical formula using the CIF format.
+
+mass    |     | Mass of the sample.concentration
+    |     | Mass/volume.environment 
+    |     | Sample environment.temperature 
+    |     | Sample temperature.temperature_set
+    |     | Sample temperature set point.pressure
+    |     | Sample pressure.
+
+thickness    |     | Sample thickness.position 
+    |     | Sample position in the sample changer/robot.
+
+geometry    |     | Sample center of mass position and orientation.experiment
+    |     | Facility experiment identifiers.experimenter
+    |     | Experimenter identifiers.
+Experiment~~~~~~~~~~This provides references to facility ids for the proposal, scheduledactivity, and safety form.+---------------+-------------------------+----------------------+|   Member      |            Type         |       Example        | +===============+=========================+======================+
+| proposal      |     string dataset      |        “1234”        |+---------------+-------------------------+----------------------+| activity      |     string dataset      |        “9876”        |+---------------+-------------------------+----------------------+| safety        |     string dataset      |        “9876”        |+---------------+-------------------------+----------------------+Table: Experiment Group Members
+
+proposal    |     | Proposal reference number. For the APS this is the General User    | Proposal number.
+      
+activity    |     | Proposal scheduler id. For the APS this is the beamline scheduler      activity id.
+
+safety    |     | Safety reference document. For the APS this is the Experiment    | Safety Approval Form number.Experimenter~~~~~~~~~~~~Description of a single experimenter. Multiple experimenters can berepresented through numbered entries such as experimenter_1,experimenter_2.+--------------------+-------------------------+--------------------------------------------+|      Member        |           Type          |         Example                            |
++====================+=========================+============================================+
+|       name         |     string dataset      |     “John Doe”                             |+--------------------+-------------------------+--------------------------------------------+|       role         |     string dataset      |     “Project PI”                           |+--------------------+-------------------------+--------------------------------------------+|    affiliation     |     string dataset      |     “University of California, Berkeley”   |+--------------------+-------------------------+--------------------------------------------+|      address       |     string dataset      |     “EPS UC Berkeley CA 94720 4767 USA”    |+--------------------+-------------------------+--------------------------------------------+|       phone        |     string dataset      |     “+1 123 456 0000”                      |+--------------------+-------------------------+--------------------------------------------+|       email        |     string dataset      |     “johndoe@berkeley.edu”                 |+--------------------+-------------------------+--------------------------------------------+| facility_user_id   |     string dataset      |     “a123456”                              |+--------------------+-------------------------+--------------------------------------------+Table: Experimenter Group Members    name: User name.    role: User role.    affiliation: User affiliation.    address: User address.    phoen: User phone number.    email: User e-mail address    facility_user_id: User badge number
+
+
 .. _geometry:
 
 Geometry
-````````
+^^^^^^^^
 
-This class holds the position and orientation of a component for
-tomography.
+The geometry group is common to many of the subgroups undermeasurement. The intent is to describe the translation and rotation(orientation) of the sample or instrument component relative to somecoordinate system. Since we believe it is not possible to determine allpossible uses at this time, we leave the precise definition of geometryup to the technique. We do encourage the use of separate translation andorientation subgroups within geometry. As such, we do not describegeometry further here. This class holds the general position and 
+orientation of a component.
 
 +----------------------------------------------+-----------------+----------------------------------+
 |     Member                                   |      Type       |            Example               |
@@ -572,7 +699,7 @@ orientation
 .. _translation:
 
 Translation
-'''''''''''
+```````````
 
 This is the description for the general spatial location of a component
 for tomography.
@@ -594,7 +721,7 @@ distances
 .. _orientation:
 
 Orientation
-'''''''''''
+```````````
 
 This is the description for the orientation of a component for
 tomography.
@@ -632,116 +759,7 @@ matrix that transforms from the global orientation to the local
 orientation. The third row can be recovered by using the fact that the
 basis vectors are orthonormal.
 
-Data Structure
-============== 
+Provenance==========Data provenance is the documentation of all transformations, analysesand interpretations of data performed by a sequence of process functionsor actorts.Maintaining this history allows for reproducible data. The Data Exchangeformat tracks provenance by allowing each actor to append provenanceinformation to a process table. The provenance process table tracks theexecution order of a series of processes by appending sequential entriesin the process table.Scientific users will not generally be expected to maintain data in thisgroup. The expectation is that analysis pipeline tools willautomatically record process steps using this group. In addition, it ispossible to re-run an analysis using the information provided here.+-----------+-------------------+-------------------+---------------+----------------------+--------------------------+-------------------------------------+|   actor   |    start_time     |    end_time       |     status    |     message          |          reference       |     description                     |+===========+===================+===================+===============+======================+==========================+=====================================+
+| gridftp   |     21:15:22      |     21:15:23      |     FAILED    |     auth. error      |     /provenance/griftp   |     transfer detector to cluster    |+-----------+-------------------+-------------------+---------------+----------------------+--------------------------+-------------------------------------+| gridftp   |     21:15:26      |     21:15:27      |     FAILED    |     auth. error      |     /provenance/griftp   |     transfer detector to cluster    |   +-----------+-------------------+-------------------+---------------+----------------------+--------------------------+-------------------------------------+| gridftp   |     21:17:28      |     22:15:22      |     SUCCESS   |         OK           |     /provenance/griftp   |     transfer detector to cluster    |    +-----------+-------------------+-------------------+---------------+----------------------+--------------------------+-------------------------------------+| norm      |     22:15:23      |     22:30:22      |     SUCCESS   |         OK           |     /provenance/norm     |     normalize the raw data          |+-----------+-------------------+-------------------+---------------+----------------------+--------------------------+-------------------------------------+| rec       |     22:30:23      |     22:50:22      |     SUCCESS   |         OK           |     /provenance/rec      |     reconstruct the norm. data      |  +-----------+-------------------+-------------------+---------------+----------------------+--------------------------+-------------------------------------+| convert   |     22:50:23      |                   |     RUNNING   |         OK           |     /provenance/export   |     convert reconstructed data      |  +-----------+-------------------+-------------------+---------------+----------------------+--------------------------+-------------------------------------+| gridftp   |                   |       QUEUED      |               |                      |     /provenance/griftp_2 |     transfer data to user           | +-----------+-------------------+-------------------+---------------+----------------------+--------------------------+-------------------------------------+Table: Process table to log actors activity
 
-A tomographic data set consists of a series of projections, dark and white field images. The dark and white fields must have the same
-projection image dimensions and can be collected at any time before, after or during the projection data collection. The angular position of
-the tomographic rotation axis, theta, can be used to keep track of when the dark and white images are collected. 
-These examples show projection, dark, and white images saved in three 3D arrays as shown in Figures :ref:`MinimalTomo0` and :ref:`MinimalTomo1` using, by default, the natural HDF5 order of the a multidimensional array (rotation axis, ccd y, ccd x), i.e. with the fastest changing dimension being the last dimension, and the slowest changing dimension being the first dimension. If using the default dimension order, the axes attribute *theta:y:x* can be
-omitted. The attribute is **mandatory** if the 3D arrays use a different axes order. This could be the case when, for example, the arrays are
-optimized for sinogram read *y:theta:x*. As no units are specified the data is assumed to be in *counts" with the axes (x, y) in pixels. If the positions of the rotation axis for each projection, dark, and white images are not specified via theta dimension scale datasets, it is assumed that the raw projections are taken at equally spaced angular intervals between 0 and 180 degree, with white and dark field collected at the same time before or after the projection data collection.
-
-.. _MinimalTomo0:
-
-.. figure:: figures/dx_MinimalTomo0.png
-   :align: center
-   :alt: Diagram of a minimal Data Exchange file for a single tomographic data set including raw projections, dark, and white fields.
-   :width: 50.0%
-
-   Diagram of a minimal Data Exchange file for a single tomographic data set including raw projections, dark, and white fields 
-
-.. _MinimalTomo1:
-
-.. figure:: figures/dx_MinimalTomo1.png
-   :align: center
-   :alt: Diagram of a single tomographic data set including raw projections, dark and white fields. In this case, there are additional dimension descriptor datasets theta, theta_dark, and theta_white that contain the positions of the rotation axis for each projection, dark, and white image. The lefthand example shows this as it would appear using the HDF5 H5DSattach_scale function. The righthand example shows this as it would appear by manually adding an axes attribute (for cases where H5DSattach_scale is unavailable). 
-   :width: 80.0%
-
-   Diagram of a single tomographic data set including raw projections,
-   dark and white fields. In this case, there are additional dimension
-   descriptor datasets theta, theta_dark, and theta_white that contain
-   the positions of the rotation axis for each projection, dark, and
-   white image. The lefthand example shows this as it would appear using
-   the HDF5 H5DSattach_scale function. The righthand example shows this
-   as it would appear by manually adding an axes attribute (for cases
-   where H5DSattach_scale is unavailable)
-
-
-Series
-------
-
-A series of tomographic measurements, when relevant, can be stored in
-the same file appending _N to the measurement tag. 
-A series of tomographic data sets are typically collected changing the
-instrument status (energy, detector or optics position); changing the
-sample status (position, environment etc.). Figure :ref:`MinimalTomo2`,
-:ref:`MinimalTomo3` and :ref:`MinimalTomo4` show the content of files
-changing the sample temperature, the X-ray source energy and
-detector-sample distance.
-In nano tomography experiments, for example, the detector field of view is 
-often smaller than the sample. To collect a complete tomographic data set, 
-it is necessary to raster the sample across the field of view moving its x
-and y location. Figure :ref:`NanoTomo1` shows a file from a nano
-tomography experiment when the sample rasters through the field of view.
-
-There are limits to this approach, as one clearly does not want to have
-hundreds of measurement groups in a file (or multiple files) where most
-of the metadata is the same. For measurements where there are many
-“positioner” values (aka a “scan”), it is more sensible to add
-dimension(s) to the exchange dataset, and describe the “positioner”
-values as dimension scales. This is a judgement left to the user.
-
-Temperature
-~~~~~~~~~~~
-
-.. _MinimalTomo2:
-
-.. figure:: figures/dx_MinimalTomo2.png
-   :align: center
-   :alt: Diagram of two tomographic data sets taken at two different sample temperatures (100 and 200 Celsius).
-   :width: 100.0%
-
-   Diagram of two tomographic data sets taken at two different sample
-   temperatures (100 and 200 Celsius)
-
-Energy
-~~~~~~
-.. _MinimalTomo3:
-
-.. figure:: figures/dx_MinimalTomo3.png
-   :align: center
-   :alt: Diagram of two tomographic data sets taken at two different energy (10 and 20 keV).
-   :width: 80.0%
-
-   Diagram of two tomographic data sets taken at two different energy
-   (10 and 20 keV)
-
-Detector-sample
-~~~~~~~~~~~~~~~
-
-.. _MinimalTomo4:
-
-.. figure:: figures/dx_MinimalTomo4.png
-   :align: center
-   :alt: Diagram of two tomographic data sets collected with two different detector-sample distances (5 and 9 mm). Note the use of output_data dataset to associate the detector with the exchange group generated from the acquisition.
-   :width: 80.0%
-
-   Diagram of two tomographic data sets collected with two different
-   detector-sample distances (5 and 9 mm). Note the use of output_data
-   dataset to associate the detector with the exchange group generated
-   from the acquisition
-
-Raster
-~~~~~~
-
-.. _NanoTomo1:
-
-.. figure:: figures/dx_NanoTomo1.png
-   :align: center
-   :alt: Diagram of a file with 4 tomographic data sets from a nano tomography experiment.
-   :width: 90.0%
-
-   Diagram of a file with 4 tomographic data sets from a nano tomography
-   experiment
-
+actor    |     | Name of the process in the pipeline stage that is executed at this      step.*start_time*    |     | Time the process started.*end_time*    |     | TIme the process ended.*status*    |     | Current process status. May be one of the following: QUEUED,      RUNNING, FAILED, or SUCCESS.*message*    |     | A process specific message generated by the process. It may be a      confirmation that the process was successful, or a detailed error      message, for example.*reference*    |     | Path to a process description group. The process description group      contains all metadata to perform the specific process. This      reference is simply the HDF5 path within this file of the      technique specific process description group. The process      description group should contain all parameters necessary to run      the process, including the name and version of any external      analysis tool used to process the data. It should also contain      input and output references that point to the      **exchange_N** groups that contain the input and output      datasets of the process.*description*    |     | Process description.

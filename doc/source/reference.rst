@@ -1,4 +1,5 @@
 .. role:: math(raw)   :format: html latex..
+
 ==============Core Reference==============Top level (root)================This node represents the top level of the HDF5 file and holds somegeneral information about the file.+---------------+----------------+-----------------------------------------+|    Member     |      Type      |              Example                    |
 +===============+================+=========================================+|**implements** | string dataset | **exchange**:*measurement*:*provenance* |+---------------+----------------+-----------------------------------------+|**exchange**   |    group       |                                         |
 +---------------+----------------+-----------------------------------------+|*measurement*  |    group       |                                         |+---------------+----------------+-----------------------------------------+| *provenance*  |    group       |                                         |+---------------+----------------+-----------------------------------------+**implements**    |     | A colon separated list that shows which components are present in      the file. The only **mandatory** component is **exchange**. A more      general Data Exchange file also contains *measurement* and      *provenance* information, if so these will be declared in **implements**      as **exchange**:*measurement*:*provenance***exchange** or **exchange_N**
@@ -11,18 +12,23 @@
 +===============+================+=========================================+|    *title*    | string dataset |       “absorption_tomography”           |+---------------+----------------+-----------------------------------------+|   **data**    | array dataset  |        n-dimensional dataset            |
 +---------------+----------------+-----------------------------------------+Table: Exchange Group Members
 
-*title*    |     | Descriptive *title* for **data** dataset. Current types include:      absorption_tomography, phase_tomography, dpc_tomography **data**    |     | The primary scientific dataset. Additional related datasets may      have any arbitrary name. Each dataset should have a units and      description attribute. Discussion of dimension descriptors and      optional axes attribute is covered in Section [sec:multidims].+---------------+------------------------+------------------------+|    Member     |      Type              |    Example             |
+*title*    |     | Descriptive *title* for **data** dataset. Current types include:      absorption_tomography, phase_tomography, dpc_tomography **data**    |     | The primary scientific dataset. Additional related datasets may      have any arbitrary name. Each dataset should have a units and      description attribute. Discussion of dimension descriptors and      optional axes attribute is covered in Section [sec:multidims].Attribute
+---------
+
+Description and units can be added as attribute to any data, both array or values,
+inside a data exchange file. If units is omitted default is SI.
++---------------+------------------------+------------------------+|    Member     |      Type              |    Example             |
 +===============+========================+========================+|  description  |   string attribute     | “transmission”         |
 +---------------+------------------------+------------------------+|     units     |   string attribute     |      *counts*          |+---------------+------------------------+------------------------+Table: data attributesMeasurement===========This group holds sample and instrument information. These groups aredesigned to hold relatively static data about the sample and instrumentconfiguration at the time of the measurement. Rapidly changing*positioner* values (aka scan) are better represented in the exchangegroup dataset.+---------------+----------------------+------------------------+|    Member     |      Type            |     Example            |
-+===============+======================+========================+|   instrument  |      group           |                        |+---------------+----------------------+------------------------+|    sample     |      group           |                        |
-+---------------+----------------------+------------------------+|  description  |   string attribute   | "Tomography of a rock” |
++===============+======================+========================+|   instrument_ |      group           |                        |+---------------+----------------------+------------------------+|    sample_    |      group           |                        |
 +---------------+----------------------+------------------------+Table: Measurement Group Members
 
 instrument    |     | The instrument used to collect this data.
 
 sample    |     | The sample measured.
 
-description    |     | Measurement description.
+.. _instrument:
+
 Instrument----------The instrument group stores all relevant beamline components status atthe beginning of a measurement. While all these fields are optional, ifyou do intend to include them they should appear within this parentageof groups.
 
 +---------------------------------------------+-------------------------+-------------------------+|                    Member                   |           Type          |         Example         |
@@ -99,6 +105,9 @@ orientation of a component.
 +---------------+------------------------+------------------------+|    Member     |      Type              |    Example             |
 +===============+========================+========================+|  translation  |     group              |                        |+---------------+------------------------+------------------------+|  orientation  |     group              |                        |
 +---------------+------------------------+------------------------+translation    |     | The position of the object with respect to the origin of your      coordinate system.orientation    |     | The rotation of the object with respect to your coordinate system.
+
+
+.. _sample:
 
 Sample------This group holds basic information about the sample, its geometry,properties, the sample owner (user) and sample proposal information.While all these fields are optional, if you do intend to include themthey should appear within this parentage of groups.
 

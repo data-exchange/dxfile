@@ -126,6 +126,7 @@ inside a data exchange file. If units is omitted default is SI.
 +---------------+------------------------+------------------------+|    Member     |      Type              |    Example             |
 +===============+========================+========================+|  description  |   string attribute     | “transmission”         |
 +---------------+------------------------+------------------------+|     units     |   string attribute     |      *counts*          |+---------------+------------------------+------------------------+Table: data attributes
+
 Measurement===========
 
 This group holds sample and instrument information. These groups aredesigned to hold relatively static data about the sample and instrumentconfiguration at the time of the measurement. Rapidly changing*positioner* values (aka scan) are better represented in the exchangegroup dataset.+---------------+----------------------+------------------------+|    Member     |      Type            |     Example            |
@@ -161,6 +162,7 @@ monochromator    |     | The monochromator used by the instrument.
 capacitive_sensor    |     | The capacitive_sensors used to monitor for example the sample      position during data collection.
 
 detector    |     | The detectors that compose the instrument.
+
 .. _set-up:
 
 Setup

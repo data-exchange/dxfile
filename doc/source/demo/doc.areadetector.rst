@@ -1,8 +1,13 @@
 Area Detector
 =============
 
-The area aetector :download:`hdf_schema.xml <../../../doc/demo/areadetector/txm.xml>` defines the layout for Data Exchange as used at the Advanced Photon Source Transmission X-Ray Microscope at beamline 32-ID.
+At synchrotron facilities using the EPICS :cite:`EPICS:01` software for area detectors :cite:`AD:01` with the
+NDFileHDF5 plugin :cite:`AD:02`, is possible to save Data Exchange files by properly configure
+the detector and the HDF schema attribute files .  
 
-The EPICS process variables are defined in the :download:`DetectorAttribute.xml <../../../doc/demo/areadetector/txmDetectorAttributes.xml>` file.
+Here are the templates in use at the  Advanced Photon Source: 
 
-.. literalinclude:: ../../../doc/demo/areadetector/txm.xml    :tab-width: 4    :linenos:    :language: guess
+   - Transmission X-Ray Microscope at beamline 32-ID: :download:`txm_hdf_schema.xml <../../../doc/demo/areadetector/txm.xml>` and :download:`txm_detector_attribute.xml <../../../doc/demo/areadetector/txmDetectorAttributes.xml>`. 
+
+   - Micro Tomography Instrument at beamline 2-BM: :download:`mct_hdf_schema.xml <../../../doc/demo/areadetector/mct.xml>` and :download:`mct_detector_attribute.xml <../../../doc/demo/areadetector/mctDetectorAttributes.xml>`. 
+

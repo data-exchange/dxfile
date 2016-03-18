@@ -31,7 +31,7 @@ focus in this group.
 +------------------+---------------------------------------------------------+-----------------------------+
 |     Member       |      Type                                               |     Example/Attributes      |
 +==================+=========================================================+=============================+
-|    title         |      string dataset                                     |  "raw absorption tomo"      |
+|    *title*       |      string dataset                                     |  "raw absorption tomo"      |
 +------------------+---------------------------------------------------------+-----------------------------+
 |    **data**      |      3D dataset                                         |  axes: *theta:y:x*          |
 +------------------+---------------------------------------------------------+-----------------------------+
@@ -56,7 +56,7 @@ focus in this group.
 
 Table: Exchange Group Members for Tomography
 
-title
+*title*
     | 
     | This is the data title.
 
@@ -118,26 +118,32 @@ data_shift_x, data_shift_y
       field of view based on a pre-calibration of rotary stage runout.
       If the unit is not defined are assumed to be in pixels.
 
-.. _instrument:
+Attribute
+---------
 
+Description and units can be added as attribute to any data, both array or values,
+inside a data exchange file. If units is omitted default is SI.
++---------------+------------------------+------------------------+|    Member     |      Type              |    Example             |
++===============+========================+========================+|  description  |   string attribute     | “transmission”         |
++---------------+------------------------+------------------------+|     units     |   string attribute     |      *counts*          |+---------------+------------------------+------------------------+Table: data attributes
 Measurement===========
 
 This group holds sample and instrument information. These groups aredesigned to hold relatively static data about the sample and instrumentconfiguration at the time of the measurement. Rapidly changing*positioner* values (aka scan) are better represented in the exchangegroup dataset.+---------------+----------------------+------------------------+|    Member     |      Type            |     Example            |
-+===============+======================+========================+|   instrument  |      group           |                        |+---------------+----------------------+------------------------+|    sample     |      group           |                        |
-+---------------+----------------------+------------------------+|  description  |   string attribute   | "Tomography of a rock” |
++===============+======================+========================+|   instrument_ |      group           |                        |+---------------+----------------------+------------------------+|    sample_    |      group           |                        |
 +---------------+----------------------+------------------------+Table: Measurement Group Members
 
 instrument    |     | The instrument used to collect this data.
 
 sample    |     | The sample measured.
 
-description    |     | Measurement description.
+
+.. _instrument:
 
 Instrument----------The instrument group stores all relevant beamline components status atthe beginning of a measurement. While all these fields are optional, ifyou do intend to include them they should appear within this parentageof groups.
 
 +---------------------------------------------+-------------------------+-------------------------+|                    Member                   |           Type          |         Example         |
 +=============================================+=========================+=========================+
-|                   name                      |       string dataset    | "XSD/2-BM"              |+---------------------------------------------+-------------------------+-------------------------+|                   source_                   |          group          |                         |+---------------------------------------------+-------------------------+-------------------------+|                   shutter_                  |          group          |                         |+---------------------------------------------+-------------------------+-------------------------+|                   attenuator_               |          group          |                         |+---------------------------------------------+-------------------------+-------------------------+|                   monochromator_            |          group          |                         |+---------------------------------------------+-------------------------+-------------------------+|                   capacitive_sensors_       |          group          |                         |+---------------------------------------------+-------------------------+-------------------------+|                   detector_                 |          group          |                         |+---------------------------------------------+-------------------------+-------------------------+
+|                   name                      |       string dataset    | "XSD/2-BM"              |+---------------------------------------------+-------------------------+-------------------------+|                   source_                   |          group          |                         |+---------------------------------------------+-------------------------+-------------------------+|                   shutter_                  |          group          |                         |+---------------------------------------------+-------------------------+-------------------------+|                   attenuator_               |          group          |                         |+---------------------------------------------+-------------------------+-------------------------+|                   monochromator_            |          group          |                         |+---------------------------------------------+-------------------------+-------------------------+|                   detector_                 |          group          |                         |+---------------------------------------------+-------------------------+-------------------------+
 |                   set-up_                   |          group          |                         |+---------------------------------------------+-------------------------+-------------------------+
 
 Table: Instrument Group for Tomography
@@ -203,6 +209,10 @@ Advanced Photon Source.
 +----------------------------------------------+----------------------------------+----------------------------------+
 |     Member                                   |      Type                        |            Example               |
 +==============================================+==================================+==================================+
+|    name                                      | string                           |      "dpc_tomography"            |
++----------------------------------------------+----------------------------------+----------------------------------+
+|    description                               | string                           |      "fly scan"                  |
++----------------------------------------------+----------------------------------+----------------------------------+
 |    rotation_start_angle                      |      float                       |      0.0                         |
 +----------------------------------------------+----------------------------------+----------------------------------+
 |    rotation_end_angle                        |      float                       |      180.0                       |
@@ -223,8 +233,6 @@ Advanced Photon Source.
 +----------------------------------------------+----------------------------------+----------------------------------+
 |    sample_out                                |      float                       |      4.0                         |
 +----------------------------------------------+----------------------------------+----------------------------------+
-|    type                                      | string                           |      dpc_tomography              |
-+----------------------------------------------+----------------------------------+----------------------------------+
 
 Table: Instrument Acquisition Group for Tomography
 
@@ -233,18 +241,28 @@ Table: Instrument Acquisition Group for Tomography
 
 Source~~~~~~Class describing the light source being used.
 +-----------------------------+--------------------------------+---------------------------+| Member                      |     Type                       |     Example               |+=============================+================================+===========================+
-| name                        |     string dataset             |     “APS”                 |+-----------------------------+--------------------------------+---------------------------+| datetime                    |     string dataset (ISO 8601)  |     “2011-07-15T15:10Z”   |+-----------------------------+--------------------------------+---------------------------+| beamline                    |     string dataset             |     “2-BM”                |+-----------------------------+--------------------------------+---------------------------+| current                     |     float dataset              |     0.094                 |+-----------------------------+--------------------------------+---------------------------+| energy                      |     float dataset              |     4.807e-15             |+-----------------------------+--------------------------------+---------------------------+| pulse_energy                |     float dataset              |     1.602e-15             |+-----------------------------+--------------------------------+---------------------------+| pulse_width                 |     float dataset              |     15e-11                |+-----------------------------+--------------------------------+---------------------------+| mode                        |     string dataset             |     “TOPUP”               |+-----------------------------+--------------------------------+---------------------------+| beam_intensity_incident     |     float dataset              |     55.93                 |+-----------------------------+--------------------------------+---------------------------+| beam_intensity_transmitted  |     float dataset              |     100.0                 |+-----------------------------+--------------------------------+---------------------------+| geometry_                   |     group                      |                           |+-----------------------------+--------------------------------+---------------------------+| setup_                      |     group                      |                           |+-----------------------------+--------------------------------+---------------------------+Table: table_source
+| name                        |     string dataset             |     “APS”                 |+-----------------------------+--------------------------------+---------------------------+| description                 |     float dataset              |     "optionl"             |+-----------------------------+--------------------------------+---------------------------+| datetime                    |     string dataset (ISO 8601)  |     “2011-07-15T15:10Z”   |+-----------------------------+--------------------------------+---------------------------+| beamline                    |     string dataset             |     “2-BM”                |+-----------------------------+--------------------------------+---------------------------+| current                     |     float dataset              |     0.094                 |+-----------------------------+--------------------------------+---------------------------+| energy                      |     float dataset              |     4.807e-15             |+-----------------------------+--------------------------------+---------------------------+| pulse_energy                |     float dataset              |     1.602e-15             |+-----------------------------+--------------------------------+---------------------------+| pulse_width                 |     float dataset              |     15e-11                |+-----------------------------+--------------------------------+---------------------------+| mode                        |     string dataset             |     “TOPUP”               |+-----------------------------+--------------------------------+---------------------------+| beam_intensity_incident     |     float dataset              |     55.93                 |+-----------------------------+--------------------------------+---------------------------+| beam_intensity_transmitted  |     float dataset              |     100.0                 |+-----------------------------+--------------------------------+---------------------------+| geometry_                   |     group                      |                           |+-----------------------------+--------------------------------+---------------------------+| setup_                      |     group                      |                           |+-----------------------------+--------------------------------+---------------------------+Table: table_source
 
 
-name    |     | Name of the facility.
+name
+    |     | Name.
+
+description    |     | Description.
+    
 datetime    |     | Date and time source was measured.
+    
 beamline    |     | Name of the beamline.
+    
 current    |     | Electron beam current (A).
-energy    |     | Characteristic photon energy of the source (J). For an APS bending      magnet this is 30 keV or 4.807e-15 J.
-pulse_energy    |     | Sum of the energy of all the photons in the pulse (J).
-pulse_width    |     | Duration of the pulse (s).
+    
+energy    |     | Characteristic photon energy of the source (J). For an APS bending    | magnet this is 30 keV or 4.807e-15 J.
+      
+pulse_energy    |     | Sum of the energy of all the photons in the pulse (J). pulse_width    | Duration of the pulse (s).
+    
 mode    |     | Beam mode: TOP-UP.
+    
 beam_intensity_incident    |     | Incident beam intensity in (photons per s).
+    
 beam_intensity_transmitted    |     | Transmitted beam intensity (photons per s).
 
 .. _shutter:
@@ -252,12 +270,15 @@ beam_intensity_transmitted    |     | Transmitted beam intensity (photons per 
 Shutter~~~~~~~
 Class describing the shutter being used.+--------------------+-------------------------+-------------------------------+|      Member        |           Type          |         Example               |
 +====================+=========================+===============================+
-|       name         |     string dataset      |     “Front End Shutter 1      |+--------------------+-------------------------+-------------------------------+|      status        |     string dataset      |     “OPEN”                    |+--------------------+-------------------------+-------------------------------+|       geometry_    |        group            |                               |+--------------------+-------------------------+-------------------------------+
+|       name         |     string dataset      |     “Front End Shutter 1      |+--------------------+-------------------------+-------------------------------+|   description      |     string dataset      |     “optional”                |+--------------------+-------------------------+-------------------------------+|      status        |     string dataset      |     “OPEN”                    |+--------------------+-------------------------+-------------------------------+|       geometry_    |        group            |                               |+--------------------+-------------------------+-------------------------------+
 |       setup_       |        group            |                               |+--------------------+-------------------------+-------------------------------+
 Table: Shutter Group Members
 
 name
-    |     | Shutter name.status
+    |     | Name.
+
+description    |     | Description.
+status
     |     | “OPEN” or “CLOSED”
 
 .. _attenuator:
@@ -265,36 +286,37 @@ name
 
 +---------------------------+-------------------------+-------------------------------+|      Member               |           Type          |         Example               |
 +===========================+=========================+===============================+
-| thickness                 |     float dataset       |     1e-3                      |+---------------------------+-------------------------+-------------------------------+| attenuator_transmission   |     float dataset       |     unit-less                 |+---------------------------+-------------------------+-------------------------------+| type                      |     string dataset      |     “Al”                      |+---------------------------+-------------------------+-------------------------------+| geometry_                 |     group               |                               |+---------------------------+-------------------------+-------------------------------+| setup_                    |     group               |                               |+---------------------------+-------------------------+-------------------------------+Table: Attenuator Group Members
+| name                      |     string dataset      |     “Filter Set 1"            |+---------------------------+-------------------------+-------------------------------+| description               |     string dataset      |     “Al"                      |+---------------------------+-------------------------+-------------------------------+| thickness                 |     float dataset       |     1e-3                      |+---------------------------+-------------------------+-------------------------------+| attenuator_transmission   |     float dataset       |     unit-less                 |+---------------------------+-------------------------+-------------------------------+| geometry_                 |     group               |                               |+---------------------------+-------------------------+-------------------------------+| setup_                    |     group               |                               |+---------------------------+-------------------------+-------------------------------+Table: Attenuator Group Members
 
+
+name
+    |     | Name.
+
+description    |     | Description.
 
 thickness     |     | Thickness of attenuator along beam direction.
-attenuator_transmission    |     | The nominal amount of the beam that gets through (transmitted      intensity)/(incident intensity).
-type    |     | Type or composition of attenuator.
+    
+attenuator_transmission    |     | The nominal amount of the beam that gets through (transmitted    |  intensity)/(incident intensity).
+    
+description    |     | Type or composition of attenuator.
 
 .. _monochromator:
 Monochromator~~~~~~~~~~~~~
 Define the monochromator used in the instrument.+--------------------+-------------------------+-------------------------------+|      Member        |           Type          |         Example               |
 +====================+=========================+===============================+
-| type               |     string dataset      |     “Multilayer”              |+--------------------+-------------------------+-------------------------------+| energy             |     float dataset       |     1.602e-15                 |+--------------------+-------------------------+-------------------------------+| energy_error       |     float dataset       |     1.602e-17                 |+--------------------+-------------------------+-------------------------------+| mono_stripe        |     string dataset      |     “Ru/C”                    |+--------------------+-------------------------+-------------------------------+| geometry_          |     group               |                               |+--------------------+-------------------------+-------------------------------+| setup_             |     group               |                               |+--------------------+-------------------------+-------------------------------+Table: Monochromator Group Members
+| name               |     string dataset      |     “Mono 1”                  |+--------------------+-------------------------+-------------------------------+| description        |     string dataset      |     “Multilayer”              |+--------------------+-------------------------+-------------------------------+| energy             |     float dataset       |     1.602e-15                 |+--------------------+-------------------------+-------------------------------+| energy_error       |     float dataset       |     1.602e-17                 |+--------------------+-------------------------+-------------------------------+| mono_stripe        |     string dataset      |     “Ru/C”                    |+--------------------+-------------------------+-------------------------------+| geometry_          |     group               |                               |+--------------------+-------------------------+-------------------------------+| setup_             |     group               |                               |+--------------------+-------------------------+-------------------------------+Table: Monochromator Group Members
 
-type    |     | Multilayer type.
-energy    |     | Peak of the spectrum that the monochromator selects. Since units      is not defined this field is in J and corresponds to 10 keV.
-energy_error    |     | Standard deviation of the spectrum that the monochromator selects.      Since units is not defined this field is in J.
-mono_stripe    |     | Type of multilayer coating or crystal.
-.. _capacitive_sensors:
+name
+    |     | Name.
 
-Capacitive Sensors~~~~~~~~~~~~~~~~~~Define the capacitive sensors used in the instrument.+--------------------+-------------------------+-------------------------------+|      Member        |           Type          |         Example               |
-+====================+=========================+===============================+
-| name               |     string dataset      |     “Capacitive Sensors”      |+--------------------+-------------------------+-------------------------------+| gain               |     float dataset       |     1.602e-15                 |+--------------------+-------------------------+-------------------------------+| shift_x            |     float dataset       |     vector of float           |+--------------------+-------------------------+-------------------------------+| shift_y            |     float dataset       |     vector of float           |+--------------------+-------------------------+-------------------------------+| shift_z            |     float dataset       |     vector of float           |+--------------------+-------------------------+-------------------------------+
-| geometry_          |     group               |                               |+--------------------+-------------------------+-------------------------------+
-| setup_             |     group               |                               |+--------------------+-------------------------+-------------------------------+
-Table: Capacitive Sensors Group Membersname
-    |     | Capacitive Sensors name.
-
-gain    |     | Capacitive Sensors gain in V/m.
+description    |     | Description.
     
-shift_x, shift_y, shift_z    |     | vectors containing for each scan point the position monitored by      the capacitive sensor.
+energy    |     | Peak of the spectrum that the monochromator selects. Since units    |  is not defined this field is in J and corresponds to 10 keV.
+    
+energy_error    |     | Standard deviation of the spectrum that the monochromator selects.    |  Since units is not defined this field is in J.
+    
+mono_stripe    |     | Type of multilayer coating or crystal.
+
 .. _interferometer: 
 
 Interferometer
@@ -305,7 +327,7 @@ This group stores the interferometer parameters.
 +----------------------------------------------+----------------------------------+----------------------------------+
 |     Member                                   |      Type                        |            Example               |
 +==============================================+==================================+==================================+
-|    grid_start                                |      float                       |      1.8                         |
+|    name                                      |     string dataset               |     “Inter 1”                    |+----------------------------------------------+----------------------------------+----------------------------------+|    description                               |     string dataset               |     “description”                |+----------------------------------------------+----------------------------------+----------------------------------+|    grid_start                                |      float                       |      1.8                         |
 +----------------------------------------------+----------------------------------+----------------------------------+
 |    grid_end                                  |      float                       |      3.51                        | 
 +----------------------------------------------+----------------------------------+----------------------------------+
@@ -319,6 +341,11 @@ This group stores the interferometer parameters.
 +----------------------------------------------+----------------------------------+----------------------------------+
 
 Table: Interferometer Group Members
+
+name
+    |     | Name.
+
+description    |     | Description.
 
 start_angle
     | 
@@ -355,6 +382,10 @@ stored in this class.
 +----------------------------------------------+----------------------------------+----------------------------------+
 |     Member                                   |      Type                        |            Example               |
 +==============================================+==================================+==================================+
+|    name                                      | string dataset                   |      "DIMAX 1"                   |   
++----------------------------------------------+----------------------------------+----------------------------------+
+|    description                               | string dataset                   |      "description"               |   
++----------------------------------------------+----------------------------------+----------------------------------+
 |    manufacturer                              | string dataset                   |      "CooKe Corporation"         |   
 +----------------------------------------------+----------------------------------+----------------------------------+
 |    model                                     | string dataset                   |       "pco dimax"                |
@@ -414,6 +445,11 @@ stored in this class.
 
 
 Table: Detector Group Members for Tomography
+
+name
+    |     | Name.
+
+description    |     | Description.
 
 manufacturer
     | 
@@ -502,7 +538,9 @@ collected, if smaller than the full CCD.
 +----------------+----------------+-----------------+
 |     Member     |      Type      |      Example    |
 +================+================+=================+
-|    name        | string dataset | "center third"  | 
+|    name        | string dataset | "ROI 04"        | 
++----------------+----------------+-----------------+
+|  description   | string dataset | "center third"  | 
 +----------------+----------------+-----------------+
 |   min_x        | integer        |      256        |   
 +----------------+----------------+-----------------+
@@ -514,6 +552,11 @@ collected, if smaller than the full CCD.
 +----------------+----------------+-----------------+
 
 Table: ROI Group Members
+
+name
+    |     | Name.
+
+description    |     | Description.
 
 min_x, min_y
     | 
@@ -535,6 +578,10 @@ Group describing the microscope objective lenses used.
 +------------------------------------+----------------+-----------------+
 |     Member                         |      Type      |      Example    |
 +====================================+================+=================+
+| name                               | string dataset |      "Lens 01"  |
++------------------------------------+----------------+-----------------+
+| description                        | string dataset |      "ZeissAx"  |
++------------------------------------+----------------+-----------------+
 | manufacturer                       | string dataset |      "Zeiss"    |
 +------------------------------------+----------------+-----------------+
 | model                              | string dataset |      "Axioplan" |
@@ -549,6 +596,11 @@ Group describing the microscope objective lenses used.
 +------------------------------------+----------------+-----------------+
 
 Table: Objective Group Members
+
+name
+    |     | Name.
+
+description    |     | Description.
 
 manufacturer
     | 
@@ -577,13 +629,13 @@ camera objective lens.
 +------------------------------------+----------------+-----------------+
 |     Member                         |      Type      |      Example    |
 +====================================+================+=================+
+|    name                            | string dataset |  "Yag polished" | 
++------------------------------------+----------------+-----------------+
+|    description                     | string dataset |  "Yag on Yag"   |  
++------------------------------------+----------------+-----------------+
 |    manufacturer                    | string dataset |  "Crytur"       |
 +------------------------------------+----------------+-----------------+
 |    serial_number                   | string dataset |    "12"         |   
-+------------------------------------+----------------+-----------------+
-|    name                            | string dataset |  "Yag polished" | 
-+------------------------------------+----------------+-----------------+
-|    type                            | string dataset |  "Yag on Yag"   |  
 +------------------------------------+----------------+-----------------+
 |    scintillating_thickness         | float dataset  |       5e-6      |  
 +------------------------------------+----------------+-----------------+
@@ -596,6 +648,14 @@ camera objective lens.
 
 Table: Scintillator Group Members
 
+name
+    | 
+    | Scintillator name.
+    
+description
+    | 
+    | Scintillator description.
+
 manufacturer
     | 
     | Scintillator Manufacturer.
@@ -603,11 +663,7 @@ manufacturer
 serial_number
     | 
     | Scintillator serial number.
-
-name
-    | 
-    | Scintillator name.
-
+    
 scintillating_thickness
     | 
     | Scintillator thickness.
@@ -633,6 +689,8 @@ a  *setup* group in the instrument group should be created.
 
 +----------------------------------------------+----------------------------------+----------------------------------+|     Member                                   |      Type                        |            Example               |
 +==============================================+==================================+==================================+|    sample_x                                  |      float                       |      -10.107                     |+----------------------------------------------+----------------------------------+----------------------------------+|    sample_y                                  |      float                       |       -17.900                    |+----------------------------------------------+----------------------------------+----------------------------------+|    sample_z                                  |      float                       |      -5.950                      |+----------------------------------------------+----------------------------------+----------------------------------+|    sample_xx                                 |      float                       |      -1.559                      |+----------------------------------------------+----------------------------------+----------------------------------+|    sample_zz                                 |      float                       |      1.307                       |+----------------------------------------------+----------------------------------+----------------------------------+
+
+.. _sample:
 
 Sample------This group holds basic information about the sample, its geometry,properties, the sample owner (user) and sample proposal information.While all these fields are optional, if you do intend to include themthey should appear within this parentage of groups.
 

@@ -1,4 +1,5 @@
 .. role:: math(raw)   :format: html latex..
+
 ============Introduction============
 
 Root Level Structure====================While HDF5 gives great flexibility in data storage, straightforward filereadability and exchange requires adhering to an agreed-upon naming andorganizational convention. To achieve this goal, Data Exchange adopts alayered approach by defining a set of **mandatory** and optional fields.The general structure of a Data Exchange file is shown intable [tab:genrules]. The most basic file must have an **implements**string, and an **exchange** group at the root level/group of the HDF5file. Optional *measurement* and *provenance* groups are also defined.Beyond this, additional groups may be added to meet individual needs,with guidelines suggesting the best structure.
@@ -59,6 +60,7 @@ The examples in this section show how one can store data for imagingexperiments
 
 .. figure:: figures/dx_Minimal1.png   :align: center
    :alt: Diagram of a minimal Data Exchange file for a single image.   :width: 50.0%   Diagram of a minimal Data Exchange file for a single image.
+
 Series
 ------
 

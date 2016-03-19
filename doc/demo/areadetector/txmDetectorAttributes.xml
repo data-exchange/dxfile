@@ -37,7 +37,7 @@
 
     <Attribute name="MirrorX"             type="EPICS_PV" source="32idbMIR:m1.RBV"              dbrtype="DBR_DOUBLE"/>
     <Attribute name="MirrorY"             type="EPICS_PV" source="32idbMIR:m2.RBV"              dbrtype="DBR_DOUBLE"/>
-    <Attribute name="Stripe"              type="EPICS_PV" source="32idbMIR:seq01:text.VAL"      dbrtype="DBR_STRING"/>
+    <Attribute name="MirrorStripe"        type="EPICS_PV" source="32idbMIR:seq01:text.VAL"      dbrtype="DBR_STRING"/>
 
     <Attribute name="DCMTheta"            type="EPICS_PV" source="32ida:m1.VAL"                 dbrtype="DBR_DOUBLE"/>
     <Attribute name="DCMTheta2"           type="EPICS_PV" source="32ida:m2.VAL"                 dbrtype="DBR_DOUBLE"/>

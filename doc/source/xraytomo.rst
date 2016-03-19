@@ -76,23 +76,19 @@ focus in this group.
 +------------------+---------------------------------------------------------+-----------------------------+
 |    **data**      |      3D dataset                                         |  axes: *theta:y:x*          |
 +------------------+---------------------------------------------------------+-----------------------------+
-|    x             |      dimension scale 2                                  |                             |
-+------------------+---------------------------------------------------------+-----------------------------+
-|    y             |      dimension scale 1                                  |                             |
-+------------------+---------------------------------------------------------+-----------------------------+
-|    theta         |      dimension scale 0                                  |  units: "deg"               |
+|   *theta*        |      1D dataset                                         |  units: "deg"               |
 +------------------+---------------------------------------------------------+-----------------------------+
 |  *data_dark*     |      3D dataset                                         |  axes: *theta_dark:y:x*     |
 +------------------+---------------------------------------------------------+-----------------------------+
-|  *theta_dark*    |      dimension scale 0                                  |  units: "deg"               |
+|  *theta_dark*    |      1D dataset                                         |  units: "deg"               |
 +------------------+---------------------------------------------------------+-----------------------------+
 |  *data_white*    |      3D dataset                                         |  axes: *theta_white:y:x*    |
 +------------------+---------------------------------------------------------+-----------------------------+
 |  *theta_white*   |      dimension scale 0                                  |  units: "deg"               |
 +------------------+---------------------------------------------------------+-----------------------------+
-|    data_shift_x  |      relative x shift of data at each angular position  |                             |
+|   *data_shift_x* |      relative x shift of data at each angular position  |                             |
 +------------------+---------------------------------------------------------+-----------------------------+
-|    data_shift_y  |      relative y shift of data at each angular position  |                             |
+|   *data_shift_y* |      relative y shift of data at each angular position  |                             |
 +------------------+---------------------------------------------------------+-----------------------------+
 
 Table: Exchange Group Members for Tomography
@@ -130,14 +126,8 @@ Table: Exchange Group Members for Tomography
       “theta_dark:y:x” and “theta_white:y:x” and provide *theta_dark*
       and *theta_white* vector datasets that specify the rotation angles
       where they were collected.
-x, y
-    | 
-    | X and y are vectors storing the dimension scale for the second and
-      third data array dimension. If x, y are not defined, the second
-      and third dimensions of the data array are assumed to be in
-      pixels.
       
-theta, theta dark, *theta_white*
+*theta*, *theta dark*, *theta_white*
     | 
     | Theta is a vector dataset storing the projection angular
       positions. If theta is not defined the projections are assumed to
@@ -150,7 +140,7 @@ theta, theta dark, *theta_white*
       *data_dark* and *data_white* are assumed to be collected all at the
       beginning or at the end of the projection data collection.
       
-data_shift_x, data_shift_y
+*data_shift_x*, *data_shift_y*
     | 
     | Data_shift_x and data_shift_y are the vectors storing at each
       projection angular positions the image relative shift in x and y.
@@ -187,7 +177,7 @@ group dataset.
 +---------------+----------------------+------------------------+
 |    Member     |      Type            |     Example            |
 +===============+======================+========================+
-|   instrument_ |      group           |                        |
+| *instrument_* |      group           |                        |
 +---------------+----------------------+------------------------+
 |    sample_    |      group           |                        |
 +---------------+----------------------+------------------------+

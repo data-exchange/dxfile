@@ -18,8 +18,8 @@
 Description and units can be added as attribute to any data, both array or values,
 inside a data exchange file. If units is omitted default is SI.
 +---------------+------------------------+------------------------+|    Member     |      Type              |    Example             |
-+===============+========================+========================+|  description  |   string attribute     | “transmission”         |
-+---------------+------------------------+------------------------+|     units     |   string attribute     |      *counts*          |+---------------+------------------------+------------------------+Table: data attributesMeasurement===========This group holds sample and instrument information. These groups aredesigned to hold relatively static data about the sample and instrumentconfiguration at the time of the measurement. Rapidly changing*positioner* values (aka scan) are better represented in the exchangegroup dataset.+---------------+----------------------+------------------------+|    Member     |      Type            |     Example            |
++===============+========================+========================+| *description* |   string attribute     | “transmission”         |
++---------------+------------------------+------------------------+|    *units*    |   string attribute     |      *counts*          |+---------------+------------------------+------------------------+Table: data attributesMeasurement===========This group holds sample and instrument information. These groups aredesigned to hold relatively static data about the sample and instrumentconfiguration at the time of the measurement. Rapidly changing*positioner* values (aka scan) are better represented in the exchangegroup dataset.+---------------+----------------------+------------------------+|    Member     |      Type            |     Example            |
 +===============+======================+========================+|   instrument_ |      group           |                        |+---------------+----------------------+------------------------+|    sample_    |      group           |                        |
 +---------------+----------------------+------------------------+Table: Measurement Group Members
 
@@ -33,7 +33,7 @@ Instrument----------The instrument group stores all relevant beamline compone
 
 +---------------------------------------------+-------------------------+-------------------------+|                    Member                   |           Type          |         Example         |
 +=============================================+=========================+=========================+
-|                   name                      |       string dataset    | "XSD/2-BM"              |+---------------------------------------------+-------------------------+-------------------------+|                   component_1_              |          group          |                         |+---------------------------------------------+-------------------------+-------------------------+|                   component_2               |          group          |                         |+---------------------------------------------+-------------------------+-------------------------+|                   component_n               |          group          |                         |+---------------------------------------------+-------------------------+-------------------------+|                   setup_                    |          group          |                         |+---------------------------------------------+-------------------------+-------------------------+
+|                   *name                     |       string dataset    | "XSD/2-BM"              |+---------------------------------------------+-------------------------+-------------------------+|                   component_1_              |          group          |                         |+---------------------------------------------+-------------------------+-------------------------+|                  *component_2*              |          group          |                         |+---------------------------------------------+-------------------------+-------------------------+|                  *component_n*              |          group          |                         |+---------------------------------------------+-------------------------+-------------------------+|                   setup_                    |          group          |                         |+---------------------------------------------+-------------------------+-------------------------+
 
 Table: Instrument
 
@@ -47,7 +47,7 @@ detector    |     | The detectors that compose the instrument.
 
 Component~~~~~~~~~Class describing the component being used. 
 +-----------------------------+--------------------------------+---------------------------+| Member                      |     Type                       |     Example               |+=============================+================================+===========================+
-| name                        |     string dataset             |     “APS”                 |+-----------------------------+--------------------------------+---------------------------+| description                 |     string dataset             |     “APS”                 |+-----------------------------+--------------------------------+---------------------------+| *arbitrary_label_1*         |     string dataset             |     “what ever”           |+-----------------------------+--------------------------------+---------------------------+| *arbitrary_label_2*         |     string dataset             |     “what ever”           |+-----------------------------+--------------------------------+---------------------------+| *arbitrary_label_n*         |     string dataset             |     “what ever”           |+-----------------------------+--------------------------------+---------------------------+| setup_                      |     group                      |                           |+-----------------------------+--------------------------------+---------------------------+| geometry_                   |     group                      |                           |+-----------------------------+--------------------------------+---------------------------+Table: Component Description
+| *name*                      |     string dataset             |     “APS”                 |+-----------------------------+--------------------------------+---------------------------+| *description*               |     string dataset             |     “APS”                 |+-----------------------------+--------------------------------+---------------------------+| *arbitrary_label_1*         |     string dataset             |     “what ever”           |+-----------------------------+--------------------------------+---------------------------+| *arbitrary_label_2*         |     string dataset             |     “what ever”           |+-----------------------------+--------------------------------+---------------------------+| *arbitrary_label_n*         |     string dataset             |     “what ever”           |+-----------------------------+--------------------------------+---------------------------+| setup_                      |     group                      |                           |+-----------------------------+--------------------------------+---------------------------+| geometry_                   |     group                      |                           |+-----------------------------+--------------------------------+---------------------------+Table: Component Description
 
 name    |     | Name.
     
@@ -68,7 +68,7 @@ Ideally each component in the instrument list (source, shutter, attenuator etc.)
 included its setup group. For setup values not associated with a specific beamline component
 a  *setup* group in the instrument group should be created.
 +----------------------------------------------+----------------------------------+----------------------------------+|     Member                                   |      Type                        |            Example               |
-+==============================================+==================================+==================================+|    positioner_x                              |      float                       |      -10.107                     |+----------------------------------------------+----------------------------------+----------------------------------+|    positioner_y                              |      float                       |       -17.900                    |+----------------------------------------------+----------------------------------+----------------------------------+|    positioner_z                              |      float                       |      -5.950                      |+----------------------------------------------+----------------------------------+----------------------------------+Table: Setup Group Members
++==============================================+==================================+==================================+|    *positioner_x*                            |      float                       |      -10.107                     |+----------------------------------------------+----------------------------------+----------------------------------+|    *positioner_y*                            |      float                       |       -17.900                    |+----------------------------------------------+----------------------------------+----------------------------------+|    *positioner_z*                            |      float                       |      -5.950                      |+----------------------------------------------+----------------------------------+----------------------------------+Table: Setup Group Members
 
 
 .. _geometry:
@@ -79,17 +79,114 @@ The geometry group is common to many of the subgroups undermeasurement. The int
 orientation of a component. 
 
 +---------------+------------------------+------------------------+|    Member     |      Type              |    Example             |
-+===============+========================+========================+|  translation  |     group              |                        |+---------------+------------------------+------------------------+|  orientation  |     group              |                        |
++===============+========================+========================+| *translation* |     group              |                        |+---------------+------------------------+------------------------+| *orientation* |     group              |                        |
 +---------------+------------------------+------------------------+translation    |     | The position of the object with respect to the origin of your      coordinate system.orientation    |     | The rotation of the object with respect to your coordinate system.
+
+.. _translation:
+
+Translation
+```````````
+
+This is the description for the general spatial location of a component
+for tomography.
+
++----------------------------+------------------------+-----------------+
+|     Member                 |      Type              |      Example    |
++============================+========================+=================+
+|           *distances*      | 3 float array dataset  |  (0, 0.001, 0)  |
++----------------------------+------------------------+-----------------+
+
+distances
+    | 
+    | The x, y and z components of the translation of the origin of the object
+    | relative to the origin of the global coordinate system (the place where 
+    | the X-ray beam  meets the sample when the sample is first aligned in the beam).
+    | If  distances does not have the attribute units set then the units are in
+    | meters.
+
+.. _orientation:
+
+Orientation
+```````````
+
+This is the description for the orientation of a component for
+tomography.
+
++----------------------------+------------------------+-----------------+
+|     Member                 |      Type              |      Example    |
++============================+========================+=================+
+|      *value*               | 6 float array dataset  |                 |
++----------------------------+------------------------+-----------------+
+
+value
+    | 
+    | Dot products between the local and the global unit vectors. Unitless
+
+
+The orientation information is stored as direction cosines. The
+direction cosines will be between the local coordinate directions and
+the global coordinate directions. The unit vectors in both the local and
+global coordinates are right-handed and orthonormal.
+
+Calling the local unit vectors (x', y',z') and the reference unit
+vectors (x, y, z) the six numbers will be
+
+
+.. math:: [x \cdot x, x' \cdot y, x' \cdot z, y' \cdot x, y'  \cdot y, y' \cdot z] 
+
+where 
+
+.. math:: `\cdot` 
+
+is the scalar dot product (cosine of the angle between the unit vectors).
+
+Notice that this corresponds to the first two rows of the rotation
+matrix that transforms from the global orientation to the local
+orientation. The third row can be recovered by using the fact that the
+basis vectors are orthonormal.
 
 
 .. _sample:
 
 Sample------This group holds basic information about the sample, its geometry,properties, the sample owner (user) and sample proposal information.While all these fields are optional, if you do intend to include themthey should appear within this parentage of groups.
 
-+-------------------------------------+------------------------------------+-----------------------------+|    Member                           |                 Type               |          Example            |
+
++-------------------------------------+------------------------------------+-----------------------------+
+|    Member                           |                 Type               |          Example            |
 +=====================================+====================================+=============================+
-|         name                        |     string dataset                 |      "cells sample 1"       |    +-------------------------------------+------------------------------------+-----------------------------+|     description                     |     string dataset                 |      "malaria cells"        |   +-------------------------------------+------------------------------------+-----------------------------+|    preparation_date                 |  string dataset (ISO 8601)         |  "2012-07-31T21:15:22+0600" |    +-------------------------------------+------------------------------------+-----------------------------+|    chemical_formula                 | string dataset (abbr. CIF format)  |     "(Cd 2+)3,  2(H2 O)"    |   +-------------------------------------+------------------------------------+-----------------------------+|          mass                       |     float dataset                  |              0.25           |+-------------------------------------+------------------------------------+-----------------------------+|    concentration                    |     float dataset                  |              0.4            |+-------------------------------------+------------------------------------+-----------------------------+|    environment                      |     string dataset                 |             "air"           |  +-------------------------------------+------------------------------------+-----------------------------+|    temperature                      |     float dataset                  |             25.4            |+-------------------------------------+------------------------------------+-----------------------------+|    temperature_set                  |     float dataset                  |             26.0            |+-------------------------------------+------------------------------------+-----------------------------+|    pressure                         |     float dataset                  |           101325            | +-------------------------------------+------------------------------------+-----------------------------+|    thickness                        |     float dataset                  |            0.001            |+-------------------------------------+------------------------------------+-----------------------------+|    position                         |     string dataset                 |  "2D"  APS robot coord.     |+-------------------------------------+------------------------------------+-----------------------------+|    geometry_                        |            group                   |                             |+-------------------------------------+------------------------------------+-----------------------------+|    setup_                           |            group                   |                             |+-------------------------------------+------------------------------------+-----------------------------+|    experiment_                      |            group                   |                             |+-------------------------------------+------------------------------------+-----------------------------+|    experimenter_                    |            group                   |                             |+-------------------------------------+------------------------------------+-----------------------------+Table: Sample Group Members
+|        *name*                       |     string dataset                 |      "cells sample 1"       |    
++-------------------------------------+------------------------------------+-----------------------------+
+|    *description*                    |     string dataset                 |      "malaria cells"        |   
++-------------------------------------+------------------------------------+-----------------------------+
+|    *preparation_date*               |  string dataset (ISO 8601)         |  "2012-07-31T21:15:22+0600" |    
++-------------------------------------+------------------------------------+-----------------------------+
+|    *chemical_formula*               | string dataset (abbr. CIF format)  |     "(Cd 2+)3,  2(H2 O)"    |   
++-------------------------------------+------------------------------------+-----------------------------+
+|          *mass*                     |     float dataset                  |              0.25           |
++-------------------------------------+------------------------------------+-----------------------------+
+|    *concentration*                  |     float dataset                  |              0.4            |
++-------------------------------------+------------------------------------+-----------------------------+
+|    *environment*                    |     string dataset                 |             "air"           |  
++-------------------------------------+------------------------------------+-----------------------------+
+|    *temperature*                    |     float dataset                  |             25.4            |
++-------------------------------------+------------------------------------+-----------------------------+
+|    *temperature_set*                |     float dataset                  |             26.0            |
++-------------------------------------+------------------------------------+-----------------------------+
+|    *pressure*                       |     float dataset                  |           101325            | 
++-------------------------------------+------------------------------------+-----------------------------+
+|    *thickness*                      |     float dataset                  |            0.001            |
++-------------------------------------+------------------------------------+-----------------------------+
+|    *position*                       |     string dataset                 |  "2D"  APS robot coord.     |
++-------------------------------------+------------------------------------+-----------------------------+
+|    geometry_                        |            group                   |                             |
++-------------------------------------+------------------------------------+-----------------------------+
+|    setup_                           |            group                   |                             |
++-------------------------------------+------------------------------------+-----------------------------+
+|    experiment_                      |            group                   |                             |
++-------------------------------------+------------------------------------+-----------------------------+
+|    experimenter_                    |            group                   |                             |
++-------------------------------------+------------------------------------+-----------------------------+
+Table: Sample Group Members
 
 name    |     | Descriptive name of the sample.
 
@@ -112,7 +209,7 @@ geometry    |     | Sample center of mass position and orientation.experimen
     |     | Facility experiment identifiers.experimenter
     |     | Experimenter identifiers.
 Experiment~~~~~~~~~~This provides references to facility ids for the proposal, scheduledactivity, and safety form.+---------------+-------------------------+----------------------+|   Member      |            Type         |       Example        | +===============+=========================+======================+
-| proposal      |     string dataset      |        “1234”        |+---------------+-------------------------+----------------------+| activity      |     string dataset      |        “9876”        |+---------------+-------------------------+----------------------+| safety        |     string dataset      |        “9876”        |+---------------+-------------------------+----------------------+Table: Experiment Group Members
+| *proposal*    |     string dataset      |        “1234”        |+---------------+-------------------------+----------------------+| *activity*    |     string dataset      |        “9876”        |+---------------+-------------------------+----------------------+| *safety*      |     string dataset      |        “9876”        |+---------------+-------------------------+----------------------+Table: Experiment Group Members
 
 proposal    |     | Proposal reference number. For the APS this is the General User    | Proposal number.
       
@@ -120,7 +217,7 @@ activity    |     | Proposal scheduler id. For the APS this is the beamline sc
 
 safety    |     | Safety reference document. For the APS this is the Experiment    | Safety Approval Form number.Experimenter~~~~~~~~~~~~Description of a single experimenter. Multiple experimenters can berepresented through numbered entries such as experimenter_1,experimenter_2.+--------------------+-------------------------+--------------------------------------------+|      Member        |           Type          |         Example                            |
 +====================+=========================+============================================+
-|       name         |     string dataset      |     “John Doe”                             |+--------------------+-------------------------+--------------------------------------------+|       role         |     string dataset      |     “Project PI”                           |+--------------------+-------------------------+--------------------------------------------+|    affiliation     |     string dataset      |     “University of California, Berkeley”   |+--------------------+-------------------------+--------------------------------------------+|      address       |     string dataset      |     “EPS UC Berkeley CA 94720 4767 USA”    |+--------------------+-------------------------+--------------------------------------------+|       phone        |     string dataset      |     “+1 123 456 0000”                      |+--------------------+-------------------------+--------------------------------------------+|       email        |     string dataset      |     “johndoe@berkeley.edu”                 |+--------------------+-------------------------+--------------------------------------------+| facility_user_id   |     string dataset      |     “a123456”                              |+--------------------+-------------------------+--------------------------------------------+Table: Experimenter Group Members    name: User name.    role: User role.    affiliation: User affiliation.    address: User address.    phoen: User phone number.    email: User e-mail address    facility_user_id: User badge number
+|       *name*       |     string dataset      |     “John Doe”                             |+--------------------+-------------------------+--------------------------------------------+|       *role*       |     string dataset      |     “Project PI”                           |+--------------------+-------------------------+--------------------------------------------+|    *affiliation*   |     string dataset      |     “University of California, Berkeley”   |+--------------------+-------------------------+--------------------------------------------+|      *address*     |     string dataset      |     “EPS UC Berkeley CA 94720 4767 USA”    |+--------------------+-------------------------+--------------------------------------------+|       *phone*      |     string dataset      |     “+1 123 456 0000”                      |+--------------------+-------------------------+--------------------------------------------+|       *email*      |     string dataset      |     “johndoe@berkeley.edu”                 |+--------------------+-------------------------+--------------------------------------------+| *facility_user_id* |     string dataset      |     “a123456”                              |+--------------------+-------------------------+--------------------------------------------+Table: Experimenter Group Members    name: User name.    role: User role.    affiliation: User affiliation.    address: User address.    phoen: User phone number.    email: User e-mail address    facility_user_id: User badge number
 
 Provenance==========Data provenance is the documentation of all transformations, analysesand interpretations of data performed by a sequence of process functionsor actorts.Maintaining this history allows for reproducible data. The Data Exchangeformat tracks provenance by allowing each actor to append provenanceinformation to a process table. The provenance process table tracks theexecution order of a series of processes by appending sequential entriesin the process table.Scientific users will not generally be expected to maintain data in thisgroup. The expectation is that analysis pipeline tools willautomatically record process steps using this group. In addition, it ispossible to re-run an analysis using the information provided here.+-----------+-------------------+-------------------+---------------+----------------------+--------------------------+-------------------------------------+|   actor   |    start_time     |    end_time       |     status    |     message          |          reference       |     description                     |+===========+===================+===================+===============+======================+==========================+=====================================+
 | gridftp   |     21:15:22      |     21:15:23      |     FAILED    |     auth. error      |     /provenance/griftp   |     transfer detector to cluster    |+-----------+-------------------+-------------------+---------------+----------------------+--------------------------+-------------------------------------+| gridftp   |     21:15:26      |     21:15:27      |     FAILED    |     auth. error      |     /provenance/griftp   |     transfer detector to cluster    |   +-----------+-------------------+-------------------+---------------+----------------------+--------------------------+-------------------------------------+| gridftp   |     21:17:28      |     22:15:22      |     SUCCESS   |         OK           |     /provenance/griftp   |     transfer detector to cluster    |    +-----------+-------------------+-------------------+---------------+----------------------+--------------------------+-------------------------------------+| norm      |     22:15:23      |     22:30:22      |     SUCCESS   |         OK           |     /provenance/norm     |     normalize the raw data          |+-----------+-------------------+-------------------+---------------+----------------------+--------------------------+-------------------------------------+| rec       |     22:30:23      |     22:50:22      |     SUCCESS   |         OK           |     /provenance/rec      |     reconstruct the norm. data      |  +-----------+-------------------+-------------------+---------------+----------------------+--------------------------+-------------------------------------+| convert   |     22:50:23      |                   |     RUNNING   |         OK           |     /provenance/export   |     convert reconstructed data      |  +-----------+-------------------+-------------------+---------------+----------------------+--------------------------+-------------------------------------+| gridftp   |                   |       QUEUED      |               |                      |     /provenance/griftp_2 |     transfer data to user           | +-----------+-------------------+-------------------+---------------+----------------------+--------------------------+-------------------------------------+Table: Process table to log actors activity

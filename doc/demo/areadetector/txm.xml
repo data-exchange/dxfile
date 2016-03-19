@@ -76,6 +76,7 @@
             </dataset>
           </group><!-- /setup -->
         </group><!-- /detector -->
+
         <group name="monochromator">
           <dataset name="name" source="constant" value="Si Double Crystal" type="string" when="OnFileClose"></dataset>        
           <dataset name="energy" source="ndattribute" ndattribute="Energy" when="OnFileClose">       

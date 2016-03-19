@@ -568,7 +568,7 @@ description
 Beam Monitor
 ~~~~~~~~~~~~
 
-Class describing the compound refractive lenses being used, if there is more than one append _##
+Class describing the beam monitor being used, if there is more than one append _##
 
 +--------------------+-------------------------+-------------------------------+
 |      Member        |           Type          |         Example               |
@@ -597,7 +597,7 @@ description
 Diffuser
 ~~~~~~~~
 
-Class describing the compound refractive lenses being used, if there is more than one append _##
+Class describing the diffuser being used, if there is more than one append _##
 
 +--------------------+-------------------------+-------------------------------+
 |      Member        |           Type          |         Example               |
@@ -626,7 +626,7 @@ description
 Beam Stop
 ~~~~~~~~~
 
-Class describing the compound refractive lenses being used, if there is more than one append _##
+Class describing the beam stop being used, if there is more than one append _##
 
 +--------------------+-------------------------+-------------------------------+
 |      Member        |           Type          |         Example               |
@@ -655,7 +655,7 @@ description
 Condenser
 ~~~~~~~~~
 
-Class describing the compound refractive lenses being used, if there is more than one append _##
+Class describing the condenser being used, if there is more than one append _##
 
 +--------------------+-------------------------+-------------------------------+
 |      Member        |           Type          |         Example               |
@@ -684,7 +684,7 @@ description
 Pin Hole
 ~~~~~~~~
 
-Class describing the compound refractive lenses being used, if there is more than one append _##
+Class describing the pin hole being used, if there is more than one append _##
 
 +--------------------+-------------------------+-------------------------------+
 |      Member        |           Type          |         Example               |
@@ -713,7 +713,7 @@ description
 Zone Plate
 ~~~~~~~~~~
 
-Class describing the compound refractive lenses being used, if there is more than one append _##
+Class describing the zone plate being used, if there is more than one append _##
 
 +--------------------+-------------------------+-------------------------------+
 |      Member        |           Type          |         Example               |
@@ -742,7 +742,7 @@ description
 Bertrand Lens
 ~~~~~~~~~~~~~
 
-Class describing the compound refractive lenses being used, if there is more than one append _##
+Class describing the Bertrand lens being used, if there is more than one append _##
 
 +--------------------+-------------------------+-------------------------------+
 |      Member        |           Type          |         Example               |
@@ -771,7 +771,7 @@ description
 Flight Tube
 ~~~~~~~~~~~~~
 
-Class describing the compound refractive lenses being used, if there is more than one append _##
+Class describing the flight tube being used, if there is more than one append _##
 
 +--------------------+-------------------------+-------------------------------+
 |      Member        |           Type          |         Example               |

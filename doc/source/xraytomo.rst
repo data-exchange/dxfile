@@ -60,7 +60,7 @@ general information about the file.
     | The Provenance group describes all process steps that have been
       applied to the data.
       
-Exchange
+exchange
 ========
 
 In X-ray tomography, the 3D arrays representing the most basic version
@@ -160,12 +160,12 @@ inside a data exchange file. If units is omitted default is SI.
 +===============+========================+========================+
 | *description* |   string attribute     | “transmission”         |
 +---------------+------------------------+------------------------+
-|     units     |   string attribute     |      *counts*          |
+|    *units*    |   string attribute     |      *counts*          |
 +---------------+------------------------+------------------------+
 
 Table: data attributes
 
-Measurement
+measurement
 ===========
 
 This group holds sample and instrument information. These groups are
@@ -195,7 +195,7 @@ sample
 
 .. _instrument:
 
-Instrument
+instrument
 ----------
 
 The instrument group stores all relevant beamline components status at
@@ -281,7 +281,7 @@ acquisition
 
 .. _source:
 
-Source
+source
 ~~~~~~
 
 Class describing the light source being used.
@@ -363,7 +363,7 @@ beam_intensity_transmitted
 
 .. _shutter:
 
-Shutter
+shutter
 ~~~~~~~
 
 Class describing the shutter being used.
@@ -398,7 +398,7 @@ status
 
 .. _attenuator:
 
-Attenuator
+attenuator
 ~~~~~~~~~~
 
 This class describes the beamline attenuator(s) used during data
@@ -447,7 +447,7 @@ description
 
 .. _monochromator:
 
-Monochromator
+monochromator
 ~~~~~~~~~~~~~
 
 Define the monochromator used in the instrument.
@@ -497,7 +497,7 @@ mono_stripe
 
 .. _mirror:
 
-Mirror
+mirror
 ~~~~~~
 
 Class describing the mirror being used, if there is more than one append _##
@@ -519,7 +519,7 @@ Table: Mirror Group Members
 
 .. _crl:
 
-CRL
+crl
 ~~~
 
 Class describing the compound refractive lenses being used, if there is more than one append _##
@@ -541,7 +541,7 @@ Table: CRL Group Members
 
 .. _beam_monitor:
 
-Beam Monitor
+beam_monitor
 ~~~~~~~~~~~~
 
 Class describing the beam monitor being used, if there is more than one append _##
@@ -563,7 +563,7 @@ Table: Beam Monitor Group Members
 
 .. _diffuser:
 
-Diffuser
+diffuser
 ~~~~~~~~
 
 Class describing the diffuser being used, if there is more than one append _##
@@ -585,7 +585,7 @@ Table: Diffuser Group Members
 
 .. _beam_stop:
 
-Beam Stop
+beam_stop
 ~~~~~~~~~
 
 Class describing the beam stop being used, if there is more than one append _##
@@ -607,7 +607,7 @@ Table: Beam Stop Group Members
 
 .. _condenser:
 
-Condenser
+condenser
 ~~~~~~~~~
 
 Class describing the condenser being used, if there is more than one append _##
@@ -629,7 +629,7 @@ Table: Condenser Group Members
 
 .. _pin_hole:
 
-Pin Hole
+pin_hole
 ~~~~~~~~
 
 Class describing the pin hole being used, if there is more than one append _##
@@ -651,7 +651,7 @@ Table: Pin Hole Group Members
 
 .. _zone_plate:
 
-Zone Plate
+zone_plate
 ~~~~~~~~~~
 
 Class describing the zone plate being used, if there is more than one append _##
@@ -673,7 +673,7 @@ Table: Zone Plate Group Members
 
 .. _bertrand_lens:
 
-Bertrand Lens
+bertrand_lens
 ~~~~~~~~~~~~~
 
 Class describing the Bertrand lens being used, if there is more than one append _##
@@ -695,8 +695,8 @@ Table: Bertrand Lens Group Members
 
 .. _flight_tube:
 
-Flight Tube
-~~~~~~~~~~~~~
+flight_tube
+~~~~~~~~~~~
 
 Class describing the flight tube being used, if there is more than one append _##
 
@@ -717,7 +717,7 @@ Table: Flight Tube Group Members
 
 .. _interferometer: 
 
-Interferometer
+interferometer
 ~~~~~~~~~~~~~~
 
 This group stores the interferometer parameters.
@@ -774,7 +774,7 @@ number_of_grid_steps
 
 .. _detector:
 
-Detector
+detector
 ~~~~~~~~
 
 This class holds information about the detector used during the
@@ -937,7 +937,7 @@ geometry
 
 .. _roi:
 
-ROI
+roi
 ^^^
 
 Group describing the region of interest (ROI) of the image actually
@@ -981,7 +981,7 @@ size_x, size_y
 
 .. _objective:
 
-Objective
+objective
 ^^^^^^^^^
 
 Group describing the microscope objective lenses used.
@@ -1034,7 +1034,7 @@ numerical_aperture
 
 .. _scintillator:
 
-Scintillator
+scintillator
 ^^^^^^^^^^^^
 
 Group describing the visible light scintillator coupled to the CCD
@@ -1089,7 +1089,7 @@ substrate_thickness
 
 .. _acquisition:
 
-Acquisition
+acquisition
 ~~~~~~~~~~~
 
 Logging acquisition setup parameters (static setup values) is not defined by Data Exchange 
@@ -1117,8 +1117,8 @@ Table: Setup Group Members
 
 .. _set-up:
 
-Setup
-^^^^^
+setup (acquisition)
+^^^^^^^^^^^^^^^^^^^
 
 In the table below we present the implementation adopted by the Swiss Light Source and
 Advanced Photon Source.
@@ -1148,7 +1148,7 @@ Table: Instrument Acquisition Group for Tomography
 
 .. _setup:
 
-Setup
+setup
 ~~~~~
 
 Logging instrument and beamline component setup parameters (static setup values) 
@@ -1177,7 +1177,7 @@ a  *setup* group in the instrument group should be created.
 
 .. _sample:
 
-Sample
+sample
 ------
 
 This group holds basic information about the sample, its geometry,
@@ -1283,7 +1283,7 @@ experimenter
     | 
     | Experimenter identifiers.
 
-Experiment
+experiment
 ~~~~~~~~~~
 
 This provides references to facility ids for the proposal, scheduled
@@ -1316,7 +1316,7 @@ safety
     | Safety reference document. For the APS this is the Experiment
     | Safety Approval Form number.
 
-Experimenter
+experimenter
 ~~~~~~~~~~~~
 
 Description of a single experimenter. Multiple experimenters can be
@@ -1360,7 +1360,7 @@ Table: Experimenter Group Members
 
 .. _geometry:
 
-Geometry
+geometry
 ^^^^^^^^
 
 The geometry group is common to many of the subgroups under
@@ -1413,7 +1413,7 @@ distances
 
 .. _orientation:
 
-Orientation
+orientation
 ```````````
 
 This is the description for the orientation of a component for
@@ -1452,7 +1452,7 @@ matrix that transforms from the global orientation to the local
 orientation. The third row can be recovered by using the fact that the
 basis vectors are orthonormal.
 
-Provenance
+provenance
 ==========
 
 Data provenance is the documentation of all transformations, analyses

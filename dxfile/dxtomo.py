@@ -689,25 +689,25 @@ class Entry(object):
                 'units': 'text',
                 'docstring': 'ROI name'
             },
-            'x1': {
+            'min_x': {
                 'value': None,
                 'units': 'pixels',
-                'docstring': 'Left pixel position'
+                'docstring': 'Top left x pixel position'
             },
-            'x2': {
+            'min_y': {
                 'value': None,
                 'units': 'pixels',
-                'docstring': 'Right pixel position'
+                'docstring': 'Top left y pixel position'
             },
-            'y1': {
+            'size_x': {
                 'value': None,
                 'units': 'pixels',
-                'docstring': 'Top pixel position'
+                'docstring': 'Horizontal image size'
             },
-            'y2': {
+            'size_y': {
                 'value': None,
                 'units': 'pixels',
-                'docstring': 'Bottom pixel position'
+                'docstring': 'Vertical image size'
             }
         }
 

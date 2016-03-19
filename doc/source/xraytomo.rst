@@ -1090,7 +1090,7 @@ substrate_thickness
 .. _acquisition:
 
 Acquisition
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 Logging acquisition setup parameters (static setup values) is not defined by Data Exchange 
 because is specific and different for each instrument and beamline.
@@ -1118,7 +1118,7 @@ Table: Setup Group Members
 .. _set-up:
 
 Setup
-~~~~~
+^^^^^
 
 In the table below we present the implementation adopted by the Swiss Light Source and
 Advanced Photon Source.
@@ -1149,7 +1149,7 @@ Table: Instrument Acquisition Group for Tomography
 .. _setup:
 
 Setup
-^^^^^
+~~~~~
 
 Logging instrument and beamline component setup parameters (static setup values) 
 is not defined by Data Exchange because is specific and different for each instrument

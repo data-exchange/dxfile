@@ -526,13 +526,6 @@ Class describing the mirror being used, if there is more than one append _##
 
 Table: Mirror Group Members
 
-name
-    | 
-    | Name.
-
-description
-    | 
-    | Description.
 
 .. _crl:
 
@@ -555,13 +548,6 @@ Class describing the compound refractive lenses being used, if there is more tha
 
 Table: CRL Group Members
 
-name
-    | 
-    | Name.
-
-description
-    | 
-    | Description.
 
 .. _beam_monitor:
 
@@ -584,13 +570,6 @@ Class describing the beam monitor being used, if there is more than one append _
 
 Table: Beam Monitor Group Members
 
-name
-    | 
-    | Name.
-
-description
-    | 
-    | Description.
 
 .. _diffuser:
 
@@ -613,13 +592,6 @@ Class describing the diffuser being used, if there is more than one append _##
 
 Table: Diffuser Group Members
 
-name
-    | 
-    | Name.
-
-description
-    | 
-    | Description.
 
 .. _beam_stop:
 
@@ -642,13 +614,6 @@ Class describing the beam stop being used, if there is more than one append _##
 
 Table: Beam Stop Group Members
 
-name
-    | 
-    | Name.
-
-description
-    | 
-    | Description.
 
 .. _condenser:
 
@@ -671,14 +636,7 @@ Class describing the condenser being used, if there is more than one append _##
 
 Table: Condenser Group Members
 
-name
-    | 
-    | Name.
 
-description
-    | 
-    | Description.
-    
 .. _pin_hole:
 
 Pin Hole
@@ -700,13 +658,6 @@ Class describing the pin hole being used, if there is more than one append _##
 
 Table: Pin Hole Group Members
 
-name
-    | 
-    | Name.
-
-description
-    | 
-    | Description.
 
 .. _zone_plate:
 
@@ -729,14 +680,7 @@ Class describing the zone plate being used, if there is more than one append _##
 
 Table: Zone Plate Group Members
 
-name
-    | 
-    | Name.
 
-description
-    | 
-    | Description.
-    
 .. _bertrand_lens:
 
 Bertrand Lens
@@ -758,14 +702,7 @@ Class describing the Bertrand lens being used, if there is more than one append 
 
 Table: Bertrand Lens Group Members
 
-name
-    | 
-    | Name.
 
-description
-    | 
-    | Description.
-    
 .. _flight_tube:
 
 Flight Tube
@@ -787,14 +724,7 @@ Class describing the flight tube being used, if there is more than one append _#
 
 Table: Flight Tube Group Members
 
-name
-    | 
-    | Name.
 
-description
-    | 
-    | Description.
-    
 .. _interferometer: 
 
 Interferometer

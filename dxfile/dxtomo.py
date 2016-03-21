@@ -487,33 +487,7 @@ class Entry(object):
             'status': {
                 'value': None,
                 'units': 'text',
-                'docstring': '"OPEN" or "CLOSED" or "NORMAL"'
-            },
-        }
-
-        self._amplifier = {
-            'root': '/measurement/instrument',
-            'entry_name': 'amplifier',
-            'docstring': 'Amplifier settings.',
-            'name': {
-                'value': None,
-                'units': 'text',
-                'docstring': 'Name of the amplifier.'
-            },
-            'gain': {
-                'value': None,
-                'units': 'text',
-                'docstring': 'Amplifier gain setting'
-            },
-            'gain_units': {
-                'value': None,
-                'units': 'text',
-                'docstring': 'Amplifier gain units'
-            },
-            'current': {
-                'value': None,
-                'units': 'text',
-                'docstring': 'The current recorded by the amplifier.'
+                'docstring': '"OPEN" or "CLOSED"'
             },
         }
 
@@ -521,11 +495,16 @@ class Entry(object):
             'root': '/measurement/instrument',
             'entry_name': 'attenuator',
             'docstring': 'X-ray beam attenuator.',
-            'distance': {
+            'name': {
                 'value': None,
-                'units': 'm',
-                'docstring': 'Distance from the sample'
+                'units': 'text',
+                'docstring': 'Name of the attenuator.'
             },
+            'description': {
+                'value': None,
+                'units': 'text',
+                'docstring': 'Description or composition of attenuator'
+            }
             'thickness': {
                 'value': None,
                 'units': 'm',
@@ -536,22 +515,22 @@ class Entry(object):
                 'units': 'None',
                 'docstring': 'The nominal amount of the beam that gets through (transmitted intensity)/(incident intensity)'
             },
-            'type': {
-                'value': None,
-                'units': 'text',
-                'docstring': 'Type or composition of attenuator'
-            }
         }
 
         self._monochromator = {
             'root': '/measurement/instrument',
             'entry_name': 'monochromator',
             'docstring': 'X-ray beam monochromator.',
-            'type': {
+            'name': {
                 'value': None,
                 'units': 'text',
-                'docstring': 'Multilayer type.'
+                'docstring': 'Name of the monochromator.'
             },
+            'description': {
+                'value': None,
+                'units': 'text',
+                'docstring': 'Description of the monochromator'
+            }
             'energy': {
                 'value': None,
                 'units': 'J',
@@ -569,10 +548,36 @@ class Entry(object):
             }
         }
 
+        self._mirror = {
+            'root': '/measurement/instrument',
+            'entry_name': 'mirror',
+            'docstring': 'X-ray beam mirror.',
+            'name': {
+                'value': None,
+                'units': 'text',
+                'docstring': 'Name of the mirror.'
+            },
+            'description': {
+                'value': None,
+                'units': 'text',
+                'docstring': 'Description of the mirror'
+            }
+        }
+
         self._detector = {
             'root': '/measurement/instrument',
             'entry_name': 'detector',
             'docstring': 'X-ray detector.',
+            'name': {
+                'value': None,
+                'units': 'text',
+                'docstring': 'Name of the detector.'
+            },
+            'description': {
+                'value': None,
+                'units': 'text',
+                'docstring': 'Description of the detector'
+            }
             'manufacturer': {
                 'value': None,
                 'units': 'text',
@@ -587,6 +592,16 @@ class Entry(object):
                 'value': None,
                 'units': 'text',
                 'docstring': 'The detector serial number.'
+            },
+            'firmware_version': {
+                'value': None,
+                'units': 'text',
+                'docstring': 'The detector firmware version.'
+            },
+            'software_version': {
+                'value': None,
+                'units': 'text',
+                'docstring': 'The detector software version.'
             },
             'bit_depth': {
                 'value': None,
@@ -682,12 +697,17 @@ class Entry(object):
 
         self._roi = {
             'root': '/measurement/instrument/detector',
-            'entry_name': 'roi_1',
+            'entry_name': 'roi',
             'docstring': 'region of interest (ROI) of the image actually collected, if smaller than the full CCD.',
             'name': {
                 'value': None,
                 'units': 'text',
                 'docstring': 'ROI name'
+            },
+            'description': {
+                'value': None,
+                'units': 'text',
+                'docstring': 'ROI description'
             },
             'min_x': {
                 'value': None,
@@ -715,6 +735,16 @@ class Entry(object):
             'root': '/measurement/instrument/detector',
             'entry_name': 'objective',
             'docstring': 'microscope objective lenses used.',
+            'name': {
+                'value': None,
+                'units': 'text',
+                'docstring': 'Lens name'
+            },
+            'description': {
+                'value': None,
+                'units': 'text',
+                'docstring': 'Lens description'
+            },
             'manufacturer': {
                 'value': None,
                 'units': 'text',
@@ -741,6 +771,16 @@ class Entry(object):
             'root': '/measurement/instrument/detector',
             'entry_name': 'scintillator',
             'docstring': 'microscope objective lenses used.',
+            'name': {
+                'value': None,
+                'units': 'text',
+                'docstring': 'Scintillator name'
+            },
+            'description': {
+                'value': None,
+                'units': 'text',
+                'docstring': 'Scintillator description'
+            },
             'manufacturer': {
                 'value': None,
                 'units': 'text',
@@ -750,11 +790,6 @@ class Entry(object):
                 'value': None,
                 'units': 'text',
                 'docstring': 'Scintillator serial number.'
-            },
-            'name': {
-                'value': None,
-                'units': 'dimensionless',
-                'docstring': 'Scintillator name.'
             },
             'scintillating_thickness': {
                 'value': None,
@@ -792,10 +827,10 @@ class Entry(object):
             },
         }
 
-        self._simulation = {
-            'root': '/simulation',
+        self._provenance = {
+            'root': '/provenance',
             'entry_name': '',
-            'docstring': 'Describes parameters used to generate simulate data.',
+            'docstring': 'Describes parameters used to generate raw and processed data.',
             'name': {
                 'value': None,
                 'units': 'm',

@@ -400,7 +400,7 @@ class Entry(object):
                 'value': None,
                 'units': 'text',
                 'docstring': 'Description of the data contained inside'
-            },
+            }
         }
 
         self._instrument = {
@@ -488,7 +488,7 @@ class Entry(object):
                 'value': None,
                 'units': 'text',
                 'docstring': '"OPEN" or "CLOSED"'
-            },
+            }
         }
 
         self._attenuator = {
@@ -503,18 +503,18 @@ class Entry(object):
             'description': {
                 'value': None,
                 'units': 'text',
-                'docstring': 'Description or composition of attenuator'
-            }
+                'docstring': 'Description or composition of attenuator.'
+            },
             'thickness': {
                 'value': None,
                 'units': 'm',
-                'docstring': 'Thickness of attenuator along beam direction'
+                'docstring': 'Thickness of attenuator along beam direction.'
             },
             'attenuator_transmission': {
                 'value': None,
                 'units': 'None',
                 'docstring': 'The nominal amount of the beam that gets through (transmitted intensity)/(incident intensity)'
-            },
+            }
         }
 
         self._monochromator = {
@@ -530,7 +530,7 @@ class Entry(object):
                 'value': None,
                 'units': 'text',
                 'docstring': 'Description of the monochromator'
-            }
+            },
             'energy': {
                 'value': None,
                 'units': 'J',
@@ -577,7 +577,7 @@ class Entry(object):
                 'value': None,
                 'units': 'text',
                 'docstring': 'Description of the detector'
-            }
+            },
             'manufacturer': {
                 'value': None,
                 'units': 'text',

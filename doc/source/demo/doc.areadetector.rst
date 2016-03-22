@@ -7,7 +7,8 @@ the detector and the HDF schema attribute files .
 
 Here are the templates in use at the  Advanced Photon Source: 
 
-   - Transmission X-Ray Microscope at beamline 32-ID: :download:`txm_hdf_schema.xml <../../../doc/demo/areadetector/txm.xml>` and :download:`txm_detector_attribute.xml <../../../doc/demo/areadetector/txmDetectorAttributes.xml>`. 
+   - Transmission X-Ray Microscope at beamline 32-ID: :download:`txm_hdf_schema.xml <../../../doc/demo/areadetector/txm.xml>` and :download:`txm_detector_attribute.xml <../../../doc/demo/areadetector/txmDetectorAttributes.xml>` and the generated HDF5 file: :download:`txm.h5 <../../../doc/demo/areadetector/txm.h5>` . 
 
    - Micro Tomography Instrument at beamline 2-BM: :download:`mct_hdf_schema.xml <../../../doc/demo/areadetector/mct.xml>` and :download:`mct_detector_attribute.xml <../../../doc/demo/areadetector/mctDetectorAttributes.xml>`. 
 
+and the data exchange file 

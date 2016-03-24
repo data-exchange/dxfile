@@ -1,16 +1,16 @@
-DXchange
-########
+DXfile
+######
 
-.. image:: https://readthedocs.org/projects/dxchange/badge/?version=latest
-   :target: https://readthedocs.org/projects/dxchange/?badge=latest
+.. image:: https://readthedocs.org/projects/dxfile/badge/?version=latest
+   :target: https://readthedocs.org/projects/dxfile/?badge=latest
    :alt: Read the Docs
 
-.. image:: https://anaconda.org/decarlof/dxchange/badges/version.svg
-   :target: https://anaconda.org/decarlof/dxchange
+.. image:: https://anaconda.org/decarlof/dxfile/badges/version.svg
+   :target: https://anaconda.org/decarlof/dxfile
    :alt: Anaconda version
    
-.. image:: https://anaconda.org/decarlof/dxchange/badges/downloads.svg   
-   :target: https://anaconda.org/decarlof/dxchange
+.. image:: https://anaconda.org/decarlof/dxfile/badges/downloads.svg   
+   :target: https://anaconda.org/decarlof/dxfile
    :alt: Anaconda downloads
 
 **DXfile** provides:

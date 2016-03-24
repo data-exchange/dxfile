@@ -1154,6 +1154,8 @@ they should appear within this parentage of groups.
 +-------------------------------------+------------------------------------+-----------------------------+
 |    *description*                    |     string dataset                 |      "malaria cells"        |   
 +-------------------------------------+------------------------------------+-----------------------------+
+|    *file_path*                      |     string dataset                 |      "/2016-03/tst/"        |   
++-------------------------------------+------------------------------------+-----------------------------+
 |    *preparation_date*               |  string dataset (ISO 8601)         |  "2012-07-31T21:15:22+0600" |    
 +-------------------------------------+------------------------------------+-----------------------------+
 |    *chemical_formula*               | string dataset (abbr. CIF format)  |     "(Cd 2+)3,  2(H2 O)"    |   
@@ -1186,6 +1188,10 @@ Table: Sample Group Members
 name
     | 
     | Descriptive name of the sample.
+
+file_path
+    | 
+    | Directory path where the data were originally saved.
 
 description
     | 
@@ -1440,11 +1446,16 @@ in the process table.
 +-------------------------------------+------------------------------------+-----------------------------+
 |    table_                           |         group                      |                             |    
 +-------------------------------------+------------------------------------+-----------------------------+
-Table: Provenance Group Members
 
-name    |     | Descriptive provenance task.
+Table: Provenance Group Members
 
-description    |     | Description of the provenance task.
+name
+    | 
+    | Descriptive provenance task.
+
+description
+    | 
+    | Description of the provenance task.
     
 .. _acquisition:
 
@@ -1465,7 +1476,8 @@ Advanced Photon Source.
 +----------------------------------------------+--------------------+------------------------------------------------------+
 |   *version*                                  | string dataset     | https://github.com/data_collection_scripts/b9ad87e17 |
 +----------------------------------------------+--------------------+------------------------------------------------------+
-|   *output_data*                              | string dataset     |        "/exchange"                                   |+----------------------------------------------+--------------------+------------------------------------------------------+
+|   *output_data*                              | string dataset     |        "/exchange"                                   |
++----------------------------------------------+--------------------+------------------------------------------------------+
 |   set-up_                                    | group              |                                                      |
 +----------------------------------------------+--------------------+------------------------------------------------------+
 
@@ -1513,10 +1525,16 @@ Table: Setup Acquisition Group for Tomography
 
 .. _tomo_rec:
 
-*tomo_rec* (APS)----------------The Reconstruction process description group contains metadata requiredto run a tomography reconstruction. The specific algorithm is describedin a separate group under the reconstruction setup group.
+*tomo_rec* (APS)
+----------------
+
+The Reconstruction process description group contains metadata required
+to run a tomography reconstruction. The specific algorithm is described
+in a separate group under the reconstruction setup group.
 Here is where to log the algorithm setup parameters. In the case of tomoPy 
 this can simply be the link to the scrip used to run the reconstruction. 
-+-------------------------------------+------------------------------------+---------------------------------------------+
+
++-------------------------------------+------------------------------------+---------------------------------------------+
 |    Member                           |                 Type               |          Example                            |
 +=====================================+====================================+=============================================+
 |       *name*                        |     string dataset                 |        "test rec"                           | 
@@ -1525,23 +1543,33 @@ this can simply be the link to the scrip used to run the reconstruction.
 +-------------------------------------+------------------------------------+---------------------------------------------+
 |       *version*                     |     string dataset                 | https://github.com/tomopy_scripts/b9ad87e17 |
 +-------------------------------------+------------------------------------+---------------------------------------------+
-|       *input_data*                  |     string dataset                 |        "/exchange"                          |+-------------------------------------+------------------------------------+---------------------------------------------+
-|       *output_data*                 |     string dataset                 |        "/exchange_1"                        |+-------------------------------------+------------------------------------+---------------------------------------------+
+|       *input_data*                  |     string dataset                 |        "/exchange"                          |
++-------------------------------------+------------------------------------+---------------------------------------------+
+|       *output_data*                 |     string dataset                 |        "/exchange_1"                        |
++-------------------------------------+------------------------------------+---------------------------------------------+
 |       set_up_                       |        group                       |                                             |
 +-------------------------------------+------------------------------------+---------------------------------------------+
 
 
 Table: Reconstruction Actor Group Members
 
-name    |     | Descriptive actor task.
+name
+    | 
+    | Descriptive actor task.
 
-description    |     | Description of the actor task.
+description
+    | 
+    | Description of the actor task.
     
-version    |     | Version of the actor task.
-    |     | If available this can be the repository link to the actor version used
+version
+    | 
+    | Version of the actor task.
+    | 
+    | If available this can be the repository link to the actor version used
     | https://github.com/tomopy_scripts/b9ad87e17
 input_data, output_data
-    |     | Origin and destination of the data processed by the reconstruction task.
+    | 
+    | Origin and destination of the data processed by the reconstruction task.
     
 .. _set_up:
 
@@ -1550,20 +1578,28 @@ input_data, output_data
 
 Here is where to log the algorithms used by the reconstruction actor. 
 
-+-------------------------------------+------------------------------------+-----------------------------------------------+
+
++-------------------------------------+------------------------------------+-----------------------------------------------+
 |    Member                           |                 Type               |          Example                              |
 +=====================================+====================================+===============================================+
 |    *astra*                          |     string dataset                 | https://github.com/astra/b9ad87e17            | 
 +-------------------------------------+------------------------------------+-----------------------------------------------+
 |    *tomopy*                         |     string dataset                 | https://github.com/tomopy/c9ad87e77           |
 +-------------------------------------+------------------------------------+-----------------------------------------------+
-Table: Reconstruction Setup Group Members
+
+Table: Reconstruction Setup Group Members
 
 .. _reconstruction_sls:
 
-*tomo_rec (SLS)*----------------The reconstruction process description group contains metadata requiredto run a tomography reconstruction. The specific algorithm is describedin a separate group under the reconstruction setup group.
+*tomo_rec (SLS)*
+----------------
+
+The reconstruction process description group contains metadata required
+to run a tomography reconstruction. The specific algorithm is described
+in a separate group under the reconstruction setup group.
 Here is where to log the algorithm setup parameters. 
-+-------------------------------------+------------------------------------+---------------------------------------------+
+
++-------------------------------------+------------------------------------+---------------------------------------------+
 |       Member                        |                 Type               |          Example                            |
 +=====================================+====================================+=============================================+
 |       *name*                        |     string dataset                 |        "sls rec"                            | 
@@ -1572,23 +1608,33 @@ Here is where to log the algorithm setup parameters.
 +-------------------------------------+------------------------------------+---------------------------------------------+
 |       *version*                     |     string dataset                 | https://github.com/sls_scripts/b9ad87e17    |
 +-------------------------------------+------------------------------------+---------------------------------------------+
-|       *input_data*                  |     string dataset                 |        "/exchange"                          |+-------------------------------------+------------------------------------+---------------------------------------------+
-|       *output_data*                 |     string dataset                 |        "/exchange_1"                        |+-------------------------------------+------------------------------------+---------------------------------------------+
+|       *input_data*                  |     string dataset                 |        "/exchange"                          |
++-------------------------------------+------------------------------------+---------------------------------------------+
+|       *output_data*                 |     string dataset                 |        "/exchange_1"                        |
++-------------------------------------+------------------------------------+---------------------------------------------+
 |       set_up_sls_                   |        group                       |                                             |
 +-------------------------------------+------------------------------------+---------------------------------------------+
 
 
 Table: Reconstruction Actor Group Members
 
-name    |     | Descriptive actor task.
+name
+    | 
+    | Descriptive actor task.
 
-description    |     | Description of the actor task.
+description
+    | 
+    | Description of the actor task.
     
-version    |     | Version of the actor task.
-    |     | If available this can be the repository link to the actor version used
+version
+    | 
+    | Version of the actor task.
+    | 
+    | If available this can be the repository link to the actor version used
     | https://github.com/tomopy_scripts/b9ad87e17
 input_data, output_data
-    |     | Origin and destination of the data processed by the reconstruction task.
+    | 
+    | Origin and destination of the data processed by the reconstruction task.
     
 .. _set_up_sls:
 
@@ -1597,18 +1643,203 @@ input_data, output_data
 
 Here is where to log the algorithms used by the reconstruction actor. 
 
-+-------------------------------------+-----------------+----------------------------+|    Member                           | Type            |          Example           |
+
++-------------------------------------+-----------------+----------------------------+
+|    Member                           | Type            |          Example           |
 +=====================================+=================+============================+
-|    *reconstruction_slice_start*     | int dataset     |       1000                 |+-------------------------------------+-----------------+----------------------------+|    *reconstruction_slice_end*       | int dataset     |       1030                 |+-------------------------------------+-----------------+----------------------------+|    *rotation_center*                | Float dataset   |      1048.50               |+-------------------------------------+-----------------+----------------------------+|    algorithm-sls_                   | Group           |                            |+-------------------------------------+-----------------+----------------------------+Table: Reconstruction Setup SLS Group Members
+|    *reconstruction_slice_start*     | int dataset     |       1000                 |
++-------------------------------------+-----------------+----------------------------+
+|    *reconstruction_slice_end*       | int dataset     |       1030                 |
++-------------------------------------+-----------------+----------------------------+
+|    *rotation_center*                | Float dataset   |      1048.50               |
++-------------------------------------+-----------------+----------------------------+
+|    algorithm-sls_                   | Group           |                            |
++-------------------------------------+-----------------+----------------------------+
 
-reconstruction_slice_start    |     | First reconstruction slice.reconstruction_slice_end    |     | Last reconstruction slice.rotation_center    |     | Center of rotation in pixels.algorithm    |     | Algorithm group describing reconstruction algorithm parameters.
+Table: Reconstruction Setup SLS Group Members
 
-.. _algorithm-sls:
-*algorithm* (SLS iterative)^^^^^^^^^^^^^^^^^^^^^^^^^^^The Algorithm group contains information required to run a tomographyreconstruction algorithm.+----------------------------------------------+-----------------+-------------------+|     Member                                   |      Type       |    Example        |+==============================================+=================+===================+|    *name*                                    | string dataset  | "SART"            |     +----------------------------------------------+-----------------+-------------------+|    *version*                                 | string dataset  | "1.0"             |+----------------------------------------------+-----------------+-------------------+|    *implementation*                          | string dataset  | "GPU"             |    +----------------------------------------------+-----------------+-------------------+|    *number_of_nodes*                         | int dataset     | 16                |+----------------------------------------------+-----------------+-------------------+|    *type*                                    | string dataset  | "Iterative"       |     +----------------------------------------------+-----------------+-------------------+|    *stop_condition*                          | string dataset  | "iteration_max"   |  +----------------------------------------------+-----------------+-------------------+|    *iteration_max*                           | int dataset     | 200               |+----------------------------------------------+-----------------+-------------------+|    *projection_threshold*                    | float dataset   |                   |  +----------------------------------------------+-----------------+-------------------+|    *difference_threshold_percent*            | float dataset   |                   |    +----------------------------------------------+-----------------+-------------------+|    *difference_threshold_value*              | float dataset   |                   |+----------------------------------------------+-----------------+-------------------+|    *regularization_type*                     | string dataset  | "total_variation" |  +----------------------------------------------+-----------------+-------------------+|    *regularization_parameter*                | float dataset   |                   |  +----------------------------------------------+-----------------+-------------------+|    *step_size*                               | float dataset   | 0.3               |+----------------------------------------------+-----------------+-------------------+|    *sampling_step_size*                      | float dataset   | 0.2               |+----------------------------------------------+-----------------+-------------------+Table: Algorithm Group Membersname    |     | Reconstruction method name: SART, EM, FBP.version    |     | Algorithm version.implementation    |     | CPU or GPU.number_of_nodes    |     | Number of nodes to use on cluster. This parameter is set when the reconstruction is parallelized and run on a cluster.type    |     | Tomography reconstruction method: iterative.stop_condition    |     | iteration_max, projection_threshold, difference_threshold_percent, difference_threshold_value.iteration_max    |     | Maximum number of iterations.projection_threshold    |     | The threshold of projection difference to stop the iterations as.. math:: | y - Ax_{\mathrm{n}}| < pdifference_threshold_percent    |     | The threshold of reconstruction difference to stop the iterations as.. math:: | x_{\mathrm{n+1}}|/ |x_{\mathrm{n}}| < pdifference_threshold_value    |     | The threshold of reconstruction difference to stop the iterations as:.. math:: | x_{\mathrm{n+1}}| - |x_{\mathrm{n}}| < pregularization_type    |     | total_variation, none.regularization_parameter    |     | step_size    |     | Step size between iterations in iterative methods sampling_step_size    |     | Step size used for forward projection calculation in iterative methods.   *algorithm* (SLS analytic)^^^^^^^^^^^^^^^^^^^^^^^^^^The Algorithm group contains information required to run a tomographyreconstruction algorithm.+----------------------------------------------+-----------------+-------------------+|     Member                                   |      Type       |    Example        |+==============================================+=================+===================+|    name                                      | string dataset  | "gridrec"         |     +----------------------------------------------+-----------------+-------------------+|    version                                   | string dataset  | "1.0"             |+----------------------------------------------+-----------------+-------------------+|    implementation                            | string dataset  | "CPU"             |    +----------------------------------------------+-----------------+-------------------+|    number_of_nodes                           | int dataset     | 16                |+----------------------------------------------+-----------------+-------------------+|    type                                      | string dataset  | "analytic"        |     +----------------------------------------------+-----------------+-------------------+|    filter                                    | string dataset  | "Parzen"          |+----------------------------------------------+-----------------+-------------------+|    padding                                   | float dataset   | 0.50              |+----------------------------------------------+-----------------+-------------------+Table: Algorithm Group Membersname    |     | Reconstruction method name: GridRec.version    |     | Algorithm version.implementation    |     | CPU or GPU.number_of_nodes    |     | Number of nodes to use on cluster. This parameter is set when the reconstruction is parallelized and run on a cluster.type    |     | Tomography reconstruction method: analytic.filter    |     | Filter type.padding        
+reconstruction_slice_start
+    | 
+    | First reconstruction slice.
+
+reconstruction_slice_end
+    | 
+    | Last reconstruction slice.
+
+rotation_center
+    | 
+    | Center of rotation in pixels.
+
+algorithm
+    | 
+    | Algorithm group describing reconstruction algorithm parameters.
+
+
+.. _algorithm-sls:
+
+*algorithm* (SLS iterative)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The Algorithm group contains information required to run a tomography
+reconstruction algorithm.
+
++----------------------------------------------+-----------------+-------------------+
+|     Member                                   |      Type       |    Example        |
++==============================================+=================+===================+
+|    *name*                                    | string dataset  | "SART"            |     
++----------------------------------------------+-----------------+-------------------+
+|    *version*                                 | string dataset  | "1.0"             |
++----------------------------------------------+-----------------+-------------------+
+|    *implementation*                          | string dataset  | "GPU"             |    
++----------------------------------------------+-----------------+-------------------+
+|    *number_of_nodes*                         | int dataset     | 16                |
++----------------------------------------------+-----------------+-------------------+
+|    *type*                                    | string dataset  | "Iterative"       |     
++----------------------------------------------+-----------------+-------------------+
+|    *stop_condition*                          | string dataset  | "iteration_max"   |  
++----------------------------------------------+-----------------+-------------------+
+|    *iteration_max*                           | int dataset     | 200               |
++----------------------------------------------+-----------------+-------------------+
+|    *projection_threshold*                    | float dataset   |                   |  
++----------------------------------------------+-----------------+-------------------+
+|    *difference_threshold_percent*            | float dataset   |                   |    
++----------------------------------------------+-----------------+-------------------+
+|    *difference_threshold_value*              | float dataset   |                   |
++----------------------------------------------+-----------------+-------------------+
+|    *regularization_type*                     | string dataset  | "total_variation" |  
++----------------------------------------------+-----------------+-------------------+
+|    *regularization_parameter*                | float dataset   |                   |  
++----------------------------------------------+-----------------+-------------------+
+|    *step_size*                               | float dataset   | 0.3               |
++----------------------------------------------+-----------------+-------------------+
+|    *sampling_step_size*                      | float dataset   | 0.2               |
++----------------------------------------------+-----------------+-------------------+
+
+Table: Algorithm Group Members
+
+name
+    | 
+    | Reconstruction method name: SART, EM, FBP.
+
+version
+    | 
+    | Algorithm version.
+
+implementation
+    | 
+    | CPU or GPU.
+
+number_of_nodes
+    | 
+    | Number of nodes to use on cluster. This parameter is set when the reconstruction is parallelized and run on a cluster.
+
+type
+    | 
+    | Tomography reconstruction method: iterative.
+
+stop_condition
+    | 
+    | iteration_max, projection_threshold, difference_threshold_percent, difference_threshold_value.
+
+iteration_max
+    | 
+    | Maximum number of iterations.
+
+projection_threshold
+    | 
+    | The threshold of projection difference to stop the iterations as
+
+.. math:: | y - Ax_{\mathrm{n}}| < p
+
+difference_threshold_percent
+    | 
+    | The threshold of reconstruction difference to stop the iterations as
+
+.. math:: | x_{\mathrm{n+1}}|/ |x_{\mathrm{n}}| < p
+
+difference_threshold_value
+    | 
+    | The threshold of reconstruction difference to stop the iterations as:
+
+.. math:: | x_{\mathrm{n+1}}| - |x_{\mathrm{n}}| < p
+
+regularization_type
+    | 
+    | total_variation, none.
+
+regularization_parameter
+    | 
+    | 
+
+step_size
+    | 
+    | Step size between iterations in iterative methods 
+
+sampling_step_size
+    | 
+    | Step size used for forward projection calculation in iterative methods.
+
+   
+*algorithm* (SLS analytic)
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The Algorithm group contains information required to run a tomography
+reconstruction algorithm.
+
++----------------------------------------------+-----------------+-------------------+
+|     Member                                   |      Type       |    Example        |
++==============================================+=================+===================+
+|    name                                      | string dataset  | "gridrec"         |     
++----------------------------------------------+-----------------+-------------------+
+|    version                                   | string dataset  | "1.0"             |
++----------------------------------------------+-----------------+-------------------+
+|    implementation                            | string dataset  | "CPU"             |    
++----------------------------------------------+-----------------+-------------------+
+|    number_of_nodes                           | int dataset     | 16                |
++----------------------------------------------+-----------------+-------------------+
+|    type                                      | string dataset  | "analytic"        |     
++----------------------------------------------+-----------------+-------------------+
+|    filter                                    | string dataset  | "Parzen"          |
++----------------------------------------------+-----------------+-------------------+
+|    padding                                   | float dataset   | 0.50              |
++----------------------------------------------+-----------------+-------------------+
+
+Table: Algorithm Group Members
+
+name
+    | 
+    | Reconstruction method name: GridRec.
+
+version
+    | 
+    | Algorithm version.
+
+implementation
+    | 
+    | CPU or GPU.
+
+number_of_nodes
+    | 
+    | Number of nodes to use on cluster. This parameter is set when the reconstruction is parallelized and run on a cluster.
+
+type
+    | 
+    | Tomography reconstruction method: analytic.
+
+filter
+    | 
+    | Filter type.
+
+padding
+        
 
 .. _transfer:
 
-*transfer*----------The transfer process description group contains metadata requiredto trasfer data from source (data analysis machine) to destination
+*transfer*
+----------
+
+The transfer process description group contains metadata required
+to trasfer data from source (data analysis machine) to destination
 (data distribution server). 
 
 +-------------------------------------+------------------------------------+---------------------------------------------+
@@ -1620,25 +1851,36 @@ reconstruction_slice_start    |     | First reconstruction slice.reconstruct
 +-------------------------------------+------------------------------------+---------------------------------------------+
 |       *version*                     |     string dataset                 | https://github.com/globus/b9ad87e17         |
 +-------------------------------------+------------------------------------+---------------------------------------------+
-|       *input_data*                  |     string dataset                 |        "gsiftp://host1/path"                |+-------------------------------------+------------------------------------+---------------------------------------------+
-|       *output_data*                 |     string dataset                 |        "gsiftp://host2/path"                |+-------------------------------------+------------------------------------+---------------------------------------------+
+|       *input_data*                  |     string dataset                 |        "gsiftp://host1/path"                |
++-------------------------------------+------------------------------------+---------------------------------------------+
+|       *output_data*                 |     string dataset                 |        "gsiftp://host2/path"                |
++-------------------------------------+------------------------------------+---------------------------------------------+
 |       *setup*                       |        group                       |                                             |
 +-------------------------------------+------------------------------------+---------------------------------------------+
 
 
 Table: Transfer Actor Group Members
 
-name    |     | Descriptive actor task.
+name
+    | 
+    | Descriptive actor task.
 
-description    |     | Description of the actor task.
+description
+    | 
+    | Description of the actor task.
     
-version    |     | Version of the actor task.
-    |     | If available this can be the repository link to the actor version used
+version
+    | 
+    | Version of the actor task.
+    | 
+    | If available this can be the repository link to the actor version used
     | https://github.com/globus/b9ad87e17
     
 input_data, output_data
-    |     | Origin and destination of the data processed by the trasnfer task.
-    setup
+    | 
+    | Origin and destination of the data processed by the trasnfer task.
+    
+setup
     |
     | Group containing the specific data transfer protocol paramenters.
 
@@ -1669,8 +1911,42 @@ possible to re-run an analysis using the information provided here.
 
 Table: Process table to log actors activity
 
-actor    |     | Name of the process in the pipeline stage that is executed at this step.*start_time*    |     | Time the process started.*end_time*    |     | TIme the process ended.
-    *status*    |     | Current process status. May be one of the following: QUEUED,    | RUNNING, FAILED, or SUCCESS.
-    *message*    |     | A process specific message generated by the process. It may be a    | confirmation that the process was successful, or a detailed error    | message, for example.
-    *reference*    |     | Path to the actor description group. The process description group    | contains all metadata to perform the specific process. This    | reference is simply the HDF5 path within this file of the    | technique specific process description group. The process    | description group should contain all parameters necessary to run    | the process, including the name and version of any external    | analysis tool used to process the data. It should also contain    | input and output references that point to the    | **exchange_N** groups that contain the input and output    | datasets of the process.
-    *description*    |     | Process description.
+actor
+    | 
+    | Name of the process in the pipeline stage that is executed at this step.
+
+*start_time*
+    | 
+    | Time the process started.
+
+*end_time*
+    | 
+    | TIme the process ended.
+    
+*status*
+    | 
+    | Current process status. May be one of the following: QUEUED,
+    | RUNNING, FAILED, or SUCCESS.
+    
+*message*
+    | 
+    | A process specific message generated by the process. It may be a
+    | confirmation that the process was successful, or a detailed error
+    | message, for example.
+    
+*reference*
+    | 
+    | Path to the actor description group. The process description group
+    | contains all metadata to perform the specific process. This
+    | reference is simply the HDF5 path within this file of the
+    | technique specific process description group. The process
+    | description group should contain all parameters necessary to run
+    | the process, including the name and version of any external
+    | analysis tool used to process the data. It should also contain
+    | input and output references that point to the
+    | **exchange_N** groups that contain the input and output
+    | datasets of the process.
+    
+*description*
+    | 
+    | Process description.

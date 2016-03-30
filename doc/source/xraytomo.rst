@@ -1,6 +1,5 @@
 .. role:: math(raw)
    :format: html latex
-..
 
 ================
 X-ray Tomography

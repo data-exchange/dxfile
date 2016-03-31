@@ -31,7 +31,7 @@ Features
 * A python interface for writing scientific data exchange files.
 * XML attribute files for writers with the EPICS Area Detector HDF plug-in.
  
- Highlights
+Highlights
 ----------
 * Based on Hierarchical Data Format 5 (HDF5).
 * Focuses on technique rather than instrument descriptions.

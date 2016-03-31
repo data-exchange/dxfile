@@ -30,7 +30,14 @@ Features
 * The definition of the scientific data exchange.
 * A python interface for writing scientific data exchange files.
 * XML attribute files for writers with the EPICS Area Detector HDF plug-in.
-    
+ 
+ Highlights
+----------
+* Based on Hierarchical Data Format 5 (HDF5).
+* Focuses on technique rather than instrument descriptions.
+* Provenance tracking for understanding analysis steps and results.
+* Ease of readability.
+   
 Contribute
 ----------
 

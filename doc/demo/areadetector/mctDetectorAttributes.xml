@@ -59,7 +59,7 @@
     <Attribute name="DCMFlagDial"                     type="EPICS_PV" source="32idb:m5.DVAL"                dbrtype="DBR_DOUBLE"/>
 
     <Attribute name="UserName"                        type="EPICS_PV" source="32idcTXM:UserName"            dbrtype="DBR_STRING"/>
-    <Attribute name="UserAffiliation"                 type="EPICS_PV" source="32idcTXM:UserAffiliation"     dbrtype="DBR_STRING"/>
+    <Attribute name="UserAffiliation"                 type="EPICS_PV" source="32idcTXM:UserInstitution"     dbrtype="DBR_STRING"/>
     <Attribute name="UserBadge"                       type="EPICS_PV" source="32idcTXM:UserBadge"           dbrtype="DBR_STRING"/>
     <Attribute name="UserEmail"                       type="EPICS_PV" source="32idcTXM:UserEmail"           dbrtype="DBR_STRING"/>
     <Attribute name="SampleName"                      type="EPICS_PV" source="32idcPG3:HDF1:FileName"       dbrtype="DBR_STRING"/>

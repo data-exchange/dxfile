@@ -81,16 +81,16 @@
     <Attribute name="SampleTopX"                      type="EPICS_PV" source="32idc01:m104.VAL"             dbrtype="DBR_DOUBLE"/>
     <Attribute name="SampleTopZ"                      type="EPICS_PV" source="32idc01:m105.VAL"             dbrtype="DBR_DOUBLE"/>
     <Attribute name="SampleRotary"                    type="EPICS_PV" source="32idc02:m11.VAL"              dbrtype="DBR_DOUBLE"/>
-    <Attribute name="SampleYaw"                       type="EPICS_PV" source="32idc02:m30.VAL"              dbrtype="DBR_DOUBLE"/>
-    <Attribute name="SamplePitch"                     type="EPICS_PV" source="32idc02:m29.VAL"              dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleYaw"                       type="EPICS_PV" source="32idc02:m29.VAL"              dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SamplePitch"                     type="EPICS_PV" source="32idc02:m30.VAL"              dbrtype="DBR_DOUBLE"/>
 
     <Attribute name="SampleXDial"                     type="EPICS_PV" source="32idc02:m31.DVAL"             dbrtype="DBR_DOUBLE"/>
     <Attribute name="SampleYDial"                     type="EPICS_PV" source="32idc02:m25.DVAL"             dbrtype="DBR_DOUBLE"/>
     <Attribute name="SampleTopXDial"                  type="EPICS_PV" source="32idc01:m104.DVAL"            dbrtype="DBR_DOUBLE"/>
     <Attribute name="SampleTopZDial"                  type="EPICS_PV" source="32idc01:m105.DVAL"            dbrtype="DBR_DOUBLE"/>
     <Attribute name="SampleRotaryDial"                type="EPICS_PV" source="32idc02:m11.DVAL"             dbrtype="DBR_DOUBLE"/>
-    <Attribute name="SampleYawDial"                   type="EPICS_PV" source="32idc02:m30.DVAL"             dbrtype="DBR_DOUBLE"/>
-    <Attribute name="SamplePitchDial"                 type="EPICS_PV" source="32idc02:m29.DVAL"             dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleYawDial"                   type="EPICS_PV" source="32idc02:m29.DVAL"             dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SamplePitchDial"                 type="EPICS_PV" source="32idc02:m30.DVAL"             dbrtype="DBR_DOUBLE"/>
 
     <Attribute name="CcdCameraZ"                      type="EPICS_PV" source="32idc02:m20.VAL"              dbrtype="DBR_DOUBLE"/>
     <Attribute name="CcdCameraZDial"                  type="EPICS_PV" source="32idc02:m20.DVAL"             dbrtype="DBR_DOUBLE"/>

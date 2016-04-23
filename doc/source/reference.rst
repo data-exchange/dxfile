@@ -13,7 +13,7 @@ provenance    |     | The Provenance group describes all process steps that ha
 +---------------+----------------+-----------------------------------------+Table: Exchange Group Members
 
 
-name    |     | Descriptive *title* for **data** dataset. Current types include:      absorption_tomography, phase_tomography, dpc_tomography description
+name    |     | Descriptive *name* for **data** dataset. Current types include:      absorption_tomography, phase_tomography, dpc_tomography description
     | 
     | Description.
 

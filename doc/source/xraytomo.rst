@@ -71,7 +71,9 @@ focus in this group.
 +------------------+---------------------------------------------------------+-----------------------------+
 |     Member       |      Type                                               |     Example/Attributes      |
 +==================+=========================================================+=============================+
-|    *title*       |      string dataset                                     |  "raw absorption tomo"      |
+|    *name*        |      string dataset                                     |  "absorption_tomography"    |
++------------------+---------------------------------------------------------+-----------------------------+
+|   *description*  |      string dataset                                     |  "raw absorption tomo"      |
 +------------------+---------------------------------------------------------+-----------------------------+
 |    **data**      |      3D dataset                                         |  axes: *theta:y:x*          |
 +------------------+---------------------------------------------------------+-----------------------------+
@@ -92,9 +94,11 @@ focus in this group.
 
 Table: Exchange Group Members for Tomography
 
-title
+
+name    |     | Descriptive *name* for **data** dataset. Current types include:      absorption_tomography, phase_tomography, dpc_tomography 
+description
     | 
-    | This is the data title.
+    | Description.
 
 data
     | 
@@ -1482,6 +1486,11 @@ Advanced Photon Source.
 
 
 Table: Acquisition Group Members
+
+
+name    |     | Descriptive *name* for *acquisition*. Current name include:      tomo, timbir, mosaic description
+    | 
+    | Description.
 
 
 .. _set-up:

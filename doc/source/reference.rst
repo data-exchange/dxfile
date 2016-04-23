@@ -9,10 +9,15 @@ measurement or measurement_N    |     | Description of the sample and instrume
 
 provenance    |     | The Provenance group describes all process steps that have been      applied to the data.**exchange**============The exchange group is where scientific datasets reside. This groupcontains one or more array datasets containing n-dimensional data andoptional descriptions of the axes (dimension scale datasets). Exactlyhow this group is used is dependent on the application, however thegeneral idea is that one exchange group contains one cohesive dataset.If, for example, the dataset is processed into some other form, thenanother exchange group is used to store the derived data.Multiple exchange groups are numbered consecutively as**exchange_N**. At a minimum, each exchange group should have aprimary dataset named **data**. The *title* is optional.
 +---------------+----------------+-----------------------------------------+|     Member    |      Type      |            Example                      |
-+===============+================+=========================================+|    *title*    | string dataset |       “absorption_tomography”           |+---------------+----------------+-----------------------------------------+|   **data**    | array dataset  |        n-dimensional dataset            |
++===============+================+=========================================+|    *name*     | string dataset |       “absorption_tomography”           |+---------------+----------------+-----------------------------------------+| *description* | string dataset |        "raw absorption tomo"            |+---------------+----------------+-----------------------------------------+|   **data**    | array dataset  |        n-dimensional dataset            |
 +---------------+----------------+-----------------------------------------+Table: Exchange Group Members
 
-title    |     | Descriptive *title* for **data** dataset. Current types include:      absorption_tomography, phase_tomography, dpc_tomography data    |     | The primary scientific dataset. Additional related datasets may      have any arbitrary name. Each dataset should have a units and      description attribute. Discussion of dimension descriptors and      optional axes attribute is covered in Section [sec:multidims].Attribute
+
+name    |     | Descriptive *title* for **data** dataset. Current types include:      absorption_tomography, phase_tomography, dpc_tomography description
+    | 
+    | Description.
+
+data    |     | The primary scientific dataset. Additional related datasets may      have any arbitrary name. Each dataset should have a units and      description attribute. Discussion of dimension descriptors and      optional axes attribute is covered in Section [sec:multidims].Attribute
 ---------
 
 Description and units can be added as attribute to any data, both array or values,

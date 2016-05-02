@@ -1,13 +1,17 @@
 .. role:: math(raw)   :format: html latex..
 
 ==============Core Reference==============Top level (root)================This node represents the top level of the HDF5 file and holds somegeneral information about the file.+---------------+----------------+-----------------------------------------+|    Member     |      Type      |              Example                    |
-+===============+================+=========================================+|**implements** | string dataset | **exchange**:*measurement*:*provenance* |+---------------+----------------+-----------------------------------------+|**exchange**   |    group       |                                         |
-+---------------+----------------+-----------------------------------------+|*measurement*  |    group       |                                         |+---------------+----------------+-----------------------------------------+| *provenance*  |    group       |                                         |+---------------+----------------+-----------------------------------------+implements    |     | A colon separated list that shows which components are present in      the file. The only **mandatory** component is **exchange**. A more      general Data Exchange file also contains *measurement* and      *provenance* information, if so these will be declared in **implements**      as **exchange**:*measurement*:*provenance*exchange or exchange_N
++===============+================+=========================================+|**implements** | string dataset |   **exchange**:*measurement*:*process*  |+---------------+----------------+-----------------------------------------+|**exchange**   |    group       |                                         |
++---------------+----------------+-----------------------------------------+|*measurement*  |    group       |                                         |+---------------+----------------+-----------------------------------------+|   *process*   |    group       |                                         |+---------------+----------------+-----------------------------------------+implements    |     | A colon separated list that shows which components are present in      the file. The only **mandatory** component is **exchange**. A more      general Data Exchange file also contains *measurement* and      *process* information, if so these will be declared in **implements**      as **exchange**:*measurement*:*process*exchange or exchange_N
     |     | The data taken from measurements or processing. Dimension      descriptors within the group may also serve to describe      “positioner” values involved in a scan. 
 
 measurement or measurement_N    |     | Description of the sample and instrument as configured for the      measurement. This group is appropriate for relatively static      metadata. For measurements where there are many “positioner”      values (aka a “scan”), it is more sensible to add dimension(s) to      the exchange dataset, and describe the “positioner” values as      dimension scales rather than record the data via multiple matching      *measurement* and **exchange** groups. This is a judgement left to      the user.
 
-provenance    |     | The Provenance group describes all process steps that have been      applied to the data.**exchange**============The exchange group is where scientific datasets reside. This groupcontains one or more array datasets containing n-dimensional data andoptional descriptions of the axes (dimension scale datasets). Exactlyhow this group is used is dependent on the application, however thegeneral idea is that one exchange group contains one cohesive dataset.If, for example, the dataset is processed into some other form, thenanother exchange group is used to store the derived data.Multiple exchange groups are numbered consecutively as**exchange_N**. At a minimum, each exchange group should have aprimary dataset named **data**. The *title* is optional.
+process    |     | The Process group describes all the "work" that has been done. This 
+      includes data processing steps that have been applied to the data as
+      well as experimental steps (e.g. data collection strategy etc.) 
+      and sample preparation ahead of the experiment and during the 
+      measurement (e.g. environment conditions etc.).**exchange**============The exchange group is where scientific datasets reside. This groupcontains one or more array datasets containing n-dimensional data andoptional descriptions of the axes (dimension scale datasets). Exactlyhow this group is used is dependent on the application, however thegeneral idea is that one exchange group contains one cohesive dataset.If, for example, the dataset is processed into some other form, thenanother exchange group is used to store the derived data.Multiple exchange groups are numbered consecutively as**exchange_N**. At a minimum, each exchange group should have aprimary dataset named **data**. The *title* is optional.
 +---------------+----------------+-----------------------------------------+|     Member    |      Type      |            Example                      |
 +===============+================+=========================================+|    *name*     | string dataset |       “absorption_tomography”           |+---------------+----------------+-----------------------------------------+| *description* | string dataset |        "raw absorption tomo"            |+---------------+----------------+-----------------------------------------+|   **data**    | array dataset  |        n-dimensional dataset            |
 +---------------+----------------+-----------------------------------------+Table: Exchange Group Members
@@ -224,18 +228,22 @@ safety    |     | Safety reference document. For the APS this is the Experimen
 +====================+=========================+============================================+
 |       *name*       |     string dataset      |     “John Doe”                             |+--------------------+-------------------------+--------------------------------------------+|       *role*       |     string dataset      |     “Project PI”                           |+--------------------+-------------------------+--------------------------------------------+|    *affiliation*   |     string dataset      |     “University of California, Berkeley”   |+--------------------+-------------------------+--------------------------------------------+|      *address*     |     string dataset      |     “EPS UC Berkeley CA 94720 4767 USA”    |+--------------------+-------------------------+--------------------------------------------+|       *phone*      |     string dataset      |     “+1 123 456 0000”                      |+--------------------+-------------------------+--------------------------------------------+|       *email*      |     string dataset      |     “johndoe@berkeley.edu”                 |+--------------------+-------------------------+--------------------------------------------+| *facility_user_id* |     string dataset      |     “a123456”                              |+--------------------+-------------------------+--------------------------------------------+Table: Experimenter Group Members    name: User name.    role: User role.    affiliation: User affiliation.    address: User address.    phoen: User phone number.    email: User e-mail address    facility_user_id: User badge number
 
-*provenance*
+*process*
 ============
 
-Data provenance is the documentation of the data collection strategy
+Data process is the documentation of the data collection strategy
 (*acquisition*) and all transformations, analyses and interpretations 
-of data performed by a sequence of process functions (*actor*).
+of data performed by a sequence of process functions (*actor*) as well
+as any sample preparation ahead of the experiment and during the 
+measurement (e.g. environment conditions etc.).
 
-Maintaining this history allows for reproducible data. The Data Exchange
-format tracks provenance by allowing each actor to append provenance
-information to a process table. The provenance process table tracks the
-execution order of a series of processes by appending sequential actor 
-entries in the process table.
+Maintaining this history, also called provenance, allows for reproducible 
+data. The Data Exchange format tracks process by allowing each actor 
+to append process information to a process table. 
+
+The process table tracks provenance in the execution order as a series 
+of processing steps by appending sequential actor entries in the process 
+table.
 
 +-------------------------------------+------------------------------------+-----------------------------+
 |     Member                          |                 Type               |          Example            |
@@ -252,11 +260,11 @@ entries in the process table.
 +-------------------------------------+------------------------------------+-----------------------------+
 |    table_                           |         group                      |                             |    
 +-------------------------------------+------------------------------------+-----------------------------+
-Table: Provenance Group Members
+Table: Process Group Members
 
-name    |     | Descriptive provenance task.
+name    |     | Descriptive process task.
 
-description    |     | Description of the provenance task.
+description    |     | Description of the process task.
     
 .. _actor_1:
 
@@ -329,6 +337,6 @@ tools will automatically record process steps using this group.
 In addition, it is possible to re-run an analysis using the information 
 provided here.
 +-----------+-------------------+-------------------+---------------+----------------------+--------------------------+-------------------------------------+|   actor   |    start_time     |    end_time       |     status    |     message          |          reference       |     description                     |+===========+===================+===================+===============+======================+==========================+=====================================+
-| actor_1   |     21:15:22      |     21:15:23      |     SUCCESS   |         OK           |     /provenance/actor_1  |     raw data collection             |+-----------+-------------------+-------------------+---------------+----------------------+--------------------------+-------------------------------------+| actor_2   |     21:15:26      |     21:15:27      |     RUNNING   |         OK           |     /provenance/actor_2  |     reconstruct                     |   +-----------+-------------------+-------------------+---------------+----------------------+--------------------------+-------------------------------------+| actor_n   |     21:17:28      |     22:15:22      |     QUEUED    |         OK           |     /provenance/actor_n  |     transfer data to user           |    +-----------+-------------------+-------------------+---------------+----------------------+--------------------------+-------------------------------------+Table: Process table to log actors activity
+| actor_1   |     21:15:22      |     21:15:23      |     SUCCESS   |         OK           |     /process/actor_1     |     raw data collection             |+-----------+-------------------+-------------------+---------------+----------------------+--------------------------+-------------------------------------+| actor_2   |     21:15:26      |     21:15:27      |     RUNNING   |         OK           |     /process/actor_2     |     reconstruct                     |   +-----------+-------------------+-------------------+---------------+----------------------+--------------------------+-------------------------------------+| actor_n   |     21:17:28      |     22:15:22      |     QUEUED    |         OK           |     /process/actor_n     |     transfer data to user           |    +-----------+-------------------+-------------------+---------------+----------------------+--------------------------+-------------------------------------+Table: Process table to log actors activity
 
 actor    |     | Name of the process in the pipeline stage that is executed at this step.*start_time*    |     | Time the process started.*end_time*    |     | TIme the process ended.*status*    |     | Current process status. May be one of the following: QUEUED,    | RUNNING, FAILED, or SUCCESS.*message*    |     | A process specific message generated by the process. It may be a    | confirmation that the process was successful, or a detailed error    | message, for example.*reference*    |     | Path to the actor description group. The process description group    | contains all metadata to perform the specific process. This    | reference is simply the HDF5 path within this file of the    | technique specific process description group. The process    | description group should contain all parameters necessary to run    | the process, including the name and version of any external    | analysis tool used to process the data. It should also contain    | input and output references that point to the    | **exchange_N** groups that contain the input and output    | datasets of the process.*description*    |     | Process description.

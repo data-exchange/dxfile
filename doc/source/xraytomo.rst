@@ -20,13 +20,13 @@ general information about the file.
 +---------------+----------------+-----------------------------------------+
 |    Member     |      Type      |              Example                    |
 +===============+================+=========================================+
-|**implements** | string dataset | **exchange**:*measurement*:*provenance* |
+|**implements** | string dataset |   **exchange**:*measurement*:*process*  |
 +---------------+----------------+-----------------------------------------+
 |**exchange**   |    group       |                                         |
 +---------------+----------------+-----------------------------------------+
 |*measurement*  |    group       |                                         |
 +---------------+----------------+-----------------------------------------+
-| *provenance*  |    group       |                                         |
+|   *process*   |    group       |                                         |
 +---------------+----------------+-----------------------------------------+
 
 implements
@@ -34,8 +34,8 @@ implements
     | A colon separated list that shows which components are present in
       the file. The only **mandatory** component is **exchange**. A more
       general Data Exchange file also contains *measurement* and
-      *provenance* information, if so these will be declared in **implements**
-      as **exchange**:*measurement*:*provenance*
+      *process* information, if so these will be declared in **implements**
+      as **exchange**:*measurement*:*process*
 
 exchange or exchange_N
     | 
@@ -54,11 +54,11 @@ measurement or measurement_N
       *measurement* and **exchange** groups. This is a judgement left to
       the user.
 
-provenance
-    | 
-    | The Provenance group describes all process steps that have been
-      applied to the data.
-      
+process    |     | The Process group describes all the "work" that has been done. This 
+      includes data processing steps that have been applied to the data as
+      well as experimental steps (e.g. data collection strategy etc.) 
+      and sample preparation ahead of the experiment and during the 
+      measurement (e.g. environment conditions etc.).      
 **exchange**
 ============
 
@@ -1421,18 +1421,23 @@ matrix that transforms from the global orientation to the local
 orientation. The third row can be recovered by using the fact that the
 basis vectors are orthonormal.
 
-*provenance*
+*process*
 ============
 
-Data provenance is the documentation of the data collection strategy
+Data process is the documentation of the data collection strategy
 (*acquisition*) and all transformations, analyses and interpretations 
-of data performed by a sequence of process functions or actorts.
+of data performed by a sequence of process functions (*actor*) as well
+as any sample preparation ahead of the experiment and during the 
+measurement (e.g. environment conditions etc.).
 
-Maintaining this history allows for reproducible data. The Data Exchange
-format tracks provenance by allowing each actor to append provenance
-information to a process table. The provenance process table tracks the
-execution order of a series of processes by appending sequential entries
-in the process table.
+Maintaining this history, also called provenance, allows for reproducible 
+data. The Data Exchange format tracks process by allowing each actor 
+to append process information to a process table. 
+
+The process table tracks provenance in the execution order as a series 
+of processing steps by appending sequential actor entries in the process 
+table.
+
 
 +-------------------------------------+------------------------------------+-----------------------------+
 |    Member                           |                 Type               |          Example            |
@@ -1450,15 +1455,15 @@ in the process table.
 |    table_                           |         group                      |                             |    
 +-------------------------------------+------------------------------------+-----------------------------+
 
-Table: Provenance Group Members
+Table: Process Group Members
 
 name
     | 
-    | Descriptive provenance task.
+    | Descriptive process task.
 
 description
     | 
-    | Description of the provenance task.
+    | Description of the process task.
     
 .. _acquisition:
 
@@ -1906,15 +1911,15 @@ possible to re-run an analysis using the information provided here.
 +---------------+-------------------+-------------------+---------------+----------------------------+-------------------------------+--------------------------+
 |   actor       |    start_time     |    end_time       |     status    |     message                |          reference            |   description            |
 +===============+===================+===================+===============+============================+===============================+==========================+
-| acquisition   |     21:15:22      |     21:15:23      |     FAILED    |     beamline off line      |     /provenance/acquisition   |   raw data collection    |
+| acquisition   |     21:15:22      |     21:15:23      |     FAILED    |     beamline off line      |       /process/acquisition    |   raw data collection    |
 +---------------+-------------------+-------------------+---------------+----------------------------+-------------------------------+--------------------------+
-| acquisition   |     21:15:26      |     21:15:27      |     FAILED    |     beamline off line      |     /provenance/acquisition   |   raw data collection    |
+| acquisition   |     21:15:26      |     21:15:27      |     FAILED    |     beamline off line      |       /process/acquisition    |   raw data collection    |
 +---------------+-------------------+-------------------+---------------+----------------------------+-------------------------------+--------------------------+
-| acquisition   |     21:17:28      |     22:15:22      |     SUCCESS   |            OK              |     /provenance/acquisition   |   raw data collection    |
+| acquisition   |     21:17:28      |     22:15:22      |     SUCCESS   |            OK              |       /process/acquisition    |   raw data collection    |
 +---------------+-------------------+-------------------+---------------+----------------------------+-------------------------------+--------------------------+
-| tomo_rec      |     22:30:23      |     22:50:22      |     SUCCESS   |            OK              |     /provenance/tomo_rec      |   reconstruct            |  
+| tomo_rec      |     22:30:23      |     22:50:22      |     SUCCESS   |            OK              |       /process/tomo_rec       |   reconstruct            |  
 +---------------+-------------------+-------------------+---------------+----------------------------+-------------------------------+--------------------------+
-| transfer      |                   |                   |     QUEUED    |                            |     /provenance/transfer      |   transfer data to user  | 
+| transfer      |                   |                   |     QUEUED    |                            |       /process/transfer       |   transfer data to user  | 
 +---------------+-------------------+-------------------+---------------+----------------------------+-------------------------------+--------------------------+
 
 Table: Process table to log actors activity

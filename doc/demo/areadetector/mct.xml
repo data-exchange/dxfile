@@ -277,12 +277,12 @@
       </group><!-- /sample -->
     </group><!-- /measurement -->
 
-    <group name="provenance">
+    <group name="process">
       <group name="acquisition">
         <dataset name="start_date" source="ndattribute" ndattribute="DateTimeStart" when="OnFileOpen"></dataset>
         <dataset name="end_date" source="ndattribute" ndattribute="DateTimeEnd" when="OnFileClose"></dataset>
       </group><!-- /acquisition -->
-    </group><!-- /provenance -->
+    </group><!-- /process -->
 
     <group name="defaults" ndattr_default="true">
   </group>

@@ -1424,10 +1424,10 @@ basis vectors are orthonormal.
 *process*
 ============
 
-Data process is the documentation of the data collection strategy
-(*acquisition*) and all transformations, analyses and interpretations 
+Process is the documentation of the data collection strategy
+(*acquisition*) steps, all transformations, analyses and interpretations 
 of data performed by a sequence of process functions (*actor*) as well
-as any sample preparation ahead of the experiment and during the 
+as any sample preparation step done ahead of the experiment and during the 
 measurement (e.g. environment conditions etc.).
 
 Maintaining this history, also called provenance, allows for reproducible 

@@ -117,18 +117,6 @@
           </group><!-- /setup -->
         </group><!-- /monochromator -->
 
-        <group name="attenuator">
-          <dataset name="name" source="constant" value="Filter" type="string" when="OnFileClose"></dataset>        
-          <group name="setup">
-            <dataset name="filter_x" source="ndattribute" ndattribute="FilterX" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string"></attribute>
-            </dataset>
-            <dataset name="filter_x_dial" source="ndattribute" ndattribute="FilterXDial" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string"></attribute>
-            </dataset>
-          </group><!-- /setup-->
-        </group><!-- /attenuator -->
-
         <group name="scintillator">
           <dataset name="name" source="constant" value="Micro CT Scintillator" type="string" when="OnFileClose"></dataset>        
           <group name="setup">

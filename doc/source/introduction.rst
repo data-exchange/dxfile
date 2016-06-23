@@ -62,8 +62,11 @@ with guidelines suggesting the best structure.
 
 *process*
     | 
-    | Optional group containing information about the status of each
-      processing step.
+    | The Process group describes all the “work” that has been done. 
+      This includes data processing steps that have been applied to the 
+      data as well as experimental steps (e.g. data collection strategy etc.) 
+      and sample preparation ahead of the experiment and during the measurement 
+      (e.g. environment conditions etc.).
 
 In a Data Exchange file, each dataset has a unit defined using the units
 attribute. units is not **mandatory** - if omitted, the default unit as

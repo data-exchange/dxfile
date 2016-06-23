@@ -1,24 +1,139 @@
-.. role:: math(raw)   :format: html latex..
+.. role:: math(raw)
+   :format: html latex
+..
 
-============Introduction============
+============
+Introduction
+============
 
-Root Level Structure====================While HDF5 gives great flexibility in data storage, straightforward filereadability and exchange requires adhering to an agreed-upon naming andorganizational convention. To achieve this goal, Data Exchange adopts alayered approach by defining a set of **mandatory** and optional fields.The general structure of a Data Exchange file is shown intable [tab:genrules]. The most basic file must have an **implements**string, and an **exchange** group at the root level/group of the HDF5file. Optional *measurement* and *provenance* groups are also defined.Beyond this, additional groups may be added to meet individual needs,with guidelines suggesting the best structure.
-+---------------+----------------+-----------------------------------------+|     Member    |       Type     |            Example                      |
-+===============+================+=========================================+|**implements** | string dataset | **exchange**:*measurement*:*provenance* |+---------------+----------------+-----------------------------------------+| **exchange**  |     group      |                                         |
-+---------------+----------------+-----------------------------------------+| *measurement* |     group      |                                         |+---------------+----------------+-----------------------------------------+| *provenance*  |     group      |                                         |+---------------+----------------+-----------------------------------------+**implements**    |     | Mandatory scalar string dataset in the root of the HDF5 file whose      value is a colon separated list that shows which components are      present in the file. All components listed in the **implements**      string are to be groups placed in the HDF5 file at the root      level/group. In a minimal Data Exchange file, the only **mandatory**      item in this list is **exchange**. A more general Data Exchange file      also contain *measurement* and possibly *provenance*, in which case 
-      the **implements** string would be: **exchange**:*measurement*:*provenance*.**exchange**    |     | Mandatory group containing one or more arrays that represent the      most basic version of the data, such as raw or normalized optical      density maps or a elemental signal map. **Exchange_N** is      used when more than one core dataset or derived datasets are saved      in the file. The **exchange** implementation for specific techniques      are defined in separate sections in the Reference Guide.*measurement*    |     | Optional group containing the *measurement* made on the sample;      *measurement* contains information about the sample and the      instrument; *measurement_N* is used when more than one      *measurement* is stored in the same file.*provenance*    |     | Optional group containing information about the status of each      processing step.In a Data Exchange file, each dataset has a unit defined using the unitsattribute. units is not **mandatory** - if omitted, the default unit asdefined in Appendix [appendix:units] is used.The detailed rules about how to store datasets within the exchange groupare best shown through examples in the next section. Detailed referenceinformation can be found in the section.
+Root Level Structure
+====================
+
+While HDF5 gives great flexibility in data storage, straightforward file
+readability and exchange requires adhering to an agreed-upon naming and
+organizational convention. To achieve this goal, Data Exchange adopts a
+layered approach by defining a set of **mandatory** and optional fields.
+
+The general structure of a Data Exchange file is shown in
+table [tab:genrules]. The most basic file must have an **implements**
+string, and an **exchange** group at the root level/group of the HDF5
+file. Optional *measurement* and *process* groups are also defined.
+Beyond this, additional groups may be added to meet individual needs,
+with guidelines suggesting the best structure.
+
++---------------+----------------+-----------------------------------------+
+|     Member    |       Type     |            Example                      |
++===============+================+=========================================+
+|**implements** | string dataset | **exchange**:*measurement*:*process*    |
++---------------+----------------+-----------------------------------------+
+| **exchange**  |     group      |                                         |
++---------------+----------------+-----------------------------------------+
+| *measurement* |     group      |                                         |
++---------------+----------------+-----------------------------------------+
+| *provenance*  |     group      |                                         |
++---------------+----------------+-----------------------------------------+
+
+**implements**
+    | 
+    | Mandatory scalar string dataset in the root of the HDF5 file whose
+      value is a colon separated list that shows which components are
+      present in the file. All components listed in the **implements**
+      string are to be groups placed in the HDF5 file at the root
+      level/group. In a minimal Data Exchange file, the only **mandatory**
+      item in this list is **exchange**. A more general Data Exchange file
+      also contain *measurement* and possibly *process*, in which case 
+      the **implements** string would be: **exchange**:*measurement*:*process*.
+
+**exchange**
+    | 
+    | Mandatory group containing one or more arrays that represent the
+      most basic version of the data, such as raw or normalized optical
+      density maps or a elemental signal map. **Exchange_N** is
+      used when more than one core dataset or derived datasets are saved
+      in the file. The **exchange** implementation for specific techniques
+      are defined in separate sections in the Reference Guide.
+
+*measurement*
+    | 
+    | Optional group containing the *measurement* made on the sample;
+      *measurement* contains information about the sample and the
+      instrument; *measurement_N* is used when more than one
+      *measurement* is stored in the same file.
+
+*process*
+    | 
+    | Optional group containing information about the status of each
+      processing step.
+
+In a Data Exchange file, each dataset has a unit defined using the units
+attribute. units is not **mandatory** - if omitted, the default unit as
+defined in Appendix [appendix:units] is used.
+
+The detailed rules about how to store datasets within the exchange group
+are best shown through examples in the next section. Detailed reference
+information can be found in the section.
 
 Definitions
 ===========
-Color code----------
 
-All the diagrams in this section follow the color conventions shown inFigure :ref:`DiagramColorCode`. The basic elements are HDF5 datasets,attributes, and groups. We also support internal references to elementsin the file by a simple scalar string that holds the path of the datasetwithin the file. On the diagram, this is shown as a reference datasetthat points to the referred-to dataset. Note that we use this mechanismrather than HDF5 hard or soft links 
+Color code
+----------
 
-.. _DiagramColorCode:.. figure:: figures/dx_DiagramColorCode.png   :align: center
-   :alt: AExplanation of the color code used in the diagrams   :width: 50.0%   Explanation of the color code used in the diagrams
-Multidimensional data---------------------A multidimensional dataset should be described as fully as possible,with units for the dataset as well as dimension descriptors (that alsohave units defined). There are also additional descriptive fieldsavailable such as title and description. The order of dimensions in thedataset should put the slowest changing dimension first, and the fastestchanging dimension last.It is strongly encouraged that all datasets have a units attribute. Thestring value for units should preferably be an SI unit, however wellunderstood non-SI units are acceptable, in particular *degrees*. Theunits strings should conform to those defined by UDUNITS :cite:`UNIDATA:01`. 
+All the diagrams in this section follow the color conventions shown in
+Figure :ref:`DiagramColorCode`. The basic elements are HDF5 datasets,
+attributes, and groups. We also support internal references to elements
+in the file by a simple scalar string that holds the path of the dataset
+within the file. On the diagram, this is shown as a reference dataset
+that points to the referred-to dataset. Note that we use this mechanism
+rather than HDF5 hard or soft links 
+
+.. _DiagramColorCode:
+
+.. figure:: figures/dx_DiagramColorCode.png
+   :align: center
+   :alt: AExplanation of the color code used in the diagrams
+   :width: 50.0%
+
+   Explanation of the color code used in the diagrams
+
+Multidimensional data
+---------------------
+
+A multidimensional dataset should be described as fully as possible,
+with units for the dataset as well as dimension descriptors (that also
+have units defined). There are also additional descriptive fields
+available such as title and description. The order of dimensions in the
+dataset should put the slowest changing dimension first, and the fastest
+changing dimension last.
+
+It is strongly encouraged that all datasets have a units attribute. The
+string value for units should preferably be an SI unit, however well
+understood non-SI units are acceptable, in particular *degrees*. The
+units strings should conform to those defined by UDUNITS :cite:`UNIDATA:01`. 
 While UDUNITS is a software package, it contains simple XML files that 
-describe units strings and acceptable aliases.The axes of a multidimensional dataset are described through the use ofadditional one-dimensional datasets (dimension descriptors), one foreach axis in the main dataset. Take for example a 3-dimensional cube ofimages, with axes of x, y, and z where z represents the angle of thesample when each image was taken. There should be 3 additionalone-dimensional datasets called x, y, and z where x and y contain aninteger sequence, and z contains a list of angles. X and y have units of*counts* and z has units of *degree*. To simplify, it is acceptable toomit x and y, since the default interpretation will always be an integersequence.The dimension descriptors (x, y, z) can be associated with the maindataset through two mechanisms. The HDF5 libraries contain a functioncall H5DSattach_scale to *attach* a dimension descriptor dataset to agiven dimension of the main dataset. HDF5 takes care of entering severalattributes in the file that serve to keep track of this association. Ifthe particular programming language you work in does not support thisHDF5 function, then you can instead add a string attribute to your maindataset called axes. The axes attribute is simply a colon separatedstring naming the dimension descriptor datasets in order, so *z:y:x* inthis case. Additional examples below show this in action.
+describe units strings and acceptable aliases.
+
+The axes of a multidimensional dataset are described through the use of
+additional one-dimensional datasets (dimension descriptors), one for
+each axis in the main dataset. Take for example a 3-dimensional cube of
+images, with axes of x, y, and z where z represents the angle of the
+sample when each image was taken. There should be 3 additional
+one-dimensional datasets called x, y, and z where x and y contain an
+integer sequence, and z contains a list of angles. X and y have units of
+*counts* and z has units of *degree*. To simplify, it is acceptable to
+omit x and y, since the default interpretation will always be an integer
+sequence.
+
+The dimension descriptors (x, y, z) can be associated with the main
+dataset through two mechanisms. The HDF5 libraries contain a function
+call H5DSattach_scale to *attach* a dimension descriptor dataset to a
+given dimension of the main dataset. HDF5 takes care of entering several
+attributes in the file that serve to keep track of this association. If
+the particular programming language you work in does not support this
+HDF5 function, then you can instead add a string attribute to your main
+dataset called axes. The axes attribute is simply a colon separated
+string naming the dimension descriptor datasets in order, so *z:y:x* in
+this case. Additional examples below show this in action.
 
 Data Structure
 ============== 
@@ -55,11 +170,30 @@ optimized for sinogram read *y:theta:x*. As no units are specified the data is a
    as it would appear by manually adding an axes attribute (for cases
    where H5DSattach_scale is unavailable)
 
-Imaging-------
-The examples in this section show how one can store data for imagingexperiments using the Data Exchange format. It is general enough,however, to show how Data Exchange can be extended or adapted to othertechniques. These examples are meant to give a flavor for our approach.A complete reference to the core structure can be found in Section*Reference*. Technique specific extensions to the core structurecan be found at the end of the Reference Guide.Figure :ref:`Minimal1` shows a diagram of a minimal Data Exchange fileto store a single projection image. It is strongly encouraged that alldatasets shall have a units attribute. The axes of the dataset are notspecified in this minimal case, and can be assumed to be x and y with azero-based integer sequence, or more simply, pixels... _Minimal1:
+Imaging
+-------
+The examples in this section show how one can store data for imaging
+experiments using the Data Exchange format. It is general enough,
+however, to show how Data Exchange can be extended or adapted to other
+techniques. These examples are meant to give a flavor for our approach.
+A complete reference to the core structure can be found in Section
+*Reference*. Technique specific extensions to the core structure
+can be found at the end of the Reference Guide.
 
-.. figure:: figures/dx_Minimal1.png   :align: center
-   :alt: Diagram of a minimal Data Exchange file for a single image.   :width: 50.0%   Diagram of a minimal Data Exchange file for a single image.
+Figure :ref:`Minimal1` shows a diagram of a minimal Data Exchange file
+to store a single projection image. It is strongly encouraged that all
+datasets shall have a units attribute. The axes of the dataset are not
+specified in this minimal case, and can be assumed to be x and y with a
+zero-based integer sequence, or more simply, pixels.
+
+.. _Minimal1:
+
+.. figure:: figures/dx_Minimal1.png
+   :align: center
+   :alt: Diagram of a minimal Data Exchange file for a single image.
+   :width: 50.0%
+
+   Diagram of a minimal Data Exchange file for a single image.
 
 Series
 ------

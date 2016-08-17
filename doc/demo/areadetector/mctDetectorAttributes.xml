@@ -77,7 +77,7 @@
     <Attribute name="TableYDownDial"                  type="EPICS_PV" source="32idc02:m3.DVAL"              dbrtype="DBR_DOUBLE"/>
 
     <Attribute name="SampleX"                         type="EPICS_PV" source="32idc02:m31.VAL"              dbrtype="DBR_DOUBLE"/>
-    <Attribute name="SampleY"                         type="EPICS_PV" source="32idc02:m25.VAL"              dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleY"                         type="EPICS_PV" source="32idc02:m15.VAL"              dbrtype="DBR_DOUBLE"/>
     <Attribute name="SampleTopX"                      type="EPICS_PV" source="32idc01:m104.VAL"             dbrtype="DBR_DOUBLE"/>
     <Attribute name="SampleTopZ"                      type="EPICS_PV" source="32idc01:m105.VAL"             dbrtype="DBR_DOUBLE"/>
     <Attribute name="SampleRotary"                    type="EPICS_PV" source="32idc02:m11.VAL"              dbrtype="DBR_DOUBLE"/>
@@ -85,7 +85,7 @@
     <Attribute name="SamplePitch"                     type="EPICS_PV" source="32idc02:m30.VAL"              dbrtype="DBR_DOUBLE"/>
 
     <Attribute name="SampleXDial"                     type="EPICS_PV" source="32idc02:m31.DVAL"             dbrtype="DBR_DOUBLE"/>
-    <Attribute name="SampleYDial"                     type="EPICS_PV" source="32idc02:m25.DVAL"             dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleYDial"                     type="EPICS_PV" source="32idc02:m15.DVAL"             dbrtype="DBR_DOUBLE"/>
     <Attribute name="SampleTopXDial"                  type="EPICS_PV" source="32idc01:m104.DVAL"            dbrtype="DBR_DOUBLE"/>
     <Attribute name="SampleTopZDial"                  type="EPICS_PV" source="32idc01:m105.DVAL"            dbrtype="DBR_DOUBLE"/>
     <Attribute name="SampleRotaryDial"                type="EPICS_PV" source="32idc02:m11.DVAL"             dbrtype="DBR_DOUBLE"/>

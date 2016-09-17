@@ -83,7 +83,7 @@ Color code
 ----------
 
 All the diagrams in this section follow the color conventions shown in
-Figure :ref:`DiagramColorCode`. The basic elements are HDF5 datasets,
+:ref:`DiagramColorCode`. The basic elements are HDF5 datasets,
 attributes, and groups. We also support internal references to elements
 in the file by a simple scalar string that holds the path of the dataset
 within the file. On the diagram, this is shown as a reference dataset
@@ -96,6 +96,8 @@ rather than HDF5 hard or soft links
    :align: center
    :alt: AExplanation of the color code used in the diagrams
    :width: 50.0%
+
+   Color Code
 
    Explanation of the color code used in the diagrams
 
@@ -144,7 +146,7 @@ Data Structure
 A tomographic data set consists of a series of projections, dark and white field images. The dark and white fields must have the same
 projection image dimensions and can be collected at any time before, after or during the projection data collection. The angular position of
 the tomographic rotation axis, theta, can be used to keep track of when the dark and white images are collected. 
-These examples show projection, dark, and white images saved in three 3D arrays as shown in Figures :ref:`MinimalTomo0` and :ref:`MinimalTomo1` using, by default, the natural HDF5 order of the a multidimensional array (rotation axis, ccd y, ccd x), i.e. with the fastest changing dimension being the last dimension, and the slowest changing dimension being the first dimension. If using the default dimension order, the axes attribute *theta:y:x* can be
+These examples show projection, dark, and white images saved in three 3D arrays as shown in :ref:`MinimalTomo0` and :ref:`MinimalTomo1` using, by default, the natural HDF5 order of the a multidimensional array (rotation axis, ccd y, ccd x), i.e. with the fastest changing dimension being the last dimension, and the slowest changing dimension being the first dimension. If using the default dimension order, the axes attribute *theta:y:x* can be
 omitted. The attribute is **mandatory** if the 3D arrays use a different axes order. This could be the case when, for example, the arrays are
 optimized for sinogram read *y:theta:x*. As no units are specified the data is assumed to be in *counts" with the axes (x, y) in pixels. If the positions of the rotation axis for each projection, dark, and white images are not specified via theta dimension scale datasets, it is assumed that the raw projections are taken at equally spaced angular intervals between 0 and 180 degree, with white and dark field collected at the same time before or after the projection data collection.
 
@@ -155,6 +157,8 @@ optimized for sinogram read *y:theta:x*. As no units are specified the data is a
    :alt: Diagram of a minimal Data Exchange file for a single tomographic data set including raw projections, dark, and white fields.
    :width: 50.0%
 
+   Basic Tomo A
+
    Diagram of a minimal Data Exchange file for a single tomographic data set including raw projections, dark, and white fields 
 
 .. _MinimalTomo1:
@@ -163,6 +167,8 @@ optimized for sinogram read *y:theta:x*. As no units are specified the data is a
    :align: center
    :alt: Diagram of a single tomographic data set including raw projections, dark and white fields. In this case, there are additional dimension descriptor datasets theta, theta_dark, and theta_white that contain the positions of the rotation axis for each projection, dark, and white image. The lefthand example shows this as it would appear using the HDF5 H5DSattach_scale function. The righthand example shows this as it would appear by manually adding an axes attribute (for cases where H5DSattach_scale is unavailable). 
    :width: 80.0%
+
+   Basic Tomo B
 
    Diagram of a single tomographic data set including raw projections,
    dark and white fields. In this case, there are additional dimension
@@ -183,7 +189,7 @@ A complete reference to the core structure can be found in Section
 *Reference*. Technique specific extensions to the core structure
 can be found at the end of the Reference Guide.
 
-Figure :ref:`Minimal1` shows a diagram of a minimal Data Exchange file
+:ref:`Minimal1` shows a diagram of a minimal Data Exchange file
 to store a single projection image. It is strongly encouraged that all
 datasets shall have a units attribute. The axes of the dataset are not
 specified in this minimal case, and can be assumed to be x and y with a
@@ -195,6 +201,8 @@ zero-based integer sequence, or more simply, pixels.
    :align: center
    :alt: Diagram of a minimal Data Exchange file for a single image.
    :width: 50.0%
+
+   Minimal DXfile
 
    Diagram of a minimal Data Exchange file for a single image.
 
@@ -232,6 +240,8 @@ Temperature
    :alt: Diagram of two tomographic data sets taken at two different sample temperatures (100 and 200 Celsius).
    :width: 100.0%
 
+   Temperature 
+
    Diagram of two tomographic data sets taken at two different sample
    temperatures (100 and 200 Celsius)
 
@@ -244,11 +254,13 @@ Energy
    :alt: Diagram of two tomographic data sets taken at two different energy (10 and 20 keV).
    :width: 80.0%
 
+   Energy
+
    Diagram of two tomographic data sets taken at two different energy
    (10 and 20 keV)
 
-Detector-sample
-~~~~~~~~~~~~~~~
+Detector-sample distance
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. _MinimalTomo4:
 
@@ -256,6 +268,8 @@ Detector-sample
    :align: center
    :alt: Diagram of two tomographic data sets collected with two different detector-sample distances (5 and 9 mm). Note the use of output_data dataset to associate the detector with the exchange group generated from the acquisition.
    :width: 80.0%
+
+   Distance
 
    Diagram of two tomographic data sets collected with two different
    detector-sample distances (5 and 9 mm). Note the use of output_data
@@ -271,6 +285,8 @@ Raster
    :align: center
    :alt: Diagram of a file with 4 tomographic data sets from a nano tomography experiment.
    :width: 90.0%
+
+   Raster
 
    Diagram of a file with 4 tomographic data sets from a nano tomography
    experiment

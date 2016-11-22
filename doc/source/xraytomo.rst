@@ -54,11 +54,14 @@ measurement or measurement_N
       *measurement* and **exchange** groups. This is a judgement left to
       the user.
 
-process    |     | The Process group describes all the "work" that has been done. This 
+process
+    | 
+    | The Process group describes all the "work" that has been done. This 
       includes data processing steps that have been applied to the data as
       well as experimental steps (e.g. data collection strategy etc.) 
       and sample preparation ahead of the experiment and during the 
-      measurement (e.g. environment conditions etc.).      
+      measurement (e.g. environment conditions etc.).
+      
 **exchange**
 ============
 
@@ -85,7 +88,7 @@ focus in this group.
 +------------------+---------------------------------------------------------+-----------------------------+
 |  *data_white*    |      3D dataset                                         |  axes: *theta_white:y:x*    |
 +------------------+---------------------------------------------------------+-----------------------------+
-|  *theta_white*   |      dimension scale 0                                  |  units: "deg"               |
+|  *theta_white*   |      1D dataset                                         |  units: "deg"               |
 +------------------+---------------------------------------------------------+-----------------------------+
 |   *data_shift_x* |      relative x shift of data at each angular position  |                             |
 +------------------+---------------------------------------------------------+-----------------------------+
@@ -95,7 +98,11 @@ focus in this group.
 Table: Exchange Group Members for Tomography
 
 
-name    |     | Descriptive *name* for **data** dataset. Current types include:      absorption_tomography, phase_tomography, dpc_tomography 
+name
+    | 
+    | Descriptive *name* for **data** dataset. Current types include:
+      absorption_tomography, phase_tomography, dpc_tomography 
+
 description
     | 
     | Description.
@@ -1493,7 +1500,12 @@ Advanced Photon Source.
 Table: Acquisition Group Members
 
 
-name    |     | Descriptive *name* for *acquisition*. Current name include:      tomo, timbir, mosaic description
+name
+    | 
+    | Descriptive *name* for *acquisition*. Current name include:
+      tomo, timbir, mosaic 
+
+description
     | 
     | Description.
 

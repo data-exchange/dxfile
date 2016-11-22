@@ -213,6 +213,12 @@
         <group name="condenser">
           <dataset name="name" source="constant" value="TXM Condenser" type="string" when="OnFileClose"></dataset>        
           <group name="setup">
+            <dataset name="condenser_yaw" source="ndattribute" ndattribute="CondenserYaw" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string"></attribute>
+            </dataset>
+            <dataset name="condenser_pitch" source="ndattribute" ndattribute="CondenserPitch" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string"></attribute>
+            </dataset>
             <dataset name="condenser_x" source="ndattribute" ndattribute="CondenserX" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
@@ -220,6 +226,12 @@
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
             <dataset name="condenser_z" source="ndattribute" ndattribute="CondenserZ" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string"></attribute>
+            </dataset>
+            <dataset name="condenser_yaw_dial" source="ndattribute" ndattribute="CondenserYawDial" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string"></attribute>
+            </dataset>
+            <dataset name="condenser_pitch_dial" source="ndattribute" ndattribute="CondenserPitchDial" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
             <dataset name="condenser_x_dial" source="ndattribute" ndattribute="CondenserXDial" when="OnFileClose"> 

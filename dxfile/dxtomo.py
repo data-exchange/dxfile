@@ -732,7 +732,7 @@ class Entry(object):
         }
 
         self._objective = {
-            'root': '/measurement/instrument/detector',
+            'root': '/measurement/instrument/detection_system',
             'entry_name': 'objective',
             'docstring': 'microscope objective lenses used.',
             'name': {
@@ -768,9 +768,9 @@ class Entry(object):
         }
 
         self._scintillator = {
-            'root': '/measurement/instrument/detector',
+            'root': '/measurement/instrument/detection_system',
             'entry_name': 'scintillator',
-            'docstring': 'microscope objective lenses used.',
+            'docstring': 'scintillator used.',
             'name': {
                 'value': None,
                 'units': 'text',

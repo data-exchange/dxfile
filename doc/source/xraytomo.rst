@@ -257,6 +257,8 @@ of groups.
 +---------------------------------------------+-------------------------+-------------------------+
 |                   slits_                    |          group          |                         |
 +---------------------------------------------+-------------------------+-------------------------+
+|                   table_                    |          group          |                         |
++---------------------------------------------+-------------------------+-------------------------+
 |                   zone_plate_               |          group          |                         |
 +---------------------------------------------+-------------------------+-------------------------+
 |                   setup_                    |          group          |                         |
@@ -995,6 +997,29 @@ description
     | Description.
 
 
+
+.. _table:
+
+*table*
+~~~~~~~
+
+Class describing the zone plate being used, if there is more than one append _##
+
++--------------------+-------------------------+-------------------------------+
+|      Member        |           Type          |         Example               |
++====================+=========================+===============================+
+|      *name*        |     string dataset      |     “Optical Table"           |
++--------------------+-------------------------+-------------------------------+
+|  *description*     |     string dataset      |     “optional”                |
++--------------------+-------------------------+-------------------------------+
+|       geometry_    |        group            |                               |
++--------------------+-------------------------+-------------------------------+
+|       setup_       |        group            |                               |
++--------------------+-------------------------+-------------------------------+
+
+Table: Optical Table Group Members
+
+
 .. _zone_plate:
 
 *zone_plate*
@@ -1479,7 +1504,7 @@ orientation. The third row can be recovered by using the fact that the
 basis vectors are orthonormal.
 
 *process*
-============
+=========
 
 Process is the documentation of the data collection strategy
 (*acquisition*) steps, all transformations, analyses and interpretations 

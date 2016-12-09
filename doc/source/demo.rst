@@ -7,7 +7,7 @@ Transmission X-Ray Microscope at beamline 32-ID.
 
 .. toctree::
 
-   demo/doc.code
+   demo/doc.python
    demo/doc.areadetector
 
 .. automodule:: dxfile

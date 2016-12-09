@@ -242,6 +242,17 @@ class Entry(object):
                         Where a value is ``None`` this entry will not be added to the DataExchangeFile.
                         'ENTRY' can have any other parameter and these will be treated as HDF5 dataset attributes
         """
+        self._exchange = {
+            'root': 'exchange',
+            'entry_name': '',
+            'docstring': 'Used for grouping the results of the measurement',
+            'name': {
+                'value': None,
+                'units': 'text',
+                'docstring': 'Description of the data contained inside'
+            }
+        }
+
         self._data = {
             'root': '/exchange',
             'entry_name': '',
@@ -312,7 +323,7 @@ class Entry(object):
                 'units': 'm',
                 'docstring': 'Sample thickness.'
             },
-            'position': {
+            'tray': {
                 'value': None,
                 'units': 'text',
                 'docstring': 'Sample position in the sample changer/robot.'
@@ -322,12 +333,6 @@ class Entry(object):
                 'units': 'text',
                 'docstring': 'comment'
             }
-        }
-
-        self._geometry = {
-            'root': '/measurement/sample',
-            'entry_name': 'geometry',
-            'docstring': 'The general position and orientation of a component'
         }
 
         self._experiment = {
@@ -390,17 +395,6 @@ class Entry(object):
                 'units': 'text',
                 'docstring': 'User badge number.'
             },
-        }
-
-        self._exchange = {
-            'root': 'exchange',
-            'entry_name': '',
-            'docstring': 'Used for grouping the results of the measurement',
-            'name': {
-                'value': None,
-                'units': 'text',
-                'docstring': 'Description of the data contained inside'
-            }
         }
 
         self._instrument = {
@@ -475,22 +469,6 @@ class Entry(object):
             },
         }
 
-        self._shutter = {
-            'root': '/measurement/instrument',
-            'entry_name': 'shutter',
-            'docstring': 'The shutter being used',
-            'name': {
-                'value': None,
-                'units': 'text',
-                'docstring': 'Name of the shutter.'
-            },
-            'status': {
-                'value': None,
-                'units': 'text',
-                'docstring': '"OPEN" or "CLOSED"'
-            }
-        }
-
         self._attenuator = {
             'root': '/measurement/instrument',
             'entry_name': 'attenuator',
@@ -510,7 +488,7 @@ class Entry(object):
                 'units': 'm',
                 'docstring': 'Thickness of attenuator along beam direction.'
             },
-            'attenuator_transmission': {
+            'transmission': {
                 'value': None,
                 'units': 'None',
                 'docstring': 'The nominal amount of the beam that gets through (transmitted intensity)/(incident intensity)'
@@ -793,55 +771,21 @@ class Entry(object):
             },
             'scintillating_thickness': {
                 'value': None,
-                'units': 'dimensionless',
+                'units': 'm',
                 'docstring': 'Scintillator thickness.'
             },
             'substrate_thickness': {
                 'value': None,
-                'units': 'dimensionless',
+                'units': 'm',
                 'docstring': 'Scintillator substrate thickness.'
             }
         }
 
-        self._translation = {
-            'root': '/exchange/geometry',
-            'entry_name': 'translation',
-            'docstring': 'This is the description for the general spatial location of a component.',
-            'distances': {
-                'value': None,
-                'units': 'm',
-                'docstring': 'x,y,zcomponents of translation.'
-            },
-        }
-
-        self._orientation = {
-            'root': '/exchange/geometry',
-            'entry_name': 'orientation',
-            'docstring': 'This is the description for the orientation of a component.',
-            'distances': {
-                'value': None,
-                'units': 'm',
-                'docstring': ('Calling the local unit vectors (x0; y0; z0) and the reference unit vectors (x; y; z)'
-                              'the six numbers will be [x0 . x; x0 . y; x0 . z; y0 . x; y0 . y; y0 . z] where "."" is the scalar dot'
-                              'product (cosine of the angle between the unit vectors).')
-            },
-        }
-
-        self._process = {
-            'root': '/process',
-            'entry_name': '',
-            'docstring': 'Describes parameters used to generate raw and processed data.',
-            'name': {
-                'value': None,
-                'units': 'm',
-                'docstring': 'Name of the simulation'
-            },
-        }
 
         self._sample_stack = {
             'root': '/measurement/instrument',
             'entry_name': 'sample',
-            'docstring': 'Sample name',
+            'docstring': 'Sample stack name',
             'name': {
                 'value': None,
                 'units': 'text',
@@ -861,31 +805,46 @@ class Entry(object):
             'sample_x': {
                 'value': None,
                 'units': 'mm',
-                'docstring': 'Position of the X stage under the rotary motor.'
+                'docstring': 'Initial position of the X stage under the rotary motor.'
             },
             'sample_y': {
                 'value': None,
                 'units': 'mm',
-                'docstring': 'Position of the Y stage under the rotary motor.'
+                'docstring': 'Initial position of the Y stage under the rotary motor.'
             },
             'sample_z': {
                 'value': None,
                 'units': 'mm',
-                'docstring': 'Position of the Z stage under the rotary motor.'
+                'docstring': 'Initial position of the Z stage under the rotary motor.'
             },
             'sample_xx': {
                 'value': None,
                 'units': 'mm',
-                'docstring': 'Position of the X stage on top of the rotary motor.'
+                'docstring': 'Initial position of the X stage on top of the rotary motor.'
             },
             'sample_zz': {
                 'value': None,
                 'units': 'mm',
-                'docstring': 'Position of the Z stage on top of the rotary motor.'
+                'docstring': 'Initial position of the Z stage on top of the rotary motor.'
             }
         }
 
         self._interferometer = {
+            'root': '/measurement/instrument/',
+            'entry_name': 'interferometer',
+            'docstring': 'interferometer name',
+            'name': {
+                'value': None,
+                'units': 'text',
+                'docstring': 'Descriptive name of the interferometer.'
+            },
+            'description': {
+                'value': None,
+                'units': 'text',
+                'docstring': 'Description of the interferometer.'
+            },
+        }
+        self._interferometer_setup = {
             'root': '/measurement/instrument/interferometer/',
             'entry_name': 'setup',
             'docstring': 'Tomography specific tag to store interferometer parameters.',
@@ -911,10 +870,21 @@ class Entry(object):
             }
         }
 
-        self._acquisition_setup = {
-            'root': '/process/acquisition',
-            'entry_name': 'setup',
-            'docstring': 'Tomography specific tag to store static scan parameters.',
+        self._process = {
+            'root': '/process',
+            'entry_name': '',
+            'docstring': 'Describes parameters used to generate raw and processed data.',
+            'name': {
+                'value': None,
+                'units': 'text',
+                'docstring': 'Name of the simulation'
+            },
+        }
+
+        self._acquisition = {
+            'root': '/process',
+            'entry_name': 'acquisition',
+            'docstring': 'Tomography specific tag to store dynamic (per image) parameters.',
             'start_date': {
                 'value': None,
                 'units': 'text',
@@ -925,6 +895,87 @@ class Entry(object):
                 'units': 'text',
                 'docstring': 'Date and time measurement ends.'
             },
+            'sample_position_x': {
+                'value': None,
+                'units': 'mm',
+                'docstring': 'Vector containing the position of the sample axis x at each projection image collection.'
+            },
+            'sample_position_y': {
+                'value': None,
+                'units': 'mm',
+                'docstring': 'Vector containing the position of the sample axis y at each projection image collection.'
+            },
+            'sample_position_z': {
+                'value': None,
+                'units': 'mm',
+                'docstring': 'Vector containing the position of the sample axis z at each projection image collection.'
+            },
+            'sample_image_shift_x': {
+                'value': None,
+                'units': 'pixels',
+                'docstring': 'Vector containing the shift of the sample axis x at each projection on the detector plane.'
+            },
+            'sample_image_shift_y': {
+                'value': None,
+                'units': 'pixels',
+                'docstring': 'Vector containing the shift of the sample axis y at each projection on the detector plane.'
+            },
+            'image_theta': {
+                'value': None,
+                'units': 'degree',
+                'docstring': 'Vector containing the rotary stage angular position read from the encoder at each image.'
+            },
+            'scan_index': {
+                'value': None,
+                'units': None,
+                'docstring': 'Vector containin for each image the identifier assigned by beamline controls to each individual series of images or scan.'
+            },
+            'scan_date': {
+                'value': None,
+                'units': None,
+                'docstring': 'Vector containing for each image the wall date/time at start of scan in iso 8601.'
+            },
+            'image_date': {
+                'value': None,
+                'units': 'time',
+                'docstring': 'Vector containing the date/time each image was acquired in iso 8601.'
+            },
+            'time_stamp': {
+                'value': None,
+                'units': None,
+                'docstring': 'Vector containin for each image the relative time since scan_date in 1e-7 seconds.'
+            },
+            'image_number': {
+                'value': None,
+                'units': None,
+                'docstring': 'Vector containin for each image the the image serial number as assigned by the camera. Unique for each individual scan. Always starts at 0.'
+            },
+            'image_exposure_time': {
+                'value': None,
+                'units': None,
+                'docstring': 'Vector containin for each image the the measured exposure time in 1e-7 seconds (0.1us)'
+            },
+            'image_is_complete': {
+                'value': None,
+                'units': None,
+                'docstring': 'Vector containin for each image the boolen status of: is any pixel data missing?'
+            },
+            'shutter': {
+                'value': None,
+                'units': None,
+                'docstring': 'Vector containin for each image the beamline shutter status: 0 for closed, 1 for open'
+            },
+            'image_type': {
+                'value': None,
+                'units': None,
+                'docstring': 'Vector containin for each image contained in /exchange/data 0 for white, 1 for projection and 2 for dark'
+            },
+        }
+
+        self._acquisition_setup = {
+            'root': '/process/acquisition',
+            'entry_name': 'setup',
+            'docstring': 'Tomography specific tag to store static scan parameters.',
             'number_of_projections': {
                 'value': None,
                 'units': None,
@@ -986,83 +1037,6 @@ class Entry(object):
                 'docstring': 'comment'
             },
         }
-
-        self._acquisition = {
-            'root': '/process',
-            'entry_name': 'acquisition',
-            'docstring': 'Tomography specific tag to store dynamic (per image) parameters.',
-            'sample_position_x': {
-                'value': None,
-                'units': 'mm',
-                'docstring': 'Vector containing the position of the sample axis x at each projection image collection.'
-            },
-            'sample_position_y': {
-                'value': None,
-                'units': 'mm',
-                'docstring': 'Vector containing the position of the sample axis y at each projection image collection.'
-            },
-            'sample_position_z': {
-                'value': None,
-                'units': 'mm',
-                'docstring': 'Vector containing the position of the sample axis z at each projection image collection.'
-            },
-            'sample_image_shift_x': {
-                'value': None,
-                'units': 'pixels',
-                'docstring': 'Vector containing the shift of the sample axis x at each projection on the detector plane.'
-            },
-            'sample_image_shift_y': {
-                'value': None,
-                'units': 'pixels',
-                'docstring': 'Vector containing the shift of the sample axis y at each projection on the detector plane.'
-            },
-            'image_theta': {
-                'value': None,
-                'units': 'degree',
-                'docstring': 'Vector containing the rotary stage angular position read from the encoder at each image.'
-            },
-            'scan_index': {
-                'value': None,
-                'units': None,
-                'docstring': 'Vector containin for each image the identifier assigned by beamline controls to each individual series of images or scan.'
-            },
-            'scan_date': {
-                'value': None,
-                'units': None,
-                'docstring': 'Vector containin for each image the wall date/time at start of scan in iso 8601.'
-            },
-            'image_date': {
-                'value': None,
-                'units': 'time',
-                'docstring': 'Vector containing the date/time each image was acquired in iso 8601.'
-            },
-            'time_stamp': {
-                'value': None,
-                'units': None,
-                'docstring': 'Vector containin for each image the relative time since scan_date in 1e-7 seconds.'
-            },
-            'image_number': {
-                'value': None,
-                'units': None,
-                'docstring': 'Vector containin for each image the the image serial number as assigned by the camera. Unique for each individual scan. Always starts at 0.'
-            },
-            'image_exposure_time': {
-                'value': None,
-                'units': None,
-                'docstring': 'Vector containin for each image the the measured exposure time in 1e-7 seconds (0.1us)'
-            },
-            'image_is_complete': {
-                'value': None,
-                'units': None,
-                'docstring': 'Vector containin for each image the boolen status of: is any pixel data missing?'
-            },
-            'image_type': {
-                'value': None,
-                'units': None,
-                'docstring': 'Vector containin for each image contained in /exchange/data 0 for white, 1 for projection and 2 for dark'
-            }
-        }
-
 
     def _generate_classes(self):
         """

@@ -292,16 +292,16 @@
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
 
-            <dataset name="sample_top_x" source="ndattribute" ndattribute="SampleTopX" when="OnFileClose"> 
+            <dataset name="sample_xx" source="ndattribute" ndattribute="SampleTopX" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
-            <dataset name="sample_top_z" source="ndattribute" ndattribute="SampleTopZ" when="OnFileClose"> 
+            <dataset name="sample_zz" source="ndattribute" ndattribute="SampleTopZ" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
-            <dataset name="sample_top_x_dial" source="ndattribute" ndattribute="SampleTopXDial" when="OnFileClose"> 
+            <dataset name="sample_xx_dial" source="ndattribute" ndattribute="SampleTopXDial" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
-            <dataset name="sample_top_z_dial" source="ndattribute" ndattribute="SampleTopZDial" when="OnFileClose"> 
+            <dataset name="sample_zz_dial" source="ndattribute" ndattribute="SampleTopZDial" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
           </group><!-- /setup -->

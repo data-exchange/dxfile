@@ -827,8 +827,8 @@ class Entry(object):
             },
         }
 
-        self._provenance = {
-            'root': '/provenance',
+        self._process = {
+            'root': '/process',
             'entry_name': '',
             'docstring': 'Describes parameters used to generate raw and processed data.',
             'name': {
@@ -838,8 +838,24 @@ class Entry(object):
             },
         }
 
-        self._setup = {
+        self._sample_stack = {
             'root': '/measurement/instrument',
+            'entry_name': 'sample',
+            'docstring': 'Sample name',
+            'name': {
+                'value': None,
+                'units': 'text',
+                'docstring': 'Descriptive name of the sample stack.'
+            },
+            'description': {
+                'value': None,
+                'units': 'text',
+                'docstring': 'Description of the sample stack.'
+            },
+        }
+
+        self._sample_stack_setup = {
+            'root': '/measurement/instrument/sample',
             'entry_name': 'setup',
             'docstring': 'Tomography specific tag to store motor positions that are static during data collection.',
             'sample_x': {
@@ -870,8 +886,8 @@ class Entry(object):
         }
 
         self._interferometer = {
-            'root': '/measurement/instrument/setup/',
-            'entry_name': 'interferometer',
+            'root': '/measurement/instrument/interferometer/',
+            'entry_name': 'setup',
             'docstring': 'Tomography specific tag to store interferometer parameters.',
             'grid_start': {
                 'value': None,
@@ -895,10 +911,10 @@ class Entry(object):
             }
         }
 
-        self._acquisition = {
-            'root': '/measurement/instrument',
-            'entry_name': 'acquisition',
-            'docstring': 'Tomography specific tag to store scan parameters.',
+        self._acquisition_setup = {
+            'root': '/process/acquisition',
+            'entry_name': 'setup',
+            'docstring': 'Tomography specific tag to store static scan parameters.',
             'start_date': {
                 'value': None,
                 'units': 'text',
@@ -919,10 +935,20 @@ class Entry(object):
                 'units': None,
                 'docstring': 'Number of dark images.'
             },
-            'number_of_flats': {
+            'number_of_whites': {
                 'value': None,
                 'units': None,
-                'docstring': 'Number of flat/white images.'
+                'docstring': 'Number of white images.'
+            },
+            'number_of_inter_whites': {
+                'value': None,
+                'units': None,
+                'docstring': 'Number of inter whites.'
+            },
+            'white_frequency': {
+                'value': None,
+                'units': None,
+                'docstring': 'White frequency.'
             },
             'sample_in': {
                 'value': None,
@@ -932,7 +958,7 @@ class Entry(object):
             'sample_out': {
                 'value': None,
                 'units': 'mm',
-                'docstring': 'Position of the sample axis (x or y) used for taking the sample out of the beam during the flat field data collection.'
+                'docstring': 'Position of the sample axis (x or y) used for taking the sample out of the beam during the white field data collection.'
             },
             'rotation_start_angle': {
                 'value': None,
@@ -959,6 +985,12 @@ class Entry(object):
                 'units': 'text',
                 'docstring': 'comment'
             },
+        }
+
+        self._acquisition = {
+            'root': '/process',
+            'entry_name': 'acquisition',
+            'docstring': 'Tomography specific tag to store dynamic (per image) parameters.',
             'sample_position_x': {
                 'value': None,
                 'units': 'mm',
@@ -1002,7 +1034,7 @@ class Entry(object):
             'image_date': {
                 'value': None,
                 'units': 'time',
-                'docstring': 'Vector containing the date/time each image was acquired in iso 8601..'
+                'docstring': 'Vector containing the date/time each image was acquired in iso 8601.'
             },
             'time_stamp': {
                 'value': None,
@@ -1024,7 +1056,13 @@ class Entry(object):
                 'units': None,
                 'docstring': 'Vector containin for each image the boolen status of: is any pixel data missing?'
             }
+            'image_type': {
+                'value': None,
+                'units': None,
+                'docstring': 'Vector containin for each image contained in /exchange/data 0 for white, 1 for projection and 2 for dark'
+            }
         }
+
 
     def _generate_classes(self):
         """

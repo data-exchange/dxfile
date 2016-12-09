@@ -1055,7 +1055,7 @@ class Entry(object):
                 'value': None,
                 'units': None,
                 'docstring': 'Vector containin for each image the boolen status of: is any pixel data missing?'
-            }
+            },
             'image_type': {
                 'value': None,
                 'units': None,

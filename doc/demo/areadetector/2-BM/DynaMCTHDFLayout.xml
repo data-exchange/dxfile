@@ -98,8 +98,8 @@
             <dataset name="scintillator_y_dial" source="ndattribute" ndattribute="ScintillatorYDial" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
-          </group><!-- /setup-->
-<!--        </group><!-- /scintillator -->      
+          </group> --> <!-- setup-->
+<!--        </group> /scintillator -->      
  
         <group name="table">
           <dataset name="name" source="constant" value="2-BM-A Experimental Table" type="string" when="OnFileClose"></dataset>        

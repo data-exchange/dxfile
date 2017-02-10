@@ -29,26 +29,26 @@
           <dataset name="current" source="ndattribute" ndattribute="Current" when="OnFileClose">        
             <attribute name="units" source="constant" value="mA" type="string"></attribute>
 		  </dataset>	
-		  <dataset name="beam mode" source="ndattribute" ndattribute="TopUpStatus" when="OnFileClose"></dataset>	
-          <dataset name="fill mode" source="ndattribute" ndattribute="BeamMode" when="OnFileClose"></dataset>
+		  <dataset name="beam_mode" source="ndattribute" ndattribute="TopUpStatus" when="OnFileClose"></dataset>	
+          <dataset name="fill_mode" source="ndattribute" ndattribute="BeamMode" when="OnFileClose"></dataset>
         </group><!-- /source -->
 
         <group name="mirror">
           <dataset name="name" source="constant" value="2-BM Mirror" type="string" when="OnFileClose"></dataset>        
           <group name="setup">
-             <dataset name="mirror x" source="ndattribute" ndattribute="MirrorX" when="OnFileClose">       
+             <dataset name="mirror_x" source="ndattribute" ndattribute="MirrorX" when="OnFileClose">       
                <attribute name="units" source="constant" value="mm" type="string"></attribute>
              </dataset>
-             <dataset name="mirror y" source="ndattribute" ndattribute="MirrorY" when="OnFileClose">       
+             <dataset name="mirror_y" source="ndattribute" ndattribute="MirrorY" when="OnFileClose">       
                <attribute name="units" source="constant" value="mm" type="string"></attribute>
 			 </dataset>  
-             <dataset name="mirror USY" source="ndattribute" ndattribute="MirrorUSY" when="OnFileClose">       
+             <dataset name="mirror_us_y" source="ndattribute" ndattribute="MirrorUSY" when="OnFileClose">       
                <attribute name="units" source="constant" value="mm" type="string"></attribute>
 			 </dataset>	
-             <dataset name="mirror DSY" source="ndattribute" ndattribute="MirrorDSY" when="OnFileClose">       
+             <dataset name="mirror_ds_y" source="ndattribute" ndattribute="MirrorDSY" when="OnFileClose">       
                <attribute name="units" source="constant" value="mm" type="string"></attribute>			   
              </dataset>
-             <dataset name="mirror angle" source="ndattribute" ndattribute="MirrorAngle" when="OnFileClose">       
+             <dataset name="mirror_angle" source="ndattribute" ndattribute="MirrorAngle" when="OnFileClose">       
                <attribute name="units" source="constant" value="mrad" type="string"></attribute>			   
              </dataset>			 
              <dataset name="stripe" source="ndattribute" ndattribute="MirrorStripe" when="OnFileClose">       
@@ -59,25 +59,25 @@
         <group name="monochromator">
           <dataset name="name" source="constant" value="2-BM DMM" type="string" when="OnFileClose"></dataset>        
           <group name="setup">
-            <dataset name="DMM USArm" source="ndattribute" ndattribute="DMM_USArm" when="OnFileClose"> 
+            <dataset name="dmm_us_arm" source="ndattribute" ndattribute="DMM_USArm" when="OnFileClose"> 
               <attribute name="units" source="constant" value="degree" type="string"></attribute>
             </dataset>
-            <dataset name="DMM DSArm" source="ndattribute" ndattribute="DMM_DSArm" when="OnFileClose"> 
+            <dataset name="dmm_ds_arm" source="ndattribute" ndattribute="DMM_DSArm" when="OnFileClose"> 
               <attribute name="units" source="constant" value="degree" type="string"></attribute>
             </dataset>
-            <dataset name="DMM M2Y" source="ndattribute" ndattribute="DMM_M2Y" when="OnFileClose"> 
+            <dataset name="dmm_m2_y" source="ndattribute" ndattribute="DMM_M2Y" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
-            <dataset name="DMM M2Z" source="ndattribute" ndattribute="DMM_M2Z" when="OnFileClose"> 
+            <dataset name="dmm_m2_z" source="ndattribute" ndattribute="DMM_M2Z" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
-            <dataset name="DMM_Table_USY_OB" source="ndattribute" ndattribute="DMM_Table_USY_OB" when="OnFileClose"> 
+            <dataset name="dmm_table_usy_ob" source="ndattribute" ndattribute="DMM_Table_USY_OB" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
-            <dataset name="DMM_Table_USY_IB" source="ndattribute" ndattribute="DMM_Table_USY_IB" when="OnFileClose"> 
+            <dataset name="dmm_table_usy_ib" source="ndattribute" ndattribute="DMM_Table_USY_IB" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
-            <dataset name="DMM_Table_DSY" source="ndattribute" ndattribute="DMM_Table_DSY" when="OnFileClose"> 
+            <dataset name="dmm_table_ds_y" source="ndattribute" ndattribute="DMM_Table_DSY" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
           </group><!-- /setup -->
@@ -86,22 +86,22 @@
         <group name="table">
           <dataset name="name" source="constant" value="2-BM-A Experimental Table" type="string" when="OnFileClose"></dataset>        
           <group name="setup">
-            <dataset name="Exp_Table_GlobalY" source="ndattribute" ndattribute="Exp_Table_GlobalY" when="OnFileClose"> 
+            <dataset name="exp_table_global_y" source="ndattribute" ndattribute="Exp_Table_GlobalY" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
-            <dataset name="Exp_Table_USY_OB" source="ndattribute" ndattribute="Exp_Table_USY_OB" when="OnFileClose"> 
+            <dataset name="exp_table_us_y_ob" source="ndattribute" ndattribute="Exp_Table_USY_OB" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
-            <dataset name="Exp_Table_USY_IB" source="ndattribute" ndattribute="Exp_Table_USY_IB" when="OnFileClose"> 
+            <dataset name="exp_table_us_y_ib" source="ndattribute" ndattribute="Exp_Table_USY_IB" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
-            <dataset name="Exp_Table_DSY" source="ndattribute" ndattribute="Exp_Table_DSY" when="OnFileClose"> 
+            <dataset name="exp_table_ds_y" source="ndattribute" ndattribute="Exp_Table_DSY" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
-            <dataset name="Exp_Table_USX" source="ndattribute" ndattribute="Exp_Table_USX" when="OnFileClose"> 
+            <dataset name="exp_table_us_x" source="ndattribute" ndattribute="Exp_Table_USX" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
-            <dataset name="Exp_Table_DSX" source="ndattribute" ndattribute="Exp_Table_DSX" when="OnFileClose"> 
+            <dataset name="exp_bable_ds_x" source="ndattribute" ndattribute="Exp_Table_DSX" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
           </group><!-- /setup-->
@@ -111,13 +111,13 @@
         <group name="sample">
           <dataset name="name" source="constant" value="2-BM-A Sample Stages" type="string" when="OnFileClose"></dataset>        
           <group name="setup">
-            <dataset name="Tomo SampleX" source="ndattribute" ndattribute="TomoSampleX" when="OnFileClose"> 
+            <dataset name="tomo_sample_x" source="ndattribute" ndattribute="TomoSampleX" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
-            <dataset name="Tomo SampleY" source="ndattribute" ndattribute="TomoSampleY" when="OnFileClose"> 
+            <dataset name="tomo_sample_y" source="ndattribute" ndattribute="TomoSampleY" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
-            <dataset name="sample Theta" source="ndattribute" ndattribute="Theta" when="OnFileClose"> 
+            <dataset name="sample_theta" source="ndattribute" ndattribute="Theta" when="OnFileClose"> 
               <attribute name="units" source="constant" value="degree" type="string"></attribute>
             </dataset>
           </group><!-- /setup -->
@@ -135,10 +135,10 @@
           <dataset name="binning_x" source="ndattribute" ndattribute="BinX" when="OnFileClose"></dataset>
           <dataset name="binning_y" source="ndattribute" ndattribute="BinY" when="OnFileClose"></dataset>
 
-          <dataset name="frame mode" source="ndattribute" ndattribute="DetectorFrameMode" when="OnFileClose"></dataset>	
+          <dataset name="frame_mode" source="ndattribute" ndattribute="DetectorFrameMode" when="OnFileClose"></dataset>	
           <dataset name="exposure_time" source="ndattribute" ndattribute="AcqTime" when="OnFileClose"></dataset>
-          <dataset name="acquisition period" source="ndattribute" ndattribute="AcqPeriod" when="OnFileClose"></dataset>
-          <dataset name="frame rate" source="ndattribute" ndattribute="FrameRate" when="OnFileClose"></dataset>		  
+          <dataset name="acquisition_period" source="ndattribute" ndattribute="AcqPeriod" when="OnFileClose"></dataset>
+          <dataset name="frame_rate" source="ndattribute" ndattribute="FrameRate" when="OnFileClose"></dataset>		  
 
 
           <group name="roi">

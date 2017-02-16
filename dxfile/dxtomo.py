@@ -656,6 +656,11 @@ class Entry(object):
                 'units': 'fps',
                 'docstring': 'The detector frame rate (fps).'
             },
+            'shutter_mode': {
+                'value': None,
+                'units': 'text',
+                'docstring': 'The detector shutter mode: global, rolling etc.'
+            },
             'output_data': {
                 'value': None,
                 'units': 'text',
@@ -1025,6 +1030,11 @@ class Entry(object):
                 'value': None,
                 'units': 'degree',
                 'docstring': 'Position of rotation axis at the start of the data collection.'
+            },
+            'rotation_speed': {
+                'value': None,
+                'units': 'degree per second',
+                'docstring': 'Rotation axis speed.'
             },
             'angular_step': {
                 'value': None,

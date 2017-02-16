@@ -104,6 +104,7 @@ def main():
     detector_delay_time = 0.001
     detector_stabilization_time = 0.0001
     detector_frame_rate = 160
+    detector_shutter_mode = 'global'
     detector_output_data = '/exchange'
     detector_counts_per_joule = '123'
     detector_basis_vectors = '456'
@@ -177,6 +178,7 @@ def main():
     acquisition_setup_sample_out = 4
     acquisition_setup_rotation_start_angle = 0
     acquisition_setup_rotation_end_angle = 180
+    acquisition_setup_rotation_speed = 0.750
     acquisition_setup_angular_step = (acquisition_setup_rotation_end_angle - acquisition_setup_rotation_start_angle) / 180
     acquisition_setup_mode = 'fly scan'
     acquisition_setup_comment = 'a nice fly scan'
@@ -276,6 +278,7 @@ def main():
             f.add_entry(dx.Entry.detector(delay_time={'value':detector_delay_time}))
             f.add_entry(dx.Entry.detector(stabilization_time={'value':detector_stabilization_time}))
             f.add_entry(dx.Entry.detector(frame_rate={'value':detector_frame_rate}))
+            f.add_entry(dx.Entry.detector(shutter_mode={'value':detector_shutter_mode}))
             f.add_entry(dx.Entry.detector(output_data={'value':detector_output_data}))
             f.add_entry(dx.Entry.detector(counts_per_joule={'value':detector_counts_per_joule}))
             f.add_entry(dx.Entry.detector(basis_vectors={'value':detector_basis_vectors}))
@@ -348,6 +351,7 @@ def main():
             f.add_entry(dx.Entry.acquisition_setup(sample_out={'value':acquisition_setup_sample_out}))
             f.add_entry(dx.Entry.acquisition_setup(rotation_start_angle={'value':acquisition_setup_rotation_start_angle}))
             f.add_entry(dx.Entry.acquisition_setup(rotation_end_angle={'value':acquisition_setup_rotation_end_angle}))
+            f.add_entry(dx.Entry.acquisition_setup(rotation_speed={'value':acquisition_setup_rotation_speed}))
             f.add_entry(dx.Entry.acquisition_setup(angular_step={'value':acquisition_setup_angular_step}))
             f.add_entry(dx.Entry.acquisition_setup(mode={'value':acquisition_setup_mode}))
             f.add_entry(dx.Entry.acquisition_setup(comment={'value':acquisition_setup_comment}))

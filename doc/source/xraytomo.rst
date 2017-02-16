@@ -1349,6 +1349,8 @@ activity, and safety form.
 +---------------+-------------------------+----------------------+
 | *safety*      |     string dataset      |        “9876”        |
 +---------------+-------------------------+----------------------+
+| *title*       |     string dataset      | “Al 4D dynamic tomo” |
++---------------+-------------------------+----------------------+
 
 Table: Experiment Group Members
 
@@ -1366,6 +1368,11 @@ safety
     | 
     | Safety reference document. For the APS this is the Experiment
     | Safety Approval Form number.
+
+title
+    | 
+    | Proposal title.
+
 
 *experimenter*
 ~~~~~~~~~~~~~~

@@ -354,6 +354,11 @@ class Entry(object):
                 'units': 'text',
                 'docstring': 'Safety reference document. For the APS this is the Experiment Safety Approval Form number.'
             },
+            'title': {
+                'value': None,
+                'units': 'text',
+                'docstring': 'Experiment title. For the APS this is the proposal title assigned by the user.'
+            },
         }
 
         self._experimenter = {

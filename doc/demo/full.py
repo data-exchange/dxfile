@@ -46,6 +46,7 @@ def main():
     experiment_prosal = '1234'
     experiment_activity = '5678'
     experiment_safety = '9012'
+    experiment_title = '4D Dynamics of Stress Corrosion Cracking in High Performance Aluminum Alloy'
 
     experimenter_name = 'Joe'
     experimenter_role = 'PI'
@@ -224,6 +225,7 @@ def main():
             f.add_entry(dx.Entry.experiment( proposal={'value':experiment_prosal}))
             f.add_entry(dx.Entry.experiment( activity={'value':experiment_activity}))
             f.add_entry(dx.Entry.experiment( safety={'value':experiment_safety}))
+            f.add_entry(dx.Entry.experiment( title={'value':experiment_title}))
 
             f.add_entry(dx.Entry.experimenter(name={'value':experimenter_name}))
             f.add_entry(dx.Entry.experimenter(role={'value':experimenter_role}))

@@ -318,6 +318,11 @@ class Entry(object):
                 'units': 'kPa',
                 'docstring': 'Sample pressure.'
             },
+            'fatigue_cycle': {
+                'value': None,
+                'units': None,
+                'docstring': 'Sample fatigue cycles.'
+            },
             'thickness': {
                 'value': None,
                 'units': 'm',

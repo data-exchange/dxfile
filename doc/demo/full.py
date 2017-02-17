@@ -71,18 +71,21 @@ def main():
     
     attenuator_name = 'filter'
     attenuator_description = 'a nice filter'
-    attenuator_thickness = '123'
-    attenuator_transmission = '456'
+    attenuator_thickness = 1
+    attenuator_transmission = 0.754
     
     monochromator_name = 'mono'
     monochromator_description = 'a nice mono'
-    monochromator_energy = '123'
+    monochromator_energy = 27.5
+    monochromator_energy_units = 'keV'
     monochromator_energy_error = '456'
     monochromator_mono_stripe = 'Au/Ag'
             
     mirror_name = 'mirror'
     mirror_description = 'a nice mirror'
-
+    mirror_angle = 2.657
+    mirror_angle_units = 'rad'
+    
     detector_name = 'camera'
     detector_description = 'a nice camera'
     detector_manufacturer = 'a nice company'
@@ -91,15 +94,15 @@ def main():
     detector_firmware_version = '789'
     detector_software_version = '012'
     detector_bit_dept = '16'
-    detector_pixel_size_x = '6.5'
-    detector_pixel_size_y = '6.5'
-    detector_actual_pixel_size_x = '1.2'
-    detector_actual_pixel_size_y = '1.2'
+    detector_pixel_size_x = 0.65e-4
+    detector_pixel_size_y = 0.65e-4
+    detector_actual_pixel_size_x = 1.2
+    detector_actual_pixel_size_y = 1.2
     detector_dimension_x = ccd_x
     detector_dimension_y = ccd_y
-    detector_binning_x = '1'
-    detector_binning_y = '1'
-    detector_operating_temperature = '12'
+    detector_binning_x = 1
+    detector_binning_y = 1
+    detector_operating_temperature = 12
     detector_exposure_time = 0.2
     detector_delay_time = 0.001
     detector_stabilization_time = 0.0001
@@ -128,8 +131,8 @@ def main():
     scintillator_description = 'a nice scintillator' 
     scintillator_manufacturer = 'a nice company' 
     scintillator_serial_number = '123'
-    scintillator_scintillating_thickness = '456'
-    scintillator_substrate_thickness = '789'
+    scintillator_scintillating_thickness = 456
+    scintillator_substrate_thickness = 789
 
     sample_stack_name = 'sample stack'
     sample_stack_description = 'a nice sample stack'
@@ -139,7 +142,8 @@ def main():
     sample_stack_setup_sample_z = 3
     sample_stack_setup_sample_xx = 11
     sample_stack_setup_sample_zz = 33
-
+    sample_detector_distance = 60
+    
     interferometer_name = 'interferometer'
     interferometer_description = 'a nice interferometer'
 
@@ -245,17 +249,18 @@ def main():
 
             f.add_entry(dx.Entry.attenuator( name={'value':attenuator_name}))
             f.add_entry(dx.Entry.attenuator( description={'value':attenuator_description}))
-            f.add_entry(dx.Entry.attenuator( thickness={'value':attenuator_thickness}))
+            f.add_entry(dx.Entry.attenuator( thickness={'value':attenuator_thickness, 'units':'mm'}))
             f.add_entry(dx.Entry.attenuator( transmission={'value':attenuator_transmission}))
     
             f.add_entry(dx.Entry.monochromator( name={'value':monochromator_name}))
             f.add_entry(dx.Entry.monochromator( description={'value':monochromator_description}))
-            f.add_entry(dx.Entry.monochromator( energy={'value':monochromator_energy}))
+            f.add_entry(dx.Entry.monochromator( energy={'value':monochromator_energy, 'units':monochromator_energy_units}))
             f.add_entry(dx.Entry.monochromator( energy_error={'value':monochromator_energy_error}))
             f.add_entry(dx.Entry.monochromator( mono_stripe={'value':monochromator_mono_stripe}))
             
             f.add_entry(dx.Entry.mirror( name={'value':mirror_name}))
             f.add_entry(dx.Entry.mirror( description={'value':mirror_description}))
+            f.add_entry(dx.Entry.mirror( angle={'value':mirror_angle, 'units':mirror_angle_units}))
 
             f.add_entry(dx.Entry.detector(name={'value':detector_name}))
             f.add_entry(dx.Entry.detector(description={'value':detector_description}))
@@ -265,10 +270,10 @@ def main():
             f.add_entry(dx.Entry.detector(firmware_version={'value':detector_firmware_version}))
             f.add_entry(dx.Entry.detector(software_version={'value':detector_software_version}))
             f.add_entry(dx.Entry.detector(bit_dept={'value':detector_bit_dept}))
-            f.add_entry(dx.Entry.detector(pixel_size_x={'value':detector_pixel_size_x}))
-            f.add_entry(dx.Entry.detector(pixel_size_y={'value':detector_pixel_size_y}))
-            f.add_entry(dx.Entry.detector(actual_pixel_size_x={'value':detector_actual_pixel_size_x}))
-            f.add_entry(dx.Entry.detector(actual_pixel_size_y={'value':detector_actual_pixel_size_y}))
+            f.add_entry(dx.Entry.detector(pixel_size_x={'value':detector_pixel_size_x, 'units':'m'}))
+            f.add_entry(dx.Entry.detector(pixel_size_y={'value':detector_pixel_size_y, 'units':'m'}))
+            f.add_entry(dx.Entry.detector(actual_pixel_size_x={'value':detector_actual_pixel_size_x, 'units':'um'}))
+            f.add_entry(dx.Entry.detector(actual_pixel_size_y={'value':detector_actual_pixel_size_y, 'units':'um'}))
             f.add_entry(dx.Entry.detector(dimension_x={'value':detector_dimension_x}))
             f.add_entry(dx.Entry.detector(dimension_y={'value':detector_dimension_y}))
             f.add_entry(dx.Entry.detector(binning_x={'value':detector_binning_x}))
@@ -302,17 +307,18 @@ def main():
             f.add_entry(dx.Entry.scintillator(description={'value':scintillator_description}))
             f.add_entry(dx.Entry.scintillator(manufacturer={'value':scintillator_manufacturer}))
             f.add_entry(dx.Entry.scintillator(serial_number={'value':scintillator_serial_number}))
-            f.add_entry(dx.Entry.scintillator(scintillating_thickness={'value':scintillator_scintillating_thickness}))
-            f.add_entry(dx.Entry.scintillator(substrate_thickness={'value':scintillator_substrate_thickness}))
+            f.add_entry(dx.Entry.scintillator(scintillating_thickness={'value':scintillator_scintillating_thickness, 'units':'um'}))
+            f.add_entry(dx.Entry.scintillator(substrate_thickness={'value':scintillator_substrate_thickness, 'units':'um'}))
 
             f.add_entry(dx.Entry.sample_stack(name={'value':sample_stack_name}))
             f.add_entry(dx.Entry.sample_stack(description={'value':sample_stack_description}))
 
-            f.add_entry(dx.Entry.sample_stack_setup(sample_x={'value':sample_stack_setup_sample_x}))
-            f.add_entry(dx.Entry.sample_stack_setup(sample_y={'value':sample_stack_setup_sample_y}))
-            f.add_entry(dx.Entry.sample_stack_setup(sample_z={'value':sample_stack_setup_sample_z}))
-            f.add_entry(dx.Entry.sample_stack_setup(sample_xx={'value':sample_stack_setup_sample_xx}))
-            f.add_entry(dx.Entry.sample_stack_setup(sample_zz={'value':sample_stack_setup_sample_zz}))
+            f.add_entry(dx.Entry.sample_stack_setup(sample_x={'value':sample_stack_setup_sample_x, 'units':'mm'}))
+            f.add_entry(dx.Entry.sample_stack_setup(sample_y={'value':sample_stack_setup_sample_y, 'units':'mm'}))
+            f.add_entry(dx.Entry.sample_stack_setup(sample_z={'value':sample_stack_setup_sample_z, 'units':'mm'}))
+            f.add_entry(dx.Entry.sample_stack_setup(sample_xx={'value':sample_stack_setup_sample_xx, 'units':'mm'}))
+            f.add_entry(dx.Entry.sample_stack_setup(sample_zz={'value':sample_stack_setup_sample_zz, 'units':'mm'}))
+            f.add_entry(dx.Entry.sample_stack_setup(sample_detector_distance={'value':sample_detector_distance, 'units':'mm'}))
 
             f.add_entry(dx.Entry.interferometer(name={'value':interferometer_name}))
             f.add_entry(dx.Entry.interferometer(description={'value':interferometer_description}))

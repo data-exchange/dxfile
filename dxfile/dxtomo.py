@@ -517,12 +517,12 @@ class Entry(object):
             'energy': {
                 'value': None,
                 'units': 'J',
-                'docstring': 'Peak of the spectrum that the monochromator selects. Since units is not defined this field is in J and corresponds to 10 keV'
+                'docstring': 'Peak of the spectrum that the monochromator selects. When units is not defined this field is in J'
             },
             'energy_error': {
                 'value': None,
                 'units': 'J',
-                'docstring': 'Standard deviation of the spectrum that the monochromator selects. Since units is not defined this field is in J.'
+                'docstring': 'Standard deviation of the spectrum that the monochromator selects. When units is not defined this field is in J.'
             },
             'mono_stripe': {
                 'value': None,
@@ -544,6 +544,11 @@ class Entry(object):
                 'value': None,
                 'units': 'text',
                 'docstring': 'Description of the mirror'
+            },
+            'angle': {
+                'value': None,
+                'units': 'rad',
+                'docstring': 'Mirror incident angle'
             }
         }
 
@@ -836,6 +841,11 @@ class Entry(object):
                 'value': None,
                 'units': 'mm',
                 'docstring': 'Initial position of the Z stage on top of the rotary motor.'
+            },
+            'detector_distance': {
+                'value': None,
+                'units': 'mm',
+                'docstring': 'Sample to detector distance.'
             }
         }
 

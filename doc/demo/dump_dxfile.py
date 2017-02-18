@@ -6,12 +6,6 @@
    :platform: Unix
    :synopsis: Print an hdf5 file Group/Data dataset list.
 
-:Author:
-  `Francesco De Carlo <mailto: decarlof@gmail.com>`_
-
-:Organization:
-  Argonne National Laboratory, Argonne, IL 60439 USA
-
 """
 
 from __future__ import print_function

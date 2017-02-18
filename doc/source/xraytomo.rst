@@ -28,8 +28,6 @@ general information about the file.
 +------------------------------+----------------------------+-----------------------------------------+
 |           *process*          |             group          |                                         |
 +------------------------------+----------------------------+-----------------------------------------+
-|   *file_creation_datetime*   | string dataset (ISO 8601)  |         “2011-07-15T15:10Z”             |
-+------------------------------+----------------------------+-----------------------------------------+
 
 implements
     | 
@@ -63,10 +61,6 @@ process
       well as experimental steps (e.g. data collection strategy etc.) 
       and sample preparation ahead of the experiment and during the 
       measurement (e.g. environment conditions etc.).
-
-datetime
-    | 
-    | Date and time source was measured.
 
       
 **exchange**

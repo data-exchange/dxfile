@@ -125,7 +125,7 @@
         <group name="table">
           <dataset name="name" source="constant" value="2-BM-A Experimental Table" type="string" when="OnFileClose"></dataset>        
           <group name="setup">
-            <dataset name="exp_table_global_y" source="ndattribute" ndattribute="Exp_Table_GlobalY" when="OnFileClose"> 
+            <dataset name="exp_table_globaly" source="ndattribute" ndattribute="Exp_Table_GlobalY" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
             <dataset name="exp_table_usy_ob" source="ndattribute" ndattribute="Exp_Table_USY_OB" when="OnFileClose"> 
@@ -142,8 +142,9 @@
             </dataset>
             <dataset name="exp_table_dsx" source="ndattribute" ndattribute="Exp_Table_DSX" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
+            </dataset>
             <dataset name="flag" source="ndattribute" ndattribute="Flag" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string"></attribute>  
+              <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
           </group><!-- /setup-->
         </group><!-- /table -->

@@ -25,7 +25,6 @@
 
         <group name="source">
           <dataset name="beamline" source="constant" value="2-BM" type="string" when="OnFileClose"></dataset>  
-          <dataset name="beamline_filter" source="ndattribute" ndattribute="BeamlineFilter" when="OnFileClose"></dataset>          
           <dataset name="name" source="constant" value="Advanced Photon Source" type="string" when="OnFileClose"></dataset>        
           <dataset name="current" source="ndattribute" ndattribute="Current" when="OnFileClose">        
             <attribute name="units" source="constant" value="mA" type="string"></attribute>
@@ -33,6 +32,11 @@
           <dataset name="beam_mode" source="ndattribute" ndattribute="TopUpStatus" when="OnFileClose"></dataset>    
           <dataset name="fill_mode" source="ndattribute" ndattribute="BeamMode" when="OnFileClose"></dataset>
         </group><!-- /source -->
+
+        <group name="attenuator">
+          <dataset name="name" source="constant" value="User Filters upstream" type="string" when="OnFileClose"></dataset>        
+          <dataset name="description" source="ndattribute" ndattribute="BeamlineFilter" when="OnFileClose"></dataset>          
+        </group><!-- /attenuator -->
 
         <group name="mirror">
           <dataset name="name" source="constant" value="2-BM Mirror" type="string" when="OnFileClose"></dataset>        
@@ -107,7 +111,6 @@
             </dataset>
           </group><!-- /setup-->
         </group><!-- /table -->
-
 
         <group name="sample">
           <dataset name="name" source="constant" value="2-BM-A Sample Stages" type="string" when="OnFileClose"></dataset>        

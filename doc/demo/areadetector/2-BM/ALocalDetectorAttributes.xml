@@ -52,8 +52,6 @@
     <Attribute name="DMM_Table_USY_IB"              type="EPICS_PV"     source="2bma:m27.VAL"                               dbrtype="DBR_DOUBLE"/>
     <Attribute name="DMM_Table_DSY"                 type="EPICS_PV"     source="2bma:m29.VAL"                               dbrtype="DBR_DOUBLE"/>
 	
-    <Attribute name="Flag"                          type="EPICS_PV"     source="2bma:m19.VAL"                               dbrtype="DBR_DOUBLE"/>
-	
     <Attribute name="Exp_Table_GlobalY"             type="EPICS_PV"     source="2bma:m33.VAL"                               dbrtype="DBR_DOUBLE"/>
     <Attribute name="Exp_Table_USY_OB"              type="EPICS_PV"     source="2bma:m36.VAL"                               dbrtype="DBR_DOUBLE"/>
     <Attribute name="Exp_Table_USY_IB"              type="EPICS_PV"     source="2bma:m35.VAL"                               dbrtype="DBR_DOUBLE"/>
@@ -61,20 +59,12 @@
     <Attribute name="Exp_Table_USX"                 type="EPICS_PV"     source="2bma:m37.VAL"                               dbrtype="DBR_DOUBLE"/>
     <Attribute name="Exp_Table_DSX"                 type="EPICS_PV"     source="2bma:m38.VAL"                               dbrtype="DBR_DOUBLE"/>
 	
-    <Attribute name="Tomo_Sample_X_B"               type="EPICS_PV"     source="2bmb:m52.VAL"                               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="Tomo_Sample_Y_B"               type="EPICS_PV"     source="2bmb:m50.VAL"                               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="NNRail_B"                      type="EPICS_PV"     source="2bmb:m31.VAL"                               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="Tomo_Rot_Z_B"                  type="EPICS_PV"     source="2bmb:m49.VAL"                               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="Tomo_Rot_X_B"                  type="EPICS_PV"     source="2bmb:m51.VAL"                               dbrtype="DBR_DOUBLE"/>
-    
-    <Attribute name="Tomo_Sample_X_A"               type="EPICS_PV"     source="2bma:m48.VAL"                               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="Tomo_Sample_Y_A"               type="EPICS_PV"     source="2bma:m46.VAL"                               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="NNRail_A"                      type="EPICS_PV"     source="2bma:m22.VAL"                               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="Tomo_Rot_Z_A"                  type="EPICS_PV"     source="2bma:m45.VAL"                               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="Tomo_Rot_X_A"                  type="EPICS_PV"     source="2bma:m44.VAL"                               dbrtype="DBR_DOUBLE"/>
-
-    <Attribute name="Theta_B"                       type="EPICS_PV"     source="2bmb:m34.VAL"                               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="Theta_A"                       type="EPICS_PV"     source="2bma:m58.VAL"                               dbrtype="DBR_DOUBLE"/>
-    
+    <Attribute name="Tomo_Sample_X"                 type="EPICS_PV"     source="2bma:m48.VAL"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="Tomo_Sample_Y"                 type="EPICS_PV"     source="2bma:m46.VAL"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="NNRail"                        type="EPICS_PV"     source="2bma:m22.VAL"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="Tomo_Rot_Z"                    type="EPICS_PV"     source="2bma:m45.VAL"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="Tomo_Rot_X"                    type="EPICS_PV"     source="2bma:m44.VAL"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="Theta"                         type="EPICS_PV"     source="2bma:m58.VAL"                               dbrtype="DBR_DOUBLE"/>
+       
     <Attribute name="SaveDest"                      type="EPICS_PV"     source="2bmbPG1:cam1:FrameType"                     dbrtype="DBR_STRING"/>
 </Attributes>

@@ -21,7 +21,7 @@
     
     <group name="measurement">
       <group name="instrument">
-        <dataset name="name" source="constant" value="Local tomography at 2-BM" type="string" when="OnFileClose"></dataset>   
+        <dataset name="name" source="constant" value="Local tomography at 2-BM-A" type="string" when="OnFileClose"></dataset>   
              
         <group name="source">
           <dataset name="beamline" source="constant" value="2-BM" type="string" when="OnFileClose"></dataset>        
@@ -57,12 +57,12 @@
         </group><!-- /mirror -->
         
         <group name="attenuator">
-          <dataset name="beamline" source="constant" value="2-BM" type="string" when="OnFileClose"></dataset>  
+          <dataset name="beamline" source="constant" value="2-BM attenuators" type="string" when="OnFileClose"></dataset>  
           <group name="setup">
-          <dataset name="beamline_filter_us" source="ndattribute" ndattribute="BeamlineFilterA" when="OnFileClose"> 
+          <dataset name="user_filter_us" source="ndattribute" ndattribute="BeamlineFilterA" when="OnFileClose"> 
             <attribute name="units" source="constant" value="mm" type="string"></attribute>
           </dataset>
-          <dataset name="beamline_filter_ds" source="ndattribute" ndattribute="BeamlineFilterB" when="OnFileClose"> 
+          <dataset name="user_filter_ds" source="ndattribute" ndattribute="BeamlineFilterB" when="OnFileClose"> 
             <attribute name="units" source="constant" value="mm" type="string"></attribute>
           </dataset>
           </group><!-- /setup -->
@@ -148,56 +148,28 @@
           </group><!-- /setup-->
         </group><!-- /table -->
       
-        <group name = "sample">
-          <dataset name="name" source="constant" value="2-BM Sample stages" type="string" when="OnFileClose"></dataset>    
+        <group name="sample">
+          <dataset name="name" source="constant" value="microCT sample stages stack A" type="string" when="OnFileClose"></dataset>        
           <group name="setup">
-            <group name="sampleB">
-              <dataset name="name" source="constant" value="2-BM-B Sample Stages" type="string" when="OnFileClose"></dataset>        
-              <group name="setup">
-              <dataset name="tomo_x_B" source="ndattribute" ndattribute="Tomo_X_B" when="OnFileClose"> 
-                <attribute name="units" source="constant" value="mm" type="string"></attribute>
-              </dataset>
-              <dataset name="tomo_y_B" source="ndattribute" ndattribute="Tomo_Y_B" when="OnFileClose"> 
-                <attribute name="units" source="constant" value="mm" type="string"></attribute>
-              </dataset>
-              <dataset name="nnrail_B" source="ndattribute" ndattribute="NNRail_B" when="OnFileClose"> 
-                <attribute name="units" source="constant" value="mm" type="string"></attribute>
-              </dataset>
-              <dataset name="tomo_rot_z_B" source="ndattribute" ndattribute="Tomo_Rot_Z_B" when="OnFileClose"> 
-                <attribute name="units" source="constant" value="mm" type="string"></attribute>
-              </dataset>
-              <dataset name="tomo_rot_x_B" source="ndattribute" ndattribute="Tomo_Rot_X_B" when="OnFileClose"> 
-                <attribute name="units" source="constant" value="mm" type="string"></attribute>
-              </dataset>
-              <dataset name="theta" source="ndattribute" ndattribute="Theta_B" when="OnFileClose"> 
-                <attribute name="units" source="constant" value="degree" type="string"></attribute>
-              </dataset>
-              </group><!-- /setup -->
-            </group><!-- /sampleB -->
-            
-            <group name="sampleA">
-              <dataset name="name" source="constant" value="2-BM-A Sample Stages" type="string" when="OnFileClose"></dataset>        
-              <group name="setup">
-              <dataset name="tomo_xa" source="ndattribute" ndattribute="Tomo_Sample_X_A" when="OnFileClose"> 
-                <attribute name="units" source="constant" value="mm" type="string"></attribute>
-              </dataset>
-              <dataset name="tomo_ya" source="ndattribute" ndattribute="Tomo_Sample_Y_A" when="OnFileClose"> 
-                <attribute name="units" source="constant" value="mm" type="string"></attribute>
-              </dataset>
-              <dataset name="nnrail_a" source="ndattribute" ndattribute="NNRail_A" when="OnFileClose"> 
-                <attribute name="units" source="constant" value="mm" type="string"></attribute>
-              </dataset>
-              <dataset name="tomo_rot_z_a" source="ndattribute" ndattribute="Tomo_Rot_Z_A" when="OnFileClose"> 
-                <attribute name="units" source="constant" value="mm" type="string"></attribute>
-              </dataset>
-              <dataset name="tomo_rot_x_a" source="ndattribute" ndattribute="Tomo_Rot_X_A" when="OnFileClose"> 
-                <attribute name="units" source="constant" value="mm" type="string"></attribute>
-              </dataset>
-              <dataset name="theta" source="ndattribute" ndattribute="Theta_A" when="OnFileClose"> 
-                <attribute name="units" source="constant" value="degree" type="string"></attribute>
-              </dataset>
-              </group><!-- /setup -->
-            </group><!-- /sampleA -->
+            <dataset name="sample_x" source="ndattribute" ndattribute="Tomo_X" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string"></attribute>
+            </dataset>
+            <dataset name="sample_y" source="ndattribute" ndattribute="Tomo_Y" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string"></attribute>
+            </dataset>
+            <dataset name="sample_rotary" source="ndattribute" ndattribute="Theta" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string"></attribute>
+            </dataset>
+            <dataset name="sample_xx" source="ndattribute" ndattribute="Tomo_Rot_X" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string"></attribute>
+            </dataset>
+            <dataset name="sample_zz" source="ndattribute" ndattribute="Tomo_Rot_Z" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string"></attribute>
+            </dataset>
+            <dataset name="rail_z" source="ndattribute" ndattribute="NNRail" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string"></attribute>
+            </dataset>
+          </group><!-- /setup -->
         </group><!-- /sample -->
         
         <group name="detector">

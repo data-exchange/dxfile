@@ -5,56 +5,55 @@
     xsi:schemaLocation="http://epics.aps.anl.gov/areaDetector/attributes ../attributes.xsd"
     >
     <Attribute name="detector_manufacturer"            type="EPICS_PV"    source="PCOIOC3:cam1:Manufacturer_RBV"                 dbrtype="DBR_STRING"   description=" " />
-	<Attribute name="save_dest"                        type="EPICS_PV"    source="PCOIOC3:cam1:FrameType"                        dbrtype="DBR_STRING"   description=" " />
-    <Attribute name="detector_model"                   type="EPICS_PV"    source="PCOIOC3:cam1:Model_RBV"                        dbrtype="DBR_STRING"   description=" " />	
-    <Attribute name="max_size_x"                        type="EPICS_PV"    source="PCOIOC3:cam1:MaxSizeX_RBV"                     dbrtype="DBR_NATIVE"   description=" " />
-    <Attribute name="max_size_y"                        type="EPICS_PV"    source="PCOIOC3:cam1:MaxSizeY_RBV"                     dbrtype="DBR_NATIVE"   description=" " />
-    <Attribute name="temperature"                     type="EPICS_PV"    source="PCOIOC3:cam1:Temperature_RBV"                  dbrtype="DBR_NATIVE"   description=" " />	
-    <Attribute name="detector_frame_mode"               type="EPICS_PV"    source="PCOIOC3:cam1:pco_is_frame_rate_mode_RBV"       dbrtype="DBR_STRING"   description=" " /> 
-    <Attribute name="acq_time"                         type="EPICS_PV"    source="PCOIOC3:cam1:AcquireTime_RBV"                  dbrtype="DBR_NATIVE"   description=" " />   
-    <Attribute name="acq_period"                       type="EPICS_PV"    source="PCOIOC3:cam1:AcquirePeriod_RBV"                dbrtype="DBR_NATIVE"   description=" " />
-    <Attribute name="frame_rate"                       type="EPICS_PV"    source="PCOIOC3:cam1:pco_set_frame_rate_RBV"           dbrtype="DBR_NATIVE"   description=" " />        
-    <Attribute name="gain"                            type="EPICS_PV"    source="PCOIOC3:cam1:Gain_RB"                          dbrtype="DBR_NATIVE"   description=" " />  
-    <Attribute name="bin_x"                            type="EPICS_PV"    source="PCOIOC3:cam1:BinX_RBV"                         dbrtype="DBR_NATIVE"   description=" " />  
-    <Attribute name="bin_y"                            type="EPICS_PV"    source="PCOIOC3:cam1:BinY_RBV"                         dbrtype="DBR_NATIVE"   description=" " /> 
-    <Attribute name="min_x"                            type="EPICS_PV"    source="PCOIOC3:cam1:MinX_RBV"                         dbrtype="DBR_NATIVE"   description=" " />
-    <Attribute name="min_y"                            type="EPICS_PV"    source="PCOIOC3:cam1:MinY_RBV"                         dbrtype="DBR_NATIVE"   description=" " />
-    <Attribute name="size_x"                           type="EPICS_PV"    source="PCOIOC3:cam1:SizeX_RBV"                        dbrtype="DBR_NATIVE"   description=" " />
-    <Attribute name="size_y"                           type="EPICS_PV"    source="PCOIOC3:cam1:SizeY_RBV"                        dbrtype="DBR_NATIVE"   description=" " />
+	<Attribute name="SaveDest"                        type="EPICS_PV"    source="PCOIOC3:cam1:FrameType"                        dbrtype="DBR_STRING"   description=" " />
+    <Attribute name="DetectorModel"                   type="EPICS_PV"    source="PCOIOC3:cam1:Model_RBV"                        dbrtype="DBR_STRING"   description=" " />	
+    <Attribute name="MaxSizeX"                        type="EPICS_PV"    source="PCOIOC3:cam1:MaxSizeX_RBV"                     dbrtype="DBR_NATIVE"   description=" " />
+    <Attribute name="MaxSizeY"                        type="EPICS_PV"    source="PCOIOC3:cam1:MaxSizeY_RBV"                     dbrtype="DBR_NATIVE"   description=" " />
+    <Attribute name="Temperature"                     type="EPICS_PV"    source="PCOIOC3:cam1:Temperature_RBV"                  dbrtype="DBR_NATIVE"   description=" " />	
+    <Attribute name="DetectorFrameMode"               type="EPICS_PV"    source="PCOIOC3:cam1:pco_is_frame_rate_mode_RBV"       dbrtype="DBR_STRING"   description=" " /> 
+    <Attribute name="AcqTime"                         type="EPICS_PV"    source="PCOIOC3:cam1:AcquireTime_RBV"                  dbrtype="DBR_NATIVE"   description=" " />   
+    <Attribute name="AcqPeriod"                       type="EPICS_PV"    source="PCOIOC3:cam1:AcquirePeriod_RBV"                dbrtype="DBR_NATIVE"   description=" " />
+    <Attribute name="FrameRate"                       type="EPICS_PV"    source="PCOIOC3:cam1:pco_set_frame_rate_RBV"           dbrtype="DBR_NATIVE"   description=" " />         
+    <Attribute name="BinX"                            type="EPICS_PV"    source="PCOIOC3:cam1:BinX_RBV"                         dbrtype="DBR_NATIVE"   description=" " />  
+    <Attribute name="BinY"                            type="EPICS_PV"    source="PCOIOC3:cam1:BinY_RBV"                         dbrtype="DBR_NATIVE"   description=" " /> 
+    <Attribute name="MinX"                            type="EPICS_PV"    source="PCOIOC3:cam1:MinX_RBV"                         dbrtype="DBR_NATIVE"   description=" " />
+    <Attribute name="MinY"                            type="EPICS_PV"    source="PCOIOC3:cam1:MinY_RBV"                         dbrtype="DBR_NATIVE"   description=" " />
+    <Attribute name="SizeX"                           type="EPICS_PV"    source="PCOIOC3:cam1:SizeX_RBV"                        dbrtype="DBR_NATIVE"   description=" " />
+    <Attribute name="SizeY"                           type="EPICS_PV"    source="PCOIOC3:cam1:SizeY_RBV"                        dbrtype="DBR_NATIVE"   description=" " />
 
 	
-    <Attribute name="datetime_start"                   type="EPICS_PV"    source="S:IOC:timeOfDayForm1SI"                        dbrtype="DBR_STRING"   description=" " />
-    <Attribute name="datetime_end"                     type="EPICS_PV"    source="S:IOC:timeOfDayForm1SI"                        dbrtype="DBR_STRING"   description=" " />
-    <Attribute name="current"                         type="EPICS_PV"    source="S:SRcurrentAI"                                 dbrtype="DBR_NATIVE"   description=" " />
-    <Attribute name="topup_status"                     type="EPICS_PV"    source="S:TopUpStatus"                                 dbrtype="DBR_ENUM"     description=" " />
-	<Attribute name="beam_mode"                        type="EPICS_PV"    source="OPS:message3"                                  dbrtype="DBR_STRING"   description=" " />
+    <Attribute name="DateTimeStart"                   type="EPICS_PV"    source="S:IOC:timeOfDayForm1SI"                        dbrtype="DBR_STRING"   description=" " />
+    <Attribute name="DateTimeEnd"                     type="EPICS_PV"    source="S:IOC:timeOfDayForm1SI"                        dbrtype="DBR_STRING"   description=" " />
+    <Attribute name="Current"                         type="EPICS_PV"    source="S:SRcurrentAI"                                 dbrtype="DBR_NATIVE"   description=" " />
+    <Attribute name="TopUpStatus"                     type="EPICS_PV"    source="S:TopUpStatus"                                 dbrtype="DBR_ENUM"     description=" " />
+	<Attribute name="BeamMode"                        type="EPICS_PV"    source="OPS:message3"                                  dbrtype="DBR_STRING"   description=" " />
 	
 	
-    <Attribute name="mirror_x"                         type="EPICS_PV"    source="2bma:m3.RBV"                                   dbrtype="DBR_NATIVE"   description=" " />
-    <Attribute name="mirror_y"                         type="EPICS_PV"    source="2bma:M1t2.D"                                   dbrtype="DBR_NATIVE"   description=" " />
-	<Attribute name="mirror_us_y"                       type="EPICS_PV"    source="2bma:m5.RBV"                                   dbrtype="DBR_NATIVE"   description=" " />
-	<Attribute name="mirror_ds_y"                       type="EPICS_PV"    source="2bma:m2.RBV"                                   dbrtype="DBR_NATIVE"   description=" " />
-	<Attribute name="mirror_angle"                     type="EPICS_PV"    source="2bma:M1t2.C"                                   dbrtype="DBR_NATIVE"   description=" " />
-    <Attribute name="mirror_stripe"                    type="EPICS_PV"    source="2bma:mirror1:select.VAL"                       dbrtype="DBR_ENUM"     description=" " />
+    <Attribute name="MirrorX"                         type="EPICS_PV"    source="2bma:m3.RBV"                                   dbrtype="DBR_NATIVE"   description=" " />
+    <Attribute name="MirrorY"                         type="EPICS_PV"    source="2bma:M1t2.D"                                   dbrtype="DBR_NATIVE"   description=" " />
+	<Attribute name="MirrorUSY"                       type="EPICS_PV"    source="2bma:m5.RBV"                                   dbrtype="DBR_NATIVE"   description=" " />
+	<Attribute name="MirrorDSY"                       type="EPICS_PV"    source="2bma:m2.RBV"                                   dbrtype="DBR_NATIVE"   description=" " />
+	<Attribute name="MirrorAngle"                     type="EPICS_PV"    source="2bma:M1t2.C"                                   dbrtype="DBR_NATIVE"   description=" " />
+    <Attribute name="MirrorStripe"                    type="EPICS_PV"    source="2bma:mirror1:select.VAL"                       dbrtype="DBR_ENUM"     description=" " />
 	
-	<Attribute name="dmm_us_arm"                       type="EPICS_PV" source="2bma:m30.VAL"                                     dbrtype="DBR_NATIVE"   description=" " />
-	<Attribute name="dmm_ds_arm"                       type="EPICS_PV" source="2bma:m31.VAL"                                     dbrtype="DBR_NATIVE"   description=" " />	
-	<Attribute name="dmm_m2_y"                         type="EPICS_PV" source="2bma:m32.VAL"                                     dbrtype="DBR_NATIVE"   description=" " />
-	<Attribute name="dmm_m2_z"                         type="EPICS_PV" source="2bma:m8.VAL"                                      dbrtype="DBR_NATIVE"   description=" " />
-	<Attribute name="dmm_table_us_y_ob"                type="EPICS_PV" source="2bma:m26.VAL"                                     dbrtype="DBR_NATIVE"   description=" " />
-	<Attribute name="dmm_table_us_y_ib"                type="EPICS_PV" source="2bma:m27.VAL"                                     dbrtype="DBR_NATIVE"   description=" " />
-	<Attribute name="dmm_table_ds_y"                   type="EPICS_PV" source="2bma:m29.VAL"                                     dbrtype="DBR_NATIVE"   description=" " />
+	<Attribute name="DMM_USArm"                       type="EPICS_PV" source="2bma:m30.VAL"                                     dbrtype="DBR_NATIVE"   description=" " />
+	<Attribute name="DMM_DSArm"                       type="EPICS_PV" source="2bma:m31.VAL"                                     dbrtype="DBR_NATIVE"   description=" " />	
+	<Attribute name="DMM_M2Y"                         type="EPICS_PV" source="2bma:m32.VAL"                                     dbrtype="DBR_NATIVE"   description=" " />
+	<Attribute name="DMM_M2Z"                         type="EPICS_PV" source="2bma:m8.VAL"                                      dbrtype="DBR_NATIVE"   description=" " />
+	<Attribute name="DMM_Table_USY_OB"                type="EPICS_PV" source="2bma:m26.VAL"                                     dbrtype="DBR_NATIVE"   description=" " />
+	<Attribute name="DMM_Table_USY_IB"                type="EPICS_PV" source="2bma:m27.VAL"                                     dbrtype="DBR_NATIVE"   description=" " />
+	<Attribute name="DMM_Table_DSY"                   type="EPICS_PV" source="2bma:m29.VAL"                                     dbrtype="DBR_NATIVE"   description=" " />
 	
-	<Attribute name="exp_bable_global_Y"               type="EPICS_PV" source="2bma:m33.VAL"                                     dbrtype="DBR_NATIVE"   description=" " />
-	<Attribute name="exp_table_us_y_ob"                type="EPICS_PV" source="2bma:m36.VAL"                                     dbrtype="DBR_NATIVE"   description=" " />
-	<Attribute name="exp_table_us_y_ib"                type="EPICS_PV" source="2bma:m35.VAL"                                     dbrtype="DBR_NATIVE"   description=" " />
-	<Attribute name="exp_table_ds_y"                   type="EPICS_PV" source="2bma:m34.VAL"                                     dbrtype="DBR_NATIVE"   description=" " />
-	<Attribute name="exp_table_us_x"                   type="EPICS_PV" source="2bma:m37.VAL"                                     dbrtype="DBR_NATIVE"   description=" " />
-	<Attribute name="exp_table_ds_x"                   type="EPICS_PV" source="2bma:m38.VAL"                                     dbrtype="DBR_NATIVE"   description=" " />
+	<Attribute name="Exp_Table_GlobalY"               type="EPICS_PV" source="2bma:m33.VAL"                                     dbrtype="DBR_NATIVE"   description=" " />
+	<Attribute name="Exp_Table_USY_OB"                type="EPICS_PV" source="2bma:m36.VAL"                                     dbrtype="DBR_NATIVE"   description=" " />
+	<Attribute name="Exp_Table_USY_IB"                type="EPICS_PV" source="2bma:m35.VAL"                                     dbrtype="DBR_NATIVE"   description=" " />
+	<Attribute name="Exp_Table_DSY"                   type="EPICS_PV" source="2bma:m34.VAL"                                     dbrtype="DBR_NATIVE"   description=" " />
+	<Attribute name="Exp_Table_USX"                   type="EPICS_PV" source="2bma:m37.VAL"                                     dbrtype="DBR_NATIVE"   description=" " />
+	<Attribute name="Exp_Table_DSX"                   type="EPICS_PV" source="2bma:m38.VAL"                                     dbrtype="DBR_NATIVE"   description=" " />
 	
-	<Attribute name="beamline_filter"                  type="EPICS_PV" source="2bma:fltr1:select.VAL"                            dbrtype="DBR_ENUM"     description=" " />
+	<Attribute name="BeamlineFilter"                  type="EPICS_PV" source="2bma:fltr1:select.VAL"                            dbrtype="DBR_ENUM"     description=" " />
 
-	<Attribute name="tomo_sample_x"                     type="EPICS_PV" source="2bma:m49.VAL"                                     dbrtype="DBR_NATIVE"   description=" " />
-	<Attribute name="tomo_sample_y"                     type="EPICS_PV" source="2bma:m20.VAL"                                     dbrtype="DBR_NATIVE"   description=" " />
-	<Attribute name="theta"                           type="EPICS_PV" source="2bmb:m82.VAL"                                     dbrtype="DBR_NATIVE"   description=" " />
+	<Attribute name="TomoSampleX"                     type="EPICS_PV" source="2bma:m49.VAL"                                     dbrtype="DBR_NATIVE"   description=" " />
+	<Attribute name="TomoSampleY"                     type="EPICS_PV" source="2bma:m20.VAL"                                     dbrtype="DBR_NATIVE"   description=" " />
+	<Attribute name="Theta"                           type="EPICS_PV" source="2bmb:m82.VAL"                                     dbrtype="DBR_NATIVE"   description=" " />
 </Attributes>

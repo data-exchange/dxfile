@@ -24,7 +24,8 @@
         <dataset name="name" source="constant" value="Dynamic CT at 2-BM" type="string" when="OnFileClose"></dataset>        
 
         <group name="source">
-          <dataset name="beamline" source="constant" value="2-BM" type="string" when="OnFileClose"></dataset>        
+          <dataset name="beamline" source="constant" value="2-BM" type="string" when="OnFileClose"></dataset>  
+          <dataset name="beamline_filter" source="ndattribute" ndattribute="BeamlineFilter" when="OnFileClose"></dataset>		  
           <dataset name="name" source="constant" value="Advanced Photon Source" type="string" when="OnFileClose"></dataset>        
           <dataset name="current" source="ndattribute" ndattribute="Current" when="OnFileClose">        
             <attribute name="units" source="constant" value="mA" type="string"></attribute>
@@ -124,7 +125,7 @@
         </group><!-- /sample -->
 
         <group name="detector">
-          <dataset name="manufacturer" source="ndattribute" ndattribute="DetectorManufacturer" when="OnFileClose"></dataset>
+          <dataset name="manufacturer" source="ndattribute" ndattribute="detector_manufacturer" when="OnFileClose"></dataset>
           <dataset name="model" source="ndattribute" ndattribute="DetectorModel" when="OnFileClose"></dataset>
 		  <dataset name="dimension_x" source="ndattribute" ndattribute="MaxSizeX" when="OnFileClose"></dataset>
           <dataset name="dimension_y" source="ndattribute" ndattribute="MaxSizeY" when="OnFileClose"></dataset>
@@ -140,7 +141,12 @@
           <dataset name="acquisition_period" source="ndattribute" ndattribute="AcqPeriod" when="OnFileClose"></dataset>
           <dataset name="frame_rate" source="ndattribute" ndattribute="FrameRate" when="OnFileClose"></dataset>		  
 
-
+		  <dataset name="pco_conv_12to16" source="ndattribute" ndattribute="pco_conv_12to16" when="OnFileClose"></dataset>
+		  <dataset name="pco_descramble" source="ndattribute" ndattribute="pco_descramble" when="OnFileClose"></dataset>		  
+		  <dataset name="pco_disable_descramble" source="ndattribute" ndattribute="pco_disable_descramble" when="OnFileClose"></dataset>		  
+		  <dataset name="pco_edge_fastscan" source="ndattribute" ndattribute="pco_edge_fastscan" when="OnFileClose"></dataset>	
+          <dataset name="save_dest" source="ndattribute" ndattribute="SaveDest" when="OnFileClose"></dataset>
+		  
           <group name="roi">
             <dataset name="min_x" source="ndattribute" ndattribute="MinX" when="OnFileClose"></dataset>
             <dataset name="size_x" source="ndattribute" ndattribute="SizeX" when="OnFileClose"></dataset>

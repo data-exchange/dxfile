@@ -20,15 +20,13 @@
     <Attribute name="MinY"                            type="EPICS_PV"    source="PCOIOC3:cam1:MinY_RBV"                         dbrtype="DBR_NATIVE"   description=" " />
     <Attribute name="SizeX"                           type="EPICS_PV"    source="PCOIOC3:cam1:SizeX_RBV"                        dbrtype="DBR_NATIVE"   description=" " />
     <Attribute name="SizeY"                           type="EPICS_PV"    source="PCOIOC3:cam1:SizeY_RBV"                        dbrtype="DBR_NATIVE"   description=" " />
-
     
     <Attribute name="DateTimeStart"                   type="EPICS_PV"    source="S:IOC:timeOfDayForm1SI"                        dbrtype="DBR_STRING"   description=" " />
     <Attribute name="DateTimeEnd"                     type="EPICS_PV"    source="S:IOC:timeOfDayForm1SI"                        dbrtype="DBR_STRING"   description=" " />
     <Attribute name="Current"                         type="EPICS_PV"    source="S:SRcurrentAI"                                 dbrtype="DBR_NATIVE"   description=" " />
     <Attribute name="TopUpStatus"                     type="EPICS_PV"    source="S:TopUpStatus"                                 dbrtype="DBR_ENUM"     description=" " />
     <Attribute name="BeamMode"                        type="EPICS_PV"    source="OPS:message3"                                  dbrtype="DBR_STRING"   description=" " />
-    
-    
+     
     <Attribute name="MirrorX"                         type="EPICS_PV"    source="2bma:m3.RBV"                                   dbrtype="DBR_NATIVE"   description=" " />
     <Attribute name="MirrorY"                         type="EPICS_PV"    source="2bma:M1t2.D"                                   dbrtype="DBR_NATIVE"   description=" " />
     <Attribute name="MirrorUSY"                       type="EPICS_PV"    source="2bma:m5.RBV"                                   dbrtype="DBR_NATIVE"   description=" " />

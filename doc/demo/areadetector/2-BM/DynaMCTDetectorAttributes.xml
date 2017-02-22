@@ -49,7 +49,8 @@
     <Attribute name="Exp_Table_USX"                   type="EPICS_PV" source="2bma:m37.VAL"                                     dbrtype="DBR_NATIVE"   description=" " />
     <Attribute name="Exp_Table_DSX"                   type="EPICS_PV" source="2bma:m38.VAL"                                     dbrtype="DBR_NATIVE"   description=" " />
     
-    <Attribute name="BeamlineFilter"                  type="EPICS_PV" source="2bma:fltr1:select.VAL"                            dbrtype="DBR_ENUM"     description=" " />
+    <Attribute name="BeamlineFilterA"                 type="EPICS_PV" source="2bma:fltr1:select.VAL"                            dbrtype="DBR_ENUM"/>
+    <Attribute name="BeamlineFilterB"                 type="EPICS_PV" source="2bma:fltr2:select.VAL"                            dbrtype="DBR_ENUM"/>
 
     <Attribute name="TomoSampleX"                     type="EPICS_PV" source="2bma:m49.VAL"                                     dbrtype="DBR_NATIVE"   description=" " />
     <Attribute name="TomoSampleY"                     type="EPICS_PV" source="2bma:m20.VAL"                                     dbrtype="DBR_NATIVE"   description=" " />

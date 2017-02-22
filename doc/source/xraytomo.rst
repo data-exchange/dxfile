@@ -1,6 +1,5 @@
 .. role:: math(raw)
    :format: html latex
-..
 
 ================
 X-ray Tomography
@@ -18,25 +17,25 @@ This node represents the top level of the HDF5 file and holds some
 general information about the file.
 
 
-+---------------+----------------+-----------------------------------------+
-|    Member     |      Type      |              Example                    |
-+===============+================+=========================================+
-|**implements** | string dataset | **exchange**:*measurement*:*provenance* |
-+---------------+----------------+-----------------------------------------+
-|**exchange**   |    group       |                                         |
-+---------------+----------------+-----------------------------------------+
-|*measurement*  |    group       |                                         |
-+---------------+----------------+-----------------------------------------+
-| *provenance*  |    group       |                                         |
-+---------------+----------------+-----------------------------------------+
++------------------------------+----------------------------+-----------------------------------------+
+|            Member            |            Type            |              Example                    |
++==============================+============================+=========================================+
+|        **implements**        |       string dataset       |   **exchange**:*measurement*:*process*  |
++------------------------------+----------------------------+-----------------------------------------+
+|         **exchange**         |             group          |                                         |
++------------------------------+----------------------------+-----------------------------------------+
+|         *measurement*        |             group          |                                         |
++------------------------------+----------------------------+-----------------------------------------+
+|           *process*          |             group          |                                         |
++------------------------------+----------------------------+-----------------------------------------+
 
 implements
     | 
     | A colon separated list that shows which components are present in
       the file. The only **mandatory** component is **exchange**. A more
       general Data Exchange file also contains *measurement* and
-      *provenance* information, if so these will be declared in **implements**
-      as **exchange**:*measurement*:*provenance*
+      *process* information, if so these will be declared in **implements**
+      as **exchange**:*measurement*:*process*
 
 exchange or exchange_N
     | 
@@ -55,10 +54,14 @@ measurement or measurement_N
       *measurement* and **exchange** groups. This is a judgement left to
       the user.
 
-provenance
+process
     | 
-    | The Provenance group describes all process steps that have been
-      applied to the data.
+    | The Process group describes all the "work" that has been done. This 
+      includes data processing steps that have been applied to the data as
+      well as experimental steps (e.g. data collection strategy etc.) 
+      and sample preparation ahead of the experiment and during the 
+      measurement (e.g. environment conditions etc.).
+
       
 **exchange**
 ============
@@ -72,7 +75,9 @@ focus in this group.
 +------------------+---------------------------------------------------------+-----------------------------+
 |     Member       |      Type                                               |     Example/Attributes      |
 +==================+=========================================================+=============================+
-|    *title*       |      string dataset                                     |  "raw absorption tomo"      |
+|    *name*        |      string dataset                                     |  "absorption_tomography"    |
++------------------+---------------------------------------------------------+-----------------------------+
+|   *description*  |      string dataset                                     |  "raw absorption tomo"      |
 +------------------+---------------------------------------------------------+-----------------------------+
 |    **data**      |      3D dataset                                         |  axes: *theta:y:x*          |
 +------------------+---------------------------------------------------------+-----------------------------+
@@ -84,7 +89,7 @@ focus in this group.
 +------------------+---------------------------------------------------------+-----------------------------+
 |  *data_white*    |      3D dataset                                         |  axes: *theta_white:y:x*    |
 +------------------+---------------------------------------------------------+-----------------------------+
-|  *theta_white*   |      dimension scale 0                                  |  units: "deg"               |
+|  *theta_white*   |      1D dataset                                         |  units: "deg"               |
 +------------------+---------------------------------------------------------+-----------------------------+
 |   *data_shift_x* |      relative x shift of data at each angular position  |                             |
 +------------------+---------------------------------------------------------+-----------------------------+
@@ -93,9 +98,15 @@ focus in this group.
 
 Table: Exchange Group Members for Tomography
 
-title
+
+name
     | 
-    | This is the data title.
+    | Descriptive *name* for **data** dataset. Current types include:
+      absorption_tomography, phase_tomography, dpc_tomography 
+
+description
+    | 
+    | Description.
 
 data
     | 
@@ -211,39 +222,45 @@ of groups.
 +---------------------------------------------+-------------------------+-------------------------+
 |                  *description*              |       string dataset    | "X-ray Microscope"      |
 +---------------------------------------------+-------------------------+-------------------------+
-|                   source_                   |          group          |                         |
-+---------------------------------------------+-------------------------+-------------------------+
-|                   shutter_                  |          group          |                         |
-+---------------------------------------------+-------------------------+-------------------------+
 |                   attenuator_               |          group          |                         |
-+---------------------------------------------+-------------------------+-------------------------+
-|                   monochromator_            |          group          |                         |
-+---------------------------------------------+-------------------------+-------------------------+
-|                   mirror_                   |          group          |                         |
-+---------------------------------------------+-------------------------+-------------------------+
-|                   crl_                      |          group          |                         |
 +---------------------------------------------+-------------------------+-------------------------+
 |                   beam_monitor_             |          group          |                         |
 +---------------------------------------------+-------------------------+-------------------------+
-|                   diffuser_                 |          group          |                         |
-+---------------------------------------------+-------------------------+-------------------------+
 |                   beam_stop_                |          group          |                         |
++---------------------------------------------+-------------------------+-------------------------+
+|                   bertrand_lens_            |          group          |                         |
 +---------------------------------------------+-------------------------+-------------------------+
 |                   condenser_                |          group          |                         |
 +---------------------------------------------+-------------------------+-------------------------+
-|                   pin_hole_                 |          group          |                         |
+|                   crl_                      |          group          |                         |
 +---------------------------------------------+-------------------------+-------------------------+
-|                   zone_plate_               |          group          |                         |
+|                   detection_system_         |          group          |                         |
 +---------------------------------------------+-------------------------+-------------------------+
-|                   bertrand_lens_            |          group          |                         |
+|                   detector_                 |          group          |                         |
++---------------------------------------------+-------------------------+-------------------------+
+|                   diffuser_                 |          group          |                         |
 +---------------------------------------------+-------------------------+-------------------------+
 |                   flight_tube_              |          group          |                         |
 +---------------------------------------------+-------------------------+-------------------------+
 |                   interferometer_           |          group          |                         |
 +---------------------------------------------+-------------------------+-------------------------+
-|                   detector_                 |          group          |                         |
+|                   mirror_                   |          group          |                         |
 +---------------------------------------------+-------------------------+-------------------------+
-|                   acquisition_              |          group          |                         |
+|                   monochromator_            |          group          |                         |
++---------------------------------------------+-------------------------+-------------------------+
+|                   pin_hole_                 |          group          |                         |
++---------------------------------------------+-------------------------+-------------------------+
+|                   samplee_                  |          group          |                         |
++---------------------------------------------+-------------------------+-------------------------+
+|                   shutter_                  |          group          |                         |
++---------------------------------------------+-------------------------+-------------------------+
+|                   source_                   |          group          |                         |
++---------------------------------------------+-------------------------+-------------------------+
+|                   slits_                    |          group          |                         |
++---------------------------------------------+-------------------------+-------------------------+
+|                   table_                    |          group          |                         |
++---------------------------------------------+-------------------------+-------------------------+
+|                   zone_plate_               |          group          |                         |
 +---------------------------------------------+-------------------------+-------------------------+
 |                   setup_                    |          group          |                         |
 +---------------------------------------------+-------------------------+-------------------------+
@@ -274,127 +291,7 @@ detector
     | 
     | The detectors that compose the instrument.
 
-acquisition
-    | 
-    | acquisition setup parameters (static setup values)
 
-
-.. _source:
-
-*source*
-~~~~~~~~
-
-Class describing the light source being used.
-
-+-----------------------------+--------------------------------+---------------------------+
-| Member                      |     Type                       |     Example               |
-+=============================+================================+===========================+
-|*name*                       |     string dataset             |     “APS”                 |
-+-----------------------------+--------------------------------+---------------------------+
-|*description*                |     float dataset              |     "optional"            |
-+-----------------------------+--------------------------------+---------------------------+
-|*datetime*                   |     string dataset (ISO 8601)  |     “2011-07-15T15:10Z”   |
-+-----------------------------+--------------------------------+---------------------------+
-|*beamline*                   |     string dataset             |     “2-BM”                |
-+-----------------------------+--------------------------------+---------------------------+
-|*current*                    |     float dataset              |     0.094                 |
-+-----------------------------+--------------------------------+---------------------------+
-|*energy*                     |     float dataset              |     4.807e-15             |
-+-----------------------------+--------------------------------+---------------------------+
-|*pulse_energy*               |     float dataset              |     1.602e-15             |
-+-----------------------------+--------------------------------+---------------------------+
-|*pulse_width*                |     float dataset              |     15e-11                |
-+-----------------------------+--------------------------------+---------------------------+
-|*mode*                       |     string dataset             |     “TOPUP”               |
-+-----------------------------+--------------------------------+---------------------------+
-|*beam_intensity_incident*    |     float dataset              |     55.93                 |
-+-----------------------------+--------------------------------+---------------------------+
-|*beam_intensity_transmitted* |     float dataset              |     100.0                 |
-+-----------------------------+--------------------------------+---------------------------+
-| geometry_                   |     group                      |                           |
-+-----------------------------+--------------------------------+---------------------------+
-| setup_                      |     group                      |                           |
-+-----------------------------+--------------------------------+---------------------------+
-
-Table: table_source
-
-
-name
-    | 
-    | Name.
-
-description
-    | 
-    | Description.
-    
-datetime
-    | 
-    | Date and time source was measured.
-    
-beamline
-    | 
-    | Name of the beamline.
-    
-current
-    | 
-    | Electron beam current (A).
-    
-energy
-    | 
-    | Characteristic photon energy of the source (J). For an APS bending
-    | magnet this is 30 keV or 4.807e-15 J.
-      
-pulse_energy
-    | 
-    | Sum of the energy of all the photons in the pulse (J). pulse_width
-    | Duration of the pulse (s).
-    
-mode
-    | 
-    | Beam mode: TOP-UP.
-    
-beam_intensity_incident
-    | 
-    | Incident beam intensity in (photons per s).
-    
-beam_intensity_transmitted
-    | 
-    | Transmitted beam intensity (photons per s).
-
-.. _shutter:
-
-*shutter*
-~~~~~~~~~
-
-Class describing the shutter being used.
-
-+--------------------+-------------------------+-------------------------------+
-|      Member        |           Type          |         Example               |
-+====================+=========================+===============================+
-|      *name*        |     string dataset      |     “Front End Shutter 1"     |
-+--------------------+-------------------------+-------------------------------+
-|  *description*     |     string dataset      |     “optional”                |
-+--------------------+-------------------------+-------------------------------+
-|     *status*       |     string dataset      |     “OPEN”                    |
-+--------------------+-------------------------+-------------------------------+
-|       geometry_    |        group            |                               |
-+--------------------+-------------------------+-------------------------------+
-|       setup_       |        group            |                               |
-+--------------------+-------------------------+-------------------------------+
-
-Table: Shutter Group Members
-
-name
-    | 
-    | Name.
-
-description
-    | 
-    | Description.
-
-status
-    | 
-    | “OPEN” or “CLOSED”
 
 .. _attenuator:
 
@@ -445,100 +342,6 @@ description
     | 
     | Type or composition of attenuator.
 
-.. _monochromator:
-
-*monochromator*
-~~~~~~~~~~~~~~~
-
-Define the monochromator used in the instrument.
-
-+--------------------+-------------------------+-------------------------------+
-|      Member        |           Type          |         Example               |
-+====================+=========================+===============================+
-| *name*             |     string dataset      |     “Mono 1”                  |
-+--------------------+-------------------------+-------------------------------+
-| *description*      |     string dataset      |     “Multilayer”              |
-+--------------------+-------------------------+-------------------------------+
-| *energy*           |     float dataset       |     1.602e-15                 |
-+--------------------+-------------------------+-------------------------------+
-| *energy_error*     |     float dataset       |     1.602e-17                 |
-+--------------------+-------------------------+-------------------------------+
-| *mono_stripe*      |     string dataset      |     “Ru/C”                    |
-+--------------------+-------------------------+-------------------------------+
-| geometry_          |     group               |                               |
-+--------------------+-------------------------+-------------------------------+
-| setup_             |     group               |                               |
-+--------------------+-------------------------+-------------------------------+
-
-Table: Monochromator Group Members
-
-name
-    | 
-    | Name.
-
-description
-    | 
-    | Description.
-    
-energy
-    | 
-    | Peak of the spectrum that the monochromator selects. Since units
-    |  is not defined this field is in J and corresponds to 10 keV.
-    
-energy_error
-    | 
-    | Standard deviation of the spectrum that the monochromator selects.
-    |  Since units is not defined this field is in J.
-    
-mono_stripe
-    | 
-    | Type of multilayer coating or crystal.
-
-
-.. _mirror:
-
-*mirror*
-~~~~~~~~
-
-Class describing the mirror being used, if there is more than one append _##
-
-+--------------------+-------------------------+-------------------------------+
-|      Member        |           Type          |         Example               |
-+====================+=========================+===============================+
-|      *name*        |     string dataset      |     “M1"                      |
-+--------------------+-------------------------+-------------------------------+
-|  *description*     |     string dataset      |     “optional”                |
-+--------------------+-------------------------+-------------------------------+
-|       geometry_    |        group            |                               |
-+--------------------+-------------------------+-------------------------------+
-|       setup_       |        group            |                               |
-+--------------------+-------------------------+-------------------------------+
-
-Table: Mirror Group Members
-
-
-.. _crl:
-
-crl
-~~~
-
-Class describing the compound refractive lenses being used, if there is more than one append _##
-
-+--------------------+-------------------------+-------------------------------+
-|      Member        |           Type          |         Example               |
-+====================+=========================+===============================+
-|      *name*        |     string dataset      |     “CRL"                     |
-+--------------------+-------------------------+-------------------------------+
-|  *description*     |     string dataset      |     “optional”                |
-+--------------------+-------------------------+-------------------------------+
-|       geometry_    |        group            |                               |
-+--------------------+-------------------------+-------------------------------+
-|       setup_       |        group            |                               |
-+--------------------+-------------------------+-------------------------------+
-
-Table: CRL Group Members
-
-
 .. _beam_monitor:
 
 *beam_monitor*
@@ -559,29 +362,6 @@ Class describing the beam monitor being used, if there is more than one append _
 +--------------------+-------------------------+-------------------------------+
 
 Table: Beam Monitor Group Members
-
-
-.. _diffuser:
-
-*diffuser*
-~~~~~~~~~~
-
-Class describing the diffuser being used, if there is more than one append _##
-
-+--------------------+-------------------------+-------------------------------+
-|      Member        |           Type          |         Example               |
-+====================+=========================+===============================+
-|      *name*        |     string dataset      |     “Diffuser"                |
-+--------------------+-------------------------+-------------------------------+
-|  *description*     |     string dataset      |     “optional”                |
-+--------------------+-------------------------+-------------------------------+
-|       geometry_    |        group            |                               |
-+--------------------+-------------------------+-------------------------------+
-|       setup_       |        group            |                               |
-+--------------------+-------------------------+-------------------------------+
-
-Table: Diffuser Group Members
-
 
 .. _beam_stop:
 
@@ -604,6 +384,26 @@ Class describing the beam stop being used, if there is more than one append _##
 
 Table: Beam Stop Group Members
 
+.. _bertrand_lens:
+
+*bertrand_lens*
+~~~~~~~~~~~~~~~
+
+Class describing the Bertrand lens being used, if there is more than one append _##
+
++--------------------+-------------------------+-------------------------------+
+|      Member        |           Type          |         Example               |
++====================+=========================+===============================+
+|      *name*        |     string dataset      |     “Bertrand Lens"           |
++--------------------+-------------------------+-------------------------------+
+|  *description*     |     string dataset      |     “optional”                |
++--------------------+-------------------------+-------------------------------+
+|       geometry_    |        group            |                               |
++--------------------+-------------------------+-------------------------------+
+|       setup_       |        group            |                               |
++--------------------+-------------------------+-------------------------------+
+
+Table: Bertrand Lens Group Members
 
 .. _condenser:
 
@@ -626,18 +426,17 @@ Class describing the condenser being used, if there is more than one append _##
 
 Table: Condenser Group Members
 
+.. _crl:
 
-.. _pin_hole:
+crl
+~~~
 
-*pin_hole*
-~~~~~~~~~~
-
-Class describing the pin hole being used, if there is more than one append _##
+Class describing the compound refractive lenses being used, if there is more than one append _##
 
 +--------------------+-------------------------+-------------------------------+
 |      Member        |           Type          |         Example               |
 +====================+=========================+===============================+
-|      *name*        |     string dataset      |     “Pin Hole"                |
+|      *name*        |     string dataset      |     “CRL"                     |
 +--------------------+-------------------------+-------------------------------+
 |  *description*     |     string dataset      |     “optional”                |
 +--------------------+-------------------------+-------------------------------+
@@ -646,124 +445,28 @@ Class describing the pin hole being used, if there is more than one append _##
 |       setup_       |        group            |                               |
 +--------------------+-------------------------+-------------------------------+
 
-Table: Pin Hole Group Members
+Table: CRL Group Members
 
-.. _sample_stack:
+.. _detection_system:
 
-*sample* (stack)
-~~~~~~~~~~~~~~~~
+*detection_system*
+~~~~~~~~~~~~~~~~~~
 
-Class describing the sample stage stack being used.
-
-+--------------------+-------------------------+-------------------------------+
-|      Member        |           Type          |         Example               |
-+====================+=========================+===============================+
-|      *name*        |     string dataset      |     “TXM sample stack"        |
-+--------------------+-------------------------+-------------------------------+
-|  *description*     |     string dataset      |     “optional”                |
-+--------------------+-------------------------+-------------------------------+
-|       geometry_    |        group            |                               |
-+--------------------+-------------------------+-------------------------------+
-|       setup_       |        group            |                               |
-+--------------------+-------------------------+-------------------------------+
-
-Table: Sample stage stack Group Members
-
-
-.. _zone_plate:
-
-*zone_plate*
-~~~~~~~~~~~~
-
-Class describing the zone plate being used, if there is more than one append _##
-
-+--------------------+-------------------------+-------------------------------+
-|      Member        |           Type          |         Example               |
-+====================+=========================+===============================+
-|      *name*        |     string dataset      |     “Zone Plate"              |
-+--------------------+-------------------------+-------------------------------+
-|  *description*     |     string dataset      |     “optional”                |
-+--------------------+-------------------------+-------------------------------+
-|       geometry_    |        group            |                               |
-+--------------------+-------------------------+-------------------------------+
-|       setup_       |        group            |                               |
-+--------------------+-------------------------+-------------------------------+
-
-Table: Zone Plate Group Members
-
-
-.. _bertrand_lens:
-
-*bertrand_lens*
-~~~~~~~~~~~~~~~
-
-Class describing the Bertrand lens being used, if there is more than one append _##
-
-+--------------------+-------------------------+-------------------------------+
-|      Member        |           Type          |         Example               |
-+====================+=========================+===============================+
-|      *name*        |     string dataset      |     “Bertrand Lens"           |
-+--------------------+-------------------------+-------------------------------+
-|  *description*     |     string dataset      |     “optional”                |
-+--------------------+-------------------------+-------------------------------+
-|       geometry_    |        group            |                               |
-+--------------------+-------------------------+-------------------------------+
-|       setup_       |        group            |                               |
-+--------------------+-------------------------+-------------------------------+
-
-Table: Bertrand Lens Group Members
-
-
-.. _flight_tube:
-
-*flight_tube*
-~~~~~~~~~~~~~
-
-Class describing the flight tube being used, if there is more than one append _##
-
-+--------------------+-------------------------+-------------------------------+
-|      Member        |           Type          |         Example               |
-+====================+=========================+===============================+
-|      *name*        |     string dataset      |     “Flight Tube"             |
-+--------------------+-------------------------+-------------------------------+
-|  *description*     |     string dataset      |     “optional”                |
-+--------------------+-------------------------+-------------------------------+
-|       geometry_    |        group            |                               |
-+--------------------+-------------------------+-------------------------------+
-|       setup_       |        group            |                               |
-+--------------------+-------------------------+-------------------------------+
-
-Table: Flight Tube Group Members
-
-
-.. _interferometer: 
-
-*interferometer*
-~~~~~~~~~~~~~~~~
-
-This group stores the interferometer parameters.
+In full field imaging the detector consists of microscope objective and a scintillator screen.
 
 +----------------------------------------------+----------------------------------+----------------------------------+
 |     Member                                   |      Type                        |            Example               |
 +==============================================+==================================+==================================+
-|    *name*                                    |     string dataset               |     “Inter 1”                    |
+|   *name*                                     | string dataset                   |      "Detection 1"               |   
 +----------------------------------------------+----------------------------------+----------------------------------+
-|    *description*                             |     string dataset               |     “description”                |
+|   *description*                              | string dataset                   |      "Standard microCT"          |   
 +----------------------------------------------+----------------------------------+----------------------------------+
-|    *grid_start*                              |      float                       |      1.8                         |
+|    objective_                                |      group                       |                                  |
 +----------------------------------------------+----------------------------------+----------------------------------+
-|    *grid_end*                                |      float                       |      3.51                        | 
-+----------------------------------------------+----------------------------------+----------------------------------+
-|    *number_of_grid_periods*                  |      int                         |      1                           |
-+----------------------------------------------+----------------------------------+----------------------------------+
-|    *number_of_grid_steps*                    |      int                         |      6                           |
-+----------------------------------------------+----------------------------------+----------------------------------+
-|         geometry_                            |      group                       |                                  |
-+----------------------------------------------+----------------------------------+----------------------------------+
-|         setup_                               |      group                       |                                  |
+|    scintillator_                             |      group                       |                                  |
 +----------------------------------------------+----------------------------------+----------------------------------+
 
-Table: Interferometer Group Members
+Table: Detection System Group Members
 
 name
     | 
@@ -773,25 +476,14 @@ description
     | 
     | Description.
 
-start_angle
+objective_N
     | 
-    | Interferometer start angle.
+    | List of the visible light objectives mounted between the detector and the scintillator screen.
 
-grid_start
-    | 
-    | Interferometer grid start angle.
+scintillator
+    |
+    | Scintillator screen
 
-grid_end
-    | 
-    | Interferometer grid end angle.
-
-grid_position_for_scan
-    | 
-    | Interferometer grid position for scan.   
-
-number_of_grid_steps
-    | 
-    | Number of grid steps.
 
 .. _detector:
 
@@ -854,10 +546,6 @@ stored in this class.
 +----------------------------------------------+----------------------------------+----------------------------------+
 |    roi_                                      |      group                       |                                  |
 +----------------------------------------------+----------------------------------+----------------------------------+
-|    objective_                                |      group                       |                                  |
-+----------------------------------------------+----------------------------------+----------------------------------+
-|    scintillator_                             |      group                       |                                  |
-+----------------------------------------------+----------------------------------+----------------------------------+
 |    *counts_per_joule*                        |      float                       |      unitless                    | 
 +----------------------------------------------+----------------------------------+----------------------------------+
 |    *basis_vectors*                           |      float array                 |      length                      | 
@@ -868,7 +556,6 @@ stored in this class.
 +----------------------------------------------+----------------------------------+----------------------------------+
 |         setup_                               |      group                       |                                  |
 +----------------------------------------------+----------------------------------+----------------------------------+
-
 
 Table: Detector Group Members for Tomography
 
@@ -936,10 +623,6 @@ roi
     | 
     | The detector selected Region Of Interest (ROI).
 
-objective_N
-    | 
-    | List of the visible light objectives mounted between the detector and the scintillator screen.
-
 counts_per_joule
     | 
     | Number of counts recorded per each joule of energy received by the detector. The number of incident photons can then be calculated by:
@@ -955,6 +638,413 @@ corner_position
 geometry
     | 
     | Position and orientation of the center of mass of the detector. This should only be specified for non pixel detectors. For pixel detectors use basis_vectors and corner_position.
+
+.. _diffuser:
+
+*diffuser*
+~~~~~~~~~~
+
+Class describing the diffuser being used, if there is more than one append _##
+
++--------------------+-------------------------+-------------------------------+
+|      Member        |           Type          |         Example               |
++====================+=========================+===============================+
+|      *name*        |     string dataset      |     “Diffuser"                |
++--------------------+-------------------------+-------------------------------+
+|  *description*     |     string dataset      |     “optional”                |
++--------------------+-------------------------+-------------------------------+
+|       geometry_    |        group            |                               |
++--------------------+-------------------------+-------------------------------+
+|       setup_       |        group            |                               |
++--------------------+-------------------------+-------------------------------+
+
+Table: Diffuser Group Members
+
+.. _flight_tube:
+
+*flight_tube*
+~~~~~~~~~~~~~
+
+Class describing the flight tube being used, if there is more than one append _##
+
++--------------------+-------------------------+-------------------------------+
+|      Member        |           Type          |         Example               |
++====================+=========================+===============================+
+|      *name*        |     string dataset      |     “Flight Tube"             |
++--------------------+-------------------------+-------------------------------+
+|  *description*     |     string dataset      |     “optional”                |
++--------------------+-------------------------+-------------------------------+
+|       geometry_    |        group            |                               |
++--------------------+-------------------------+-------------------------------+
+|       setup_       |        group            |                               |
++--------------------+-------------------------+-------------------------------+
+
+Table: Flight Tube Group Members
+
+.. _interferometer: 
+
+*interferometer*
+~~~~~~~~~~~~~~~~
+
+This group stores the interferometer parameters.
+
++----------------------------------------------+----------------------------------+----------------------------------+
+|     Member                                   |      Type                        |            Example               |
++==============================================+==================================+==================================+
+|    *name*                                    |     string dataset               |     “Inter 1”                    |
++----------------------------------------------+----------------------------------+----------------------------------+
+|    *description*                             |     string dataset               |     “description”                |
++----------------------------------------------+----------------------------------+----------------------------------+
+|    *grid_start*                              |      float                       |      1.8                         |
++----------------------------------------------+----------------------------------+----------------------------------+
+|    *grid_end*                                |      float                       |      3.51                        | 
++----------------------------------------------+----------------------------------+----------------------------------+
+|    *number_of_grid_periods*                  |      int                         |      1                           |
++----------------------------------------------+----------------------------------+----------------------------------+
+|    *number_of_grid_steps*                    |      int                         |      6                           |
++----------------------------------------------+----------------------------------+----------------------------------+
+|         geometry_                            |      group                       |                                  |
++----------------------------------------------+----------------------------------+----------------------------------+
+|         setup_                               |      group                       |                                  |
++----------------------------------------------+----------------------------------+----------------------------------+
+
+Table: Interferometer Group Members
+
+name
+    | 
+    | Name.
+
+description
+    | 
+    | Description.
+
+start_angle
+    | 
+    | Interferometer start angle.
+
+grid_start
+    | 
+    | Interferometer grid start angle.
+
+grid_end
+    | 
+    | Interferometer grid end angle.
+
+grid_position_for_scan
+    | 
+    | Interferometer grid position for scan.   
+
+number_of_grid_steps
+    | 
+    | Number of grid steps.
+
+.. _mirror:
+
+*mirror*
+~~~~~~~~
+
+Class describing the mirror being used, if there is more than one append _##
+
++--------------------+-------------------------+-------------------------------+
+|      Member        |           Type          |         Example               |
++====================+=========================+===============================+
+|      *name*        |     string dataset      |     “M1"                      |
++--------------------+-------------------------+-------------------------------+
+|  *description*     |     string dataset      |     “optional”                |
++--------------------+-------------------------+-------------------------------+
+|      *angle*       |        float            |     “optional”                |
++--------------------+-------------------------+-------------------------------+
+|       geometry_    |        group            |                               |
++--------------------+-------------------------+-------------------------------+
+|       setup_       |        group            |                               |
++--------------------+-------------------------+-------------------------------+
+
+Table: Mirror Group Members
+
+.. _monochromator:
+
+*monochromator*
+~~~~~~~~~~~~~~~
+
+Define the monochromator used in the instrument.
+
++--------------------+-------------------------+-------------------------------+
+|      Member        |           Type          |         Example               |
++====================+=========================+===============================+
+| *name*             |     string dataset      |     “Mono 1”                  |
++--------------------+-------------------------+-------------------------------+
+| *description*      |     string dataset      |     “Multilayer”              |
++--------------------+-------------------------+-------------------------------+
+| *energy*           |     float dataset       |     1.602e-15                 |
++--------------------+-------------------------+-------------------------------+
+| *energy_error*     |     float dataset       |     1.602e-17                 |
++--------------------+-------------------------+-------------------------------+
+| *mono_stripe*      |     string dataset      |     “Ru/C”                    |
++--------------------+-------------------------+-------------------------------+
+| geometry_          |     group               |                               |
++--------------------+-------------------------+-------------------------------+
+| setup_             |     group               |                               |
++--------------------+-------------------------+-------------------------------+
+
+Table: Monochromator Group Members
+
+name
+    | 
+    | Name.
+
+description
+    | 
+    | Description.
+    
+energy
+    | 
+    | Peak of the spectrum that the monochromator selects. Since units
+    |  is not defined this field is in J and corresponds to 10 keV.
+    
+energy_error
+    | 
+    | Standard deviation of the spectrum that the monochromator selects.
+    |  Since units is not defined this field is in J.
+    
+mono_stripe
+    | 
+    | Type of multilayer coating or crystal.
+
+.. _pin_hole:
+
+*pin_hole*
+~~~~~~~~~~
+
+Class describing the pin hole being used, if there is more than one append _##
+
++--------------------+-------------------------+-------------------------------+
+|      Member        |           Type          |         Example               |
++====================+=========================+===============================+
+|      *name*        |     string dataset      |     “Pin Hole"                |
++--------------------+-------------------------+-------------------------------+
+|  *description*     |     string dataset      |     “optional”                |
++--------------------+-------------------------+-------------------------------+
+|       geometry_    |        group            |                               |
++--------------------+-------------------------+-------------------------------+
+|       setup_       |        group            |                               |
++--------------------+-------------------------+-------------------------------+
+
+Table: Pin Hole Group Members
+
+.. _shutter:
+
+*shutter*
+~~~~~~~~~
+
+Class describing the shutter being used.
+
++--------------------+-------------------------+-------------------------------+
+|      Member        |           Type          |         Example               |
++====================+=========================+===============================+
+|      *name*        |     string dataset      |     “Front End Shutter 1"     |
++--------------------+-------------------------+-------------------------------+
+|  *description*     |     string dataset      |     “optional”                |
++--------------------+-------------------------+-------------------------------+
+|     *status*       |     string dataset      |     “OPEN”                    |
++--------------------+-------------------------+-------------------------------+
+|       geometry_    |        group            |                               |
++--------------------+-------------------------+-------------------------------+
+|       setup_       |        group            |                               |
++--------------------+-------------------------+-------------------------------+
+
+Table: Shutter Group Members
+
+name
+    | 
+    | Name.
+
+description
+    | 
+    | Description.
+
+status
+    | 
+    | “OPEN” or “CLOSED”
+
+.. _samplee:
+
+*sample*
+~~~~~~~~
+
+Class describing the sample stage stack being used.
+
++--------------------+-------------------------+-------------------------------+
+|      Member        |           Type          |         Example               |
++====================+=========================+===============================+
+|      *name*        |     string dataset      |     “TXM sample stack"        |
++--------------------+-------------------------+-------------------------------+
+|  *description*     |     string dataset      |     “optional”                |
++--------------------+-------------------------+-------------------------------+
+|*detector_distance* |     string dataset      |     “optional”                |
++--------------------+-------------------------+-------------------------------+
+|       geometry_    |        group            |                               |
++--------------------+-------------------------+-------------------------------+
+|       setup_       |        group            |                               |
++--------------------+-------------------------+-------------------------------+
+
+Table: Sample stage stack Group Members
+
+.. _source:
+
+*source*
+~~~~~~~~
+
+Class describing the light source being used.
+
++-----------------------------+--------------------------------+---------------------------+
+| Member                      |     Type                       |     Example               |
++=============================+================================+===========================+
+|*name*                       |     string dataset             |     “APS”                 |
++-----------------------------+--------------------------------+---------------------------+
+|*description*                |     float dataset              |     "optional"            |
++-----------------------------+--------------------------------+---------------------------+
+|*datetime*                   |     string dataset (ISO 8601)  |     “2011-07-15T15:10Z”   |
++-----------------------------+--------------------------------+---------------------------+
+|*beamline*                   |     string dataset             |     “2-BM”                |
++-----------------------------+--------------------------------+---------------------------+
+|*current*                    |     float dataset              |     0.094                 |
++-----------------------------+--------------------------------+---------------------------+
+|*energy*                     |     float dataset              |     4.807e-15             |
++-----------------------------+--------------------------------+---------------------------+
+|*pulse_energy*               |     float dataset              |     1.602e-15             |
++-----------------------------+--------------------------------+---------------------------+
+|*pulse_width*                |     float dataset              |     15e-11                |
++-----------------------------+--------------------------------+---------------------------+
+|*mode*                       |     string dataset             |     “TOPUP”               |
++-----------------------------+--------------------------------+---------------------------+
+|*beam_intensity_incident*    |     float dataset              |     55.93                 |
++-----------------------------+--------------------------------+---------------------------+
+|*beam_intensity_transmitted* |     float dataset              |     100.0                 |
++-----------------------------+--------------------------------+---------------------------+
+| geometry_                   |     group                      |                           |
++-----------------------------+--------------------------------+---------------------------+
+| setup_                      |     group                      |                           |
++-----------------------------+--------------------------------+---------------------------+
+
+Table: Source
+
+
+name
+    | 
+    | Name.
+
+description
+    | 
+    | Description.
+    
+datetime
+    | 
+    | Date and time source was measured.
+    
+beamline
+    | 
+    | Name of the beamline.
+    
+current
+    | 
+    | Electron beam current (A).
+    
+energy
+    | 
+    | Characteristic photon energy of the source (J). For an APS bending
+    | magnet this is 30 keV or 4.807e-15 J.
+      
+pulse_energy
+    | 
+    | Sum of the energy of all the photons in the pulse (J). pulse_width
+    | Duration of the pulse (s).
+    
+mode
+    | 
+    | Beam mode: TOP-UP.
+    
+beam_intensity_incident
+    | 
+    | Incident beam intensity in (photons per s).
+    
+beam_intensity_transmitted
+    | 
+    | Transmitted beam intensity (photons per s).
+
+
+.. _slits:
+
+*slists*
+~~~~~~~~
+
+Class describing the slits being used.
+
++--------------------+-------------------------+-------------------------------+
+|      Member        |           Type          |         Example               |
++====================+=========================+===============================+
+|      *name*        |     string dataset      |     “A slits"                 |
++--------------------+-------------------------+-------------------------------+
+|  *description*     |     string dataset      |     “Horizontal Slits”        |
++--------------------+-------------------------+-------------------------------+
+|       geometry_    |        group            |                               |
++--------------------+-------------------------+-------------------------------+
+|       setup_       |        group            |                               |
++--------------------+-------------------------+-------------------------------+
+
+Table: Slits Group Members
+
+name
+    | 
+    | Name.
+
+description
+    | 
+    | Description.
+
+
+
+.. _table:
+
+*table*
+~~~~~~~
+
+Class describing the zone plate being used, if there is more than one append _##
+
++--------------------+-------------------------+-------------------------------+
+|      Member        |           Type          |         Example               |
++====================+=========================+===============================+
+|      *name*        |     string dataset      |     “Optical Table"           |
++--------------------+-------------------------+-------------------------------+
+|  *description*     |     string dataset      |     “optional”                |
++--------------------+-------------------------+-------------------------------+
+|       geometry_    |        group            |                               |
++--------------------+-------------------------+-------------------------------+
+|       setup_       |        group            |                               |
++--------------------+-------------------------+-------------------------------+
+
+Table: Optical Table Group Members
+
+
+.. _zone_plate:
+
+*zone_plate*
+~~~~~~~~~~~~
+
+Class describing the zone plate being used, if there is more than one append _##
+
++--------------------+-------------------------+-------------------------------+
+|      Member        |           Type          |         Example               |
++====================+=========================+===============================+
+|      *name*        |     string dataset      |     “Zone Plate"              |
++--------------------+-------------------------+-------------------------------+
+|  *description*     |     string dataset      |     “optional”                |
++--------------------+-------------------------+-------------------------------+
+|       geometry_    |        group            |                               |
++--------------------+-------------------------+-------------------------------+
+|       setup_       |        group            |                               |
++--------------------+-------------------------+-------------------------------+
+
+Table: Zone Plate Group Members
 
 .. _roi:
 
@@ -1154,6 +1244,8 @@ they should appear within this parentage of groups.
 +-------------------------------------+------------------------------------+-----------------------------+
 |    *description*                    |     string dataset                 |      "malaria cells"        |   
 +-------------------------------------+------------------------------------+-----------------------------+
+|    *file_path*                      |     string dataset                 |      "/2016-03/tst/"        |   
++-------------------------------------+------------------------------------+-----------------------------+
 |    *preparation_date*               |  string dataset (ISO 8601)         |  "2012-07-31T21:15:22+0600" |    
 +-------------------------------------+------------------------------------+-----------------------------+
 |    *chemical_formula*               | string dataset (abbr. CIF format)  |     "(Cd 2+)3,  2(H2 O)"    |   
@@ -1186,6 +1278,10 @@ Table: Sample Group Members
 name
     | 
     | Descriptive name of the sample.
+
+file_path
+    | 
+    | Directory path where the data were originally saved.
 
 description
     | 
@@ -1258,6 +1354,8 @@ activity, and safety form.
 +---------------+-------------------------+----------------------+
 | *safety*      |     string dataset      |        “9876”        |
 +---------------+-------------------------+----------------------+
+| *title*       |     string dataset      | “Al 4D dynamic tomo” |
++---------------+-------------------------+----------------------+
 
 Table: Experiment Group Members
 
@@ -1275,6 +1373,11 @@ safety
     | 
     | Safety reference document. For the APS this is the Experiment
     | Safety Approval Form number.
+
+title
+    | 
+    | Proposal title.
+
 
 *experimenter*
 ~~~~~~~~~~~~~~
@@ -1412,18 +1515,23 @@ matrix that transforms from the global orientation to the local
 orientation. The third row can be recovered by using the fact that the
 basis vectors are orthonormal.
 
-*provenance*
-============
+*process*
+=========
 
-Data provenance is the documentation of the data collection strategy
-(*acquisition*) and all transformations, analyses and interpretations 
-of data performed by a sequence of process functions or actorts.
+Process is the documentation of the data collection strategy
+(*acquisition*) steps, all transformations, analyses and interpretations 
+of data performed by a sequence of process functions (*actor*) as well
+as any sample preparation step done ahead of the experiment and during the 
+measurement (e.g. environment conditions etc.).
 
-Maintaining this history allows for reproducible data. The Data Exchange
-format tracks provenance by allowing each actor to append provenance
-information to a process table. The provenance process table tracks the
-execution order of a series of processes by appending sequential entries
-in the process table.
+Maintaining this history, also called provenance, allows for reproducible 
+data. The Data Exchange format tracks process by allowing each actor 
+to append process information to a process table. 
+
+The process table tracks provenance in the execution order as a series 
+of processing steps by appending sequential actor entries in the process 
+table.
+
 
 +-------------------------------------+------------------------------------+-----------------------------+
 |    Member                           |                 Type               |          Example            |
@@ -1440,37 +1548,83 @@ in the process table.
 +-------------------------------------+------------------------------------+-----------------------------+
 |    table_                           |         group                      |                             |    
 +-------------------------------------+------------------------------------+-----------------------------+
-Table: Provenance Group Members
 
-name    |     | Descriptive provenance task.
+Table: Process Group Members
 
-description    |     | Description of the provenance task.
+name
+    | 
+    | Descriptive process task.
+
+description
+    | 
+    | Description of the process task.
     
 .. _acquisition:
 
 *acquisition*
 -------------
 
-Logging acquisition setup parameters (static setup values) is not defined by Data Exchange 
+Logging acquisition parameters (static setup and per-image values) is not defined by Data Exchange 
 because is specific and different for each instrument and beamline.
 In the table below we present the implementation adopted by the Swiss Light Source and
 Advanced Photon Source.
 
-+----------------------------------------------+--------------------+------------------------------------------------------+
-|     Member                                   |      Type          |            Example                                   |
-+==============================================+====================+======================================================+
-|   *name*                                     | string dataset     |      "dpc_tomography"                                |
-+----------------------------------------------+--------------------+------------------------------------------------------+
-|   *description*                              | string dataset     |      "step scan"                                     |
-+----------------------------------------------+--------------------+------------------------------------------------------+
-|   *version*                                  | string dataset     | https://github.com/data_collection_scripts/b9ad87e17 |
-+----------------------------------------------+--------------------+------------------------------------------------------+
-|   *output_data*                              | string dataset     |        "/exchange"                                   |+----------------------------------------------+--------------------+------------------------------------------------------+
-|   set-up_                                    | group              |                                                      |
-+----------------------------------------------+--------------------+------------------------------------------------------+
++----------------------------------------------+--------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+|     Member                                   |      Type          |            Example                                                                                                                                   |
++==============================================+====================+======================================================================================================================================================+
+|   *name*                                     | string dataset     |   "mosaic"                                                                                                                                           |
++----------------------------------------------+--------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+|   *description*                              | string dataset     |   "step scan"                                                                                                                                        |
++----------------------------------------------+--------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+|   *output_data*                              | string dataset     |   "/exchange"                                                                                                                                        |
++----------------------------------------------+--------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+|   *version*                                  | string dataset     |   https://github.com/data_collection_scripts/b9ad87e17                                                                                               |
++----------------------------------------------+--------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+|   *sample_position_x*                        | 1D array           |   Position of the sample axis x for each image collected                                                                                             |
++----------------------------------------------+--------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+|   *sample_position_y*                        | 1D array           |   Position of the sample axis y for each image collected                                                                                             |
++----------------------------------------------+--------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+|   *sample_position_z*                        | 1D array           |   Position of the sample axis z for each image collected                                                                                             |
++----------------------------------------------+--------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+|   *sample_image_shift_x*                     | 1D array           |   Vector containing the shift of the sample axis x at each projection on the detector plane.                                                         |
++----------------------------------------------+--------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+|   *sample_image_shift_y*                     | 1D array           |   Vector containing the shift of the sample axis y at each projection on the detector plane.                                                         |
++----------------------------------------------+--------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+|   *sample_image_shift_x*                     | 1D array           |   Vector containing the shift of the sample axis z at each projection on the detector plane.                                                         |
++----------------------------------------------+--------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+|   *image_theta*                              | 1D array           |   Vector containing the rotary stage angular position read from the encoder at each image.                                                           |
++----------------------------------------------+--------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+|   *scan_index*                               | 1D array           |   Vector containin for each image the identifier assigned by beamline controls to each individual series of images or scan.                          |
++----------------------------------------------+--------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+|   *scan_date*                                | 1D array           |   Vector containin for each image the wall date/time at start of scan in iso 8601.                                                                   |
++----------------------------------------------+--------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+|   *image_date*                               | 1D array           |   Vector containing the date/time each image was acquired in iso 8601.                                                                               |
++----------------------------------------------+--------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+|   *time_stamp*                               | 1D array           |   Vector containin for each image the relative time since scan_date                                                                                  |
++----------------------------------------------+--------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+|   *image_number*                             | 1D array           |   Vector containin for each image the the image serial number as assigned by the camera. Unique for each individual scan. Always starts at 0.0       |
++----------------------------------------------+--------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+|   *image_exposure_time*                      | 1D array           |   Vector containin for each image the the measured exposure time                                                                                     |
++----------------------------------------------+--------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+|   *image_is_complete*                        | 1D array           |   Vector containin for each image the boolen status of: is any pixel data missing?                                                                   |
++----------------------------------------------+--------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+|   *image_type*                               | 1D array           |   Vector containin for each image contained in /exchange/data 0 for white, 1 for projection and 2 for dark.                                          |
++----------------------------------------------+--------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+|    set-up_                                   | group              |                                                                                                                                                      |
++----------------------------------------------+--------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 Table: Acquisition Group Members
+
+
+name
+    | 
+    | Descriptive *name* for *acquisition*. Current name include:
+      tomo, interlaced, mosaic.
+
+description
+    | 
+    | Description.
 
 
 .. _set-up:
@@ -1478,7 +1632,7 @@ Table: Acquisition Group Members
 *setup*
 ~~~~~~~
 
-In the table below we present the implementation adopted by the Swiss Light Source and
+List of static scan setup values. In the table below we present the implementation adopted by the Swiss Light Source and
 Advanced Photon Source.
 
 +----------------------------------------------+----------------------------------+----------------------------------+
@@ -1488,27 +1642,43 @@ Advanced Photon Source.
 +----------------------------------------------+----------------------------------+----------------------------------+
 |    *rotation_end_angle*                      |      float                       |      180.0                       |
 +----------------------------------------------+----------------------------------+----------------------------------+
+|    *rotation_speed*                          |      float                       |      180.0                       |
++----------------------------------------------+----------------------------------+----------------------------------+
 |    *angular_step*                            |      float                       |      0.125                       |
 +----------------------------------------------+----------------------------------+----------------------------------+
 |    *number_of_projections*                   |      integer                     |      1441                        |
 +----------------------------------------------+----------------------------------+----------------------------------+
-|    *number_of_flats*                         |      integer                     |      100                         |
+|    *number_of_whites*                        |      integer                     |      100                         |
 +----------------------------------------------+----------------------------------+----------------------------------+
 |    *number_of_darks*                         |      integer                     |      32                          |
++----------------------------------------------+----------------------------------+----------------------------------+
+|    *number_of_inter_whites*                  |      integer                     |       1                          |
++----------------------------------------------+----------------------------------+----------------------------------+
+|    *inner_scan_flag*                         |      integer                     |       1                          |
++----------------------------------------------+----------------------------------+----------------------------------+
+|    *white_frequency*                         |      integer                     |       0                          |
 +----------------------------------------------+----------------------------------+----------------------------------+
 |    *sample_in*                               |      float                       |      0.0                         |
 +----------------------------------------------+----------------------------------+----------------------------------+
 |    *sample_out*                              |      float                       |      4.0                         |
 +----------------------------------------------+----------------------------------+----------------------------------+
 
-Table: Setup Acquisition Group for Tomography
+
+Table: Static Setup Acquisition Group for Tomography
+
 
 .. _tomo_rec:
 
-*tomo_rec* (APS)----------------The Reconstruction process description group contains metadata requiredto run a tomography reconstruction. The specific algorithm is describedin a separate group under the reconstruction setup group.
+*tomo_rec* (APS)
+----------------
+
+The Reconstruction process description group contains metadata required
+to run a tomography reconstruction. The specific algorithm is described
+in a separate group under the reconstruction setup group.
 Here is where to log the algorithm setup parameters. In the case of tomoPy 
 this can simply be the link to the scrip used to run the reconstruction. 
-+-------------------------------------+------------------------------------+---------------------------------------------+
+
++-------------------------------------+------------------------------------+---------------------------------------------+
 |    Member                           |                 Type               |          Example                            |
 +=====================================+====================================+=============================================+
 |       *name*                        |     string dataset                 |        "test rec"                           | 
@@ -1517,23 +1687,33 @@ this can simply be the link to the scrip used to run the reconstruction.
 +-------------------------------------+------------------------------------+---------------------------------------------+
 |       *version*                     |     string dataset                 | https://github.com/tomopy_scripts/b9ad87e17 |
 +-------------------------------------+------------------------------------+---------------------------------------------+
-|       *input_data*                  |     string dataset                 |        "/exchange"                          |+-------------------------------------+------------------------------------+---------------------------------------------+
-|       *output_data*                 |     string dataset                 |        "/exchange_1"                        |+-------------------------------------+------------------------------------+---------------------------------------------+
+|       *input_data*                  |     string dataset                 |        "/exchange"                          |
++-------------------------------------+------------------------------------+---------------------------------------------+
+|       *output_data*                 |     string dataset                 |        "/exchange_1"                        |
++-------------------------------------+------------------------------------+---------------------------------------------+
 |       set_up_                       |        group                       |                                             |
 +-------------------------------------+------------------------------------+---------------------------------------------+
 
 
 Table: Reconstruction Actor Group Members
 
-name    |     | Descriptive actor task.
+name
+    | 
+    | Descriptive actor task.
 
-description    |     | Description of the actor task.
+description
+    | 
+    | Description of the actor task.
     
-version    |     | Version of the actor task.
-    |     | If available this can be the repository link to the actor version used
+version
+    | 
+    | Version of the actor task.
+    | 
+    | If available this can be the repository link to the actor version used
     | https://github.com/tomopy_scripts/b9ad87e17
 input_data, output_data
-    |     | Origin and destination of the data processed by the reconstruction task.
+    | 
+    | Origin and destination of the data processed by the reconstruction task.
     
 .. _set_up:
 
@@ -1542,20 +1722,28 @@ input_data, output_data
 
 Here is where to log the algorithms used by the reconstruction actor. 
 
-+-------------------------------------+------------------------------------+-----------------------------------------------+
+
++-------------------------------------+------------------------------------+-----------------------------------------------+
 |    Member                           |                 Type               |          Example                              |
 +=====================================+====================================+===============================================+
 |    *astra*                          |     string dataset                 | https://github.com/astra/b9ad87e17            | 
 +-------------------------------------+------------------------------------+-----------------------------------------------+
 |    *tomopy*                         |     string dataset                 | https://github.com/tomopy/c9ad87e77           |
 +-------------------------------------+------------------------------------+-----------------------------------------------+
-Table: Reconstruction Setup Group Members
+
+Table: Reconstruction Setup Group Members
 
 .. _reconstruction_sls:
 
-*tomo_rec (SLS)*----------------The reconstruction process description group contains metadata requiredto run a tomography reconstruction. The specific algorithm is describedin a separate group under the reconstruction setup group.
+*tomo_rec (SLS)*
+----------------
+
+The reconstruction process description group contains metadata required
+to run a tomography reconstruction. The specific algorithm is described
+in a separate group under the reconstruction setup group.
 Here is where to log the algorithm setup parameters. 
-+-------------------------------------+------------------------------------+---------------------------------------------+
+
++-------------------------------------+------------------------------------+---------------------------------------------+
 |       Member                        |                 Type               |          Example                            |
 +=====================================+====================================+=============================================+
 |       *name*                        |     string dataset                 |        "sls rec"                            | 
@@ -1564,23 +1752,33 @@ Here is where to log the algorithm setup parameters.
 +-------------------------------------+------------------------------------+---------------------------------------------+
 |       *version*                     |     string dataset                 | https://github.com/sls_scripts/b9ad87e17    |
 +-------------------------------------+------------------------------------+---------------------------------------------+
-|       *input_data*                  |     string dataset                 |        "/exchange"                          |+-------------------------------------+------------------------------------+---------------------------------------------+
-|       *output_data*                 |     string dataset                 |        "/exchange_1"                        |+-------------------------------------+------------------------------------+---------------------------------------------+
+|       *input_data*                  |     string dataset                 |        "/exchange"                          |
++-------------------------------------+------------------------------------+---------------------------------------------+
+|       *output_data*                 |     string dataset                 |        "/exchange_1"                        |
++-------------------------------------+------------------------------------+---------------------------------------------+
 |       set_up_sls_                   |        group                       |                                             |
 +-------------------------------------+------------------------------------+---------------------------------------------+
 
 
 Table: Reconstruction Actor Group Members
 
-name    |     | Descriptive actor task.
+name
+    | 
+    | Descriptive actor task.
 
-description    |     | Description of the actor task.
+description
+    | 
+    | Description of the actor task.
     
-version    |     | Version of the actor task.
-    |     | If available this can be the repository link to the actor version used
+version
+    | 
+    | Version of the actor task.
+    | 
+    | If available this can be the repository link to the actor version used
     | https://github.com/tomopy_scripts/b9ad87e17
 input_data, output_data
-    |     | Origin and destination of the data processed by the reconstruction task.
+    | 
+    | Origin and destination of the data processed by the reconstruction task.
     
 .. _set_up_sls:
 
@@ -1589,18 +1787,203 @@ input_data, output_data
 
 Here is where to log the algorithms used by the reconstruction actor. 
 
-+-------------------------------------+-----------------+----------------------------+|    Member                           | Type            |          Example           |
+
++-------------------------------------+-----------------+----------------------------+
+|    Member                           | Type            |          Example           |
 +=====================================+=================+============================+
-|    *reconstruction_slice_start*     | int dataset     |       1000                 |+-------------------------------------+-----------------+----------------------------+|    *reconstruction_slice_end*       | int dataset     |       1030                 |+-------------------------------------+-----------------+----------------------------+|    *rotation_center*                | Float dataset   |      1048.50               |+-------------------------------------+-----------------+----------------------------+|    algorithm-sls_                   | Group           |                            |+-------------------------------------+-----------------+----------------------------+Table: Reconstruction Setup SLS Group Members
+|    *reconstruction_slice_start*     | int dataset     |       1000                 |
++-------------------------------------+-----------------+----------------------------+
+|    *reconstruction_slice_end*       | int dataset     |       1030                 |
++-------------------------------------+-----------------+----------------------------+
+|    *rotation_center*                | Float dataset   |      1048.50               |
++-------------------------------------+-----------------+----------------------------+
+|    algorithm-sls_                   | Group           |                            |
++-------------------------------------+-----------------+----------------------------+
 
-reconstruction_slice_start    |     | First reconstruction slice.reconstruction_slice_end    |     | Last reconstruction slice.rotation_center    |     | Center of rotation in pixels.algorithm    |     | Algorithm group describing reconstruction algorithm parameters.
+Table: Reconstruction Setup SLS Group Members
 
-.. _algorithm-sls:
-*algorithm* (SLS iterative)^^^^^^^^^^^^^^^^^^^^^^^^^^^The Algorithm group contains information required to run a tomographyreconstruction algorithm.+----------------------------------------------+-----------------+-------------------+|     Member                                   |      Type       |    Example        |+==============================================+=================+===================+|    *name*                                    | string dataset  | "SART"            |     +----------------------------------------------+-----------------+-------------------+|    *version*                                 | string dataset  | "1.0"             |+----------------------------------------------+-----------------+-------------------+|    *implementation*                          | string dataset  | "GPU"             |    +----------------------------------------------+-----------------+-------------------+|    *number_of_nodes*                         | int dataset     | 16                |+----------------------------------------------+-----------------+-------------------+|    *type*                                    | string dataset  | "Iterative"       |     +----------------------------------------------+-----------------+-------------------+|    *stop_condition*                          | string dataset  | "iteration_max"   |  +----------------------------------------------+-----------------+-------------------+|    *iteration_max*                           | int dataset     | 200               |+----------------------------------------------+-----------------+-------------------+|    *projection_threshold*                    | float dataset   |                   |  +----------------------------------------------+-----------------+-------------------+|    *difference_threshold_percent*            | float dataset   |                   |    +----------------------------------------------+-----------------+-------------------+|    *difference_threshold_value*              | float dataset   |                   |+----------------------------------------------+-----------------+-------------------+|    *regularization_type*                     | string dataset  | "total_variation" |  +----------------------------------------------+-----------------+-------------------+|    *regularization_parameter*                | float dataset   |                   |  +----------------------------------------------+-----------------+-------------------+|    *step_size*                               | float dataset   | 0.3               |+----------------------------------------------+-----------------+-------------------+|    *sampling_step_size*                      | float dataset   | 0.2               |+----------------------------------------------+-----------------+-------------------+Table: Algorithm Group Membersname    |     | Reconstruction method name: SART, EM, FBP.version    |     | Algorithm version.implementation    |     | CPU or GPU.number_of_nodes    |     | Number of nodes to use on cluster. This parameter is set when the reconstruction is parallelized and run on a cluster.type    |     | Tomography reconstruction method: iterative.stop_condition    |     | iteration_max, projection_threshold, difference_threshold_percent, difference_threshold_value.iteration_max    |     | Maximum number of iterations.projection_threshold    |     | The threshold of projection difference to stop the iterations as.. math:: | y - Ax_{\mathrm{n}}| < pdifference_threshold_percent    |     | The threshold of reconstruction difference to stop the iterations as.. math:: | x_{\mathrm{n+1}}|/ |x_{\mathrm{n}}| < pdifference_threshold_value    |     | The threshold of reconstruction difference to stop the iterations as:.. math:: | x_{\mathrm{n+1}}| - |x_{\mathrm{n}}| < pregularization_type    |     | total_variation, none.regularization_parameter    |     | step_size    |     | Step size between iterations in iterative methods sampling_step_size    |     | Step size used for forward projection calculation in iterative methods.   *algorithm* (SLS analytic)^^^^^^^^^^^^^^^^^^^^^^^^^^The Algorithm group contains information required to run a tomographyreconstruction algorithm.+----------------------------------------------+-----------------+-------------------+|     Member                                   |      Type       |    Example        |+==============================================+=================+===================+|    name                                      | string dataset  | "gridrec"         |     +----------------------------------------------+-----------------+-------------------+|    version                                   | string dataset  | "1.0"             |+----------------------------------------------+-----------------+-------------------+|    implementation                            | string dataset  | "CPU"             |    +----------------------------------------------+-----------------+-------------------+|    number_of_nodes                           | int dataset     | 16                |+----------------------------------------------+-----------------+-------------------+|    type                                      | string dataset  | "analytic"        |     +----------------------------------------------+-----------------+-------------------+|    filter                                    | string dataset  | "Parzen"          |+----------------------------------------------+-----------------+-------------------+|    padding                                   | float dataset   | 0.50              |+----------------------------------------------+-----------------+-------------------+Table: Algorithm Group Membersname    |     | Reconstruction method name: GridRec.version    |     | Algorithm version.implementation    |     | CPU or GPU.number_of_nodes    |     | Number of nodes to use on cluster. This parameter is set when the reconstruction is parallelized and run on a cluster.type    |     | Tomography reconstruction method: analytic.filter    |     | Filter type.padding        
+reconstruction_slice_start
+    | 
+    | First reconstruction slice.
+
+reconstruction_slice_end
+    | 
+    | Last reconstruction slice.
+
+rotation_center
+    | 
+    | Center of rotation in pixels.
+
+algorithm
+    | 
+    | Algorithm group describing reconstruction algorithm parameters.
+
+
+.. _algorithm-sls:
+
+*algorithm* (SLS iterative)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The Algorithm group contains information required to run a tomography
+reconstruction algorithm.
+
++----------------------------------------------+-----------------+-------------------+
+|     Member                                   |      Type       |    Example        |
++==============================================+=================+===================+
+|    *name*                                    | string dataset  | "SART"            |     
++----------------------------------------------+-----------------+-------------------+
+|    *version*                                 | string dataset  | "1.0"             |
++----------------------------------------------+-----------------+-------------------+
+|    *implementation*                          | string dataset  | "GPU"             |    
++----------------------------------------------+-----------------+-------------------+
+|    *number_of_nodes*                         | int dataset     | 16                |
++----------------------------------------------+-----------------+-------------------+
+|    *type*                                    | string dataset  | "Iterative"       |     
++----------------------------------------------+-----------------+-------------------+
+|    *stop_condition*                          | string dataset  | "iteration_max"   |  
++----------------------------------------------+-----------------+-------------------+
+|    *iteration_max*                           | int dataset     | 200               |
++----------------------------------------------+-----------------+-------------------+
+|    *projection_threshold*                    | float dataset   |                   |  
++----------------------------------------------+-----------------+-------------------+
+|    *difference_threshold_percent*            | float dataset   |                   |    
++----------------------------------------------+-----------------+-------------------+
+|    *difference_threshold_value*              | float dataset   |                   |
++----------------------------------------------+-----------------+-------------------+
+|    *regularization_type*                     | string dataset  | "total_variation" |  
++----------------------------------------------+-----------------+-------------------+
+|    *regularization_parameter*                | float dataset   |                   |  
++----------------------------------------------+-----------------+-------------------+
+|    *step_size*                               | float dataset   | 0.3               |
++----------------------------------------------+-----------------+-------------------+
+|    *sampling_step_size*                      | float dataset   | 0.2               |
++----------------------------------------------+-----------------+-------------------+
+
+Table: Algorithm Group Members
+
+name
+    | 
+    | Reconstruction method name: SART, EM, FBP.
+
+version
+    | 
+    | Algorithm version.
+
+implementation
+    | 
+    | CPU or GPU.
+
+number_of_nodes
+    | 
+    | Number of nodes to use on cluster. This parameter is set when the reconstruction is parallelized and run on a cluster.
+
+type
+    | 
+    | Tomography reconstruction method: iterative.
+
+stop_condition
+    | 
+    | iteration_max, projection_threshold, difference_threshold_percent, difference_threshold_value.
+
+iteration_max
+    | 
+    | Maximum number of iterations.
+
+projection_threshold
+    | 
+    | The threshold of projection difference to stop the iterations as
+
+.. math:: | y - Ax_{\mathrm{n}}| < p
+
+difference_threshold_percent
+    | 
+    | The threshold of reconstruction difference to stop the iterations as
+
+.. math:: | x_{\mathrm{n+1}}|/ |x_{\mathrm{n}}| < p
+
+difference_threshold_value
+    | 
+    | The threshold of reconstruction difference to stop the iterations as:
+
+.. math:: | x_{\mathrm{n+1}}| - |x_{\mathrm{n}}| < p
+
+regularization_type
+    | 
+    | total_variation, none.
+
+regularization_parameter
+    | 
+    | 
+
+step_size
+    | 
+    | Step size between iterations in iterative methods 
+
+sampling_step_size
+    | 
+    | Step size used for forward projection calculation in iterative methods.
+
+   
+*algorithm* (SLS analytic)
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The Algorithm group contains information required to run a tomography
+reconstruction algorithm.
+
++----------------------------------------------+-----------------+-------------------+
+|     Member                                   |      Type       |    Example        |
++==============================================+=================+===================+
+|    name                                      | string dataset  | "gridrec"         |     
++----------------------------------------------+-----------------+-------------------+
+|    version                                   | string dataset  | "1.0"             |
++----------------------------------------------+-----------------+-------------------+
+|    implementation                            | string dataset  | "CPU"             |    
++----------------------------------------------+-----------------+-------------------+
+|    number_of_nodes                           | int dataset     | 16                |
++----------------------------------------------+-----------------+-------------------+
+|    type                                      | string dataset  | "analytic"        |     
++----------------------------------------------+-----------------+-------------------+
+|    filter                                    | string dataset  | "Parzen"          |
++----------------------------------------------+-----------------+-------------------+
+|    padding                                   | float dataset   | 0.50              |
++----------------------------------------------+-----------------+-------------------+
+
+Table: Algorithm Group Members
+
+name
+    | 
+    | Reconstruction method name: GridRec.
+
+version
+    | 
+    | Algorithm version.
+
+implementation
+    | 
+    | CPU or GPU.
+
+number_of_nodes
+    | 
+    | Number of nodes to use on cluster. This parameter is set when the reconstruction is parallelized and run on a cluster.
+
+type
+    | 
+    | Tomography reconstruction method: analytic.
+
+filter
+    | 
+    | Filter type.
+
+padding
+        
 
 .. _transfer:
 
-*transfer*----------The transfer process description group contains metadata requiredto trasfer data from source (data analysis machine) to destination
+*transfer*
+----------
+
+The transfer process description group contains metadata required
+to trasfer data from source (data analysis machine) to destination
 (data distribution server). 
 
 +-------------------------------------+------------------------------------+---------------------------------------------+
@@ -1612,25 +1995,36 @@ reconstruction_slice_start    |     | First reconstruction slice.reconstruct
 +-------------------------------------+------------------------------------+---------------------------------------------+
 |       *version*                     |     string dataset                 | https://github.com/globus/b9ad87e17         |
 +-------------------------------------+------------------------------------+---------------------------------------------+
-|       *input_data*                  |     string dataset                 |        "gsiftp://host1/path"                |+-------------------------------------+------------------------------------+---------------------------------------------+
-|       *output_data*                 |     string dataset                 |        "gsiftp://host2/path"                |+-------------------------------------+------------------------------------+---------------------------------------------+
+|       *input_data*                  |     string dataset                 |        "gsiftp://host1/path"                |
++-------------------------------------+------------------------------------+---------------------------------------------+
+|       *output_data*                 |     string dataset                 |        "gsiftp://host2/path"                |
++-------------------------------------+------------------------------------+---------------------------------------------+
 |       *setup*                       |        group                       |                                             |
 +-------------------------------------+------------------------------------+---------------------------------------------+
 
 
 Table: Transfer Actor Group Members
 
-name    |     | Descriptive actor task.
+name
+    | 
+    | Descriptive actor task.
 
-description    |     | Description of the actor task.
+description
+    | 
+    | Description of the actor task.
     
-version    |     | Version of the actor task.
-    |     | If available this can be the repository link to the actor version used
+version
+    | 
+    | Version of the actor task.
+    | 
+    | If available this can be the repository link to the actor version used
     | https://github.com/globus/b9ad87e17
     
 input_data, output_data
-    |     | Origin and destination of the data processed by the trasnfer task.
-    setup
+    | 
+    | Origin and destination of the data processed by the trasnfer task.
+    
+setup
     |
     | Group containing the specific data transfer protocol paramenters.
 
@@ -1648,21 +2042,55 @@ possible to re-run an analysis using the information provided here.
 +---------------+-------------------+-------------------+---------------+----------------------------+-------------------------------+--------------------------+
 |   actor       |    start_time     |    end_time       |     status    |     message                |          reference            |   description            |
 +===============+===================+===================+===============+============================+===============================+==========================+
-| acquisition   |     21:15:22      |     21:15:23      |     FAILED    |     beamline off line      |     /provenance/acquisition   |   raw data collection    |
+| acquisition   |     21:15:22      |     21:15:23      |     FAILED    |     beamline off line      |       /process/acquisition    |   raw data collection    |
 +---------------+-------------------+-------------------+---------------+----------------------------+-------------------------------+--------------------------+
-| acquisition   |     21:15:26      |     21:15:27      |     FAILED    |     beamline off line      |     /provenance/acquisition   |   raw data collection    |
+| acquisition   |     21:15:26      |     21:15:27      |     FAILED    |     beamline off line      |       /process/acquisition    |   raw data collection    |
 +---------------+-------------------+-------------------+---------------+----------------------------+-------------------------------+--------------------------+
-| acquisition   |     21:17:28      |     22:15:22      |     SUCCESS   |            OK              |     /provenance/acquisition   |   raw data collection    |
+| acquisition   |     21:17:28      |     22:15:22      |     SUCCESS   |            OK              |       /process/acquisition    |   raw data collection    |
 +---------------+-------------------+-------------------+---------------+----------------------------+-------------------------------+--------------------------+
-| tomo_rec      |     22:30:23      |     22:50:22      |     SUCCESS   |            OK              |     /provenance/tomo_rec      |   reconstruct            |  
+| tomo_rec      |     22:30:23      |     22:50:22      |     SUCCESS   |            OK              |       /process/tomo_rec       |   reconstruct            |  
 +---------------+-------------------+-------------------+---------------+----------------------------+-------------------------------+--------------------------+
-| transfer      |                   |                   |     QUEUED    |                            |     /provenance/transfer      |   transfer data to user  | 
+| transfer      |                   |                   |     QUEUED    |                            |       /process/transfer       |   transfer data to user  | 
 +---------------+-------------------+-------------------+---------------+----------------------------+-------------------------------+--------------------------+
 
 Table: Process table to log actors activity
 
-actor    |     | Name of the process in the pipeline stage that is executed at this step.*start_time*    |     | Time the process started.*end_time*    |     | TIme the process ended.
-    *status*    |     | Current process status. May be one of the following: QUEUED,    | RUNNING, FAILED, or SUCCESS.
-    *message*    |     | A process specific message generated by the process. It may be a    | confirmation that the process was successful, or a detailed error    | message, for example.
-    *reference*    |     | Path to the actor description group. The process description group    | contains all metadata to perform the specific process. This    | reference is simply the HDF5 path within this file of the    | technique specific process description group. The process    | description group should contain all parameters necessary to run    | the process, including the name and version of any external    | analysis tool used to process the data. It should also contain    | input and output references that point to the    | **exchange_N** groups that contain the input and output    | datasets of the process.
-    *description*    |     | Process description.
+actor
+    | 
+    | Name of the process in the pipeline stage that is executed at this step.
+
+*start_time*
+    | 
+    | Time the process started.
+
+*end_time*
+    | 
+    | TIme the process ended.
+    
+*status*
+    | 
+    | Current process status. May be one of the following: QUEUED,
+    | RUNNING, FAILED, or SUCCESS.
+    
+*message*
+    | 
+    | A process specific message generated by the process. It may be a
+    | confirmation that the process was successful, or a detailed error
+    | message, for example.
+    
+*reference*
+    | 
+    | Path to the actor description group. The process description group
+    | contains all metadata to perform the specific process. This
+    | reference is simply the HDF5 path within this file of the
+    | technique specific process description group. The process
+    | description group should contain all parameters necessary to run
+    | the process, including the name and version of any external
+    | analysis tool used to process the data. It should also contain
+    | input and output references that point to the
+    | **exchange_N** groups that contain the input and output
+    | datasets of the process.
+    
+*description*
+    | 
+    | Process description.

@@ -242,6 +242,17 @@ class Entry(object):
                         Where a value is ``None`` this entry will not be added to the DataExchangeFile.
                         'ENTRY' can have any other parameter and these will be treated as HDF5 dataset attributes
         """
+        self._exchange = {
+            'root': 'exchange',
+            'entry_name': '',
+            'docstring': 'Used for grouping the results of the measurement',
+            'name': {
+                'value': None,
+                'units': 'text',
+                'docstring': 'Description of the data contained inside'
+            }
+        }
+
         self._data = {
             'root': '/exchange',
             'entry_name': '',
@@ -307,12 +318,17 @@ class Entry(object):
                 'units': 'kPa',
                 'docstring': 'Sample pressure.'
             },
+            'fatigue_cycle': {
+                'value': None,
+                'units': None,
+                'docstring': 'Sample fatigue cycles.'
+            },
             'thickness': {
                 'value': None,
                 'units': 'm',
                 'docstring': 'Sample thickness.'
             },
-            'position': {
+            'tray': {
                 'value': None,
                 'units': 'text',
                 'docstring': 'Sample position in the sample changer/robot.'
@@ -322,12 +338,6 @@ class Entry(object):
                 'units': 'text',
                 'docstring': 'comment'
             }
-        }
-
-        self._geometry = {
-            'root': '/measurement/sample',
-            'entry_name': 'geometry',
-            'docstring': 'The general position and orientation of a component'
         }
 
         self._experiment = {
@@ -348,6 +358,11 @@ class Entry(object):
                 'value': None,
                 'units': 'text',
                 'docstring': 'Safety reference document. For the APS this is the Experiment Safety Approval Form number.'
+            },
+            'title': {
+                'value': None,
+                'units': 'text',
+                'docstring': 'Experiment title. For the APS this is the proposal title assigned by the user.'
             },
         }
 
@@ -390,17 +405,6 @@ class Entry(object):
                 'units': 'text',
                 'docstring': 'User badge number.'
             },
-        }
-
-        self._exchange = {
-            'root': 'exchange',
-            'entry_name': '',
-            'docstring': 'Used for grouping the results of the measurement',
-            'name': {
-                'value': None,
-                'units': 'text',
-                'docstring': 'Description of the data contained inside'
-            }
         }
 
         self._instrument = {
@@ -475,22 +479,6 @@ class Entry(object):
             },
         }
 
-        self._shutter = {
-            'root': '/measurement/instrument',
-            'entry_name': 'shutter',
-            'docstring': 'The shutter being used',
-            'name': {
-                'value': None,
-                'units': 'text',
-                'docstring': 'Name of the shutter.'
-            },
-            'status': {
-                'value': None,
-                'units': 'text',
-                'docstring': '"OPEN" or "CLOSED"'
-            }
-        }
-
         self._attenuator = {
             'root': '/measurement/instrument',
             'entry_name': 'attenuator',
@@ -510,7 +498,7 @@ class Entry(object):
                 'units': 'm',
                 'docstring': 'Thickness of attenuator along beam direction.'
             },
-            'attenuator_transmission': {
+            'transmission': {
                 'value': None,
                 'units': 'None',
                 'docstring': 'The nominal amount of the beam that gets through (transmitted intensity)/(incident intensity)'
@@ -534,12 +522,12 @@ class Entry(object):
             'energy': {
                 'value': None,
                 'units': 'J',
-                'docstring': 'Peak of the spectrum that the monochromator selects. Since units is not defined this field is in J and corresponds to 10 keV'
+                'docstring': 'Peak of the spectrum that the monochromator selects. When units is not defined this field is in J'
             },
             'energy_error': {
                 'value': None,
                 'units': 'J',
-                'docstring': 'Standard deviation of the spectrum that the monochromator selects. Since units is not defined this field is in J.'
+                'docstring': 'Standard deviation of the spectrum that the monochromator selects. When units is not defined this field is in J.'
             },
             'mono_stripe': {
                 'value': None,
@@ -561,6 +549,11 @@ class Entry(object):
                 'value': None,
                 'units': 'text',
                 'docstring': 'Description of the mirror'
+            },
+            'angle': {
+                'value': None,
+                'units': 'rad',
+                'docstring': 'Mirror incident angle'
             }
         }
 
@@ -673,6 +666,11 @@ class Entry(object):
                 'units': 'fps',
                 'docstring': 'The detector frame rate (fps).'
             },
+            'shutter_mode': {
+                'value': None,
+                'units': 'text',
+                'docstring': 'The detector shutter mode: global, rolling etc.'
+            },
             'output_data': {
                 'value': None,
                 'units': 'text',
@@ -732,7 +730,7 @@ class Entry(object):
         }
 
         self._objective = {
-            'root': '/measurement/instrument/detector',
+            'root': '/measurement/instrument/detection_system',
             'entry_name': 'objective',
             'docstring': 'microscope objective lenses used.',
             'name': {
@@ -768,9 +766,9 @@ class Entry(object):
         }
 
         self._scintillator = {
-            'root': '/measurement/instrument/detector',
+            'root': '/measurement/instrument/detection_system',
             'entry_name': 'scintillator',
-            'docstring': 'microscope objective lenses used.',
+            'docstring': 'scintillator used.',
             'name': {
                 'value': None,
                 'units': 'text',
@@ -793,85 +791,87 @@ class Entry(object):
             },
             'scintillating_thickness': {
                 'value': None,
-                'units': 'dimensionless',
+                'units': 'm',
                 'docstring': 'Scintillator thickness.'
             },
             'substrate_thickness': {
                 'value': None,
-                'units': 'dimensionless',
+                'units': 'm',
                 'docstring': 'Scintillator substrate thickness.'
             }
         }
 
-        self._translation = {
-            'root': '/exchange/geometry',
-            'entry_name': 'translation',
-            'docstring': 'This is the description for the general spatial location of a component.',
-            'distances': {
-                'value': None,
-                'units': 'm',
-                'docstring': 'x,y,zcomponents of translation.'
-            },
-        }
 
-        self._orientation = {
-            'root': '/exchange/geometry',
-            'entry_name': 'orientation',
-            'docstring': 'This is the description for the orientation of a component.',
-            'distances': {
-                'value': None,
-                'units': 'm',
-                'docstring': ('Calling the local unit vectors (x0; y0; z0) and the reference unit vectors (x; y; z)'
-                              'the six numbers will be [x0 . x; x0 . y; x0 . z; y0 . x; y0 . y; y0 . z] where "."" is the scalar dot'
-                              'product (cosine of the angle between the unit vectors).')
-            },
-        }
-
-        self._provenance = {
-            'root': '/provenance',
-            'entry_name': '',
-            'docstring': 'Describes parameters used to generate raw and processed data.',
+        self._sample_stack = {
+            'root': '/measurement/instrument',
+            'entry_name': 'sample',
+            'docstring': 'Sample stack name',
             'name': {
                 'value': None,
-                'units': 'm',
-                'docstring': 'Name of the simulation'
+                'units': 'text',
+                'docstring': 'Descriptive name of the sample stack.'
+            },
+            'description': {
+                'value': None,
+                'units': 'text',
+                'docstring': 'Description of the sample stack.'
             },
         }
 
-        self._setup = {
-            'root': '/measurement/instrument',
+        self._sample_stack_setup = {
+            'root': '/measurement/instrument/sample',
             'entry_name': 'setup',
             'docstring': 'Tomography specific tag to store motor positions that are static during data collection.',
             'sample_x': {
                 'value': None,
                 'units': 'mm',
-                'docstring': 'Position of the X stage under the rotary motor.'
+                'docstring': 'Initial position of the X stage under the rotary motor.'
             },
             'sample_y': {
                 'value': None,
                 'units': 'mm',
-                'docstring': 'Position of the Y stage under the rotary motor.'
+                'docstring': 'Initial position of the Y stage under the rotary motor.'
             },
             'sample_z': {
                 'value': None,
                 'units': 'mm',
-                'docstring': 'Position of the Z stage under the rotary motor.'
+                'docstring': 'Initial position of the Z stage under the rotary motor.'
             },
             'sample_xx': {
                 'value': None,
                 'units': 'mm',
-                'docstring': 'Position of the X stage on top of the rotary motor.'
+                'docstring': 'Initial position of the X stage on top of the rotary motor.'
             },
             'sample_zz': {
                 'value': None,
                 'units': 'mm',
-                'docstring': 'Position of the Z stage on top of the rotary motor.'
+                'docstring': 'Initial position of the Z stage on top of the rotary motor.'
+            },
+            'detector_distance': {
+                'value': None,
+                'units': 'mm',
+                'docstring': 'Sample to detector distance.'
             }
         }
 
         self._interferometer = {
-            'root': '/measurement/instrument/setup/',
+            'root': '/measurement/instrument/',
             'entry_name': 'interferometer',
+            'docstring': 'interferometer name',
+            'name': {
+                'value': None,
+                'units': 'text',
+                'docstring': 'Descriptive name of the interferometer.'
+            },
+            'description': {
+                'value': None,
+                'units': 'text',
+                'docstring': 'Description of the interferometer.'
+            },
+        }
+        self._interferometer_setup = {
+            'root': '/measurement/instrument/interferometer/',
+            'entry_name': 'setup',
             'docstring': 'Tomography specific tag to store interferometer parameters.',
             'grid_start': {
                 'value': None,
@@ -895,10 +895,21 @@ class Entry(object):
             }
         }
 
+        self._process = {
+            'root': '/process',
+            'entry_name': '',
+            'docstring': 'Describes parameters used to generate raw and processed data.',
+            'name': {
+                'value': None,
+                'units': 'text',
+                'docstring': 'Name of the simulation'
+            },
+        }
+
         self._acquisition = {
-            'root': '/measurement/instrument',
+            'root': '/process',
             'entry_name': 'acquisition',
-            'docstring': 'Tomography specific tag to store scan parameters.',
+            'docstring': 'Tomography specific tag to store dynamic (per image) parameters.',
             'start_date': {
                 'value': None,
                 'units': 'text',
@@ -908,56 +919,6 @@ class Entry(object):
                 'value': None,
                 'units': 'text',
                 'docstring': 'Date and time measurement ends.'
-            },
-            'number_of_projections': {
-                'value': None,
-                'units': None,
-                'docstring': 'Number of projections.'
-            },
-            'number_of_darks': {
-                'value': None,
-                'units': None,
-                'docstring': 'Number of dark images.'
-            },
-            'number_of_flats': {
-                'value': None,
-                'units': None,
-                'docstring': 'Number of flat/white images.'
-            },
-            'sample_in': {
-                'value': None,
-                'units': 'mm',
-                'docstring': 'Position of the sample axis (x or y) used for taking the sample out of the beam during data collection.'
-            },
-            'sample_out': {
-                'value': None,
-                'units': 'mm',
-                'docstring': 'Position of the sample axis (x or y) used for taking the sample out of the beam during the flat field data collection.'
-            },
-            'rotation_start_angle': {
-                'value': None,
-                'units': 'degree',
-                'docstring': 'Position of rotation axis at the end of data collection.'
-            },
-            'rotation_end_angle': {
-                'value': None,
-                'units': 'degree',
-                'docstring': 'Position of rotation axis at the start of the data collection.'
-            },
-            'angular_step': {
-                'value': None,
-                'units': 'degree',
-                'docstring': 'Rotation axis angular step used during data collection.'
-            },
-            'mode': {
-                'value': None,
-                'units': 'text',
-                'docstring': 'Scan mode: continuos or stop-go.'
-            },
-            'comment': {
-                'value': None,
-                'units': 'text',
-                'docstring': 'comment'
             },
             'sample_position_x': {
                 'value': None,
@@ -997,12 +958,12 @@ class Entry(object):
             'scan_date': {
                 'value': None,
                 'units': None,
-                'docstring': 'Vector containin for each image the wall date/time at start of scan in iso 8601.'
+                'docstring': 'Vector containing for each image the wall date/time at start of scan in iso 8601.'
             },
             'image_date': {
                 'value': None,
                 'units': 'time',
-                'docstring': 'Vector containing the date/time each image was acquired in iso 8601..'
+                'docstring': 'Vector containing the date/time each image was acquired in iso 8601.'
             },
             'time_stamp': {
                 'value': None,
@@ -1023,7 +984,88 @@ class Entry(object):
                 'value': None,
                 'units': None,
                 'docstring': 'Vector containin for each image the boolen status of: is any pixel data missing?'
-            }
+            },
+            'shutter': {
+                'value': None,
+                'units': None,
+                'docstring': 'Vector containin for each image the beamline shutter status: 0 for closed, 1 for open'
+            },
+            'image_type': {
+                'value': None,
+                'units': None,
+                'docstring': 'Vector containin for each image contained in /exchange/data 0 for white, 1 for projection and 2 for dark'
+            },
+        }
+
+        self._acquisition_setup = {
+            'root': '/process/acquisition',
+            'entry_name': 'setup',
+            'docstring': 'Tomography specific tag to store static scan parameters.',
+            'number_of_projections': {
+                'value': None,
+                'units': None,
+                'docstring': 'Number of projections.'
+            },
+            'number_of_darks': {
+                'value': None,
+                'units': None,
+                'docstring': 'Number of dark images.'
+            },
+            'number_of_whites': {
+                'value': None,
+                'units': None,
+                'docstring': 'Number of white images.'
+            },
+            'number_of_inter_whites': {
+                'value': None,
+                'units': None,
+                'docstring': 'Number of inter whites.'
+            },
+            'white_frequency': {
+                'value': None,
+                'units': None,
+                'docstring': 'White frequency.'
+            },
+            'sample_in': {
+                'value': None,
+                'units': 'mm',
+                'docstring': 'Position of the sample axis (x or y) used for taking the sample out of the beam during data collection.'
+            },
+            'sample_out': {
+                'value': None,
+                'units': 'mm',
+                'docstring': 'Position of the sample axis (x or y) used for taking the sample out of the beam during the white field data collection.'
+            },
+            'rotation_start_angle': {
+                'value': None,
+                'units': 'degree',
+                'docstring': 'Position of rotation axis at the end of data collection.'
+            },
+            'rotation_end_angle': {
+                'value': None,
+                'units': 'degree',
+                'docstring': 'Position of rotation axis at the start of the data collection.'
+            },
+            'rotation_speed': {
+                'value': None,
+                'units': 'degree per second',
+                'docstring': 'Rotation axis speed.'
+            },
+            'angular_step': {
+                'value': None,
+                'units': 'degree',
+                'docstring': 'Rotation axis angular step used during data collection.'
+            },
+            'mode': {
+                'value': None,
+                'units': 'text',
+                'docstring': 'Scan mode: continuos or stop-go.'
+            },
+            'comment': {
+                'value': None,
+                'units': 'text',
+                'docstring': 'comment'
+            },
         }
 
     def _generate_classes(self):

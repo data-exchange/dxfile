@@ -52,12 +52,11 @@
     <Attribute name="DMM_Table_USY_IB"              type="EPICS_PV"     source="2bma:m27.VAL"                               dbrtype="DBR_DOUBLE"/>
     <Attribute name="DMM_Table_DSY"                 type="EPICS_PV"     source="2bma:m29.VAL"                               dbrtype="DBR_DOUBLE"/>
 	
-    <Attribute name="Exp_Table_GlobalY"             type="EPICS_PV"     source="2bma:m33.VAL"                               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="Exp_Table_USY_OB"              type="EPICS_PV"     source="2bma:m36.VAL"                               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="Exp_Table_USY_IB"              type="EPICS_PV"     source="2bma:m35.VAL"                               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="Exp_Table_DSY"                 type="EPICS_PV"     source="2bma:m34.VAL"                               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="Exp_Table_USX"                 type="EPICS_PV"     source="2bma:m37.VAL"                               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="Exp_Table_DSX"                 type="EPICS_PV"     source="2bma:m38.VAL"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="Exp_TableB_USY_OB"             type="EPICS_PV"     source="2bmb:m7.VAL"                                dbrtype="DBR_DOUBLE"/>
+    <Attribute name="Exp_TableB_USY_IB"             type="EPICS_PV"     source="2bmb:m13.VAL"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="Exp_TableB_DSY"                type="EPICS_PV"     source="2bmb:m9.VAL"                                dbrtype="DBR_DOUBLE"/>
+    <Attribute name="Exp_TableB_USX"                type="EPICS_PV"     source="2bmb:m5.VAL"                                dbrtype="DBR_DOUBLE"/>
+    <Attribute name="Exp_TableB_DSX"                type="EPICS_PV"     source="2bmb:m8.VAL"                                dbrtype="DBR_DOUBLE"/>    
 	
     <Attribute name="Tomo_Sample_X"                 type="EPICS_PV"     source="2bmb:m52.VAL"                               dbrtype="DBR_DOUBLE"/>
     <Attribute name="Tomo_Sample_Y"                 type="EPICS_PV"     source="2bmb:m50.VAL"                               dbrtype="DBR_DOUBLE"/>

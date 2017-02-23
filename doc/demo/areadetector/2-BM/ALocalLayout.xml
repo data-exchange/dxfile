@@ -142,9 +142,6 @@
             </dataset>
             <dataset name="exp_table_dsx" source="ndattribute" ndattribute="Exp_Table_DSX" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
-            <dataset name="flag" source="ndattribute" ndattribute="Flag" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string"></attribute>  
-            </dataset>
           </group><!-- /setup-->
         </group><!-- /table -->
       

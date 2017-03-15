@@ -57,7 +57,7 @@
         </group><!-- /mirror -->
         
         <group name="attenuator">
-          <dataset name="beamline" source="constant" value="2-BM attenuators" type="string" when="OnFileClose"></dataset>  
+          <dataset name="name" source="constant" value="2-BM Filters" type="string" when="OnFileClose"></dataset>        
           <group name="setup">
           <dataset name="user_filter_us" source="ndattribute" ndattribute="BeamlineFilterA" when="OnFileClose"> 
             <attribute name="units" source="constant" value="mm" type="string"></attribute>

@@ -2,80 +2,79 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://epics.aps.anl.gov/areaDetector/attributes ../attributes.xsd"
     >
-    <Attribute name="DetectorManufacturer"          type="EPICS_PV"     source="2bmbPG1:cam1:Manufacturer_RBV"               dbrtype="DBR_STRING"/>     
-    <Attribute name="DetectorModel"                 type="EPICS_PV"     source="2bmbPG1:cam1:Model_RBV"                      dbrtype="DBR_STRING"/>    	
-    <Attribute name="MaxSizeX"                      type="EPICS_PV"     source="2bmbPG1:cam1:MaxSizeX_RBV"                   dbrtype="DBR_LONG"/>       
-    <Attribute name="MaxSizeY"                      type="EPICS_PV"     source="2bmbPG1:cam1:MaxSizeY_RBV"                   dbrtype="DBR_LONG"/>
-    <Attribute name="Temperature"                   type="EPICS_PV"     source="2bmbPG1:cam1:TemperatureActual"              dbrtype="DBR_DOUBLE"/>	
-    <Attribute name="DetectorFrameMode"             type="EPICS_PV"     source="2bmbPG1:cam1:FrameRateOnOff"                 dbrtype="DBR_ENUM" /> 
-    <Attribute name="AcqTime"                       type="EPICS_PV"     source="2bmbPG1:cam1:AcquireTime"                    dbrtype="DBR_DOUBLE" />    
-    <Attribute name="AcqPeriod"                     type="EPICS_PV"     source="2bmbPG1:cam1:AcquirePeriod"                  dbrtype="DBR_DOUBLE" />
-    <Attribute name="FrameRate"                     type="EPICS_PV"     source="2bmbPG1:cam1:FrameRateValAbs"                dbrtype="DBR_DOUBLE" />         
-    <Attribute name="Gain"                          type="EPICS_PV"     source="2bmbPG1:cam1:Gain"                           dbrtype="DBR_DOUBLE" />    
-    <Attribute name="BinX"                          type="EPICS_PV"     source="2bmbPG1:cam1:BinX"                           dbrtype="DBR_LONG"  />      
-    <Attribute name="BinY"                          type="EPICS_PV"     source="2bmbPG1:cam1:BinY"                           dbrtype="DBR_LONG" />       
-    <Attribute name="MinX"                          type="EPICS_PV"     source="2bmbPG1:cam1:MinX"                           dbrtype="DBR_LONG" />       
-    <Attribute name="MinY"                          type="EPICS_PV"     source="2bmbPG1:cam1:MinY"                           dbrtype="DBR_LONG" />       
-    <Attribute name="SizeX"                         type="EPICS_PV"     source="2bmbPG1:cam1:SizeX"                          dbrtype="DBR_LONG" />       
-    <Attribute name="SizeY"                         type="EPICS_PV"     source="2bmbPG1:cam1:SizeY"                          dbrtype="DBR_LONG" />     
+    <Attribute name="DetectorManufacturer"          type="EPICS_PV"     source="2bmbPG1:cam1:Manufacturer_RBV"              dbrtype="DBR_STRING"/>     
+    <Attribute name="DetectorModel"                 type="EPICS_PV"     source="2bmbPG1:cam1:Model_RBV"                     dbrtype="DBR_STRING"/>    	
+    <Attribute name="MaxSizeX"                      type="EPICS_PV"     source="2bmbPG1:cam1:MaxSizeX_RBV"                  dbrtype="DBR_LONG"/>       
+    <Attribute name="MaxSizeY"                      type="EPICS_PV"     source="2bmbPG1:cam1:MaxSizeY_RBV"                  dbrtype="DBR_LONG"/>
+    <Attribute name="Temperature"                   type="EPICS_PV"     source="2bmbPG1:cam1:TemperatureActual"             dbrtype="DBR_DOUBLE"/>	
+    <Attribute name="DetectorFrameMode"             type="EPICS_PV"     source="2bmbPG1:cam1:FrameRateOnOff"                dbrtype="DBR_ENUM" /> 
+    <Attribute name="AcqTime"                       type="EPICS_PV"     source="2bmbPG1:cam1:AcquireTime"                   dbrtype="DBR_DOUBLE" />    
+    <Attribute name="AcqPeriod"                     type="EPICS_PV"     source="2bmbPG1:cam1:AcquirePeriod"                 dbrtype="DBR_DOUBLE" />
+    <Attribute name="FrameRate"                     type="EPICS_PV"     source="2bmbPG1:cam1:FrameRateValAbs"               dbrtype="DBR_DOUBLE" />         
+    <Attribute name="Gain"                          type="EPICS_PV"     source="2bmbPG1:cam1:Gain"                          dbrtype="DBR_DOUBLE" />    
+    <Attribute name="BinX"                          type="EPICS_PV"     source="2bmbPG1:cam1:BinX"                          dbrtype="DBR_LONG"  />      
+    <Attribute name="BinY"                          type="EPICS_PV"     source="2bmbPG1:cam1:BinY"                          dbrtype="DBR_LONG" />       
+    <Attribute name="MinX"                          type="EPICS_PV"     source="2bmbPG1:cam1:MinX"                          dbrtype="DBR_LONG" />       
+    <Attribute name="MinY"                          type="EPICS_PV"     source="2bmbPG1:cam1:MinY"                          dbrtype="DBR_LONG" />       
+    <Attribute name="SizeX"                         type="EPICS_PV"     source="2bmbPG1:cam1:SizeX"                         dbrtype="DBR_LONG" />       
+    <Attribute name="SizeY"                         type="EPICS_PV"     source="2bmbPG1:cam1:SizeY"                         dbrtype="DBR_LONG" />     
 
     <Attribute name="DateTimeStart"                 type="EPICS_PV"     source="S:IOC:timeOfDayForm1SI"                     dbrtype="DBR_STRING"/>
     <Attribute name="DateTimeEnd"                   type="EPICS_PV"     source="S:IOC:timeOfDayForm1SI"                     dbrtype="DBR_STRING"/>
     <Attribute name="Current"                       type="EPICS_PV"     source="S:SRcurrentAI"                              dbrtype="DBR_DOUBLE"/>
     <Attribute name="TopUpStatus"                   type="EPICS_PV"     source="S:TopUpStatus"                              dbrtype="DBR_ENUM"/>
-	<Attribute name="BeamMode"                      type="EPICS_PV"     source="OPS:message3"                               dbrtype="DBR_STRING"/>
+    <Attribute name="BeamMode"                      type="EPICS_PV"     source="OPS:message3"                               dbrtype="DBR_STRING"/>
 
-	<Attribute name="FilterUS"                      type="EPICS_PV"     source="2bma:fltr1:select.VAL"                      dbrtype="DBR_ENUM"/>
-	<Attribute name="FilterDS"                      type="EPICS_PV"     source="2bma:fltr2:select.VAL"                      dbrtype="DBR_ENUM"/>
+    <Attribute name="BeamlineFilterA"               type="EPICS_PV"     source="2bma:fltr1:select.VAL"                      dbrtype="DBR_ENUM"/>
+    <Attribute name="BeamlineFilterB"               type="EPICS_PV"     source="2bma:fltr2:select.VAL"                      dbrtype="DBR_ENUM"/>
 
-   	<Attribute name="HSlitsUSSize"                  type="EPICS_PV"     source="2bma:Slit1Hsize.VAL"                        dbrtype="DBR_ENUM"/>
-   	<Attribute name="HSlitsUSGap"                   type="EPICS_PV"     source="2bma:Slit1Hcenter.VAL"                      dbrtype="DBR_ENUM"/>
-   	<Attribute name="HSlitsDSSize"                  type="EPICS_PV"     source="2bma:Slit2Hsize.VAL"                        dbrtype="DBR_ENUM"/>
-   	<Attribute name="HSlitsDSGap"                   type="EPICS_PV"     source="2bma:Slit2Hcenter.VAL"                      dbrtype="DBR_ENUM"/>
-   	<Attribute name="VSlitsUSSize"                  type="EPICS_PV"     source="2bma:Slit1Vsize.VAL"                        dbrtype="DBR_ENUM"/>
-   	<Attribute name="VSlitsUSGap"                   type="EPICS_PV"     source="2bma:Slit1Vcenter.VAL"                      dbrtype="DBR_ENUM"/>
-   	<Attribute name="VSlitsDSSize"                  type="EPICS_PV"     source="2bma:Slit2Vsize.VAL"                        dbrtype="DBR_ENUM"/>
-   	<Attribute name="VSlitsDSGap"                   type="EPICS_PV"     source="2bma:Slit2Vcenter.VAL"                      dbrtype="DBR_ENUM"/>
+    <Attribute name="HSlitsUSSize"                  type="EPICS_PV"     source="2bma:Slit1Hsize.VAL"                        dbrtype="DBR_ENUM"/>
+    <Attribute name="HSlitsUSGap"                   type="EPICS_PV"     source="2bma:Slit1Hcenter.VAL"                      dbrtype="DBR_ENUM"/>
+    <Attribute name="HSlitsDSSize"                  type="EPICS_PV"     source="2bma:Slit2Hsize.VAL"                        dbrtype="DBR_ENUM"/>
+    <Attribute name="HSlitsDSGap"                   type="EPICS_PV"     source="2bma:Slit2Hcenter.VAL"                      dbrtype="DBR_ENUM"/>
+    <Attribute name="VSlitsUSSize"                  type="EPICS_PV"     source="2bma:Slit1Vsize.VAL"                        dbrtype="DBR_ENUM"/>
+    <Attribute name="VSlitsUSGap"                   type="EPICS_PV"     source="2bma:Slit1Vcenter.VAL"                      dbrtype="DBR_ENUM"/>
+    <Attribute name="VSlitsDSSize"                  type="EPICS_PV"     source="2bma:Slit2Vsize.VAL"                        dbrtype="DBR_ENUM"/>
+    <Attribute name="VSlitsDSGap"                   type="EPICS_PV"     source="2bma:Slit2Vcenter.VAL"                      dbrtype="DBR_ENUM"/>
 	
     <Attribute name="MirrorX"                       type="EPICS_PV"     source="2bma:m3.RBV"                                dbrtype="DBR_DOUBLE"/>
     <Attribute name="MirrorY"                       type="EPICS_PV"     source="2bma:M1t2.D"                                dbrtype="DBR_DOUBLE"/>
-	<Attribute name="MirrorUSY"                     type="EPICS_PV"     source="2bma:m5.RBV"                                dbrtype="DBR_DOUBLE"/>
-	<Attribute name="MirrorDSY"                     type="EPICS_PV"     source="2bma:m2.RBV"                                dbrtype="DBR_DOUBLE"/>
-	<Attribute name="MirrorAngle"                   type="EPICS_PV"     source="2bma:M1t2.C"                                dbrtype="DBR_DOUBLE"/>
+    <Attribute name="MirrorUSY"                     type="EPICS_PV"     source="2bma:m5.RBV"                                dbrtype="DBR_DOUBLE"/>
+    <Attribute name="MirrorDSY"                     type="EPICS_PV"     source="2bma:m2.RBV"                                dbrtype="DBR_DOUBLE"/>
+    <Attribute name="MirrorAngle"                   type="EPICS_PV"     source="2bma:M1t2.C"                                dbrtype="DBR_DOUBLE"/>
     <Attribute name="MirrorStripe"                  type="EPICS_PV"     source="2bma:mirror1:select.VAL"                    dbrtype="DBR_ENUM"/>
 	
-	<Attribute name="DMM_USArm"                     type="EPICS_PV"     source="2bma:m30.VAL"                               dbrtype="DBR_DOUBLE"/>
-	<Attribute name="DMM_DSArm"                     type="EPICS_PV"     source="2bma:m31.VAL"                               dbrtype="DBR_DOUBLE"/>	
-	<Attribute name="DMM_M2Y"                       type="EPICS_PV"     source="2bma:m32.VAL"                               dbrtype="DBR_DOUBLE"/>
-	<Attribute name="DMM_M2Z"                       type="EPICS_PV"     source="2bma:m8.VAL"                                dbrtype="DBR_DOUBLE"/>
-	<Attribute name="DMM_Table_USY_OB"              type="EPICS_PV"     source="2bma:m26.VAL"                               dbrtype="DBR_DOUBLE"/>
-	<Attribute name="DMM_Table_USY_IB"              type="EPICS_PV"     source="2bma:m27.VAL"                               dbrtype="DBR_DOUBLE"/>
-	<Attribute name="DMM_Table_DSY"                 type="EPICS_PV"     source="2bma:m29.VAL"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DMM_USArm"                     type="EPICS_PV"     source="2bma:m30.VAL"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DMM_DSArm"                     type="EPICS_PV"     source="2bma:m31.VAL"                               dbrtype="DBR_DOUBLE"/>	
+    <Attribute name="DMM_M2Y"                       type="EPICS_PV"     source="2bma:m32.VAL"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DMM_M2Z"                       type="EPICS_PV"     source="2bma:m8.VAL"                                dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DMM_Table_USY_OB"              type="EPICS_PV"     source="2bma:m26.VAL"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DMM_Table_USY_IB"              type="EPICS_PV"     source="2bma:m27.VAL"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DMM_Table_DSY"                 type="EPICS_PV"     source="2bma:m29.VAL"                               dbrtype="DBR_DOUBLE"/>
 	
     <Attribute name="Flag"                          type="EPICS_PV"     source="2bma:m19.VAL"                               dbrtype="DBR_DOUBLE"/>
 	
     <Attribute name="Exp_Table_GlobalY"             type="EPICS_PV"     source="2bma:m33.VAL"                               dbrtype="DBR_DOUBLE"/>
-	<Attribute name="Exp_Table_USY_OB"              type="EPICS_PV"     source="2bma:m36.VAL"                               dbrtype="DBR_DOUBLE"/>
-	<Attribute name="Exp_Table_USY_IB"              type="EPICS_PV"     source="2bma:m35.VAL"                               dbrtype="DBR_DOUBLE"/>
-	<Attribute name="Exp_Table_DSY"                 type="EPICS_PV"     source="2bma:m34.VAL"                               dbrtype="DBR_DOUBLE"/>
-	<Attribute name="Exp_Table_USX"                 type="EPICS_PV"     source="2bma:m37.VAL"                               dbrtype="DBR_DOUBLE"/>
-	<Attribute name="Exp_Table_DSX"                 type="EPICS_PV"     source="2bma:m38.VAL"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="Exp_Table_USY_OB"              type="EPICS_PV"     source="2bma:m36.VAL"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="Exp_Table_USY_IB"              type="EPICS_PV"     source="2bma:m35.VAL"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="Exp_Table_DSY"                 type="EPICS_PV"     source="2bma:m34.VAL"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="Exp_Table_USX"                 type="EPICS_PV"     source="2bma:m37.VAL"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="Exp_Table_DSX"                 type="EPICS_PV"     source="2bma:m38.VAL"                               dbrtype="DBR_DOUBLE"/>
 	
-    <Attribute name="TomoXB"                        type="EPICS_PV"     source="2bmb:m52.VAL"                               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="TomoYB"                        type="EPICS_PV"     source="2bmb:m50.VAL"                               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="NNRailB"                       type="EPICS_PV"     source="2bmb:m31.VAL"                               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="TomoRotZB"                     type="EPICS_PV"     source="2bmb:m49.VAL"                               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="TomoRotXB"                     type="EPICS_PV"     source="2bmb:m51.VAL"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="Tomo_Sample_X_B"               type="EPICS_PV"     source="2bmb:m52.VAL"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="Tomo_Sample_Y_B"               type="EPICS_PV"     source="2bmb:m50.VAL"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="NNRail_B"                      type="EPICS_PV"     source="2bmb:m31.VAL"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="Tomo_Rot_Z_B"                  type="EPICS_PV"     source="2bmb:m49.VAL"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="Tomo_Rot_X_B"                  type="EPICS_PV"     source="2bmb:m51.VAL"                               dbrtype="DBR_DOUBLE"/>
     
-    <Attribute name="TomoXA"                        type="EPICS_PV"     source="2bma:m48.VAL"                               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="TomoYA"                        type="EPICS_PV"     source="2bma:m46.VAL"                               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="NNRailA"                       type="EPICS_PV"     source="2bma:m22.VAL"                               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="TomoRotZA"                     type="EPICS_PV"     source="2bma:m45.VAL"                               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="TomoRotXA"                     type="EPICS_PV"     source="2bma:m44.VAL"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="Tomo_Sample_X_A"               type="EPICS_PV"     source="2bma:m48.VAL"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="Tomo_Sample_Y_A"               type="EPICS_PV"     source="2bma:m46.VAL"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="NNRail_A"                      type="EPICS_PV"     source="2bma:m22.VAL"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="Tomo_Rot_Z_A"                  type="EPICS_PV"     source="2bma:m45.VAL"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="Tomo_Rot_X_A"                  type="EPICS_PV"     source="2bma:m44.VAL"                               dbrtype="DBR_DOUBLE"/>
 
-    <Attribute name="ThetaB"                        type="EPICS_PV"     source="2bmb:m34.VAL"                               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="ThetaA"                        type="EPICS_PV"     source="2bma:m58.VAL"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="Theta_B"                       type="EPICS_PV"     source="2bmb:m34.VAL"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="Theta_A"                       type="EPICS_PV"     source="2bma:m58.VAL"                               dbrtype="DBR_DOUBLE"/>
     
-    <Attribute name="SaveDest"                      type="EPICS_PV"     source="2bmbPG1:cam1:FrameType"                      dbrtype="DBR_STRING"/>
+    <Attribute name="SaveDest"                      type="EPICS_PV"     source="2bmbPG1:cam1:FrameType"                     dbrtype="DBR_STRING"/>
 </Attributes>
-

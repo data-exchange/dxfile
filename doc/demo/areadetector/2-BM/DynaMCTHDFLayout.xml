@@ -122,13 +122,13 @@
         <group name="sample">
           <dataset name="name" source="constant" value="2-BM-A Sample Stages" type="string" when="OnFileClose"></dataset>        
           <group name="setup">
-            <dataset name="tomo_sample_x" source="ndattribute" ndattribute="TomoSampleX" when="OnFileClose"> 
+            <dataset name="sample_x" source="ndattribute" ndattribute="SampleX" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
-            <dataset name="tomo_sample_y" source="ndattribute" ndattribute="TomoSampleY" when="OnFileClose"> 
+            <dataset name="smple_y" source="ndattribute" ndattribute="SampleY" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
-            <dataset name="sample_theta" source="ndattribute" ndattribute="Theta" when="OnFileClose"> 
+            <dataset name="sample_rotary" source="ndattribute" ndattribute="SampleRotary" when="OnFileClose"> 
               <attribute name="units" source="constant" value="degree" type="string"></attribute>
             </dataset>
           </group><!-- /setup -->

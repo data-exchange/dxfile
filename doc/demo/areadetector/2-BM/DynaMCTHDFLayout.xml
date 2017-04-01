@@ -165,6 +165,22 @@
           </group><!-- /roi -->
         </group><!-- /detector -->
       </group><!-- /instrument -->
+
+      <group name="sample">
+        <dataset name="name" source="ndattribute" ndattribute="SampleName" when="OnFileClose"></dataset>        
+        <dataset name="file_path" source="ndattribute" ndattribute="FilePath" when="OnFileClose"></dataset>        
+        <group name="experimenter">
+           <dataset name="name" source="ndattribute" ndattribute="UserName" when="OnFileClose"></dataset>
+           <dataset name="affiliation" source="ndattribute" ndattribute="UserAffiliation" when="OnFileClose"></dataset>
+           <dataset name="email" source="ndattribute" ndattribute="UserEmail" when="OnFileClose"></dataset>
+           <dataset name="facility_user_id" source="ndattribute" ndattribute="UserBadge" when="OnFileClose"></dataset>
+        </group><!-- /experimenter -->
+        <group name="experiment">
+           <dataset name="proposal" source="ndattribute" ndattribute="ProposalNumber" when="OnFileClose"></dataset>
+           <dataset name="title" source="ndattribute" ndattribute="ProposalTitle" when="OnFileClose"></dataset>
+        </group><!-- /experiment -->
+      </group><!-- /sample -->
+      
     </group><!-- /measurement -->
 
     <group name="process">

@@ -55,6 +55,6 @@ def print_hdf5_item_structure(g, offset='    ') :
 if __name__ == "__main__" :
         
     # Set path to the micro-CT data.
-    fname = '//tomobank/tomo_00001/tomo_00001.h5'
+    fname = '/tomobank/tomo_00001/tomo_00001.h5'
     print_hdf5_file_structure(fname)
 

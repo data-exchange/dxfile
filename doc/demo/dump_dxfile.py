@@ -16,10 +16,10 @@ import dxchange.reader as dxreader
 
 def print_hdf5_file_structure(file_name) :
     """Prints the HDF5 file structure"""
-    file = h5py.File(file_name, 'r') # open read-only
-    item = file #["/Configure:0000/Run:0000"]
+    filee = h5py.File(file_name, 'r') # open read-only
+    item = filee #["/Configure:0000/Run:0000"]
     print_hdf5_item_structure(item)
-    file.close()
+    filee.close()
  
 def print_hdf5_item_structure(g, offset='    ') :
     """Prints the input file/group/dataset (g) name and begin iterations on its content"""
@@ -55,6 +55,6 @@ def print_hdf5_item_structure(g, offset='    ') :
 if __name__ == "__main__" :
         
     # Set path to the micro-CT data.
-    fname = './demo.h5'
+    fname = '//tomobank/tomo_00001/tomo_00001.h5'
     print_hdf5_file_structure(fname)
 

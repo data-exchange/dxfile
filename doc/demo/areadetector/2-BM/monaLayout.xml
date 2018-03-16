@@ -21,7 +21,7 @@
     
     <group name="measurement">
       <group name="instrument">
-        <dataset name="name" source="constant" value="Local tomography at 2-BM" type="string" when="OnFileClose"></dataset>   
+        <dataset name="name" source="constant" value="2-BM-B micro-tomography MONA project" type="string" when="OnFileClose"></dataset>   
              
         <group name="source">
           <dataset name="beamline" source="constant" value="2-BM" type="string" when="OnFileClose"></dataset>        
@@ -57,7 +57,7 @@
         </group><!-- /mirror -->
         
         <group name="attenuator">
-          <dataset name="beamline" source="constant" value="2-BM" type="string" when="OnFileClose"></dataset>  
+          <dataset name="name" source="constant" value="2-BM-A filters" type="string" when="OnFileClose"></dataset>  
           <group name="setup">
           <dataset name="user_filter_us" source="ndattribute" ndattribute="BeamlineFilterA" when="OnFileClose"> 
             <attribute name="units" source="constant" value="mm" type="string"></attribute>
@@ -65,6 +65,8 @@
           <dataset name="user_filter_ds" source="ndattribute" ndattribute="BeamlineFilterB" when="OnFileClose"> 
             <attribute name="units" source="constant" value="mm" type="string"></attribute>
           </dataset>
+          <dataset name="user_filter_us_legend" source="constant" value="0: 1mm C; 1: 150um Al; 2:600um Al; 3:1mm Al; 4:None; 5:LowLimit " type="string" when="OnFileClose"></dataset>  
+          <dataset name="user_filter_ds_legend" source="constant" value="0: 600um Al; 1: 150um Al; 2:300um C; 3:50um C; 4:None; 5:LowLimit " type="string" when="OnFileClose"></dataset>  
           </group><!-- /setup -->
         </group><!-- /attenuator -->
         
@@ -149,10 +151,10 @@
         <group name="sample">
           <dataset name="name" source="constant" value="microCT sample stages stack B" type="string" when="OnFileClose"></dataset>        
           <group name="setup">
-            <dataset name="sample_x" source="ndattribute" ndattribute="Sample_X" when="OnFileClose"> 
+            <dataset name="sample_x" source="ndattribute" ndattribute="SampleX" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
-            <dataset name="sample_y" source="ndattribute" ndattribute="Sample_Y" when="OnFileClose"> 
+            <dataset name="sample_y" source="ndattribute" ndattribute="SampleY" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
             <dataset name="sample_rotary" source="ndattribute" ndattribute="SampleRotary" when="OnFileClose"> 
@@ -173,11 +175,11 @@
         <group name="detector">
           <dataset name="manufacturer" source="ndattribute" ndattribute="DetectorManufacturer" when="OnFileClose"></dataset>
           <dataset name="model" source="ndattribute" ndattribute="DetectorModel" when="OnFileClose"></dataset>
+          <dataset name="serial_number" source="ndattribute" ndattribute="SerialNumber" when="OnFileClose"></dataset>
+          <dataset name="firmware_version" source="ndattribute" ndattribute="FirmwareVersion" when="OnFileClose"></dataset>
+          <dataset name="software_version" source="ndattribute" ndattribute="SoftwareVersion" when="OnFileClose"></dataset>
 		  <dataset name="dimension_x" source="ndattribute" ndattribute="MaxSizeX" when="OnFileClose"></dataset>
           <dataset name="dimension_y" source="ndattribute" ndattribute="MaxSizeY" when="OnFileClose"></dataset>
-          <dataset name="temperature" source="ndattribute" ndattribute="Temperature" when="OnFileClose">
-            <attribute name="units" source="constant" value="Celsius" type="string"></attribute>
-          </dataset>
           <dataset name="gain" source="ndattribute" ndattribute="Gain" when="OnFileClose"></dataset>		  
           <dataset name="binning_x" source="ndattribute" ndattribute="BinX" when="OnFileClose"></dataset>
           <dataset name="binning_y" source="ndattribute" ndattribute="BinY" when="OnFileClose"></dataset>

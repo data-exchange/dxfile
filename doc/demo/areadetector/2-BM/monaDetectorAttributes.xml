@@ -4,9 +4,12 @@
     >
     <Attribute name="DetectorManufacturer"          type="EPICS_PV"     source="2bmbPG3:cam1:Manufacturer_RBV"              dbrtype="DBR_STRING"/>     
     <Attribute name="DetectorModel"                 type="EPICS_PV"     source="2bmbPG3:cam1:Model_RBV"                     dbrtype="DBR_STRING"/>    	
+    <Attribute name="SerialNumber"                  type="EPICS_PV"     source="2bmbPG3:cam1:SerialNumber"                  dbrtype="DBR_STRING"/>  
+    <Attribute name="FirmwareVersion"               type="EPICS_PV"     source="2bmbPG3:cam1:FirmwareVersion"               dbrtype="DBR_STRING"/>  
+    <Attribute name="SoftwareVersion"               type="EPICS_PV"     source="2bmbPG3:cam1:SoftwareVersion"               dbrtype="DBR_STRING"/>  
+
     <Attribute name="MaxSizeX"                      type="EPICS_PV"     source="2bmbPG3:cam1:MaxSizeX_RBV"                  dbrtype="DBR_LONG"/>       
     <Attribute name="MaxSizeY"                      type="EPICS_PV"     source="2bmbPG3:cam1:MaxSizeY_RBV"                  dbrtype="DBR_LONG"/>
-    <Attribute name="Temperature"                   type="EPICS_PV"     source="2bmbPG3:cam1:TemperatureActual"             dbrtype="DBR_DOUBLE"/>	
     <Attribute name="DetectorFrameMode"             type="EPICS_PV"     source="2bmbPG3:cam1:FrameRateOnOff"                dbrtype="DBR_ENUM"/> 
     <Attribute name="AcqTime"                       type="EPICS_PV"     source="2bmbPG3:cam1:AcquireTime"                   dbrtype="DBR_DOUBLE"/>    
     <Attribute name="AcqPeriod"                     type="EPICS_PV"     source="2bmbPG3:cam1:AcquirePeriod"                 dbrtype="DBR_DOUBLE"/>

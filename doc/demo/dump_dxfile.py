@@ -17,14 +17,14 @@ import argparse
 import dxchange.reader as dxreader
 
 
-def print_hdf5_file_structure(file_name) :
+def dump_hdf5_file_structure(file_name) :
     """Prints the HDF5 file structure"""
     filee = h5py.File(file_name, 'r') # open read-only
     item = filee #["/Configure:0000/Run:0000"]
-    print_hdf5_item_structure(item, file_name)
+    dump_hdf5_item_structure(item, file_name)
     filee.close()
  
-def print_hdf5_item_structure(g, file_name, offset='    ') :
+def dump_hdf5_item_structure(g, file_name, offset='    ') :
     """Prints the input file/group/dataset (g) name and begin iterations on its content"""
 
     if   isinstance(g, h5py.File) :
@@ -54,7 +54,7 @@ def print_hdf5_item_structure(g, file_name, offset='    ') :
         for key,val in dict(g).iteritems() :
             subg = val
             #print (offset, key )#,"   ", subg.name #, val, subg.len(), type(subg),
-            print_hdf5_item_structure(subg, file_name, offset + '    ')
+            dump_hdf5_item_structure(subg, file_name, offset + '    ')
  
 
 def main(arg):
@@ -67,7 +67,7 @@ def main(arg):
     fname = args.fname
     if os.path.isfile(fname): 
         print(fname)   
-        print_hdf5_file_structure(fname)
+        dump_hdf5_file_structure(fname)
 
 if __name__ == "__main__":
     main(sys.argv[1:])

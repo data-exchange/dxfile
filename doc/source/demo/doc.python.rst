@@ -21,6 +21,7 @@ Usage: ::
   		--tiff      	Convert HDF5 to a stack of tiff files
 
 Example: ::
+
 	python dump_dxfile.py /tomobank/tomo_00001.h5 --tiff
 
 

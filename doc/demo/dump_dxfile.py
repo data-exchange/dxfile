@@ -14,6 +14,7 @@ import os
 import h5py
 import sys
 import argparse
+import dxchange
 import dxchange.reader as dxreader
 
 
@@ -61,13 +62,32 @@ def main(arg):
 
     parser = argparse.ArgumentParser()
     parser.add_argument("fname", help="DataExchange file name: /data/sample.h5")
+    parser.add_argument("--tiff",action="store_true", help="Convert HDF5 to a stack of tiff files")
+
     args = parser.parse_args()
 
     # Set path to the micro-CT data to reconstruct.
     fname = args.fname
+    tiff = args.tiff
     if os.path.isfile(fname): 
-        print(fname)   
         dump_hdf5_file_structure(fname)
+        if tiff:   
+            # Read APS 32-BM raw data.
+            print("Reading HDF5 file: ", fname)
+            proj, flat, dark, theta = dxchange.read_aps_32id(fname)
+            print("Converting ....")
+            top_out = os.path.join(os.path.dirname(fname), os.path.splitext(os.path.basename(fname))[0])
+            flats_out = os.path.join(top_out, "flats", "image")
+            darks_out = os.path.join(top_out, "darks", "image")
+            radios_out = os.path.join(top_out, "radios", "image")
+            print("flats: ", flat.shape)
+            dxchange.write_tiff_stack(flat, fname=flats_out)
+            print("darks: ", dark.shape)
+            dxchange.write_tiff_stack(dark, fname=darks_out)
+            print("projections: ", proj.shape)
+            dxchange.write_tiff_stack(proj, fname=radios_out)
+            print ("Converted data: ", top_out)
+            print ("Done!")
 
 if __name__ == "__main__":
     main(sys.argv[1:])

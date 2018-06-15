@@ -158,7 +158,7 @@
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
             <dataset name="sample_rotary" source="ndattribute" ndattribute="SampleRotary" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string"></attribute>
+              <attribute name="units" source="constant" value="degrees" type="string"></attribute>
             </dataset>
             <dataset name="sample_xx" source="ndattribute" ndattribute="SampleXX" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>

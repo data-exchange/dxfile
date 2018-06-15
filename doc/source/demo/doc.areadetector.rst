@@ -12,6 +12,7 @@ Here are the templates in use at the  Advanced Photon Source:
     - Micro Tomography Instrument: :download:`A_station_hdf_schema.xml <../../../doc/demo/areadetector/2-BM/AlocalPG1Layout.xml>` and :download:`A_station_detector_attributes.xml <../../../doc/demo/areadetector/2-BM/AlocalPG1DetectorAttributes.xml>`
     - Micro Tomography Instrument: :download:`B_station_hdf_schema.xml <../../../doc/demo/areadetector/2-BM/BlocalPG1Layout.xml>` and :download:`B_station_detector_attributes.xml <../../../doc/demo/areadetector/2-BM/BlocalPG1DetectorAttributes.xml>`
     - Dynamic Tomography Instrument: :download:`dyna_hdf_schema.xml <../../../doc/demo/areadetector/2-BM/DynaMCTHDFLayout.xml>` and :download:`dyna_detector_attributes.xml <../../../doc/demo/areadetector/2-BM/DynaMCTDetectorAttributes.xml>`
+    - MONA project: :download:`mona_hdf_schema.xml <../../../doc/demo/areadetector/2-BM/monaLayout.xml>` and :download:`mona_detector_attributes.xml <../../../doc/demo/areadetector/2-BM/monaDetectorAttributes.xml>`
     
 - 32-ID 
     - Transmission X-Ray Microscope: :download:`txm_hdf_schema.xml <../../../doc/demo/areadetector/32-ID/nct.xml>` and :download:`txm_detector_attribute.xml <../../../doc/demo/areadetector/32-ID/nctDetectorAttributes.xml>` and the generated HDF5 file: `txm.h5 <https://drive.google.com/open?id=0B78bW1AwveI_UmVvcHVTUzVBVXM>`_ .

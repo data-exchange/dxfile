@@ -1,9 +1,9 @@
-Area Detector
-=============
+Advanced Photon Source
+======================
 
 At synchrotron facilities using the EPICS :cite:`EPICS:01` software for area detectors :cite:`AD:01` with the
 NDFileHDF5 plugin :cite:`AD:02`, is possible to save Data Exchange files by properly configure
-the detector and the HDF schema attribute files .  
+the detector and the HDF schema attribute files to obtain `txm.h5 <https://drive.google.com/open?id=0B78bW1AwveI_UmVvcHVTUzVBVXM>`_
 
 Here are the templates in use at the  Advanced Photon Source:
 

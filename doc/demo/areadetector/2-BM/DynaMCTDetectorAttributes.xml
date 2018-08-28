@@ -62,5 +62,7 @@
     <Attribute name="UserEmail"                       type="EPICS_PV" source="2bmS1:UserEmail"                                  dbrtype="DBR_STRING"/>
     <Attribute name="ProposalNumber"                  type="EPICS_PV" source="2bmS1:ProposalNumber"                             dbrtype="DBR_STRING"/>
     <Attribute name="ProposalTitle"                   type="EPICS_PV" source="2bmS1:ProposalTitle"                              dbrtype="DBR_STRING"/>
+	
+    <Attribute name="Load"                    type="EPICS_PV" source="2bmS1:D1Dmm_calc.VAL"                                     dbrtype="DBR_NATIVE"   description=" " />	
 
 </Attributes>

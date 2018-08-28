@@ -125,7 +125,7 @@
             <dataset name="sample_x" source="ndattribute" ndattribute="SampleX" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
-            <dataset name="sample_y" source="ndattribute" ndattribute="SampleY" when="OnFileClose"> 
+            <dataset name="smple_y" source="ndattribute" ndattribute="SampleY" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
             <dataset name="sample_rotary" source="ndattribute" ndattribute="SampleRotary" when="OnFileClose"> 
@@ -179,9 +179,21 @@
            <dataset name="proposal" source="ndattribute" ndattribute="ProposalNumber" when="OnFileClose"></dataset>
            <dataset name="title" source="ndattribute" ndattribute="ProposalTitle" when="OnFileClose"></dataset>
         </group><!-- /experiment -->
-      </group><!-- /sample -->
-      
+      </group><!-- /sample -->	  
     </group><!-- /measurement -->
+	
+	<group name="user_specific">
+      <dataset name="name" source="constant" value="User Specific Metadata" type="string" when="OnFileClose"></dataset>  
+
+      <group name="Load">
+        <dataset name="name" source="constant" value="Load from 2-BM-A Multimeter Voltage" type="string" when="OnFileClose"></dataset>        
+        <group name="setup">
+        <dataset name="Load from 2-BM-A_multimeter_voltage" source="ndattribute" ndattribute="Load"> 
+          <attribute name="units" source="constant" value="V" type="string"></attribute>
+        </dataset>
+        </group><!-- /setup -->
+      </group><!-- /multimeter_voltage -->		
+    </group><!-- /user_specific -->  
 
     <group name="process">
       <group name="acquisition">

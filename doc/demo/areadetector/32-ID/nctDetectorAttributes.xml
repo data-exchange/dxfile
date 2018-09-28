@@ -157,8 +157,7 @@
 
     <Attribute name="CcdObjectiveDial"    type="EPICS_PV" source="32idcTXM:xps:c2:m2.DVAL"      dbrtype="DBR_DOUBLE"/>
     <Attribute name="CcdObjective"        type="EPICS_PV" source="32idcTXM:xps:c2:m2.VAL"       dbrtype="DBR_DOUBLE"/>
-    
-
+   
  <!--   <Attribute name="Theta"               type="EPICS_PV" source="32idcTXM:hydra:c0:m1.VAL"     dbrtype="DBR_DOUBLE"/> -->
 
 </Attributes>

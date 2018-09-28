@@ -82,6 +82,11 @@
           </group><!-- /setup -->
         </group><!-- /attenuator -->
         
+        <group name="attenuator_1">
+          <dataset name="name" source="constant" value="Manually added filters" type="string" when="OnFileClose" />  
+          <dataset name="description" source="ndattribute" ndattribute="ManualFilters" when="OnFileClose" /> 
+        </group><!-- /attenuator_1 -->
+
         <group name="monochromator">
           <dataset name="name" source="constant" value="2-BM DMM" type="string" when="OnFileClose" />        
           <group name="setup">
@@ -162,6 +167,9 @@
       
         <group name="sample">
           <dataset name="name" source="constant" value="microCT sample stages stack B" type="string" when="OnFileClose" />        
+          <dataset name="detector_distance" source="ndattribute" ndattribute="SamDetDist" when="OnFileClose">        
+            <attribute name="units" source="constant" value="mm" type="string" />
+          </dataset>
           <group name="setup">
             <dataset name="sample_x" source="ndattribute" ndattribute="SampleX" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string" />
@@ -211,6 +219,22 @@
           </group><!-- /roi -->
           
         </group><!-- /detector -->
+
+        <group name="detection_system">
+          <group name="objective">
+            <dataset name="magnification" source="ndattribute" ndattribute="ObjectiveMag" when="OnFileClose" />
+          </group><!-- /objective -->
+
+          <group name="scintillator">
+            <dataset name="name" source="ndattribute" ndattribute="ScintName" when="OnFileClose" />
+            <dataset name="scintillating_thickness" source="ndattribute" ndattribute="ScintThickness" when="OnFileClose" >
+              <attribute name="units" source="constant" value="um" type="string" />            
+            </dataset>
+          </group><!-- /scintillator -->
+
+        </group><!-- /detection_system -->
+
+
       </group><!-- /instrument -->
 
     <group name="sample">

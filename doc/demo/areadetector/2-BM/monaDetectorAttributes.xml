@@ -88,4 +88,11 @@
     <Attribute name="UserEmail"                     type="EPICS_PV"     source="2bmS1:UserEmail"                            dbrtype="DBR_STRING"/>
     <Attribute name="ProposalNumber"                type="EPICS_PV"     source="2bmS1:ProposalNumber"                       dbrtype="DBR_STRING"/>
     <Attribute name="ProposalTitle"                 type="EPICS_PV"     source="2bmS1:ProposalTitle"                        dbrtype="DBR_STRING"/>
+    
+    <Attribute name="ObjectiveMag"                  type="EPICS_PV"     source="2bmb:caputRecorderGbl_5"                    dbrtype="DBR_STRING"/>
+    <Attribute name="ScintName"                     type="EPICS_PV"     source="2bmb:caputRecorderGbl_8"                    dbrtype="DBR_STRING"/>
+    <Attribute name="ScintThickness"                type="EPICS_PV"     source="2bmb:caputRecorderGbl_7"                    dbrtype="DBR_STRING"/>
+    <Attribute name="SamDetDist"                    type="EPICS_PV"     source="2bmb:caputRecorderGbl_6"                    dbrtype="DBR_STRING"/>
+    <Attribute name="ManualFilters"                 type="EPICS_PV"     source="2bmb:caputRecorderGbl_9"                    dbrtype="DBR_STRING"/>
+   
 </Attributes>

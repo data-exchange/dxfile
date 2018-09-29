@@ -157,6 +157,10 @@
 
     <Attribute name="CcdObjectiveDial"    type="EPICS_PV" source="32idcTXM:xps:c2:m2.DVAL"      dbrtype="DBR_DOUBLE"/>
     <Attribute name="CcdObjective"        type="EPICS_PV" source="32idcTXM:xps:c2:m2.VAL"       dbrtype="DBR_DOUBLE"/>
+
+    <Attribute name="ObjectiveMag"        type="EPICS_PV" source="32idcTXM:caputRecorderGbl_5"  dbrtype="DBR_STRING"/>
+    <Attribute name="ScintName"           type="EPICS_PV" source="32idcTXM:caputRecorderGbl_8"  dbrtype="DBR_STRING"/>
+    <Attribute name="ScintThickness"      type="EPICS_PV" source="32idcTXM:caputRecorderGbl_7"  dbrtype="DBR_STRING"/>
    
  <!--   <Attribute name="Theta"               type="EPICS_PV" source="32idcTXM:hydra:c0:m1.VAL"     dbrtype="DBR_DOUBLE"/> -->
 

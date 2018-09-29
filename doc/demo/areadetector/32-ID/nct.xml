@@ -434,6 +434,20 @@
             </dataset>
           </group><!-- /setup -->
         </group><!-- /detector -->
+
+        <group name="detection_system">
+          <group name="objective">
+            <dataset name="magnification" source="ndattribute" ndattribute="ObjectiveMag" when="OnFileClose" />
+          </group><!-- /objective -->
+
+          <group name="scintillator">
+            <dataset name="name" source="ndattribute" ndattribute="ScintName" when="OnFileClose" />
+            <dataset name="scintillating_thickness" source="ndattribute" ndattribute="ScintThickness" when="OnFileClose" >
+              <attribute name="units" source="constant" value="um" type="string" />            
+            </dataset>
+          </group><!-- /scintillator -->
+        </group><!-- /detection_system -->
+
       </group><!-- /instrument -->
 
       <group name="sample">

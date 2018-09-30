@@ -122,25 +122,25 @@
           <dataset name="hslits_us_size" source="ndattribute" ndattribute="HSlitsUSSize" when="OnFileClose"> 
             <attribute name="units" source="constant" value="mm" type="string" />
           </dataset>
-          <dataset name="hslits_us_gap" source="ndattribute" ndattribute="HSlitsUSGap" when="OnFileClose"> 
+          <dataset name="hslits_us_center" source="ndattribute" ndattribute="HSlitsUSCenter" when="OnFileClose"> 
             <attribute name="units" source="constant" value="mm" type="string" />
           </dataset>
           <dataset name="hslits_ds_size" source="ndattribute" ndattribute="HSlitsDSSize" when="OnFileClose"> 
             <attribute name="units" source="constant" value="mm" type="string" />
           </dataset>
-          <dataset name="hslits_ds_gap" source="ndattribute" ndattribute="HSlitsDSGap" when="OnFileClose"> 
+          <dataset name="hslits_ds_center" source="ndattribute" ndattribute="HSlitsDSCenter" when="OnFileClose"> 
             <attribute name="units" source="constant" value="mm" type="string" />
           </dataset>
           <dataset name="vslits_us_size" source="ndattribute" ndattribute="VSlitsUSSize" when="OnFileClose"> 
             <attribute name="units" source="constant" value="mm" type="string" />
           </dataset>
-          <dataset name="vslits_us_gap" source="ndattribute" ndattribute="VSlitsUSGap" when="OnFileClose"> 
+          <dataset name="vslits_us_center" source="ndattribute" ndattribute="VSlitsUSCenter" when="OnFileClose"> 
             <attribute name="units" source="constant" value="mm" type="string" />
           </dataset>
           <dataset name="vslits_ds_size" source="ndattribute" ndattribute="VSlitsDSSize" when="OnFileClose"> 
             <attribute name="units" source="constant" value="mm" type="string" />
           </dataset>
-          <dataset name="vslits_ds_gap" source="ndattribute" ndattribute="VSlitsDSGap" when="OnFileClose"> 
+          <dataset name="vslits_ds_center" source="ndattribute" ndattribute="VSlitsDSCenter" when="OnFileClose"> 
             <attribute name="units" source="constant" value="mm" type="string" />
           </dataset>
           </group><!-- /setup -->

@@ -145,27 +145,6 @@
           </dataset>
           </group><!-- /setup -->
         </group><!-- /slits -->
-
-        <group name="table">
-          <dataset name="name" source="constant" value="2-BM-B Experimental Table" type="string" when="OnFileClose" />        
-          <group name="setup">
-            <dataset name="exp_table_usy_ob" source="ndattribute" ndattribute="Exp_Table_USY_OB" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string" />
-            </dataset>
-            <dataset name="exp_table_usy_ib" source="ndattribute" ndattribute="Exp_Table_USY_IB" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string" />
-            </dataset>
-            <dataset name="exp_table_dsy" source="ndattribute" ndattribute="Exp_Table_DSY" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string" />
-            </dataset>
-            <dataset name="exp_table_usx" source="ndattribute" ndattribute="Exp_Table_USX" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string" />
-            </dataset>
-            <dataset name="exp_table_dsx" source="ndattribute" ndattribute="Exp_Table_DSX" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string" />
-            </dataset>
-          </group><!-- /setup-->          
-        </group><!-- /table -->
       
         <group name="sample">
           <dataset name="name" source="constant" value="microCT sample stages stack B" type="string" when="OnFileClose" />        

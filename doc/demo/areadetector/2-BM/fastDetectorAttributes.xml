@@ -63,12 +63,6 @@
     <Attribute name="DMM_Table_USY_IB"              type="EPICS_PV"     source="2bma:m27.RBV"                               dbrtype="DBR_DOUBLE"/>
     <Attribute name="DMM_Table_DSY"                 type="EPICS_PV"     source="2bma:m29.RBV"                               dbrtype="DBR_DOUBLE"/>
 
-    <Attribute name="Exp_Table_USY_OB"              type="EPICS_PV"     source="2bmb:m7.RBV"                                dbrtype="DBR_DOUBLE"/>
-    <Attribute name="Exp_Table_USY_IB"              type="EPICS_PV"     source="2bmb:m13.RBV"                               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="Exp_Table_DSY"                 type="EPICS_PV"     source="2bmb:m9.RBV"                                dbrtype="DBR_DOUBLE"/>
-    <Attribute name="Exp_Table_USX"                 type="EPICS_PV"     source="2bmb:m5.RBV"                                dbrtype="DBR_DOUBLE"/>
-    <Attribute name="Exp_Table_DSX"                 type="EPICS_PV"     source="2bmb:m8.RBV"                                dbrtype="DBR_DOUBLE"/>
-
     <Attribute name="Theta"                         type="EPICS_PV"     source="2bmb:DX:theta"                              dbrtype="DBR_DOUBLE" />
     <Attribute name="Theta_EGU"                     type="EPICS_PV"     source="2bmb:DX:theta.EGU"                          dbrtype="DBR_STRING" />
 

@@ -39,14 +39,14 @@
     <Attribute name="BeamlineFilterA"               type="EPICS_PV"     source="2bma:fltr1:select.VAL"                      dbrtype="DBR_ENUM"/>
     <Attribute name="BeamlineFilterB"               type="EPICS_PV"     source="2bma:fltr2:select.VAL"                      dbrtype="DBR_ENUM"/>
 
-    <Attribute name="HSlitsUSSize"                  type="EPICS_PV"     source="2bma:Slit1Hsize.VAL"                        dbrtype="DBR_ENUM"/>
-    <Attribute name="HSlitsUSGap"                   type="EPICS_PV"     source="2bma:Slit1Hcenter.VAL"                      dbrtype="DBR_ENUM"/>
-    <Attribute name="HSlitsDSSize"                  type="EPICS_PV"     source="2bma:Slit2Hsize.VAL"                        dbrtype="DBR_ENUM"/>
-    <Attribute name="HSlitsDSGap"                   type="EPICS_PV"     source="2bma:Slit2Hcenter.VAL"                      dbrtype="DBR_ENUM"/>
-    <Attribute name="VSlitsUSSize"                  type="EPICS_PV"     source="2bma:Slit1Vsize.VAL"                        dbrtype="DBR_ENUM"/>
-    <Attribute name="VSlitsUSGap"                   type="EPICS_PV"     source="2bma:Slit1Vcenter.VAL"                      dbrtype="DBR_ENUM"/>
-    <Attribute name="VSlitsDSSize"                  type="EPICS_PV"     source="2bma:Slit2Vsize.VAL"                        dbrtype="DBR_ENUM"/>
-    <Attribute name="VSlitsDSGap"                   type="EPICS_PV"     source="2bma:Slit2Vcenter.VAL"                      dbrtype="DBR_ENUM"/>
+    <Attribute name="HSlitsUSSize"                  type="EPICS_PV"     source="2bma:Slit1Hsize.VAL"                        dbrtype="DBR_DOUBLE"/>
+    <Attribute name="HSlitsUSGap"                   type="EPICS_PV"     source="2bma:Slit1Hcenter.VAL"                      dbrtype="DBR_DOUBLE"/>
+    <Attribute name="VSlitsUSSize"                  type="EPICS_PV"     source="2bma:Slit1Vsize.VAL"                        dbrtype="DBR_DOUBLE"/>
+    <Attribute name="VSlitsUSGap"                   type="EPICS_PV"     source="2bma:Slit1Vcenter.VAL"                      dbrtype="DBR_DOUBLE"/>
+    <Attribute name="HSlitsDSSize"                  type="EPICS_PV"     source="2bma:Slit2Hsize.VAL"                        dbrtype="DBR_DOUBLE"/>
+    <Attribute name="HSlitsDSGap"                   type="EPICS_PV"     source="2bma:Slit2Hcenter.VAL"                      dbrtype="DBR_DOUBLE"/>
+    <Attribute name="VSlitsDSSize"                  type="EPICS_PV"     source="2bma:Slit2Vsize.VAL"                        dbrtype="DBR_DOUBLE"/>
+    <Attribute name="VSlitsDSGap"                   type="EPICS_PV"     source="2bma:Slit2Vcenter.VAL"                      dbrtype="DBR_DOUBLE"/>
 
     <Attribute name="MirrorX"                       type="EPICS_PV"     source="2bma:m3.RBV"                                dbrtype="DBR_DOUBLE"/>
     <Attribute name="MirrorY"                       type="EPICS_PV"     source="2bma:M1t2.D"                                dbrtype="DBR_DOUBLE"/>

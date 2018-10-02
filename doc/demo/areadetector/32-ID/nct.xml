@@ -381,17 +381,26 @@
         </group><!-- /flight_tube -->
 
         <group name="detector">
-          <dataset name="dimension_x" source="ndattribute" ndattribute="MaxSizeX" when="OnFileClose"></dataset>
-          <dataset name="dimension_y" source="ndattribute" ndattribute="MaxSizeY" when="OnFileClose"></dataset>
-          <dataset name="binning_x" source="ndattribute" ndattribute="BinX" when="OnFileClose"></dataset>
-          <dataset name="binning_y" source="ndattribute" ndattribute="BinY" when="OnFileClose"></dataset>
-          <dataset name="exposure_time" source="ndattribute" ndattribute="AcqTime" when="OnFileClose"></dataset>
-          <dataset name="manufacturer" source="ndattribute" ndattribute="Manufacturer" when="OnFileClose"></dataset>
-          <dataset name="model" source="ndattribute" ndattribute="Model" when="OnFileClose"></dataset>
-          <dataset name="serial_number" source="ndattribute" ndattribute="Serial" when="OnFileClose"></dataset>
-          <dataset name="firmware_version" source="ndattribute" ndattribute="Firmware" type="string" when="OnFileClose"></dataset>
-          <dataset name="software_version" source="ndattribute" ndattribute="Software" type="string"  when="OnFileClose"></dataset>
-          <dataset name="gain" source="ndattribute" ndattribute="Gain" when="OnFileClose"></dataset>
+          <dataset name="manufacturer" source="ndattribute" ndattribute="DetectorManufacturer" when="OnFileClose" />
+          <dataset name="model" source="ndattribute" ndattribute="DetectorModel" when="OnFileClose" />
+          <dataset name="serial_number" source="ndattribute" ndattribute="SerialNumber" when="OnFileClose" />
+          <dataset name="firmware_version" source="ndattribute" ndattribute="FirmwareVersion" when="OnFileClose" />
+          <dataset name="SDK_version" source="ndattribute" ndattribute="SDKVersion" when="OnFileClose" />
+          <dataset name="driver_version" source="ndattribute" ndattribute="DriverVersion" when="OnFileClose" />
+          <dataset name="ADcore_version" source="ndattribute" ndattribute="ADCoreVersion" when="OnFileClose" />
+
+          <dataset name="dimension_x" source="ndattribute" ndattribute="MaxSizeX" when="OnFileClose" />
+          <dataset name="dimension_y" source="ndattribute" ndattribute="MaxSizeY" when="OnFileClose" />
+          <dataset name="gain" source="ndattribute" ndattribute="Gain" when="OnFileClose" />          
+          <dataset name="gain_auto" source="ndattribute" ndattribute="GainAuto" when="OnFileClose" />          
+          <dataset name="binning_x" source="ndattribute" ndattribute="BinX" when="OnFileClose" />
+          <dataset name="binning_y" source="ndattribute" ndattribute="BinY" when="OnFileClose" />
+          <dataset name="frame_rate" source="ndattribute" ndattribute="FrameRate" when="OnFileClose" /> 
+          <dataset name="frame_rate_enable" source="ndattribute" ndattribute="FrameRateEnable" when="OnFileClose" /> 
+          <dataset name="exposure_time" source="ndattribute" ndattribute="AcqTime" when="OnFileClose" />
+          <dataset name="acquisition_period" source="ndattribute" ndattribute="AcqPeriod" when="OnFileClose" />
+          <dataset name="data_type" source="ndattribute" ndattribute="DataType" when="OnFileClose" />       
+          <dataset name="array_counter" source="ndattribute" ndattribute="ArrayCounter" when="OnFileClose" />       
           <dataset name="temperature" source="ndattribute" ndattribute="Temperature" when="OnFileClose">
             <attribute name="units" source="constant" value="Celsius" type="string"></attribute>
           </dataset>

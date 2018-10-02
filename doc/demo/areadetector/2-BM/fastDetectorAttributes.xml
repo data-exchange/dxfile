@@ -12,28 +12,31 @@
 
     <Attribute name="MaxSizeX"                      type="EPICS_PV"     source="2bmbSP1:cam1:MaxSizeX_RBV"                  dbrtype="DBR_LONG"/>
     <Attribute name="MaxSizeY"                      type="EPICS_PV"     source="2bmbSP1:cam1:MaxSizeY_RBV"                  dbrtype="DBR_LONG"/>
-    <Attribute name="FrameRateEnable"               type="EPICS_PV"     source="2bmbSP1:cam1:FrameRateEnable_RBV"           dbrtype="DBR_ENUM"/>
-    <Attribute name="AcqTime"                       type="EPICS_PV"     source="2bmbSP1:cam1:AcquireTime_RBV"               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="AcqPeriod"                     type="EPICS_PV"     source="2bmbSP1:cam1:AcquirePeriod_RBV"             dbrtype="DBR_DOUBLE"/>
-    <Attribute name="FrameRate"                     type="EPICS_PV"     source="2bmbSP1:cam1:FrameRate_RBV"                 dbrtype="DBR_DOUBLE"/>
-    <Attribute name="Gain"                          type="EPICS_PV"     source="2bmbSP1:cam1:Gain_RBV"                      dbrtype="DBR_DOUBLE"/>
-    <Attribute name="GainAuto"                      type="EPICS_PV"     source="2bmbSP1:cam1:GainAuto_RBV"                  dbrtype="DBR_DOUBLE"/>
-    <Attribute name="BinX"                          type="EPICS_PV"     source="2bmbSP1:cam1:BinX"                          dbrtype="DBR_LONG"/>
-    <Attribute name="BinY"                          type="EPICS_PV"     source="2bmbSP1:cam1:BinY"                          dbrtype="DBR_LONG"/>
     <Attribute name="MinX"                          type="EPICS_PV"     source="2bmbSP1:cam1:MinX"                          dbrtype="DBR_LONG"/>
     <Attribute name="MinY"                          type="EPICS_PV"     source="2bmbSP1:cam1:MinY"                          dbrtype="DBR_LONG"/>
     <Attribute name="SizeX"                         type="EPICS_PV"     source="2bmbSP1:cam1:SizeX"                         dbrtype="DBR_LONG"/>
     <Attribute name="SizeY"                         type="EPICS_PV"     source="2bmbSP1:cam1:SizeY"                         dbrtype="DBR_LONG"/>
+    <Attribute name="BinX"                          type="EPICS_PV"     source="2bmbSP1:cam1:BinX"                          dbrtype="DBR_LONG"/>
+    <Attribute name="BinY"                          type="EPICS_PV"     source="2bmbSP1:cam1:BinY"                          dbrtype="DBR_LONG"/>
+
+    <Attribute name="AcqTime"                       type="EPICS_PV"     source="2bmbSP1:cam1:AcquireTime_RBV"               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="AcqPeriod"                     type="EPICS_PV"     source="2bmbSP1:cam1:AcquirePeriod_RBV"             dbrtype="DBR_DOUBLE"/>
+    <Attribute name="FrameRate"                     type="EPICS_PV"     source="2bmbSP1:cam1:FrameRate_RBV"                 dbrtype="DBR_DOUBLE"/>
+    <Attribute name="FrameRateEnable"               type="EPICS_PV"     source="2bmbSP1:cam1:FrameRateEnable_RBV"           dbrtype="DBR_ENUM"/>
+    <Attribute name="Gain"                          type="EPICS_PV"     source="2bmbSP1:cam1:Gain_RBV"                      dbrtype="DBR_DOUBLE"/>
+    <Attribute name="GainAuto"                      type="EPICS_PV"     source="2bmbSP1:cam1:GainAuto_RBV"                  dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DataType"                      type="EPICS_PV"     source="2bmbSP1:cam1:DataType_RBV"                  dbrtype="DBR_STRING"/>
+    <Attribute name="ArrayCounter"                  type="EPICS_PV"     source="2bmbSP1:cam1:ArrayCounter_RBV"              dbrtype="DBR_LONG"/>
+    <Attribute name="Temperature"                   type="EPICS_PV"     source="2bmbSP1:cam1:TemperatureActual"             dbrtype="DBR_DOUBLE"/>
+
     <Attribute name="SaveDest"                      type="EPICS_PV"     source="2bmbSP1:cam1:FrameType_RBV"                 dbrtype="DBR_STRING"/>
     <Attribute name="SampleName"                    type="EPICS_PV"     source="2bmbSP1:HDF1:FileName"                      dbrtype="DBR_STRING"/>
     <Attribute name="FilePath"                      type="EPICS_PV"     source="2bmbSP1:HDF1:FilePath_RBV"                  dbrtype="DBR_STRING"/>
-    <Attribute name="DataType"                      type="EPICS_PV"     source="2bmbSP1:cam1:DataType_RBV"                  dbrtype="DBR_ENUM"/>
-    <Attribute name="ArrayCounter"                  type="EPICS_PV"     source="2bmbSP1:cam1:ArrayCounter_RBV"              dbrtype="DBR_LONG"/>
 
     <Attribute name="DateTimeStart"                 type="EPICS_PV"     source="S:IOC:timeOfDayForm1SI"                     dbrtype="DBR_STRING"/>
     <Attribute name="DateTimeEnd"                   type="EPICS_PV"     source="S:IOC:timeOfDayForm1SI"                     dbrtype="DBR_STRING"/>
     <Attribute name="Current"                       type="EPICS_PV"     source="S:SRcurrentAI"                              dbrtype="DBR_DOUBLE"/>
-    <Attribute name="TopUpStatus"                   type="EPICS_PV"     source="S:TopUpStatus"                              dbrtype="DBR_ENUM"/>
+    <Attribute name="TopUpStatus"                   type="EPICS_PV"     source="S:TopUpStatus"                              dbrtype="DBR_STRING"/>
     <Attribute name="BeamMode"                      type="EPICS_PV"     source="OPS:message3"                               dbrtype="DBR_STRING"/>
 
     <Attribute name="BeamlineFilterA"               type="EPICS_PV"     source="2bma:fltr1:select.VAL"                      dbrtype="DBR_ENUM"/>

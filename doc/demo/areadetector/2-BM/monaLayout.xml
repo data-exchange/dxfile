@@ -41,7 +41,7 @@
           <dataset name="current" source="ndattribute" ndattribute="Current" when="OnFileClose">        
             <attribute name="units" source="constant" value="mA" type="string" />
           </dataset>    
-          <dataset name="mode" source="ndattribute" ndattribute="TopUpStatus" when="OnFileClose" /> 
+          <dataset name="top_up" source="ndattribute" ndattribute="TopUpStatus" when="OnFileClose" /> 
           <dataset name="fill_mode" source="ndattribute" ndattribute="BeamMode" when="OnFileClose" />
         </group><!-- /source -->
         
@@ -199,19 +199,25 @@
           <dataset name="model" source="ndattribute" ndattribute="DetectorModel" when="OnFileClose" />
           <dataset name="serial_number" source="ndattribute" ndattribute="SerialNumber" when="OnFileClose" />
           <dataset name="firmware_version" source="ndattribute" ndattribute="FirmwareVersion" when="OnFileClose" />
-          <dataset name="software_version" source="ndattribute" ndattribute="SoftwareVersion" when="OnFileClose" />
+          <dataset name="SDK_version" source="ndattribute" ndattribute="SDKVersion" when="OnFileClose" />
+          <dataset name="driver_version" source="ndattribute" ndattribute="DriverVersion" when="OnFileClose" />
+          <dataset name="ADcore_version" source="ndattribute" ndattribute="ADCoreVersion" when="OnFileClose" />
+
           <dataset name="dimension_x" source="ndattribute" ndattribute="MaxSizeX" when="OnFileClose" />
           <dataset name="dimension_y" source="ndattribute" ndattribute="MaxSizeY" when="OnFileClose" />
           <dataset name="gain" source="ndattribute" ndattribute="Gain" when="OnFileClose" />          
+          <dataset name="gain_auto" source="ndattribute" ndattribute="GainAuto" when="OnFileClose" />          
           <dataset name="binning_x" source="ndattribute" ndattribute="BinX" when="OnFileClose" />
           <dataset name="binning_y" source="ndattribute" ndattribute="BinY" when="OnFileClose" />
-
-          <dataset name="frame_mode" source="ndattribute" ndattribute="DetectorFrameMode" when="OnFileClose" /> 
+          <dataset name="frame_rate" source="ndattribute" ndattribute="FrameRate" when="OnFileClose" /> 
+          <dataset name="frame_rate_enable" source="ndattribute" ndattribute="FrameRateEnable" when="OnFileClose" /> 
           <dataset name="exposure_time" source="ndattribute" ndattribute="AcqTime" when="OnFileClose" />
           <dataset name="acquisition_period" source="ndattribute" ndattribute="AcqPeriod" when="OnFileClose" />
-          <dataset name="frame_rate" source="ndattribute" ndattribute="FrameRate" when="OnFileClose" />       
-          <dataset name="data_type" source="ndattribute" ndattribute="DataType" />       
-          <dataset name="array_counter" source="ndattribute" ndattribute="ArrayCounter" />       
+          <dataset name="data_type" source="ndattribute" ndattribute="DataType" when="OnFileClose" />       
+          <dataset name="array_counter" source="ndattribute" ndattribute="ArrayCounter" when="OnFileClose" />       
+          <dataset name="temperature" source="ndattribute" ndattribute="Temperature" when="OnFileClose">
+            <attribute name="units" source="constant" value="Celsius" type="string"></attribute>
+          </dataset>
 
           <group name="roi">
             <dataset name="min_x" source="ndattribute" ndattribute="MinX" when="OnFileClose" />

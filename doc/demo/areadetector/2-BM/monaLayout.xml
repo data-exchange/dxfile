@@ -41,7 +41,7 @@
           <dataset name="current" source="ndattribute" ndattribute="Current" when="OnFileClose">        
             <attribute name="units" source="constant" value="mA" type="string" />
           </dataset>    
-          <dataset name="mode" source="ndattribute" ndattribute="TopUpStatus" when="OnFileClose" /> 
+          <dataset name="top_up" source="ndattribute" ndattribute="TopUpStatus" when="OnFileClose" /> 
           <dataset name="fill_mode" source="ndattribute" ndattribute="BeamMode" when="OnFileClose" />
         </group><!-- /source -->
         

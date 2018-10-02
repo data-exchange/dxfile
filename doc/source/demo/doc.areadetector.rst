@@ -9,8 +9,7 @@ Here are the templates in use at the  Advanced Photon Source:
 
 
 - 2-BM
-    - Micro Tomography Instrument: :download:`A_station_hdf_schema.xml <../../../doc/demo/areadetector/2-BM/AlocalPG1Layout.xml>` and :download:`A_station_detector_attributes.xml <../../../doc/demo/areadetector/2-BM/AlocalPG1DetectorAttributes.xml>`
-    - Micro Tomography Instrument: :download:`B_station_hdf_schema.xml <../../../doc/demo/areadetector/2-BM/BlocalPG1Layout.xml>` and :download:`B_station_detector_attributes.xml <../../../doc/demo/areadetector/2-BM/BlocalPG1DetectorAttributes.xml>`
+    - Fast Micro Tomography Instrument: :download:`A_station_hdf_schema.xml <../../../doc/demo/areadetector/2-BM/fastLayout.xml>` and :download:`A_station_detector_attributes.xml <../../../doc/demo/areadetector/2-BM/fastDetectorAttributes.xml>`
     - Dynamic Tomography Instrument: :download:`dyna_hdf_schema.xml <../../../doc/demo/areadetector/2-BM/DynaMCTHDFLayout.xml>` and :download:`dyna_detector_attributes.xml <../../../doc/demo/areadetector/2-BM/DynaMCTDetectorAttributes.xml>`
     - MONA project: :download:`mona_hdf_schema.xml <../../../doc/demo/areadetector/2-BM/monaLayout.xml>` and :download:`mona_detector_attributes.xml <../../../doc/demo/areadetector/2-BM/monaDetectorAttributes.xml>`
     

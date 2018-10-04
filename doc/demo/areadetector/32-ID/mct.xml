@@ -116,24 +116,6 @@
             </dataset>
           </group><!-- /setup -->
         </group><!-- /monochromator -->
-
-        <group name="scintillator">
-          <dataset name="name" source="constant" value="Micro CT Scintillator" type="string" when="OnFileClose"></dataset>        
-          <group name="setup">
-            <dataset name="scintillator_x" source="ndattribute" ndattribute="ScintillatorX" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string"></attribute>
-            </dataset>
-            <dataset name="scintillator_y" source="ndattribute" ndattribute="ScintillatorY" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string"></attribute>
-            </dataset>
-            <dataset name="scintillator_x_dial" source="ndattribute" ndattribute="ScintillatorXDial" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string"></attribute>
-            </dataset>
-            <dataset name="scintillator_y_dial" source="ndattribute" ndattribute="ScintillatorYDial" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string"></attribute>
-            </dataset>
-          </group><!-- /setup-->
-        </group><!-- /scintillator -->
  
         <group name="table">
           <dataset name="name" source="constant" value="Micro CT Optical Table" type="string" when="OnFileClose"></dataset>        
@@ -202,33 +184,42 @@
             </dataset>
 
 
-            <dataset name="sample_xx" source="ndattribute" ndattribute="SampleTopX" when="OnFileClose"> 
+            <dataset name="sample_top_x" source="ndattribute" ndattribute="SampleTopX" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
-            <dataset name="sample_zz" source="ndattribute" ndattribute="SampleTopZ" when="OnFileClose"> 
+            <dataset name="sample_top_z" source="ndattribute" ndattribute="SampleTopZ" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
-            <dataset name="sample_xx_dial" source="ndattribute" ndattribute="SampleTopXDial" when="OnFileClose"> 
+            <dataset name="sample_top_x_dial" source="ndattribute" ndattribute="SampleTopXDial" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
-            <dataset name="sample_zz_dial" source="ndattribute" ndattribute="SampleTopZDial" when="OnFileClose"> 
+            <dataset name="sample_top_z_dial" source="ndattribute" ndattribute="SampleTopZDial" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
           </group><!-- /setup -->
         </group><!-- /sample -->
 
         <group name="detector">
-          <dataset name="dimension_x" source="ndattribute" ndattribute="MaxSizeX" when="OnFileClose"></dataset>
-          <dataset name="dimension_y" source="ndattribute" ndattribute="MaxSizeY" when="OnFileClose"></dataset>
-          <dataset name="binning_x" source="ndattribute" ndattribute="BinX" when="OnFileClose"></dataset>
-          <dataset name="binning_y" source="ndattribute" ndattribute="BinY" when="OnFileClose"></dataset>
-          <dataset name="exposure_time" source="ndattribute" ndattribute="AcqTime" when="OnFileClose"></dataset>
-          <dataset name="manufacturer" source="ndattribute" ndattribute="Manufacturer" when="OnFileClose"></dataset>
-          <dataset name="model" source="ndattribute" ndattribute="Model" when="OnFileClose"></dataset>
-          <dataset name="serial_number" source="ndattribute" ndattribute="Serial" when="OnFileClose"></dataset>
-          <dataset name="firmware_version" source="ndattribute" ndattribute="Firmware" type="string" when="OnFileClose"></dataset>
-          <dataset name="software_version" source="ndattribute" ndattribute="Software" type="string"  when="OnFileClose"></dataset>
-          <dataset name="gain" source="ndattribute" ndattribute="Gain" when="OnFileClose"></dataset>
+          <dataset name="manufacturer" source="ndattribute" ndattribute="DetectorManufacturer" when="OnFileClose" />
+          <dataset name="model" source="ndattribute" ndattribute="DetectorModel" when="OnFileClose" />
+          <dataset name="serial_number" source="ndattribute" ndattribute="SerialNumber" when="OnFileClose" />
+          <dataset name="firmware_version" source="ndattribute" ndattribute="FirmwareVersion" when="OnFileClose" />
+          <dataset name="SDK_version" source="ndattribute" ndattribute="SDKVersion" when="OnFileClose" />
+          <dataset name="driver_version" source="ndattribute" ndattribute="DriverVersion" when="OnFileClose" />
+          <dataset name="ADcore_version" source="ndattribute" ndattribute="ADCoreVersion" when="OnFileClose" />
+
+          <dataset name="dimension_x" source="ndattribute" ndattribute="MaxSizeX" when="OnFileClose" />
+          <dataset name="dimension_y" source="ndattribute" ndattribute="MaxSizeY" when="OnFileClose" />
+          <dataset name="gain" source="ndattribute" ndattribute="Gain" when="OnFileClose" />          
+          <dataset name="gain_auto" source="ndattribute" ndattribute="GainAuto" when="OnFileClose" />          
+          <dataset name="binning_x" source="ndattribute" ndattribute="BinX" when="OnFileClose" />
+          <dataset name="binning_y" source="ndattribute" ndattribute="BinY" when="OnFileClose" />
+          <dataset name="frame_rate" source="ndattribute" ndattribute="FrameRate" when="OnFileClose" /> 
+          <dataset name="frame_rate_enable" source="ndattribute" ndattribute="FrameRateEnable" when="OnFileClose" /> 
+          <dataset name="exposure_time" source="ndattribute" ndattribute="AcqTime" when="OnFileClose" />
+          <dataset name="acquisition_period" source="ndattribute" ndattribute="AcqPeriod" when="OnFileClose" />
+          <dataset name="data_type" source="ndattribute" ndattribute="DataType" when="OnFileClose" />       
+          <dataset name="array_counter" source="ndattribute" ndattribute="ArrayCounter" when="OnFileClose" />       
           <dataset name="temperature" source="ndattribute" ndattribute="Temperature" when="OnFileClose">
             <attribute name="units" source="constant" value="Celsius" type="string"></attribute>
           </dataset>
@@ -245,8 +236,47 @@
             <dataset name="ccd_camera_z_dial" source="ndattribute" ndattribute="CcdCameraZDial" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
+            <dataset name="ccd_camera_selector" source="ndattribute" ndattribute="CcdCameraSelector" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string"></attribute>
+            </dataset>
+            <dataset name="ccd_camera_selector_dial" source="ndattribute" ndattribute="CcdSelectorDial" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string"></attribute>
+            </dataset>
+            <dataset name="ccd_camera_focus" source="ndattribute" ndattribute="CcdFocus" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string"></attribute>
+            </dataset>
+            <dataset name="ccd_camera_focus_dial" source="ndattribute" ndattribute="CcdFocusDial" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string"></attribute>
+            </dataset>
           </group><!-- /setup -->
         </group><!-- /detector -->
+
+        <group name="detection_system">
+          <group name="objective">
+            <dataset name="magnification" source="ndattribute" ndattribute="ObjectiveMag" when="OnFileClose" />
+          </group><!-- /objective -->
+
+          <group name="scintillator">
+            <dataset name="name" source="ndattribute" ndattribute="ScintName" when="OnFileClose" />
+            <dataset name="scintillating_thickness" source="ndattribute" ndattribute="ScintThickness" when="OnFileClose" >
+              <attribute name="units" source="constant" value="um" type="string" />            
+            </dataset>
+          </group><!-- /scintillator -->
+          <group name="setup">
+            <dataset name="scintillator_x" source="ndattribute" ndattribute="ScintillatorX" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string"></attribute>
+            </dataset>
+            <dataset name="scintillator_y" source="ndattribute" ndattribute="ScintillatorY" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string"></attribute>
+            </dataset>
+            <dataset name="scintillator_x_dial" source="ndattribute" ndattribute="ScintillatorXDial" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string"></attribute>
+            </dataset>
+            <dataset name="scintillator_y_dial" source="ndattribute" ndattribute="ScintillatorYDial" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string"></attribute>
+            </dataset>
+          </group><!-- /setup-->          
+        </group><!-- /detection_system -->
       </group><!-- /instrument -->
 
 

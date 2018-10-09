@@ -256,16 +256,10 @@
             <dataset name="pin_hole_y" source="ndattribute" ndattribute="PinHoleY" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
-            <dataset name="pin_hole_z" source="ndattribute" ndattribute="PinHoleZ" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string"></attribute>
-            </dataset>
             <dataset name="pin_hole_x_dial" source="ndattribute" ndattribute="PinHoleXDial" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
             <dataset name="pin_hole_y_dial" source="ndattribute" ndattribute="PinHoleYDial" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string"></attribute>
-            </dataset>
-            <dataset name="pin_hole_z_dial" source="ndattribute" ndattribute="PinHoleZDial" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
           </group><!-- /setup -->
@@ -372,6 +366,18 @@
         <group name="flight_tube">
           <dataset name="name" source="constant" value="Flight_tube" type="string" when="OnFileClose"></dataset>        
           <group name="setup">
+            <dataset name="flight_tube_x" source="ndattribute" ndattribute="FlightTubeX" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string"></attribute>
+            </dataset>
+            <dataset name="flight_tube_x_dial" source="ndattribute" ndattribute="FlightTubeXDial" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string"></attribute>
+            </dataset>
+            <dataset name="flight_tube_y" source="ndattribute" ndattribute="FlightTubeY" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string"></attribute>
+            </dataset>
+            <dataset name="flight_tube_y_dial" source="ndattribute" ndattribute="FlightTubeYDial" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string"></attribute>
+            </dataset>
             <dataset name="flight_tube_z" source="ndattribute" ndattribute="FlightTubeZ" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
@@ -424,9 +430,6 @@
             <dataset name="ccd_camera_yaw" source="ndattribute" ndattribute="CcdYaw" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
-            <dataset name="ccd_camera_objective" source="ndattribute" ndattribute="CcdObjective" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string"></attribute>
-            </dataset>
             <dataset name="ccd_camera_x_dial" source="ndattribute" ndattribute="CcdCameraXDial" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
@@ -437,9 +440,6 @@
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
             <dataset name="ccd_camera_yaw_dial" source="ndattribute" ndattribute="CcdYawDial"  when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string"></attribute>
-            </dataset>
-            <dataset name="ccd_camera_objective_dial" source="ndattribute" ndattribute="CcdObjectiveDial" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
           </group><!-- /setup -->

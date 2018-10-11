@@ -77,8 +77,8 @@
 
     <Attribute name="SampleX"                       type="EPICS_PV"     source="2bmb:m63.RBV"                               dbrtype="DBR_DOUBLE"/>
     <Attribute name="SampleY"                       type="EPICS_PV"     source="2bmb:m57.RBV"                               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="SampleXX"                      type="EPICS_PV"     source="2bmb:m77.RBV"                               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="SampleZZ"                      type="EPICS_PV"     source="2bmb:m76.RBV"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleXX"                      type="EPICS_PV"     source="2bmb:m76.RBV"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleZZ"                      type="EPICS_PV"     source="2bmb:m77.RBV"                               dbrtype="DBR_DOUBLE"/>
     <Attribute name="RailZ"                         type="EPICS_PV"     source="2bmb:m31.RBV"                               dbrtype="DBR_DOUBLE"/>
     <Attribute name="SampleRotary"                  type="EPICS_PV"     source="2bmb:m100.RBV"                              dbrtype="DBR_DOUBLE"/>
 

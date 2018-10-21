@@ -33,7 +33,7 @@
     
     <group name="measurement">
       <group name="instrument">
-        <dataset name="name" source="constant" value="2-BM-B micro-tomography MONA project" type="string" when="OnFileClose" />   
+        <dataset name="name" source="constant" value="2-BM-A Dynamic micro-tomography system using PCO cameras" type="string" when="OnFileClose" />   
              
         <group name="source">
           <dataset name="beamline" source="constant" value="2-BM" type="string" when="OnFileClose" />        

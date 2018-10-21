@@ -29,7 +29,7 @@
     <Attribute name="ArrayCounter"                  type="EPICS_PV"     source="2bmbSP1:cam1:ArrayCounter_RBV"              dbrtype="DBR_LONG"/>
     <Attribute name="Temperature"                   type="EPICS_PV"     source="2bmbSP1:cam1:TemperatureActual"             dbrtype="DBR_DOUBLE"/>
 
-    <Attribute name="SaveDest"                      type="EPICS_PV"     source="2bmbSP1:cam1:FrameType_RBV"                 dbrtype="DBR_STRING"/>
+    <Attribute name="SaveDest"                      type="EPICS_PV"     source="2bmbSP1:cam1:FrameType"                     dbrtype="DBR_STRING"/>
     <Attribute name="SampleName"                    type="EPICS_PV"     source="2bmbSP1:HDF1:FileName"                      dbrtype="DBR_STRING"/>
     <Attribute name="FilePath"                      type="EPICS_PV"     source="2bmbSP1:HDF1:FilePath_RBV"                  dbrtype="DBR_STRING"/>
 

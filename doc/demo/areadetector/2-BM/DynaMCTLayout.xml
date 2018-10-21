@@ -205,7 +205,7 @@
             <dataset name="min_y" source="ndattribute" ndattribute="MinY" when="OnFileClose"></dataset>
             <dataset name="size_y" source="ndattribute" ndattribute="SizeY" when="OnFileClose"></dataset>
           </group><!-- /roi -->
-        </group><!-- /detector -->      </group><!-- /instrument -->
+        </group><!-- /detector -->
 
         <group name="detection_system">
           <group name="objective">

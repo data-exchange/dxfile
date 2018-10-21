@@ -4,118 +4,119 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://epics.aps.anl.gov/areaDetector/attributes ../attributes.xsd"
     >
-    <Attribute name="DetectorManufacturer"  type="EPICS_PV"     source="32idcPG3:cam1:Manufacturer_RBV"              dbrtype="DBR_STRING"/>
-    <Attribute name="DetectorModel"         type="EPICS_PV"     source="32idcPG3:cam1:Model_RBV"                     dbrtype="DBR_STRING"/>
-    <Attribute name="SerialNumber"          type="EPICS_PV"     source="32idcPG3:cam1:SerialNumber_RBV"              dbrtype="DBR_STRING"/>
-    <Attribute name="FirmwareVersion"       type="EPICS_PV"     source="32idcPG3:cam1:FirmwareVersion_RBV"           dbrtype="DBR_STRING"/>
-    <Attribute name="SDKVersion"            type="EPICS_PV"     source="32idcPG3:cam1:SDKVersion_RBV"                dbrtype="DBR_STRING"/>
-    <Attribute name="DriverVersion"         type="EPICS_PV"     source="32idcPG3:cam1:DriverVersion_RBV"             dbrtype="DBR_STRING"/>
-    <Attribute name="ADCoreVersion"         type="EPICS_PV"     source="32idcPG3:cam1:ADCoreVersion_RBV"             dbrtype="DBR_STRING"/>
+    <Attribute name="DetectorManufacturer"  type="EPICS_PV" source="32idcPG3:cam1:Manufacturer_RBV"                  dbrtype="DBR_STRING"/>
+    <Attribute name="DetectorModel"         type="EPICS_PV" source="32idcPG3:cam1:Model_RBV"                         dbrtype="DBR_STRING"/>
+    <Attribute name="SerialNumber"          type="EPICS_PV" source="32idcPG3:cam1:SerialNumber_RBV"                  dbrtype="DBR_STRING"/>
+    <Attribute name="FirmwareVersion"       type="EPICS_PV" source="32idcPG3:cam1:FirmwareVersion_RBV"               dbrtype="DBR_STRING"/>
+    <Attribute name="SDKVersion"            type="EPICS_PV" source="32idcPG3:cam1:SDKVersion_RBV"                    dbrtype="DBR_STRING"/>
+    <Attribute name="DriverVersion"         type="EPICS_PV" source="32idcPG3:cam1:DriverVersion_RBV"                 dbrtype="DBR_STRING"/>
+    <Attribute name="ADCoreVersion"         type="EPICS_PV" source="32idcPG3:cam1:ADCoreVersion_RBV"                 dbrtype="DBR_STRING"/>
 
-    <Attribute name="MaxSizeX"              type="EPICS_PV"     source="32idcPG3:cam1:MaxSizeX_RBV"                  dbrtype="DBR_LONG"/>
-    <Attribute name="MaxSizeY"              type="EPICS_PV"     source="32idcPG3:cam1:MaxSizeY_RBV"                  dbrtype="DBR_LONG"/>
-    <Attribute name="MinX"                  type="EPICS_PV"     source="32idcPG3:cam1:MinX"                          dbrtype="DBR_LONG"/>
-    <Attribute name="MinY"                  type="EPICS_PV"     source="32idcPG3:cam1:MinY"                          dbrtype="DBR_LONG"/>
-    <Attribute name="SizeX"                 type="EPICS_PV"     source="32idcPG3:cam1:SizeX"                         dbrtype="DBR_LONG"/>
-    <Attribute name="SizeY"                 type="EPICS_PV"     source="32idcPG3:cam1:SizeY"                         dbrtype="DBR_LONG"/>
-    <Attribute name="BinX"                  type="EPICS_PV"     source="32idcPG3:cam1:BinX"                          dbrtype="DBR_LONG"/>
-    <Attribute name="BinY"                  type="EPICS_PV"     source="32idcPG3:cam1:BinY"                          dbrtype="DBR_LONG"/>
+    <Attribute name="MaxSizeX"              type="EPICS_PV" source="32idcPG3:cam1:MaxSizeX_RBV"                      dbrtype="DBR_LONG"/>
+    <Attribute name="MaxSizeY"              type="EPICS_PV" source="32idcPG3:cam1:MaxSizeY_RBV"                      dbrtype="DBR_LONG"/>
+    <Attribute name="MinX"                  type="EPICS_PV" source="32idcPG3:cam1:MinX"                              dbrtype="DBR_LONG"/>
+    <Attribute name="MinY"                  type="EPICS_PV" source="32idcPG3:cam1:MinY"                              dbrtype="DBR_LONG"/>
+    <Attribute name="SizeX"                 type="EPICS_PV" source="32idcPG3:cam1:SizeX"                             dbrtype="DBR_LONG"/>
+    <Attribute name="SizeY"                 type="EPICS_PV" source="32idcPG3:cam1:SizeY"                             dbrtype="DBR_LONG"/>
+    <Attribute name="BinX"                  type="EPICS_PV" source="32idcPG3:cam1:BinX"                              dbrtype="DBR_LONG"/>
+    <Attribute name="BinY"                  type="EPICS_PV" source="32idcPG3:cam1:BinY"                              dbrtype="DBR_LONG"/>
 
-    <Attribute name="AcqTime"               type="EPICS_PV"     source="32idcPG3:cam1:AcquireTime_RBV"               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="AcqPeriod"             type="EPICS_PV"     source="32idcPG3:cam1:AcquirePeriod_RBV"             dbrtype="DBR_DOUBLE"/>
-    <Attribute name="FrameRate"             type="EPICS_PV"     source="32idcPG3:cam1:FrameRateValAbs_RBV"           dbrtype="DBR_DOUBLE"/>
-    <Attribute name="FrameRateEnable"       type="EPICS_PV"     source="32idcPG3:cam1:FrameRateOnOff_RBV"            dbrtype="DBR_ENUM"/>
-    <Attribute name="Gain"                  type="EPICS_PV"     source="32idcPG3:cam1:Gain_RBV"                      dbrtype="DBR_DOUBLE"/>
-    <Attribute name="DataType"              type="EPICS_PV"     source="32idcPG3:cam1:DataType_RBV"                  dbrtype="DBR_STRING"/>
-    <Attribute name="ArrayCounter"          type="EPICS_PV"     source="32idcPG3:cam1:ArrayCounter_RBV"              dbrtype="DBR_LONG"/>
-    <Attribute name="Temperature"           type="EPICS_PV"     source="32idcPG3:cam1:TemperatureActual"             dbrtype="DBR_DOUBLE"/>
+    <Attribute name="AcqTime"               type="EPICS_PV" source="32idcPG3:cam1:AcquireTime_RBV"                   dbrtype="DBR_DOUBLE"/>
+    <Attribute name="AcqPeriod"             type="EPICS_PV" source="32idcPG3:cam1:AcquirePeriod_RBV"                 dbrtype="DBR_DOUBLE"/>
+    <Attribute name="FrameRate"             type="EPICS_PV" source="32idcPG3:cam1:FrameRateValAbs_RBV"               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="FrameRateEnable"       type="EPICS_PV" source="32idcPG3:cam1:FrameRateOnOff_RBV"                dbrtype="DBR_ENUM"/>
+    <Attribute name="Gain"                  type="EPICS_PV" source="32idcPG3:cam1:Gain_RBV"                          dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DataType"              type="EPICS_PV" source="32idcPG3:cam1:DataType_RBV"                      dbrtype="DBR_STRING"/>
+    <Attribute name="ArrayCounter"          type="EPICS_PV" source="32idcPG3:cam1:ArrayCounter_RBV"                  dbrtype="DBR_LONG"/>
+    <Attribute name="Temperature"           type="EPICS_PV" source="32idcPG3:cam1:TemperatureActual"                 dbrtype="DBR_DOUBLE"/>
 
-    <Attribute name="SaveDest"            type="EPICS_PV" source="32idcPG3:cam1:FrameType_RBV"  dbrtype="DBR_STRING"/>
-    <Attribute name="SampleName"          type="EPICS_PV" source="32idcPG3:HDF1:FileName"       dbrtype="DBR_STRING"/>
-    <Attribute name="FilePath"            type="EPICS_PV" source="32idcPG3:HDF1:FilePath_RBV"   dbrtype="DBR_STRING"/>
+    <Attribute name="SaveDest"              type="EPICS_PV" source="32idcPG3:cam1:FrameType_RBV"                     dbrtype="DBR_STRING"/>
+    <Attribute name="SampleName"            type="EPICS_PV" source="32idcPG3:HDF1:FileName"                          dbrtype="DBR_STRING"/>
+    <Attribute name="FilePath"              type="EPICS_PV" source="32idcPG3:HDF1:FilePath_RBV"                      dbrtype="DBR_STRING"/>
+    <Attribute name="HDFPlufInVersion"      type="EPICS_PV" source="32idcPG3:HDF1:PluginType_RBV"                    dbrtype="DBR_STRING"/>
 
-    <Attribute name="DateTimeStart"                   type="EPICS_PV" source="S:IOC:timeOfDayISO8601"       dbrtype="DBR_STRING"/>
-    <Attribute name="DateTimeEnd"                     type="EPICS_PV" source="S:IOC:timeOfDayISO8601"       dbrtype="DBR_STRING"/>
-    <Attribute name="Current"                         type="EPICS_PV" source="S:SRcurrentAI"                dbrtype="DBR_DOUBLE"/>
-    <Attribute name="TopUpStatus"                     type="EPICS_PV" source="S:TopUpStatus"                dbrtype="DBR_ENUM"/>
-    <Attribute name="SourceEnergy"                    type="EPICS_PV" source="ID32ds:Energy.VAL"            dbrtype="DBR_DOUBLE"/>
-    <Attribute name="SourceGap"                       type="EPICS_PV" source="ID32ds:Gap.VAL"               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="Energy"                          type="EPICS_PV" source="32ida:BraggEAO.VAL"           dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DateTimeStart"         type="EPICS_PV" source="S:IOC:timeOfDayISO8601"                          dbrtype="DBR_STRING"/>
+    <Attribute name="DateTimeEnd"           type="EPICS_PV" source="S:IOC:timeOfDayISO8601"                          dbrtype="DBR_STRING"/>
+    <Attribute name="Current"               type="EPICS_PV" source="S:SRcurrentAI"                                   dbrtype="DBR_DOUBLE"/>
+    <Attribute name="TopUpStatus"           type="EPICS_PV" source="S:TopUpStatus"                                   dbrtype="DBR_ENUM"/>
+    <Attribute name="SourceEnergy"          type="EPICS_PV" source="ID32ds:Energy.VAL"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SourceGap"             type="EPICS_PV" source="ID32ds:Gap.VAL"                                  dbrtype="DBR_DOUBLE"/>
+    <Attribute name="Energy"                type="EPICS_PV" source="32ida:BraggEAO.VAL"                              dbrtype="DBR_DOUBLE"/>
 
-    <Attribute name="MirrorX"                         type="EPICS_PV" source="32idbMIR:m1.RBV"              dbrtype="DBR_DOUBLE"/>
-    <Attribute name="MirrorY"                         type="EPICS_PV" source="32idbMIR:m2.RBV"              dbrtype="DBR_DOUBLE"/>
-    <Attribute name="MirrorStripe"                    type="EPICS_PV" source="32idbMIR:seq01:text.VAL"      dbrtype="DBR_STRING"/>
+    <Attribute name="MirrorX"               type="EPICS_PV" source="32idbMIR:m1.RBV"                                 dbrtype="DBR_DOUBLE"/>
+    <Attribute name="MirrorY"               type="EPICS_PV" source="32idbMIR:m2.RBV"                                 dbrtype="DBR_DOUBLE"/>
+    <Attribute name="MirrorStripe"          type="EPICS_PV" source="32idbMIR:seq01:text.VAL"                         dbrtype="DBR_STRING"/>
 
-    <Attribute name="DCMTheta"                        type="EPICS_PV" source="32ida:m1.VAL"                 dbrtype="DBR_DOUBLE"/>
-    <Attribute name="DCMTheta2"                       type="EPICS_PV" source="32ida:m2.VAL"                 dbrtype="DBR_DOUBLE"/>
-    <Attribute name="DCMChi2"                         type="EPICS_PV" source="32ida:m3.VAL"                 dbrtype="DBR_DOUBLE"/>
-    <Attribute name="DCMX"                            type="EPICS_PV" source="32ida:m4.VAL"                 dbrtype="DBR_DOUBLE"/>
-    <Attribute name="DCMY"                            type="EPICS_PV" source="32ida:m5.VAL"                 dbrtype="DBR_DOUBLE"/>
-    <Attribute name="DCMX2"                           type="EPICS_PV" source="32ida:m6.VAL"                 dbrtype="DBR_DOUBLE"/>
-    <Attribute name="DCMY1"                           type="EPICS_PV" source="32ida:m7.VAL"                 dbrtype="DBR_DOUBLE"/>
-    <Attribute name="DCMZ2"                           type="EPICS_PV" source="32ida:m8.VAL"                 dbrtype="DBR_DOUBLE"/>
-    <Attribute name="DCMFlag"                         type="EPICS_PV" source="32idb:m5.VAL"                 dbrtype="DBR_DOUBLE"/>
-    <Attribute name="DCMThetaDial"                    type="EPICS_PV" source="32ida:m1.DVAL"                dbrtype="DBR_DOUBLE"/>
-    <Attribute name="DCMTheta2Dial"                   type="EPICS_PV" source="32ida:m2.DVAL"                dbrtype="DBR_DOUBLE"/>
-    <Attribute name="DCMChi2Dial"                     type="EPICS_PV" source="32ida:m3.DVAL"                dbrtype="DBR_DOUBLE"/>
-    <Attribute name="DCMXDial"                        type="EPICS_PV" source="32ida:m4.DVAL"                dbrtype="DBR_DOUBLE"/>
-    <Attribute name="DCMYDial"                        type="EPICS_PV" source="32ida:m5.DVAL"                dbrtype="DBR_DOUBLE"/>
-    <Attribute name="DCMX2Dial"                       type="EPICS_PV" source="32ida:m6.DVAL"                dbrtype="DBR_DOUBLE"/>
-    <Attribute name="DCMY1Dial"                       type="EPICS_PV" source="32ida:m7.DVAL"                dbrtype="DBR_DOUBLE"/>
-    <Attribute name="DCMZ2Dial"                       type="EPICS_PV" source="32ida:m8.DVAL"                dbrtype="DBR_DOUBLE"/>
-    <Attribute name="DCMFlagDial"                     type="EPICS_PV" source="32idb:m5.DVAL"                dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DCMTheta"              type="EPICS_PV" source="32ida:m1.VAL"                                    dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DCMTheta2"             type="EPICS_PV" source="32ida:m2.VAL"                                    dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DCMChi2"               type="EPICS_PV" source="32ida:m3.VAL"                                    dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DCMX"                  type="EPICS_PV" source="32ida:m4.VAL"                                    dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DCMY"                  type="EPICS_PV" source="32ida:m5.VAL"                                    dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DCMX2"                 type="EPICS_PV" source="32ida:m6.VAL"                                    dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DCMY1"                 type="EPICS_PV" source="32ida:m7.VAL"                                    dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DCMZ2"                 type="EPICS_PV" source="32ida:m8.VAL"                                    dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DCMFlag"               type="EPICS_PV" source="32idb:m5.VAL"                                    dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DCMThetaDial"          type="EPICS_PV" source="32ida:m1.DVAL"                                   dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DCMTheta2Dial"         type="EPICS_PV" source="32ida:m2.DVAL"                                   dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DCMChi2Dial"           type="EPICS_PV" source="32ida:m3.DVAL"                                   dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DCMXDial"              type="EPICS_PV" source="32ida:m4.DVAL"                                   dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DCMYDial"              type="EPICS_PV" source="32ida:m5.DVAL"                                   dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DCMX2Dial"             type="EPICS_PV" source="32ida:m6.DVAL"                                   dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DCMY1Dial"             type="EPICS_PV" source="32ida:m7.DVAL"                                   dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DCMZ2Dial"             type="EPICS_PV" source="32ida:m8.DVAL"                                   dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DCMFlagDial"           type="EPICS_PV" source="32idb:m5.DVAL"                                   dbrtype="DBR_DOUBLE"/>
 
-    <Attribute name="UserName"                        type="EPICS_PV" source="32idcTXM:UserName"            dbrtype="DBR_STRING"/>
-    <Attribute name="UserAffiliation"                 type="EPICS_PV" source="32idcTXM:UserInstitution"     dbrtype="DBR_STRING"/>
-    <Attribute name="UserBadge"                       type="EPICS_PV" source="32idcTXM:UserBadge"           dbrtype="DBR_STRING"/>
-    <Attribute name="UserEmail"                       type="EPICS_PV" source="32idcTXM:UserEmail"           dbrtype="DBR_STRING"/>
-    <Attribute name="SampleName"                      type="EPICS_PV" source="32idcPG3:HDF1:FileName"       dbrtype="DBR_STRING"/>
+    <Attribute name="UserName"              type="EPICS_PV" source="32idcTXM:UserName"                               dbrtype="DBR_STRING"/>
+    <Attribute name="UserAffiliation"       type="EPICS_PV" source="32idcTXM:UserInstitution"                        dbrtype="DBR_STRING"/>
+    <Attribute name="UserBadge"             type="EPICS_PV" source="32idcTXM:UserBadge"                              dbrtype="DBR_STRING"/>
+    <Attribute name="UserEmail"             type="EPICS_PV" source="32idcTXM:UserEmail"                              dbrtype="DBR_STRING"/>
+    <Attribute name="SampleName"            type="EPICS_PV" source="32idcPG3:HDF1:FileName"                          dbrtype="DBR_STRING"/>
 
-    <Attribute name="ProposalNumber"                  type="EPICS_PV" source="32idcTXM:ProposalNumber"      dbrtype="DBR_STRING"/>
-    <Attribute name="ProposalTitle"                   type="EPICS_PV" source="32idcTXM:ProposalTitle"       dbrtype="DBR_STRING"/>
+    <Attribute name="ProposalNumber"        type="EPICS_PV" source="32idcTXM:ProposalNumber"                         dbrtype="DBR_STRING"/>
+    <Attribute name="ProposalTitle"         type="EPICS_PV" source="32idcTXM:ProposalTitle"                          dbrtype="DBR_STRING"/>
 
-    <Attribute name="TableXUp"                        type="EPICS_PV" source="32idc02:m1.VAL"               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="TableYUp"                        type="EPICS_PV" source="32idc02:m2.VAL"               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="TableXDown"                      type="EPICS_PV" source="32idc02:m4.VAL"               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="TableYDown"                      type="EPICS_PV" source="32idc02:m3.VAL"               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="TableXUpDial"                    type="EPICS_PV" source="32idc02:m1.DVAL"              dbrtype="DBR_DOUBLE"/>
-    <Attribute name="TableYUpDial"                    type="EPICS_PV" source="32idc02:m2.DVAL"              dbrtype="DBR_DOUBLE"/>
-    <Attribute name="TableXDownDial"                  type="EPICS_PV" source="32idc02:m4.DVAL"              dbrtype="DBR_DOUBLE"/>
-    <Attribute name="TableYDownDial"                  type="EPICS_PV" source="32idc02:m3.DVAL"              dbrtype="DBR_DOUBLE"/>
+    <Attribute name="TableXUp"              type="EPICS_PV" source="32idc02:m1.VAL"                                  dbrtype="DBR_DOUBLE"/>
+    <Attribute name="TableYUp"              type="EPICS_PV" source="32idc02:m2.VAL"                                  dbrtype="DBR_DOUBLE"/>
+    <Attribute name="TableXDown"            type="EPICS_PV" source="32idc02:m4.VAL"                                  dbrtype="DBR_DOUBLE"/>
+    <Attribute name="TableYDown"            type="EPICS_PV" source="32idc02:m3.VAL"                                  dbrtype="DBR_DOUBLE"/>
+    <Attribute name="TableXUpDial"          type="EPICS_PV" source="32idc02:m1.DVAL"                                 dbrtype="DBR_DOUBLE"/>
+    <Attribute name="TableYUpDial"          type="EPICS_PV" source="32idc02:m2.DVAL"                                 dbrtype="DBR_DOUBLE"/>
+    <Attribute name="TableXDownDial"        type="EPICS_PV" source="32idc02:m4.DVAL"                                 dbrtype="DBR_DOUBLE"/>
+    <Attribute name="TableYDownDial"        type="EPICS_PV" source="32idc02:m3.DVAL"                                 dbrtype="DBR_DOUBLE"/>
 
-    <Attribute name="SampleX"                         type="EPICS_PV" source="32idc01:m33.VAL"              dbrtype="DBR_DOUBLE"/>
-    <Attribute name="SampleY"                         type="EPICS_PV" source="32idc02:m15.VAL"              dbrtype="DBR_DOUBLE"/>
-    <Attribute name="SampleTopX"                      type="EPICS_PV" source="32idc01:m104.VAL"             dbrtype="DBR_DOUBLE"/>
-    <Attribute name="SampleTopZ"                      type="EPICS_PV" source="32idc01:m105.VAL"             dbrtype="DBR_DOUBLE"/>
-    <Attribute name="SampleRotary"                    type="EPICS_PV" source="32idc02:m11.VAL"              dbrtype="DBR_DOUBLE"/>
-    <Attribute name="SampleYaw"                       type="EPICS_PV" source="32idc02:m29.VAL"              dbrtype="DBR_DOUBLE"/>
-    <Attribute name="SamplePitch"                     type="EPICS_PV" source="32idc02:m30.VAL"              dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleX"               type="EPICS_PV" source="32idc01:m33.VAL"                                 dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleY"               type="EPICS_PV" source="32idc02:m15.VAL"                                 dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleTopX"            type="EPICS_PV" source="32idc01:m104.VAL"                                dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleTopZ"            type="EPICS_PV" source="32idc01:m105.VAL"                                dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleRotary"          type="EPICS_PV" source="32idc02:m11.VAL"                                 dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleYaw"             type="EPICS_PV" source="32idc02:m29.VAL"                                 dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SamplePitch"           type="EPICS_PV" source="32idc02:m30.VAL"                                 dbrtype="DBR_DOUBLE"/>
 
-    <Attribute name="SampleXDial"                     type="EPICS_PV" source="32idc01:m33.DVAL"             dbrtype="DBR_DOUBLE"/>
-    <Attribute name="SampleYDial"                     type="EPICS_PV" source="32idc02:m15.DVAL"             dbrtype="DBR_DOUBLE"/>
-    <Attribute name="SampleTopXDial"                  type="EPICS_PV" source="32idc01:m104.DVAL"            dbrtype="DBR_DOUBLE"/>
-    <Attribute name="SampleTopZDial"                  type="EPICS_PV" source="32idc01:m105.DVAL"            dbrtype="DBR_DOUBLE"/>
-    <Attribute name="SampleRotaryDial"                type="EPICS_PV" source="32idc02:m11.DVAL"             dbrtype="DBR_DOUBLE"/>
-    <Attribute name="SampleYawDial"                   type="EPICS_PV" source="32idc02:m29.DVAL"             dbrtype="DBR_DOUBLE"/>
-    <Attribute name="SamplePitchDial"                 type="EPICS_PV" source="32idc02:m30.DVAL"             dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleXDial"           type="EPICS_PV" source="32idc01:m33.DVAL"                                dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleYDial"           type="EPICS_PV" source="32idc02:m15.DVAL"                                dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleTopXDial"        type="EPICS_PV" source="32idc01:m104.DVAL"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleTopZDial"        type="EPICS_PV" source="32idc01:m105.DVAL"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleRotaryDial"      type="EPICS_PV" source="32idc02:m11.DVAL"                                dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleYawDial"         type="EPICS_PV" source="32idc02:m29.DVAL"                                dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SamplePitchDial"       type="EPICS_PV" source="32idc02:m30.DVAL"                                dbrtype="DBR_DOUBLE"/>
 
-    <Attribute name="CcdCameraZ"                      type="EPICS_PV" source="32idc02:m20.VAL"              dbrtype="DBR_DOUBLE"/>
-    <Attribute name="CcdCameraZDial"                  type="EPICS_PV" source="32idc02:m20.DVAL"             dbrtype="DBR_DOUBLE"/>
-    <Attribute name="CcdCameraSelector"               type="EPICS_PV" source="32idc02:m21.VAL"              dbrtype="DBR_DOUBLE"/>
-    <Attribute name="CcdCameraSelectorDial"           type="EPICS_PV" source="32idc02:m21.DVAL"             dbrtype="DBR_DOUBLE"/>
-    <Attribute name="CcdCameraFocus"                  type="EPICS_PV" source="32idc02:m22.VAL"              dbrtype="DBR_DOUBLE"/>
-    <Attribute name="CcdCameraFocusDial"              type="EPICS_PV" source="32idc02:m22.DVAL"             dbrtype="DBR_DOUBLE"/>
+    <Attribute name="CcdCameraZ"            type="EPICS_PV" source="32idc02:m20.VAL"                                 dbrtype="DBR_DOUBLE"/>
+    <Attribute name="CcdCameraZDial"        type="EPICS_PV" source="32idc02:m20.DVAL"                                dbrtype="DBR_DOUBLE"/>
+    <Attribute name="CcdCameraSelector"     type="EPICS_PV" source="32idc02:m21.VAL"                                 dbrtype="DBR_DOUBLE"/>
+    <Attribute name="CcdCameraSelectorDial" type="EPICS_PV" source="32idc02:m21.DVAL"                                dbrtype="DBR_DOUBLE"/>
+    <Attribute name="CcdCameraFocus"        type="EPICS_PV" source="32idc02:m22.VAL"                                 dbrtype="DBR_DOUBLE"/>
+    <Attribute name="CcdCameraFocusDial"    type="EPICS_PV" source="32idc02:m22.DVAL"                                dbrtype="DBR_DOUBLE"/>
 
-    <Attribute name="ScintillatorX"                   type="EPICS_PV" source="32idc01:m101.VAL"             dbrtype="DBR_DOUBLE"/>
-    <Attribute name="ScintillatorY"                   type="EPICS_PV" source="32idc01:m102.VAL"             dbrtype="DBR_DOUBLE"/>
-    <Attribute name="ScintillatorXDial"               type="EPICS_PV" source="32idc01:m101.DVAL"            dbrtype="DBR_DOUBLE"/>
-    <Attribute name="ScintillatorYDial"               type="EPICS_PV" source="32idc01:m102.DVAL"            dbrtype="DBR_DOUBLE"/>
+    <Attribute name="ScintillatorX"         type="EPICS_PV" source="32idc01:m101.VAL"                                dbrtype="DBR_DOUBLE"/>
+    <Attribute name="ScintillatorY"         type="EPICS_PV" source="32idc01:m102.VAL"                                dbrtype="DBR_DOUBLE"/>
+    <Attribute name="ScintillatorXDial"     type="EPICS_PV" source="32idc01:m101.DVAL"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="ScintillatorYDial"     type="EPICS_PV" source="32idc01:m102.DVAL"                               dbrtype="DBR_DOUBLE"/>
     
-    <Attribute name="ObjectiveMag"        type="EPICS_PV" source="32idcTXM:caputRecorderGbl_5"  dbrtype="DBR_STRING"/>
-    <Attribute name="ScintName"           type="EPICS_PV" source="32idcTXM:caputRecorderGbl_8"  dbrtype="DBR_STRING"/>
-    <Attribute name="ScintThickness"      type="EPICS_PV" source="32idcTXM:caputRecorderGbl_7"  dbrtype="DBR_STRING"/>
+    <Attribute name="ObjectiveMag"          type="EPICS_PV" source="32idcTXM:caputRecorderGbl_5"                     dbrtype="DBR_STRING"/>
+    <Attribute name="ScintName"             type="EPICS_PV" source="32idcTXM:caputRecorderGbl_8"                     dbrtype="DBR_STRING"/>
+    <Attribute name="ScintThickness"        type="EPICS_PV" source="32idcTXM:caputRecorderGbl_7"                     dbrtype="DBR_STRING"/>
 
- <!--   <Attribute name="Theta"               type="EPICS_PV" source="32idcTXM:hydra:c0:m1.VAL"     dbrtype="DBR_DOUBLE"/> -->
+ <!--   <Attribute name="Theta"             type="EPICS_PV" source="32idcTXM:hydra:c0:m1.VAL"     dbrtype="DBR_DOUBLE"/> -->
 
 </Attributes>
     

@@ -43,6 +43,7 @@
     <Attribute name="SaveDest"                      type="EPICS_PV"     source="PCOIOC3:cam1:FrameType"                     dbrtype="DBR_STRING"/>
     <Attribute name="SampleName"                    type="EPICS_PV"     source="PCOIOC3:HDF1:FileName"                      dbrtype="DBR_STRING"/>
     <Attribute name="FilePath"                      type="EPICS_PV"     source="PCOIOC3:HDF1:FilePath_RBV"                  dbrtype="DBR_STRING"/>
+    <Attribute name="HDFPlufInVersion"              type="EPICS_PV"     source="PCOIOC3:HDF1:PluginType_RBV"                dbrtype="DBR_STRING"/>
 
     <Attribute name="DateTimeStart"                 type="EPICS_PV"     source="S:IOC:timeOfDayForm1SI"                     dbrtype="DBR_STRING"/>
     <Attribute name="DateTimeEnd"                   type="EPICS_PV"     source="S:IOC:timeOfDayForm1SI"                     dbrtype="DBR_STRING"/>

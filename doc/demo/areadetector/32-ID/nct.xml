@@ -463,6 +463,7 @@
 
       <group name="sample">
         <dataset name="name" source="ndattribute" ndattribute="SampleName" when="OnFileClose"></dataset>        
+        <dataset name="full_file_name" source="ndattribute" ndattribute="FullFileName" when="OnFileClose"></dataset>        
         <dataset name="file_path" source="ndattribute" ndattribute="FilePath" when="OnFileClose"></dataset>        
         <group name="experimenter">
            <dataset name="name" source="ndattribute" ndattribute="UserName" when="OnFileClose"></dataset>

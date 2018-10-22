@@ -192,12 +192,12 @@
  
           <dataset name="num_images" source="ndattribute" ndattribute="NumImages" when="OnFileClose" />
           <dataset name="image_mode" source="ndattribute" ndattribute="ImageMode" when="OnFileClose" />
-          <dataset name="scan_speed" source="ndattribute" ndattribute="ScanSpeed" when="OnFileClose" />
           <dataset name="descramble" source="ndattribute" ndattribute="Descramble" when="OnFileClose" />
-          <dataset name="disable_descramble" source="ndattribute" ndattribute="DisableDescramble" when="OnFileClose" />
+          <dataset name="descramble_disable" source="ndattribute" ndattribute="DisableDescramble" when="OnFileClose" />
           <dataset name="external_trigger_status" source="ndattribute" ndattribute="ExternalTriggerStatus" when="OnFileClose" />
           <dataset name="storage_mode" source="ndattribute" ndattribute="StorageMode" when="OnFileClose" />
           <dataset name="rec_submode" source="ndattribute" ndattribute="RecSubmode" when="OnFileClose" />
+          <dataset name="scan_speed" source="ndattribute" ndattribute="ScanSpeed" when="OnFileClose" />
           <dataset name="conv_12to16" source="ndattribute" ndattribute="Conv12to16" when="OnFileClose" />
           
           <group name="roi">

@@ -38,7 +38,7 @@
     <Attribute name="ExternalTriggerStatus"         type="EPICS_PV"     source="PCOIOC3:cam1:pco_exp_trig_stat_RBV"         dbrtype="DBR_STRING"/>
     <Attribute name="StorageMode"                   type="EPICS_PV"     source="PCOIOC3:cam1:pco_storage_mode_RBV"          dbrtype="DBR_STRING"/>
     <Attribute name="RecSubmode"                    type="EPICS_PV"     source="PCOIOC3:cam1:pco_rec_submode_RBV"           dbrtype="DBR_STRING"/>
-    <Attribute name="Conv12to16"                    type="EPICS_PV"     source="PCOIOC3:cam1:pco_conv_12to16"               dbrtype="DBR_STRING"/>
+    <Attribute name="Conv12to16"                    type="EPICS_PV"     source="PCOIOC3:cam1:pco_conv_12to16"               dbrtype="DBR_DOUBLE"/>
 
     <Attribute name="SaveDest"                      type="EPICS_PV"     source="PCOIOC3:cam1:FrameType"                     dbrtype="DBR_STRING"/>
     <Attribute name="SampleName"                    type="EPICS_PV"     source="PCOIOC3:HDF1:FileName"                      dbrtype="DBR_STRING"/>

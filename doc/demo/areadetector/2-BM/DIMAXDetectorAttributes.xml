@@ -4,47 +4,47 @@
     >
 
 
-    <Attribute name="DetectorManufacturer"          type="EPICS_PV"     source="PCOIOC3:cam1:Manufacturer_RBV"              dbrtype="DBR_STRING"/>
-    <Attribute name="DetectorModel"                 type="EPICS_PV"     source="PCOIOC3:cam1:Model_RBV"                     dbrtype="DBR_STRING"/>
-    <Attribute name="SerialNumber"                  type="EPICS_PV"     source="PCOIOC3:cam1:SerialNumber_RBV"              dbrtype="DBR_STRING"/>
-    <Attribute name="FirmwareVersion"               type="EPICS_PV"     source="PCOIOC3:cam1:FirmwareVersion_RBV"           dbrtype="DBR_STRING"/>
-    <Attribute name="SDKVersion"                    type="EPICS_PV"     source="PCOIOC3:cam1:SDKVersion_RBV"                dbrtype="DBR_STRING"/>
-    <Attribute name="DriverVersion"                 type="EPICS_PV"     source="PCOIOC3:cam1:DriverVersion_RBV"             dbrtype="DBR_STRING"/>
-    <Attribute name="ADCoreVersion"                 type="EPICS_PV"     source="PCOIOC3:cam1:ADCoreVersion_RBV"             dbrtype="DBR_STRING"/>
+    <Attribute name="DetectorManufacturer"          type="EPICS_PV"     source="PCOIOC2:cam1:Manufacturer_RBV"              dbrtype="DBR_STRING"/>
+    <Attribute name="DetectorModel"                 type="EPICS_PV"     source="PCOIOC2:cam1:Model_RBV"                     dbrtype="DBR_STRING"/>
+    <Attribute name="SerialNumber"                  type="EPICS_PV"     source="PCOIOC2:cam1:SerialNumber_RBV"              dbrtype="DBR_STRING"/>
+    <Attribute name="FirmwareVersion"               type="EPICS_PV"     source="PCOIOC2:cam1:FirmwareVersion_RBV"           dbrtype="DBR_STRING"/>
+    <Attribute name="SDKVersion"                    type="EPICS_PV"     source="PCOIOC2:cam1:SDKVersion_RBV"                dbrtype="DBR_STRING"/>
+    <Attribute name="DriverVersion"                 type="EPICS_PV"     source="PCOIOC2:cam1:DriverVersion_RBV"             dbrtype="DBR_STRING"/>
+    <Attribute name="ADCoreVersion"                 type="EPICS_PV"     source="PCOIOC2:cam1:ADCoreVersion_RBV"             dbrtype="DBR_STRING"/>
 
-    <Attribute name="MaxSizeX"                      type="EPICS_PV"     source="PCOIOC3:cam1:MaxSizeX_RBV"                  dbrtype="DBR_LONG"/>
-    <Attribute name="MaxSizeY"                      type="EPICS_PV"     source="PCOIOC3:cam1:MaxSizeY_RBV"                  dbrtype="DBR_LONG"/>
-    <Attribute name="MinX"                          type="EPICS_PV"     source="PCOIOC3:cam1:MinX"                          dbrtype="DBR_LONG"/>
-    <Attribute name="MinY"                          type="EPICS_PV"     source="PCOIOC3:cam1:MinY"                          dbrtype="DBR_LONG"/>
-    <Attribute name="SizeX"                         type="EPICS_PV"     source="PCOIOC3:cam1:SizeX"                         dbrtype="DBR_LONG"/>
-    <Attribute name="SizeY"                         type="EPICS_PV"     source="PCOIOC3:cam1:SizeY"                         dbrtype="DBR_LONG"/>
-    <Attribute name="BinX"                          type="EPICS_PV"     source="PCOIOC3:cam1:BinX"                          dbrtype="DBR_LONG"/>
-    <Attribute name="BinY"                          type="EPICS_PV"     source="PCOIOC3:cam1:BinY"                          dbrtype="DBR_LONG"/>
+    <Attribute name="MaxSizeX"                      type="EPICS_PV"     source="PCOIOC2:cam1:MaxSizeX_RBV"                  dbrtype="DBR_LONG"/>
+    <Attribute name="MaxSizeY"                      type="EPICS_PV"     source="PCOIOC2:cam1:MaxSizeY_RBV"                  dbrtype="DBR_LONG"/>
+    <Attribute name="MinX"                          type="EPICS_PV"     source="PCOIOC2:cam1:MinX"                          dbrtype="DBR_LONG"/>
+    <Attribute name="MinY"                          type="EPICS_PV"     source="PCOIOC2:cam1:MinY"                          dbrtype="DBR_LONG"/>
+    <Attribute name="SizeX"                         type="EPICS_PV"     source="PCOIOC2:cam1:SizeX"                         dbrtype="DBR_LONG"/>
+    <Attribute name="SizeY"                         type="EPICS_PV"     source="PCOIOC2:cam1:SizeY"                         dbrtype="DBR_LONG"/>
+    <Attribute name="BinX"                          type="EPICS_PV"     source="PCOIOC2:cam1:BinX"                          dbrtype="DBR_LONG"/>
+    <Attribute name="BinY"                          type="EPICS_PV"     source="PCOIOC2:cam1:BinY"                          dbrtype="DBR_LONG"/>
 
-    <Attribute name="AcqTime"                       type="EPICS_PV"     source="PCOIOC3:cam1:AcquireTime_RBV"               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="AcqPeriod"                     type="EPICS_PV"     source="PCOIOC3:cam1:AcquirePeriod_RBV"             dbrtype="DBR_DOUBLE"/>
-    <Attribute name="AcqMode"                       type="EPICS_PV"     source="PCOIOC3:cam1:pco_acq_mode_RBV"              dbrtype="DBR_STRING"/>
-    <Attribute name="FrameRate"                     type="EPICS_PV"     source="PCOIOC3:cam1:pco_set_frame_rate_RBV"        dbrtype="DBR_DOUBLE"/>
-    <Attribute name="FrameRateMode"                 type="EPICS_PV"     source="PCOIOC3:cam1:pco_is_frame_rate_mode_RBV"    dbrtype="DBR_ENUM"/>
-    <Attribute name="DataType"                      type="EPICS_PV"     source="PCOIOC3:cam1:DataType_RBV"                  dbrtype="DBR_STRING"/>
-    <Attribute name="ArrayCounter"                  type="EPICS_PV"     source="PCOIOC3:cam1:ArrayCounter_RBV"              dbrtype="DBR_LONG"/>
-    <Attribute name="Temperature"                   type="EPICS_PV"     source="PCOIOC3:cam1:TemperatureActual"             dbrtype="DBR_DOUBLE"/>
+    <Attribute name="AcqTime"                       type="EPICS_PV"     source="PCOIOC2:cam1:AcquireTime_RBV"               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="AcqPeriod"                     type="EPICS_PV"     source="PCOIOC2:cam1:AcquirePeriod_RBV"             dbrtype="DBR_DOUBLE"/>
+    <Attribute name="AcqMode"                       type="EPICS_PV"     source="PCOIOC2:cam1:pco_acq_mode_RBV"              dbrtype="DBR_STRING"/>
+    <Attribute name="FrameRate"                     type="EPICS_PV"     source="PCOIOC2:cam1:pco_set_frame_rate_RBV"        dbrtype="DBR_DOUBLE"/>
+    <Attribute name="FrameRateMode"                 type="EPICS_PV"     source="PCOIOC2:cam1:pco_is_frame_rate_mode_RBV"    dbrtype="DBR_ENUM"/>
+    <Attribute name="DataType"                      type="EPICS_PV"     source="PCOIOC2:cam1:DataType_RBV"                  dbrtype="DBR_STRING"/>
+    <Attribute name="ArrayCounter"                  type="EPICS_PV"     source="PCOIOC2:cam1:ArrayCounter_RBV"              dbrtype="DBR_LONG"/>
+    <Attribute name="Temperature"                   type="EPICS_PV"     source="PCOIOC2:cam1:TemperatureActual"             dbrtype="DBR_DOUBLE"/>
 
-    <Attribute name="NumImages"                     type="EPICS_PV"     source="PCOIOC3:cam1:NumImages_RBV"                 dbrtype="DBR_DOUBLE"/>
-    <Attribute name="ImageMode"                     type="EPICS_PV"     source="PCOIOC3:cam1:ImageMode_RBV"                 dbrtype="DBR_STRING"/>
-    <Attribute name="ScanSpeed"                     type="EPICS_PV"     source="PCOIOC3:cam1:pco_edge_fastscan_RBV"         dbrtype="DBR_STRING"/>
-    <Attribute name="Descramble"                    type="EPICS_PV"     source="PCOIOC3:cam1:pco_descramble_RBV"            dbrtype="DBR_STRING"/>
-    <Attribute name="DisableDescramble"             type="EPICS_PV"     source="PCOIOC3:cam1:pco_disable_descramble"        dbrtype="DBR_DOUBLE"/>
-    <Attribute name="ExternalTriggerStatus"         type="EPICS_PV"     source="PCOIOC3:cam1:pco_exp_trig_stat_RBV"         dbrtype="DBR_STRING"/>
-    <Attribute name="StorageMode"                   type="EPICS_PV"     source="PCOIOC3:cam1:pco_storage_mode_RBV"          dbrtype="DBR_STRING"/>
-    <Attribute name="RecSubmode"                    type="EPICS_PV"     source="PCOIOC3:cam1:pco_rec_submode_RBV"           dbrtype="DBR_STRING"/>
-    <Attribute name="Conv12to16"                    type="EPICS_PV"     source="PCOIOC3:cam1:pco_conv_12to16"               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="NumImages"                     type="EPICS_PV"     source="PCOIOC2:cam1:NumImages_RBV"                 dbrtype="DBR_DOUBLE"/>
+    <Attribute name="ImageMode"                     type="EPICS_PV"     source="PCOIOC2:cam1:ImageMode_RBV"                 dbrtype="DBR_STRING"/>
+    <Attribute name="ScanSpeed"                     type="EPICS_PV"     source="PCOIOC2:cam1:pco_edge_fastscan_RBV"         dbrtype="DBR_STRING"/>
+    <Attribute name="Descramble"                    type="EPICS_PV"     source="PCOIOC2:cam1:pco_descramble_RBV"            dbrtype="DBR_STRING"/>
+    <Attribute name="DisableDescramble"             type="EPICS_PV"     source="PCOIOC2:cam1:pco_disable_descramble"        dbrtype="DBR_DOUBLE"/>
+    <Attribute name="ExternalTriggerStatus"         type="EPICS_PV"     source="PCOIOC2:cam1:pco_exp_trig_stat_RBV"         dbrtype="DBR_STRING"/>
+    <Attribute name="StorageMode"                   type="EPICS_PV"     source="PCOIOC2:cam1:pco_storage_mode_RBV"          dbrtype="DBR_STRING"/>
+    <Attribute name="RecSubmode"                    type="EPICS_PV"     source="PCOIOC2:cam1:pco_rec_submode_RBV"           dbrtype="DBR_STRING"/>
+    <Attribute name="Conv12to16"                    type="EPICS_PV"     source="PCOIOC2:cam1:pco_conv_12to16"               dbrtype="DBR_DOUBLE"/>
 
-    <Attribute name="SaveDest"                      type="EPICS_PV"     source="PCOIOC3:cam1:FrameType"                     dbrtype="DBR_STRING"/>
-    <Attribute name="SampleName"                    type="EPICS_PV"     source="PCOIOC3:HDF1:FileName"                      dbrtype="DBR_STRING"/>
-    <Attribute name="FullFileName"                  type="EPICS_PV"     source="PCOIOC3:HDF1:FullFileName_RBV"              dbrtype="DBR_STRING"/>
-    <Attribute name="FilePath"                      type="EPICS_PV"     source="PCOIOC3:HDF1:FilePath_RBV"                  dbrtype="DBR_STRING"/>
-    <Attribute name="HDFPlufInVersion"              type="EPICS_PV"     source="PCOIOC3:HDF1:PluginType_RBV"                dbrtype="DBR_STRING"/>
+    <Attribute name="SaveDest"                      type="EPICS_PV"     source="PCOIOC2:cam1:FrameType"                     dbrtype="DBR_STRING"/>
+    <Attribute name="SampleName"                    type="EPICS_PV"     source="PCOIOC2:HDF1:FileName"                      dbrtype="DBR_STRING"/>
+    <Attribute name="FullFileName"                  type="EPICS_PV"     source="PCOIOC2:HDF1:FullFileName_RBV"              dbrtype="DBR_STRING"/>
+    <Attribute name="FilePath"                      type="EPICS_PV"     source="PCOIOC2:HDF1:FilePath_RBV"                  dbrtype="DBR_STRING"/>
+    <Attribute name="HDFPlufInVersion"              type="EPICS_PV"     source="PCOIOC2:HDF1:PluginType_RBV"                dbrtype="DBR_STRING"/>
 
     <Attribute name="DateTimeStart"                 type="EPICS_PV"     source="S:IOC:timeOfDayForm1SI"                     dbrtype="DBR_STRING"/>
     <Attribute name="DateTimeEnd"                   type="EPICS_PV"     source="S:IOC:timeOfDayForm1SI"                     dbrtype="DBR_STRING"/>

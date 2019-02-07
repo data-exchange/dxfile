@@ -1,0 +1,102 @@
+<Attributes
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://epics.aps.anl.gov/areaDetector/attributes ../attributes.xsd"
+    >
+    <Attribute name="DetectorManufacturer"          type="EPICS_PV"     source="2bmbSP1:cam1:Manufacturer_RBV"              dbrtype="DBR_STRING"/>
+    <Attribute name="DetectorModel"                 type="EPICS_PV"     source="2bmbSP1:cam1:Model_RBV"                     dbrtype="DBR_STRING"/>
+    <Attribute name="SerialNumber"                  type="EPICS_PV"     source="2bmbSP1:cam1:SerialNumber_RBV"              dbrtype="DBR_STRING"/>
+    <Attribute name="FirmwareVersion"               type="EPICS_PV"     source="2bmbSP1:cam1:FirmwareVersion_RBV"           dbrtype="DBR_STRING"/>
+    <Attribute name="SDKVersion"                    type="EPICS_PV"     source="2bmbSP1:cam1:SDKVersion_RBV"                dbrtype="DBR_STRING"/>
+    <Attribute name="DriverVersion"                 type="EPICS_PV"     source="2bmbSP1:cam1:DriverVersion_RBV"             dbrtype="DBR_STRING"/>
+    <Attribute name="ADCoreVersion"                 type="EPICS_PV"     source="2bmbSP1:cam1:ADCoreVersion_RBV"             dbrtype="DBR_STRING"/>
+
+    <Attribute name="MaxSizeX"                      type="EPICS_PV"     source="2bmbSP1:cam1:MaxSizeX_RBV"                  dbrtype="DBR_LONG"/>
+    <Attribute name="MaxSizeY"                      type="EPICS_PV"     source="2bmbSP1:cam1:MaxSizeY_RBV"                  dbrtype="DBR_LONG"/>
+    <Attribute name="MinX"                          type="EPICS_PV"     source="2bmbSP1:cam1:MinX"                          dbrtype="DBR_LONG"/>
+    <Attribute name="MinY"                          type="EPICS_PV"     source="2bmbSP1:cam1:MinY"                          dbrtype="DBR_LONG"/>
+    <Attribute name="SizeX"                         type="EPICS_PV"     source="2bmbSP1:cam1:SizeX"                         dbrtype="DBR_LONG"/>
+    <Attribute name="SizeY"                         type="EPICS_PV"     source="2bmbSP1:cam1:SizeY"                         dbrtype="DBR_LONG"/>
+    <Attribute name="BinX"                          type="EPICS_PV"     source="2bmbSP1:cam1:BinX"                          dbrtype="DBR_LONG"/>
+    <Attribute name="BinY"                          type="EPICS_PV"     source="2bmbSP1:cam1:BinY"                          dbrtype="DBR_LONG"/>
+
+    <Attribute name="AcqTime"                       type="EPICS_PV"     source="2bmbSP1:cam1:AcquireTime_RBV"               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="AcqPeriod"                     type="EPICS_PV"     source="2bmbSP1:cam1:AcquirePeriod_RBV"             dbrtype="DBR_DOUBLE"/>
+    <Attribute name="FrameRate"                     type="EPICS_PV"     source="2bmbSP1:cam1:FrameRate_RBV"                 dbrtype="DBR_DOUBLE"/>
+    <Attribute name="FrameRateEnable"               type="EPICS_PV"     source="2bmbSP1:cam1:FrameRateEnable_RBV"           dbrtype="DBR_ENUM"/>
+    <Attribute name="Gain"                          type="EPICS_PV"     source="2bmbSP1:cam1:Gain_RBV"                      dbrtype="DBR_DOUBLE"/>
+    <Attribute name="GainAuto"                      type="EPICS_PV"     source="2bmbSP1:cam1:GainAuto_RBV"                  dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DataType"                      type="EPICS_PV"     source="2bmbSP1:cam1:DataType_RBV"                  dbrtype="DBR_STRING"/>
+    <Attribute name="ArrayCounter"                  type="EPICS_PV"     source="2bmbSP1:cam1:ArrayCounter_RBV"              dbrtype="DBR_LONG"/>
+    <Attribute name="Temperature"                   type="EPICS_PV"     source="2bmbSP1:cam1:TemperatureActual"             dbrtype="DBR_DOUBLE"/>
+
+    <Attribute name="SaveDest"                      type="EPICS_PV"     source="2bmbSP1:cam1:FrameType"                     dbrtype="DBR_STRING"/>
+    <Attribute name="SampleName"                    type="EPICS_PV"     source="2bmbSP1:HDF1:FileName"                      dbrtype="DBR_STRING"/>
+    <Attribute name="FullFileName"                  type="EPICS_PV"     source="2bmbSP1:HDF1:FullFileName_RBV"              dbrtype="DBR_STRING"/>
+    <Attribute name="FilePath"                      type="EPICS_PV"     source="2bmbSP1:HDF1:FilePath_RBV"                  dbrtype="DBR_STRING"/>
+    <Attribute name="HDFPlufInVersion"              type="EPICS_PV"     source="2bmbSP1:HDF1:PluginType_RBV"                dbrtype="DBR_STRING"/>
+
+    <Attribute name="DateTimeStart"                 type="EPICS_PV"     source="S:IOC:timeOfDayForm1SI"                     dbrtype="DBR_STRING"/>
+    <Attribute name="DateTimeEnd"                   type="EPICS_PV"     source="S:IOC:timeOfDayForm1SI"                     dbrtype="DBR_STRING"/>
+    <Attribute name="Current"                       type="EPICS_PV"     source="S:SRcurrentAI"                              dbrtype="DBR_DOUBLE"/>
+    <Attribute name="TopUpStatus"                   type="EPICS_PV"     source="S:TopUpStatus"                              dbrtype="DBR_STRING"/>
+    <Attribute name="BeamMode"                      type="EPICS_PV"     source="OPS:message3"                               dbrtype="DBR_STRING"/>
+
+    <Attribute name="BeamlineFilterA"               type="EPICS_PV"     source="2bma:fltr1:select.VAL"                      dbrtype="DBR_ENUM"/>
+    <Attribute name="BeamlineFilterB"               type="EPICS_PV"     source="2bma:fltr2:select.VAL"                      dbrtype="DBR_ENUM"/>
+
+    <Attribute name="HSlitsUSSize"                  type="EPICS_PV"     source="2bma:Slit1Hsize.VAL"                        dbrtype="DBR_DOUBLE"/>
+    <Attribute name="HSlitsUSCenter"                type="EPICS_PV"     source="2bma:Slit1Hcenter.VAL"                      dbrtype="DBR_DOUBLE"/>
+    <Attribute name="VSlitsUSSize"                  type="EPICS_PV"     source="2bma:Slit1Vsize.VAL"                        dbrtype="DBR_DOUBLE"/>
+    <Attribute name="VSlitsUSCenter"                type="EPICS_PV"     source="2bma:Slit1Vcenter.VAL"                      dbrtype="DBR_DOUBLE"/>
+    <Attribute name="HSlitsDSSize"                  type="EPICS_PV"     source="2bma:Slit2Hsize.VAL"                        dbrtype="DBR_DOUBLE"/>
+    <Attribute name="HSlitsDSCenter"                type="EPICS_PV"     source="2bma:Slit2Hcenter.VAL"                      dbrtype="DBR_DOUBLE"/>
+    <Attribute name="VSlitsDSSize"                  type="EPICS_PV"     source="2bma:Slit2Vsize.VAL"                        dbrtype="DBR_DOUBLE"/>
+    <Attribute name="VSlitsDSCenter"                type="EPICS_PV"     source="2bma:Slit2Vcenter.VAL"                      dbrtype="DBR_DOUBLE"/>
+
+    <Attribute name="MirrorX"                       type="EPICS_PV"     source="2bma:m3.RBV"                                dbrtype="DBR_DOUBLE"/>
+    <Attribute name="MirrorY"                       type="EPICS_PV"     source="2bma:M1t2.D"                                dbrtype="DBR_DOUBLE"/>
+    <Attribute name="MirrorUSY"                     type="EPICS_PV"     source="2bma:m5.RBV"                                dbrtype="DBR_DOUBLE"/>
+    <Attribute name="MirrorDSY"                     type="EPICS_PV"     source="2bma:m2.RBV"                                dbrtype="DBR_DOUBLE"/>
+    <Attribute name="MirrorAngle"                   type="EPICS_PV"     source="2bma:M1t2.C"                                dbrtype="DBR_DOUBLE"/>
+    <Attribute name="MirrorStripe"                  type="EPICS_PV"     source="2bma:mirror1:select.VAL"                    dbrtype="DBR_ENUM"/>
+
+    <Attribute name="DMM_USArm"                     type="EPICS_PV"     source="2bma:m30.RBV"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DMM_DSArm"                     type="EPICS_PV"     source="2bma:m31.RBV"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DMM_M2Y"                       type="EPICS_PV"     source="2bma:m32.RBV"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DMM_M2Z"                       type="EPICS_PV"     source="2bma:m8.RBV"                                dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DMM_Table_USY_OB"              type="EPICS_PV"     source="2bma:m26.RBV"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DMM_Table_USY_IB"              type="EPICS_PV"     source="2bma:m27.RBV"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DMM_Table_DSY"                 type="EPICS_PV"     source="2bma:m29.RBV"                               dbrtype="DBR_DOUBLE"/>
+
+    <Attribute name="Theta"                         type="EPICS_PV"     source="2bmb:DX:theta"                              dbrtype="DBR_DOUBLE" />
+    <Attribute name="Theta_EGU"                     type="EPICS_PV"     source="2bmb:DX:theta.EGU"                          dbrtype="DBR_STRING" />
+
+    <Attribute name="SampleX"                       type="EPICS_PV"     source="2bma:m49.RBV"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleY"                       type="EPICS_PV"     source="2bma:m20.RBV"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleXX"                      type="EPICS_PV"     source="2bmS1:m2.VAL"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleZZ"                      type="EPICS_PV"     source="2bmS1:m1.VAL"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="RailZ"                         type="EPICS_PV"     source="2bma:m22.RBV"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleRotary"                  type="EPICS_PV"     source="2bma:m82.RBV"                               dbrtype="DBR_DOUBLE"/>
+
+
+    <Attribute name="StartPos"                      type="EPICS_PV"     source="2bma:PSOFly:startPos"                       dbrtype="DBR_DOUBLE"/>
+    <Attribute name="EndPos"                        type="EPICS_PV"     source="2bma:PSOFly:endPos"                         dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SlewSpeed"                     type="EPICS_PV"     source="2bma:PSOFly:slewSpeed"                      dbrtype="DBR_DOUBLE"/>
+    <Attribute name="ScanDelta"                     type="EPICS_PV"     source="2bma:PSOFly:scanDelta"                      dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DeltaTime"                     type="EPICS_PV"     source="2bma:PSOFly:deltaTime"                      dbrtype="DBR_DOUBLE"/>
+    <Attribute name="MotorName"                     type="EPICS_PV"     source="2bma:PSOFly:motorName"                      dbrtype="DBR_STRING"/>
+
+    <Attribute name="UserName"                      type="EPICS_PV"     source="2bmS1:UserName"                             dbrtype="DBR_STRING"/>
+    <Attribute name="UserAffiliation"               type="EPICS_PV"     source="2bmS1:UserInstitution"                      dbrtype="DBR_STRING"/>
+    <Attribute name="UserBadge"                     type="EPICS_PV"     source="2bmS1:UserBadge"                            dbrtype="DBR_STRING"/>
+    <Attribute name="UserEmail"                     type="EPICS_PV"     source="2bmS1:UserEmail"                            dbrtype="DBR_STRING"/>
+    <Attribute name="ProposalNumber"                type="EPICS_PV"     source="2bmS1:ProposalNumber"                       dbrtype="DBR_STRING"/>
+    <Attribute name="ProposalTitle"                 type="EPICS_PV"     source="2bmS1:ProposalTitle"                        dbrtype="DBR_STRING"/>
+    
+    <Attribute name="ObjectiveMag"                  type="EPICS_PV"     source="2bmb:caputRecorderGbl_5"                    dbrtype="DBR_STRING"/>
+    <Attribute name="ScintName"                     type="EPICS_PV"     source="2bmb:caputRecorderGbl_8"                    dbrtype="DBR_STRING"/>
+    <Attribute name="ScintThickness"                type="EPICS_PV"     source="2bmb:caputRecorderGbl_7"                    dbrtype="DBR_STRING"/>
+    <Attribute name="SamDetDist"                    type="EPICS_PV"     source="2bmb:caputRecorderGbl_6"                    dbrtype="DBR_STRING"/>
+    <Attribute name="ManualFilters"                 type="EPICS_PV"     source="2bmb:caputRecorderGbl_9"                    dbrtype="DBR_STRING"/>
+   
+</Attributes>

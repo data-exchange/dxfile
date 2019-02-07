@@ -19,12 +19,11 @@
     <Attribute name="BinX"                          type="EPICS_PV"     source="2bmbSP1:cam1:BinX"                          dbrtype="DBR_LONG"/>
     <Attribute name="BinY"                          type="EPICS_PV"     source="2bmbSP1:cam1:BinY"                          dbrtype="DBR_LONG"/>
 
-    <Attribute name="AcqTime"                       type="EPICS_PV"     source="2bmbSP1:cam1:AcquireTime_RBV"               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="AcqPeriod"                     type="EPICS_PV"     source="2bmbSP1:cam1:AcquirePeriod_RBV"             dbrtype="DBR_DOUBLE"/>
-    <Attribute name="FrameRate"                     type="EPICS_PV"     source="2bmbSP1:cam1:FrameRate_RBV"                 dbrtype="DBR_DOUBLE"/>
-    <Attribute name="FrameRateEnable"               type="EPICS_PV"     source="2bmbSP1:cam1:FrameRateEnable_RBV"           dbrtype="DBR_ENUM"/>
-    <Attribute name="Gain"                          type="EPICS_PV"     source="2bmbSP1:cam1:Gain_RBV"                      dbrtype="DBR_DOUBLE"/>
-    <Attribute name="GainAuto"                      type="EPICS_PV"     source="2bmbSP1:cam1:GainAuto_RBV"                  dbrtype="DBR_DOUBLE"/>
+    <Attribute name="AcqTime"                       type="EPICS_PV"     source="2bmbSP1:cam1:AcquireTime"                   dbrtype="DBR_DOUBLE"/>
+    <Attribute name="AcqPeriod"                     type="EPICS_PV"     source="2bmbSP1:cam1:AcquirePeriod"                 dbrtype="DBR_DOUBLE"/>
+    <Attribute name="FrameRate"                     type="EPICS_PV"     source="2bmbSP1:cam1:FrameRateValAbs"               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="FrameRateEnable"               type="EPICS_PV"     source="2bmbSP1:cam1:FrameRateOnOff_RBV"            dbrtype="DBR_ENUM"/>
+    <Attribute name="Gain"                          type="EPICS_PV"     source="2bmbSP1:cam1:Gain"                          dbrtype="DBR_DOUBLE"/>
     <Attribute name="DataType"                      type="EPICS_PV"     source="2bmbSP1:cam1:DataType_RBV"                  dbrtype="DBR_STRING"/>
     <Attribute name="ArrayCounter"                  type="EPICS_PV"     source="2bmbSP1:cam1:ArrayCounter_RBV"              dbrtype="DBR_LONG"/>
     <Attribute name="Temperature"                   type="EPICS_PV"     source="2bmbSP1:cam1:TemperatureActual"             dbrtype="DBR_DOUBLE"/>
@@ -34,6 +33,7 @@
     <Attribute name="FullFileName"                  type="EPICS_PV"     source="2bmbSP1:HDF1:FullFileName_RBV"              dbrtype="DBR_STRING"/>
     <Attribute name="FilePath"                      type="EPICS_PV"     source="2bmbSP1:HDF1:FilePath_RBV"                  dbrtype="DBR_STRING"/>
     <Attribute name="HDFPlufInVersion"              type="EPICS_PV"     source="2bmbSP1:HDF1:PluginType_RBV"                dbrtype="DBR_STRING"/>
+
 
     <Attribute name="DateTimeStart"                 type="EPICS_PV"     source="S:IOC:timeOfDayForm1SI"                     dbrtype="DBR_STRING"/>
     <Attribute name="DateTimeEnd"                   type="EPICS_PV"     source="S:IOC:timeOfDayForm1SI"                     dbrtype="DBR_STRING"/>
@@ -68,12 +68,21 @@
     <Attribute name="DMM_Table_USY_IB"              type="EPICS_PV"     source="2bma:m27.RBV"                               dbrtype="DBR_DOUBLE"/>
     <Attribute name="DMM_Table_DSY"                 type="EPICS_PV"     source="2bma:m29.RBV"                               dbrtype="DBR_DOUBLE"/>
 
+    <Attribute name="Exp_Table_USY_OB"              type="EPICS_PV"     source="2bmb:m7.RBV"                                dbrtype="DBR_DOUBLE"/>
+    <Attribute name="Exp_Table_USY_IB"              type="EPICS_PV"     source="2bmb:m13.RBV"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="Exp_Table_DSY"                 type="EPICS_PV"     source="2bmb:m9.RBV"                                dbrtype="DBR_DOUBLE"/>
+    <Attribute name="Exp_Table_USX"                 type="EPICS_PV"     source="2bmb:m5.RBV"                                dbrtype="DBR_DOUBLE"/>
+    <Attribute name="Exp_Table_DSX"                 type="EPICS_PV"     source="2bmb:m8.RBV"                                dbrtype="DBR_DOUBLE"/>
+
     <Attribute name="Theta"                         type="EPICS_PV"     source="2bmb:DX:theta"                              dbrtype="DBR_DOUBLE" />
     <Attribute name="Theta_EGU"                     type="EPICS_PV"     source="2bmb:DX:theta.EGU"                          dbrtype="DBR_STRING" />
 
-    <Attribute name="SampleX"                       type="EPICS_PV"     source="2bma:m49.RBV"                               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="SampleY"                       type="EPICS_PV"     source="2bma:m20.RBV"                               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="SampleRotary"                  type="EPICS_PV"     source="2bma:m82.RBV"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleX"                       type="EPICS_PV"     source="2bmb:m63.RBV"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleY"                       type="EPICS_PV"     source="2bmb:m57.RBV"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleXX"                      type="EPICS_PV"     source="2bmb:m76.RBV"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleZZ"                      type="EPICS_PV"     source="2bmb:m77.RBV"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="RailZ"                         type="EPICS_PV"     source="2bmb:m31.RBV"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleRotary"                  type="EPICS_PV"     source="2bmb:m100.RBV"                              dbrtype="DBR_DOUBLE"/>
 
     <Attribute name="StartPos"                      type="EPICS_PV"     source="2bmb:PSOFly:startPos"                       dbrtype="DBR_DOUBLE"/>
     <Attribute name="EndPos"                        type="EPICS_PV"     source="2bmb:PSOFly:endPos"                         dbrtype="DBR_DOUBLE"/>

@@ -77,6 +77,8 @@
     <Attribute name="Theta"                         type="EPICS_PV"     source="2bmb:DX:theta"                              dbrtype="DBR_DOUBLE" />
     <Attribute name="Theta_EGU"                     type="EPICS_PV"     source="2bmb:DX:theta.EGU"                          dbrtype="DBR_STRING" />
 
+    <Attribute name="SamplePitch"                   type="EPICS_PV"     source="2bmb:m54.RBV"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleRoll"                    type="EPICS_PV"     source="2bmb:m53.RBV"                               dbrtype="DBR_DOUBLE"/>
     <Attribute name="SampleX"                       type="EPICS_PV"     source="2bmb:m63.RBV"                               dbrtype="DBR_DOUBLE"/>
     <Attribute name="SampleY"                       type="EPICS_PV"     source="2bmb:m57.RBV"                               dbrtype="DBR_DOUBLE"/>
     <Attribute name="SampleXX"                      type="EPICS_PV"     source="2bmb:m76.RBV"                               dbrtype="DBR_DOUBLE"/>

@@ -82,8 +82,13 @@
     <Attribute name="Theta"                         type="EPICS_PV"     source="2bmb:DX:theta"                              dbrtype="DBR_DOUBLE" />
     <Attribute name="Theta_EGU"                     type="EPICS_PV"     source="2bmb:DX:theta.EGU"                          dbrtype="DBR_STRING" />
 
+    <Attribute name="SamplePitch"                   type="EPICS_PV"     source="2bma:m50.RBV"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleRoll"                    type="EPICS_PV"     source="2bma:m51.RBV"                               dbrtype="DBR_DOUBLE"/>
     <Attribute name="SampleX"                       type="EPICS_PV"     source="2bma:m49.RBV"                               dbrtype="DBR_DOUBLE"/>
     <Attribute name="SampleY"                       type="EPICS_PV"     source="2bma:m20.RBV"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleXX"                      type="EPICS_PV"     source="2bmS1:m2.VAL"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleZZ"                      type="EPICS_PV"     source="2bmS1:m1.VAL"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="RailZ"                         type="EPICS_PV"     source="2bma:m22.RBV"                               dbrtype="DBR_DOUBLE"/>
     <Attribute name="SampleRotary"                  type="EPICS_PV"     source="2bma:m82.RBV"                               dbrtype="DBR_DOUBLE"/>
 
     <Attribute name="StartPos"                      type="EPICS_PV"     source="2bmb:PSOFly:startPos"                       dbrtype="DBR_DOUBLE"/>

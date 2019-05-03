@@ -54,6 +54,7 @@ Contents
    source/introduction
    source/reference
    source/xraytomo
+   source/xrayfluo
    source/install
    source/api
    source/demo

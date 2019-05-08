@@ -62,7 +62,7 @@ def dump_hdf5_item_structure(g, file_name, offset='    ') :
 def main(arg):
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("fname", help="DataExchange file name: /data/sample.h5")
+    parser.add_argument("fname", help="Directory containing multiple or file name of a single DataExchange dataset: /data/ or /data/sample.h5")
     parser.add_argument("--tiff",action="store_true", help="Convert HDF5 to a stack of tiff files")
 
     args = parser.parse_args()
@@ -89,6 +89,19 @@ def main(arg):
             dxchange.write_tiff_stack(proj, fname=radios_out)
             print ("Converted data: ", top_out)
             print ("Done!")
+    elif os.path.isdir(fname):
+        # Add a trailing slash if missing
+        top = os.path.join(fname, '')
+    
+        # Set the file name that will store the rotation axis positions.
+        h5_file_list = list(filter(lambda x: x.endswith(('.h5', '.hdf')), os.listdir(top)))
+
+        print("Found: ", h5_file_list)
+        for fname in h5_file_list:
+			dump_hdf5_file_structure(fname)
+    
+    else:
+        print("Directory or File Name does not exist: ", fname)
 
 if __name__ == "__main__":
     main(sys.argv[1:])

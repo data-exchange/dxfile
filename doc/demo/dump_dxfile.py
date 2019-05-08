@@ -70,6 +70,7 @@ def main(arg):
     # Set path to the micro-CT data to reconstruct.
     fname = args.fname
     tiff = args.tiff
+
     if os.path.isfile(fname): 
         dump_hdf5_file_structure(fname)
         if tiff:   
@@ -98,7 +99,8 @@ def main(arg):
 
         print("Found: ", h5_file_list)
         for fname in h5_file_list:
-			dump_hdf5_file_structure(fname)
+            h5fname = top + fname
+            dump_hdf5_file_structure(h5fname)
     
     else:
         print("Directory or File Name does not exist: ", fname)

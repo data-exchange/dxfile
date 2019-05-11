@@ -34,21 +34,22 @@ def dump_hdf5_item_structure(g, file_name, offset='    ') :
     elif isinstance(g, h5py.Dataset) :
         #print ('Dataset: ', g.name) #, g.dtype
         if g.name == '/exchange/theta':
-            print('theta array')
+            print('theta array', file_name, g.name, dxreader.read_dx_dims(file_name, "theta"))
+
         elif g.name == '/exchange/data':
-            print('data array')
+            print('data array', file_name, g.name, dxreader.read_dx_dims(file_name, "data"))
         elif g.name == '/exchange/data_white':
-            print('data white')
+            print('data white', file_name, g.name, dxreader.read_dx_dims(file_name, "data_white"))
         elif g.name == '/exchange/data_dark' :
-            print('data dark')
+            print('data dark', file_name, g.name, dxreader.read_dx_dims(file_name, "data_dark"))
         else:
-            print (g.name, '=', dxreader.read_hdf5(file_name,  g.name))
+            print (file_name, g.name, '=', dxreader.read_hdf5(file_name,  g.name))
  
     elif isinstance(g, h5py.Group) :
         print ('Group:', g.name)
  
     else :
-        print ('WORNING: UNKNOWN ITEM IN HDF5 FILE', g.name)
+        print ('WARNING: UNKNOWN ITEM IN HDF5 FILE', g.name)
         sys.exit ( "EXECUTION IS TERMINATED" )
  
     if isinstance(g, h5py.File) or isinstance(g, h5py.Group) :
@@ -97,7 +98,7 @@ def main(arg):
         # Set the file name that will store the rotation axis positions.
         h5_file_list = list(filter(lambda x: x.endswith(('.h5', '.hdf')), os.listdir(top)))
 
-        print("Found: ", h5_file_list)
+        print("Found: ", h5_file_list.sort())
         for fname in h5_file_list:
             h5fname = top + fname
             dump_hdf5_file_structure(h5fname)

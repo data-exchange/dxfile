@@ -24,7 +24,7 @@ Usage: ::
 
 Example: ::
 
-    python /local/user2bmb/dxfile/doc/demo/dump_dxfile.py test01/ | grep "start_date"
+    python dump_dxfile.py test01/ | grep "start_date"
 
         test01/001_test.h5 /process/acquisition/start_date = ['May 29, 2019 19:20:21']
         test01/002_test.h5 /process/acquisition/start_date = ['May 29, 2019 19:23:26']
@@ -35,7 +35,7 @@ Example: ::
         ...
 
 
-    python /local/user2bmb/dxfile/doc/demo/dump_dxfile.py test01/ | grep "data array"
+    python dump_dxfile.py test01/ | grep "data array"
         data array test01/001_test.h5 /exchange/data (1500, 2048, 2448)
         data array test01/002_test.h5 /exchange/data (1500, 2048, 2448)
         data array test01/003_test.h5 /exchange/data (1500, 2048, 2448)

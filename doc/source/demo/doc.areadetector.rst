@@ -9,7 +9,7 @@ Here are the templates in use at the  Advanced Photon Source:
 
 
 - 2-BM
-    - Fast Micro Tomography Instrument: :download:`A_station_hdf_schema.xml <../../../doc/demo/areadetector/2-BM/fastLayout.xml>` and :download:`A_station_detector_attributes.xml <../../../doc/demo/areadetector/2-BM/fastDetectorAttributes.xml>`
+    - Fast Micro Tomography Instrument: :download:`A_station_hdf_schema.xml <../../../doc/demo/areadetector/2-BM/flir2bmaLayout.xml>` and :download:`A_station_detector_attributes.xml <../../../doc/demo/areadetector/2-BM/flir2bmaDetectorAttributes.xml>`
     - Dynamic Tomography Instrument: :download:`dyna_hdf_schema.xml <../../../doc/demo/areadetector/2-BM/PCOLayout.xml>` and :download:`dyna_detector_attributes.xml <../../../doc/demo/areadetector/2-BM/PCODetectorAttributes.xml>`
     - MONA project: :download:`mona_hdf_schema.xml <../../../doc/demo/areadetector/2-BM/monaLayout.xml>` and :download:`mona_detector_attributes.xml <../../../doc/demo/areadetector/2-BM/monaDetectorAttributes.xml>`
     

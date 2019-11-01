@@ -63,8 +63,8 @@ def dump_hdf5_item_structure(g, file_name, offset='    ') :
 def main(arg):
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("fname", help="Directory containing multiple or file name of a single DataExchange dataset: /data/ or /data/sample.h5")
-    parser.add_argument("--tiff",action="store_true", help="Convert HDF5 to a stack of tiff files")
+    parser.add_argument("fname", help="directory containing multiple dxfiles or a single DataExchange file: /data/ or /data/sample.h5")
+    parser.add_argument("--tiff",action="store_true", help="convert a single DataExchange file to a stack of tiff files")
 
     args = parser.parse_args()
 

@@ -39,6 +39,24 @@
           <dataset name="fill_mode" source="ndattribute" ndattribute="BeamMode" when="OnFileClose" />
         </group><!-- /source -->
 
+        <group name="slits">
+          <dataset name="name" source="constant" value="Slits" type="string" when="OnFileClose" />        
+          <group name="setup">
+          <dataset name="hslits_us_size" source="ndattribute" ndattribute="HSlitsSize" when="OnFileClose"> 
+            <attribute name="units" source="constant" value="mm" type="string" />
+          </dataset>
+          <dataset name="hslits_us_center" source="ndattribute" ndattribute="HSlitsCenter" when="OnFileClose"> 
+            <attribute name="units" source="constant" value="mm" type="string" />
+          </dataset>
+          <dataset name="vslits_us_size" source="ndattribute" ndattribute="VSlitsSize" when="OnFileClose"> 
+            <attribute name="units" source="constant" value="mm" type="string" />
+          </dataset>
+          <dataset name="vslits_us_center" source="ndattribute" ndattribute="VSlitsCenter" when="OnFileClose"> 
+            <attribute name="units" source="constant" value="mm" type="string" />
+          </dataset>
+          </group><!-- /setup -->
+        </group><!-- /slits -->
+
         <group name="mirror">
           <dataset name="name" source="constant" value="32-ID Mirror" type="string" when="OnFileClose"></dataset>        
           <group name="setup">
@@ -323,61 +341,37 @@
             <dataset name="zone_plate_z_dial" source="ndattribute" ndattribute="ZonePlateZDial" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
-
-            <dataset name="zone_plate_2nd_x" source="ndattribute" ndattribute="ZonePlate2ndX" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string"></attribute>
-            </dataset>
-            <dataset name="zone_plate_2nd_y" source="ndattribute" ndattribute="ZonePlate2ndY" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string"></attribute>
-            </dataset>
-            <dataset name="zone_plate_2nd_z" source="ndattribute" ndattribute="ZonePlate2ndZ" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string"></attribute>
-            </dataset>
-            <dataset name="zone_plate_2nd_x_dial" source="ndattribute" ndattribute="ZonePlate2ndXDial" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string"></attribute>
-            </dataset>
-            <dataset name="zone_plate_2nd_y_dial" source="ndattribute" ndattribute="ZonePlate2ndYDial" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string"></attribute>
-            </dataset>
-            <dataset name="zone_plate_2nd_z_dial" source="ndattribute" ndattribute="ZonePlate2ndZDial" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string"></attribute>
-            </dataset>
           </group><!-- /setup -->
         </group><!-- /zone_plate -->
 
-        <group name="bertrand_lens">
-          <dataset name="name" source="constant" value="Bertrand Lens" type="string" when="OnFileClose"></dataset>        
+        <group name="phase_ring">
+          <dataset name="name" source="constant" value="TXM Phase Ring" type="string" when="OnFileClose"></dataset>        
           <group name="setup">
-            <dataset name="bertrand_x" source="ndattribute" ndattribute="BertrandX" when="OnFileClose"> 
+            <dataset name="phase_ring_x" source="ndattribute" ndattribute="PhaseRingX" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
-            <dataset name="bertrand_y" source="ndattribute" ndattribute="BertrandY" when="OnFileClose"> 
+            <dataset name="phase_ring_y" source="ndattribute" ndattribute="PhaseRingY"     when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
-            <dataset name="bertrand_x_dial" source="ndattribute" ndattribute="BertrandXDial" when="OnFileClose"> 
+            <dataset name="phase_ring_z" source="ndattribute" ndattribute="PhaseRingZ" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
-            <dataset name="bertrand_y_dial" source="ndattribute" ndattribute="BertrandYDial" when="OnFileClose"> 
+            <dataset name="phase_ring_x_dial" source="ndattribute" ndattribute="PhaseRingXDial" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string"></attribute>
+            </dataset>
+            <dataset name="phase_ring_y_dial" source="ndattribute" ndattribute="PhaseRingYDial" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string"></attribute>
+            </dataset>
+            <dataset name="phase_ring_z_dial" source="ndattribute" ndattribute="PhaseRingZDial" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
           </group><!-- /setup -->
-        </group><!-- /bertrand_lens -->
+        </group><!-- /phase_ring -->
+
 
         <group name="flight_tube">
           <dataset name="name" source="constant" value="Flight_tube" type="string" when="OnFileClose"></dataset>        
           <group name="setup">
-            <dataset name="flight_tube_x" source="ndattribute" ndattribute="FlightTubeX" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string"></attribute>
-            </dataset>
-            <dataset name="flight_tube_x_dial" source="ndattribute" ndattribute="FlightTubeXDial" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string"></attribute>
-            </dataset>
-            <dataset name="flight_tube_y" source="ndattribute" ndattribute="FlightTubeY" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string"></attribute>
-            </dataset>
-            <dataset name="flight_tube_y_dial" source="ndattribute" ndattribute="FlightTubeYDial" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string"></attribute>
-            </dataset>
             <dataset name="flight_tube_z" source="ndattribute" ndattribute="FlightTubeZ" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>

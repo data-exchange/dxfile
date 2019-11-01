@@ -167,6 +167,9 @@
     <Attribute name="ScintName"             type="EPICS_PV" source="32idcTXM:caputRecorderGbl_8"                     dbrtype="DBR_STRING"/>
     <Attribute name="ScintThickness"        type="EPICS_PV" source="32idcTXM:caputRecorderGbl_7"                     dbrtype="DBR_STRING"/>
    
+    <Attribute name="FurnaceTemperature"    type="EPICS_PV" source="32idcTEMP:tc1:heater:temperature"                dbrtype="DBR_DOUBLE"/>
+
+
  <!--   <Attribute name="Theta"             type="EPICS_PV" source="32idcTXM:hydra:c0:m1.VAL"     dbrtype="DBR_DOUBLE"/> -->
 
 </Attributes>

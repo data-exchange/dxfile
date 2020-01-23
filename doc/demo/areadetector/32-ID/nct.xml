@@ -284,7 +284,7 @@
         </group><!-- /pin_hole -->
 
         <group name="sample">
-          <dataset name="temperature" source="ndattribute" ndattribute="FurnaceTemperature" when="OnFileClose"> ></dataset>        
+          <dataset name="temperature" source="ndattribute" ndattribute="FurnaceTemperature" when="OnFileClose"></dataset>        
           <dataset name="name" source="constant" value="TXM sample stages stack" type="string" when="OnFileClose"></dataset>        
           <group name="setup">
             <dataset name="sample_x" source="ndattribute" ndattribute="SampleX" when="OnFileClose"> 

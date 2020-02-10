@@ -88,7 +88,12 @@
         </group><!-- /attenuator_1 -->
 
         <group name="monochromator">
-          <dataset name="name" source="constant" value="2-BM DMM" type="string" when="OnFileClose" />        
+          <dataset name="name" source="constant" value="2-BM DMM" type="string" when="OnFileClose" />   
+
+          <dataset name="energy" source="ndattribute" ndattribute="Energy" when="OnFileClose">
+            <attribute name="units" source="constant" value="keV" type="string"></attribute>
+          </dataset>
+          <dataset name="energy_mode" source="ndattribute" ndattribute="EnergyMode" when="OnFileClose" />
           <dataset name="Energy_list" source="constant" value="55.00, 50.00, 45.00, 40.00, 35.00, 31.00, 27.40, 24.90, 22.70, 21.10, 20.20, 18.90, 17.60, 16.80, 16.00, 15.00, 14.40" type="string" when="OnFileClose" />  
           <dataset name="USArm_list" source="constant" value="0.95,  1.00,  1.05,  1.10,  1.25,  1.10,  1.15,  1.20,  1.25,  1.30,  1.35,  1.40,  1.45,  1.50,  1.55,  1.60,  1.65" type="string" when="OnFileClose" />  
           <group name="setup">
@@ -204,6 +209,9 @@
           <dataset name="temperature" source="ndattribute" ndattribute="Temperature" when="OnFileClose">
             <attribute name="units" source="constant" value="Celsius" type="string"></attribute>
           </dataset>
+          <dataset name="pixel_size" source="ndattribute" ndattribute="CCDPixelSize" when="OnFileClose">
+            <attribute name="units" source="constant" value="microns" type="string"></attribute>
+          </dataset>
 
           <group name="roi">
             <dataset name="min_x" source="ndattribute" ndattribute="MinX" when="OnFileClose" />
@@ -213,12 +221,13 @@
           </group><!-- /roi -->
           
         </group><!-- /detector -->
-
         <group name="detection_system">
           <group name="objective">
             <dataset name="magnification" source="ndattribute" ndattribute="ObjectiveMag" when="OnFileClose" />
           </group><!-- /objective -->
-
+          <dataset name="resolution" source="ndattribute" ndattribute="ImageResolution" when="OnFileClose">
+            <attribute name="units" source="constant" value="microns/pixel" type="string"></attribute>
+          </dataset>
           <group name="scintillator">
             <dataset name="name" source="ndattribute" ndattribute="ScintName" when="OnFileClose" />
             <dataset name="scintillating_thickness" source="ndattribute" ndattribute="ScintThickness" when="OnFileClose" >

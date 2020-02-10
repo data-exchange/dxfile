@@ -95,10 +95,16 @@
     <Attribute name="ProposalNumber"                type="EPICS_PV"     source="2bmS1:ExpInfo:ProposalNumber"               dbrtype="DBR_STRING"/>
     <Attribute name="ProposalTitle"                 type="EPICS_PV"     source="2bmS1:ExpInfo:ProposalTitle"                dbrtype="DBR_STRING"/>
     
-    <Attribute name="ObjectiveMag"                  type="EPICS_PV"     source="2bmS1:ExpInfo:LensMagnification"            dbrtype="DBR_STRING"/>
     <Attribute name="ScintName"                     type="EPICS_PV"     source="2bmS1:ExpInfo:ScintillatorType"             dbrtype="DBR_STRING"/>
-    <Attribute name="ScintThickness"                type="EPICS_PV"     source="2bmS1:ExpInfo:ScintillatorThickness"        dbrtype="DBR_STRING"/>
-    <Attribute name="SamDetDist"                    type="EPICS_PV"     source="2bmS1:ExpInfo:SampleDetectorDistance"       dbrtype="DBR_STRING"/>
     <Attribute name="ManualFilters"                 type="EPICS_PV"     source="2bmS1:ExpInfo:Filters"                      dbrtype="DBR_STRING"/>
-   
+    <Attribute name="ScintThickness"                type="EPICS_PV"     source="2bmS1:ExpInfo:ScintillatorThickness"        dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SamDetDist"                    type="EPICS_PV"     source="2bmS1:ExpInfo:SampleDetectorDistance"       dbrtype="DBR_DOUBLE"/>
+
+    <Attribute name="Energy"                        type="EPICS_PV"     source="2bmS1:ExpInfo:Energy"                       dbrtype="DBR_DOUBLE"/>
+    <Attribute name="EnergyMode"                    type="EPICS_PV"     source="2bmS1:ExpInfo:EnergyMode"                   dbrtype="DBR_STRING"/>
+    <Attribute name="ImageResolution"               type="EPICS_PV"     source="2bmS1:ExpInfo:ImageResolution"              dbrtype="DBR_DOUBLE"/>
+    <Attribute name="CCDPixelSize"                  type="EPICS_PV"     source="2bmS1:ExpInfo:CCDPixelSize"                 dbrtype="DBR_DOUBLE"/>
+    <Attribute name="ObjectiveMag"                  type="EPICS_PV"     source="2bmS1:ExpInfo:LensMagnification"            dbrtype="DBR_DOUBLE"/>
+
+
 </Attributes>

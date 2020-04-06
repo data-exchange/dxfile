@@ -37,8 +37,3 @@ of a `DXfile <http://dxfile.readthedocs.org/>`_.
 
    demo/doc.python
 
-
-.. automodule:: dxfile
-   :members:
-   :undoc-members:
-   :show-inheritance: 

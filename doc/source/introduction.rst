@@ -141,14 +141,25 @@ string naming the dimension descriptor datasets in order, so *z:y:x* in
 this case. Additional examples below show this in action.
 
 Data Structure
-============== 
+==============
 
-A tomographic data set consists of a series of projections, dark and white field images. The dark and white fields must have the same
-projection image dimensions and can be collected at any time before, after or during the projection data collection. The angular position of
-the tomographic rotation axis, theta, can be used to keep track of when the dark and white images are collected. 
-These examples show projection, dark, and white images saved in three 3D arrays as shown in :ref:`MinimalTomo0` and :ref:`MinimalTomo1` using, by default, the natural HDF5 order of the a multidimensional array (rotation axis, ccd y, ccd x), i.e. with the fastest changing dimension being the last dimension, and the slowest changing dimension being the first dimension. If using the default dimension order, the axes attribute *theta:y:x* can be
-omitted. The attribute is **mandatory** if the 3D arrays use a different axes order. This could be the case when, for example, the arrays are
-optimized for sinogram read *y:theta:x*. As no units are specified the data is assumed to be in *counts" with the axes (x, y) in pixels. If the positions of the rotation axis for each projection, dark, and white images are not specified via theta dimension scale datasets, it is assumed that the raw projections are taken at equally spaced angular intervals between 0 and 180 degree, with white and dark field collected at the same time before or after the projection data collection.
+A tomographic data set consists of a series of projections, dark and white field images. 
+The dark and white fields must have the same projection image dimensions and can be collected at 
+any time before, after or during the projection data collection. The angular position of the 
+tomographic rotation axis, theta, can be used to keep track of when the dark and white images 
+are collected. 
+These examples show projection, dark, and white images saved in three 3D arrays as shown in 
+:ref:`MinimalTomo0` and :ref:`MinimalTomo1` using, by default, the natural HDF5 order of the 
+multidimensional array (rotation axis, ccd y, ccd x), i.e. with the fastest changing dimension 
+being the last dimension, and the slowest changing dimension being the first dimension. 
+If using the default dimension order, the axes attribute *theta:y:x* can be omitted. 
+The attribute is **mandatory** if the 3D arrays use a different axes order. This could be the 
+case when, for example, the arrays are optimized for sinogram read *y:theta:x*. 
+As no units are specified the data is assumed to be in *counts* with the axes (x, y) in pixels. 
+If the positions of the rotation axis for each projection, dark, and white images are not specified 
+via theta dimension scale datasets, it is assumed that the raw projections are taken at equally spaced 
+angular intervals between 0 and 180 degree, with white and dark field collected at the same time before 
+or after the projection data collection.
 
 .. _MinimalTomo0:
 

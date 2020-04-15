@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no" ?>
-<hdf_layout>
+<hdf5_layout>
   <global name="detector_data_destination" ndattribute="SaveDest"></global>
     <group name="exchange">
       <dataset name="data" source="detector">
@@ -172,43 +172,43 @@
       </group><!-- /instrument -->
       
       <group name="ancillary">
-        <dataset name="MW100_ADC_01" source="ndattribute" ndattribute="MW100_ADC_01" when="OnFrame"> 
+        <dataset name="MW100_ADC_01" source="ndattribute" ndattribute="MW100_ADC_01" when="OnFileWrite"> 
           <attribute name="units" source="ndattribute" ndattribute="MW100_ADC_01_Unit"></attribute>
           <attribute name="description" source="ndattribute" ndattribute="MW100_ADC_01_Desc"></attribute>
         </dataset>	
-        <dataset name="MW100_ADC_02" source="ndattribute" ndattribute="MW100_ADC_02" when="OnFrame"> 
+        <dataset name="MW100_ADC_02" source="ndattribute" ndattribute="MW100_ADC_02" when="OnFileWrite"> 
           <attribute name="units" source="ndattribute" ndattribute="MW100_ADC_02_Unit"></attribute>
           <attribute name="description" source="ndattribute" ndattribute="MW100_ADC_02_Desc"></attribute>
         </dataset>
-        <dataset name="MW100_ADC_03" source="ndattribute" ndattribute="MW100_ADC_03" when="OnFrame"> 
+        <dataset name="MW100_ADC_03" source="ndattribute" ndattribute="MW100_ADC_03" when="OnFileWrite"> 
           <attribute name="units" source="ndattribute" ndattribute="MW100_ADC_03_Unit"></attribute>
           <attribute name="description" source="ndattribute" ndattribute="MW100_ADC_03_Desc"></attribute>
         </dataset>
-        <dataset name="MW100_ADC_04" source="ndattribute" ndattribute="MW100_ADC_04" when="OnFrame"> 
+        <dataset name="MW100_ADC_04" source="ndattribute" ndattribute="MW100_ADC_04" when="OnFileWrite"> 
           <attribute name="units" source="ndattribute" ndattribute="MW100_ADC_04_Unit"></attribute>
           <attribute name="description" source="ndattribute" ndattribute="MW100_ADC_04_Desc"></attribute>
         </dataset>
-        <dataset name="MW100_ADC_05" source="ndattribute" ndattribute="MW100_ADC_05" when="OnFrame"> 
+        <dataset name="MW100_ADC_05" source="ndattribute" ndattribute="MW100_ADC_05" when="OnFileWrite"> 
           <attribute name="units" source="ndattribute" ndattribute="MW100_ADC_05_Unit"></attribute>
           <attribute name="description" source="ndattribute" ndattribute="MW100_ADC_05_Desc"></attribute>
         </dataset>
-        <dataset name="MW100_ADC_06" source="ndattribute" ndattribute="MW100_ADC_06" when="OnFrame"> 
+        <dataset name="MW100_ADC_06" source="ndattribute" ndattribute="MW100_ADC_06" when="OnFileWrite"> 
           <attribute name="units" source="ndattribute" ndattribute="MW100_ADC_06_Unit"></attribute>
           <attribute name="description" source="ndattribute" ndattribute="MW100_ADC_06_Desc"></attribute>
         </dataset>
-        <dataset name="MW100_ADC_07" source="ndattribute" ndattribute="MW100_ADC_07" when="OnFrame"> 
+        <dataset name="MW100_ADC_07" source="ndattribute" ndattribute="MW100_ADC_07" when="OnFileWrite"> 
           <attribute name="units" source="ndattribute" ndattribute="MW100_ADC_07_Unit"></attribute>
           <attribute name="description" source="ndattribute" ndattribute="MW100_ADC_07_Desc"></attribute>
         </dataset>
-        <dataset name="MW100_ADC_08" source="ndattribute" ndattribute="MW100_ADC_08" when="OnFrame"> 
+        <dataset name="MW100_ADC_08" source="ndattribute" ndattribute="MW100_ADC_08" when="OnFileWrite"> 
           <attribute name="units" source="ndattribute" ndattribute="MW100_ADC_08_Unit"></attribute>
           <attribute name="description" source="ndattribute" ndattribute="MW100_ADC_08_Desc"></attribute>
         </dataset>
-        <dataset name="MW100_ADC_09" source="ndattribute" ndattribute="MW100_ADC_09" when="OnFrame"> 
+        <dataset name="MW100_ADC_09" source="ndattribute" ndattribute="MW100_ADC_09" when="OnFileWrite"> 
           <attribute name="units" source="ndattribute" ndattribute="MW100_ADC_09_Unit"></attribute>
           <attribute name="description" source="ndattribute" ndattribute="MW100_ADC_09_Desc"></attribute>
         </dataset>
-        <dataset name="MW100_ADC_10" source="ndattribute" ndattribute="MW100_ADC_10" when="OnFrame"> 
+        <dataset name="MW100_ADC_10" source="ndattribute" ndattribute="MW100_ADC_10" when="OnFileWrite"> 
           <attribute name="units" source="ndattribute" ndattribute="MW100_ADC_10_Unit"></attribute>
           <attribute name="description" source="ndattribute" ndattribute="MW100_ADC_10_Desc"></attribute>
         </dataset>
@@ -227,6 +227,6 @@
 
     <group name="defaults" ndattr_default="true">
   </group>
-</hdf_layout>
+</hdf5_layout>
 
 

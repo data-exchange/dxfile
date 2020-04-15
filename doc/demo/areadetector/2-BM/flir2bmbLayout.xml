@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no" ?>
-<hdf_layout>
+<hdf5_layout>
   <global name="detector_data_destination" ndattribute="SaveDest" />
     <group name="exchange">
       <dataset name="data" source="detector">
@@ -279,4 +279,4 @@
     <group name="defaults" ndattr_default="true">
     </group><!-- /defaults -->
 
-</hdf_layout>
+</hdf5_layout>

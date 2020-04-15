@@ -16,6 +16,9 @@ Here are the templates in use at the  Advanced Photon Source:
 - 7-BM
     - Fast Micro Tomography Instrument: :download:`mct.xml <../../../doc/demo/areadetector/7-BM/mct3.xml>` and :download:`mct_attributes.xml <../../../doc/demo/areadetector/7-BM/mctDetectorAttributes1.xml>`
 
+- 13-BM-D micro-tomography system using PG cameras: :download:`tomoLayout.xml <../../../doc/demo/areadetector/13-BM/tomoLayout.xml>` and :download:`tomoDetectorAttributes.xml <../../../doc/demo/areadetector/13-BM/tomoDetectorAttributes.xml>`
+
+
 - 32-ID 
     - Transmission X-Ray Microscope: :download:`txm_hdf_schema.xml <../../../doc/demo/areadetector/32-ID/nct.xml>` and :download:`txm_detector_attribute.xml <../../../doc/demo/areadetector/32-ID/nctDetectorAttributes.xml>` and the generated HDF5 file: `txm.h5 <https://drive.google.com/open?id=0B78bW1AwveI_UmVvcHVTUzVBVXM>`_ .
     - Micro Tomography Instrument: :download:`mct_hdf_schema.xml <../../../doc/demo/areadetector/32-ID/mct.xml>` and :download:`mct_detector_attribute.xml <../../../doc/demo/areadetector/32-ID/mctDetectorAttributes.xml>`. 

@@ -41,15 +41,15 @@
     <Attribute name="TopUpStatus"                   type="EPICS_PV"     source="S:TopUpStatus"                             dbrtype="DBR_STRING"  description="Top-up status"/>
     <Attribute name="BeamMode"                      type="EPICS_PV"     source="OPS:message3"                              dbrtype="DBR_STRING"  description="Beam mode"/>
 
-    <Attribute name="SampleX"                       type="EPICS_PV"     source="2bma:m49.RBV"                              dbrtype="DBR_DOUBLE" description="Bottom X stage translation"/>
-    <Attribute name="SampleOmega"                   type="EPICS_PV"     source="2bma:m82.RBV"                              dbrtype="DBR_DOUBLE" description="Sample rotation"/>
-    <Attribute name="SampleY"                       type="EPICS_PV"     source="2bma:m20.RBV"                              dbrtype="DBR_DOUBLE" description="Sample vertical height"/>
-    <Attribute name="SampleXCent"                   type="EPICS_PV"     source="2bmS1:m2.VAL"                              dbrtype="DBR_DOUBLE" description="Sample X centering"/>
-    <Attribute name="SampleZCent"                   type="EPICS_PV"     source="2bmS1:m1.VAL"                              dbrtype="DBR_DOUBLE" description="Sample Z centering"/>
-    <Attribute name="SamplePitch"                   type="EPICS_PV"     source="2bma:m50.RBV"                              dbrtype="DBR_DOUBLE" description="Sample Pitch"/>
-    <Attribute name="SampleRoll"                    type="EPICS_PV"     source="2bma:m51.RBV"                              dbrtype="DBR_DOUBLE" description="Sample Roll"/>
+    <Attribute name="SampleX"                       type="EPICS_PV"     source="2bma:m49.RBV"                              dbrtype="DBR_NATIVE" description="Bottom X stage translation"/>
+    <Attribute name="SampleOmega"                   type="EPICS_PV"     source="2bma:m82.RBV"                              dbrtype="DBR_NATIVE" description="Sample rotation"/>
+    <Attribute name="SampleY"                       type="EPICS_PV"     source="2bma:m20.RBV"                              dbrtype="DBR_NATIVE" description="Sample vertical height"/>
+    <Attribute name="SampleXCent"                   type="EPICS_PV"     source="2bmS1:m2.VAL"                              dbrtype="DBR_NATIVE" description="Sample X centering"/>
+    <Attribute name="SampleZCent"                   type="EPICS_PV"     source="2bmS1:m1.VAL"                              dbrtype="DBR_NATIVE" description="Sample Z centering"/>
+    <Attribute name="SamplePitch"                   type="EPICS_PV"     source="2bma:m50.RBV"                              dbrtype="DBR_NATIVE" description="Sample Pitch"/>
+    <Attribute name="SampleRoll"                    type="EPICS_PV"     source="2bma:m51.RBV"                              dbrtype="DBR_NATIVE" description="Sample Roll"/>
 
-    <Attribute name="CameraDistance"                type="EPICS_PV"     source="2bma:m22.RBV"                              dbrtype="DBR_DOUBLE"  description="Camera distance"/>
+    <Attribute name="CameraDistance"                type="EPICS_PV"     source="2bma:m22.RBV"                              dbrtype="DBR_NATIVE"  description="Camera distance"/>
 
     <Attribute name="ScintillatorType"              type="EPICS_PV"     source="2bmS1:ExpInfo:ScintillatorType"            dbrtype="DBR_STRING"  description="Scintillator type"/>
     <Attribute name="ScintillatorThickness"         type="EPICS_PV"     source="2bmS1:ExpInfo:ScintillatorThickness"       dbrtype="DBR_NATIVE"  description="Scintillator thickness (microns)"/>
@@ -59,36 +59,36 @@
     <Attribute name="CameraObjective"               type="EPICS_PV"     source="2bmS1:ExpInfo:CameraObjective"             dbrtype="DBR_STRING"  description="Objective type"/>
     <Attribute name="CameraTubeLength"              type="EPICS_PV"     source="2bmS1:ExpInfo:CameraTubeLength"            dbrtype="DBR_NATIVE"  description="Tube length (mm)"/>
 
-    <Attribute name="BeamlineFilterA"               type="EPICS_PV"     source="2bma:fltr1:select.VAL"                     dbrtype="DBR_ENUM"/>
-    <Attribute name="BeamlineFilterB"               type="EPICS_PV"     source="2bma:fltr2:select.VAL"                     dbrtype="DBR_ENUM"/>
+    <Attribute name="BeamlineFilterA"               type="EPICS_PV"     source="2bma:fltr1:select.VAL"                     dbrtype="DBR_NATIVE"/>
+    <Attribute name="BeamlineFilterB"               type="EPICS_PV"     source="2bma:fltr2:select.VAL"                     dbrtype="DBR_NATIVE"/>
     <Attribute name="ManualFilters"                 type="EPICS_PV"     source="2bmS1:ExpInfo:Filters"                     dbrtype="DBR_STRING"/>
 
-    <Attribute name="Energy"                        type="EPICS_PV"     source="2bmS1:ExpInfo:Energy"                      dbrtype="DBR_DOUBLE"/>
-    <Attribute name="EnergyMode"                    type="EPICS_PV"     source="2bmS1:ExpInfo:EnergyMode"                  dbrtype="DBR_STRING"/>
+    <Attribute name="Energy"                        type="EPICS_PV"     source="2bmS1:ExpInfo:Energy"                      dbrtype="DBR_NATIVE"/>
+    <Attribute name="EnergyMode"                    type="EPICS_PV"     source="2bmS1:ExpInfo:EnergyMode"                  dbrtype="DBR_NATIVE"/>
 
-    <Attribute name="HSlitsUSSize"                  type="EPICS_PV"     source="2bma:Slit1Hsize.VAL"                       dbrtype="DBR_DOUBLE"/>
-    <Attribute name="HSlitsUSCenter"                type="EPICS_PV"     source="2bma:Slit1Hcenter.VAL"                     dbrtype="DBR_DOUBLE"/>
-    <Attribute name="VSlitsUSSize"                  type="EPICS_PV"     source="2bma:Slit1Vsize.VAL"                       dbrtype="DBR_DOUBLE"/>
-    <Attribute name="VSlitsUSCenter"                type="EPICS_PV"     source="2bma:Slit1Vcenter.VAL"                     dbrtype="DBR_DOUBLE"/>
-    <Attribute name="HSlitsDSSize"                  type="EPICS_PV"     source="2bma:Slit2Hsize.VAL"                       dbrtype="DBR_DOUBLE"/>
-    <Attribute name="HSlitsDSCenter"                type="EPICS_PV"     source="2bma:Slit2Hcenter.VAL"                     dbrtype="DBR_DOUBLE"/>
-    <Attribute name="VSlitsDSSize"                  type="EPICS_PV"     source="2bma:Slit2Vsize.VAL"                       dbrtype="DBR_DOUBLE"/>
-    <Attribute name="VSlitsDSCenter"                type="EPICS_PV"     source="2bma:Slit2Vcenter.VAL"                     dbrtype="DBR_DOUBLE"/>
+    <Attribute name="HSlitsUSSize"                  type="EPICS_PV"     source="2bma:Slit1Hsize.VAL"                       dbrtype="DBR_NATIVE"/>
+    <Attribute name="HSlitsUSCenter"                type="EPICS_PV"     source="2bma:Slit1Hcenter.VAL"                     dbrtype="DBR_NATIVE"/>
+    <Attribute name="VSlitsUSSize"                  type="EPICS_PV"     source="2bma:Slit1Vsize.VAL"                       dbrtype="DBR_NATIVE"/>
+    <Attribute name="VSlitsUSCenter"                type="EPICS_PV"     source="2bma:Slit1Vcenter.VAL"                     dbrtype="DBR_NATIVE"/>
+    <Attribute name="HSlitsDSSize"                  type="EPICS_PV"     source="2bma:Slit2Hsize.VAL"                       dbrtype="DBR_NATIVE"/>
+    <Attribute name="HSlitsDSCenter"                type="EPICS_PV"     source="2bma:Slit2Hcenter.VAL"                     dbrtype="DBR_NATIVE"/>
+    <Attribute name="VSlitsDSSize"                  type="EPICS_PV"     source="2bma:Slit2Vsize.VAL"                       dbrtype="DBR_NATIVE"/>
+    <Attribute name="VSlitsDSCenter"                type="EPICS_PV"     source="2bma:Slit2Vcenter.VAL"                     dbrtype="DBR_NATIVE"/>
 
-    <Attribute name="MirrorX"                       type="EPICS_PV"     source="2bma:m3.RBV"                               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="MirrorY"                       type="EPICS_PV"     source="2bma:M1t2.D"                               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="MirrorUSY"                     type="EPICS_PV"     source="2bma:m5.RBV"                               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="MirrorDSY"                     type="EPICS_PV"     source="2bma:m2.RBV"                               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="MirrorAngle"                   type="EPICS_PV"     source="2bma:M1t2.C"                               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="MirrorStripe"                  type="EPICS_PV"     source="2bma:mirror1:select.VAL"                   dbrtype="DBR_ENUM"/>
+    <Attribute name="MirrorX"                       type="EPICS_PV"     source="2bma:m3.RBV"                               dbrtype="DBR_NATIVE"/>
+    <Attribute name="MirrorY"                       type="EPICS_PV"     source="2bma:M1t2.D"                               dbrtype="DBR_NATIVE"/>
+    <Attribute name="MirrorUSY"                     type="EPICS_PV"     source="2bma:m5.RBV"                               dbrtype="DBR_NATIVE"/>
+    <Attribute name="MirrorDSY"                     type="EPICS_PV"     source="2bma:m2.RBV"                               dbrtype="DBR_NATIVE"/>
+    <Attribute name="MirrorAngle"                   type="EPICS_PV"     source="2bma:M1t2.C"                               dbrtype="DBR_NATIVE"/>
+    <Attribute name="MirrorStripe"                  type="EPICS_PV"     source="2bma:mirror1:select.VAL"                   dbrtype="DBR_NATIVE"/>
 
-    <Attribute name="DMM_USArm"                     type="EPICS_PV"     source="2bma:m30.RBV"                              dbrtype="DBR_DOUBLE"/>
-    <Attribute name="DMM_DSArm"                     type="EPICS_PV"     source="2bma:m31.RBV"                              dbrtype="DBR_DOUBLE"/>
-    <Attribute name="DMM_M2Y"                       type="EPICS_PV"     source="2bma:m32.RBV"                              dbrtype="DBR_DOUBLE"/>
-    <Attribute name="DMM_M2Z"                       type="EPICS_PV"     source="2bma:m8.RBV"                               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="DMM_Table_USY_OB"              type="EPICS_PV"     source="2bma:m26.RBV"                              dbrtype="DBR_DOUBLE"/>
-    <Attribute name="DMM_Table_USY_IB"              type="EPICS_PV"     source="2bma:m27.RBV"                              dbrtype="DBR_DOUBLE"/>
-    <Attribute name="DMM_Table_DSY"                 type="EPICS_PV"     source="2bma:m29.RBV"                              dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DMM_USArm"                     type="EPICS_PV"     source="2bma:m30.RBV"                              dbrtype="DBR_NATIVE"/>
+    <Attribute name="DMM_DSArm"                     type="EPICS_PV"     source="2bma:m31.RBV"                              dbrtype="DBR_NATIVE"/>
+    <Attribute name="DMM_M2Y"                       type="EPICS_PV"     source="2bma:m32.RBV"                              dbrtype="DBR_NATIVE"/>
+    <Attribute name="DMM_M2Z"                       type="EPICS_PV"     source="2bma:m8.RBV"                               dbrtype="DBR_NATIVE"/>
+    <Attribute name="DMM_Table_USY_OB"              type="EPICS_PV"     source="2bma:m26.RBV"                              dbrtype="DBR_NATIVE"/>
+    <Attribute name="DMM_Table_USY_IB"              type="EPICS_PV"     source="2bma:m27.RBV"                              dbrtype="DBR_NATIVE"/>
+    <Attribute name="DMM_Table_DSY"                 type="EPICS_PV"     source="2bma:m29.RBV"                              dbrtype="DBR_NATIVE"/>
 
     <Attribute name="RotationStart"                 type="EPICS_PV"     source="2bmS1:ExpInfo:RotationStart"               dbrtype="DBR_NATIVE"  description="Rotation start position"/>
     <Attribute name="RotationStep"                  type="EPICS_PV"     source="2bmS1:ExpInfo:RotationStep"                dbrtype="DBR_NATIVE"  description="Rotation step size"/>

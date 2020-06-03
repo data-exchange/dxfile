@@ -18,6 +18,25 @@ import dxchange
 import dxchange.reader as dxreader
 
 
+def read_hdf5(fname, dataset):
+
+    try:
+        with h5py.File(fname, "r") as f:
+            try:
+                data = f[dataset]
+                attr = data.attrs.get('units')
+                if attr != None:
+                    print(data.name, data[()][0], attr.decode('UTF-8'))
+                if not data:
+                     arr = data[()][0]
+                arr = None
+            except KeyError:
+                logger.error('Unrecognized hdf5 dataset: "%s"' % (str(dataset)))
+                return None, None
+    except KeyError:
+        return None, None
+    return arr
+
 def dump_hdf5_file_structure(file_name) :
     """Prints the HDF5 file structure"""
     filee = h5py.File(file_name, 'r') # open read-only
@@ -43,7 +62,8 @@ def dump_hdf5_item_structure(g, file_name, offset='    ') :
         elif g.name == '/exchange/data_dark' :
             print('data dark', file_name, g.name, dxreader.read_dx_dims(file_name, "data_dark"))
         else:
-            print (file_name, g.name, '=', dxreader.read_hdf5(file_name,  g.name))
+            # print (file_name, g.name, '=', read_hdf5(file_name,  g.name))
+            read_hdf5(file_name,  g.name)
  
     elif isinstance(g, h5py.Group) :
         print ('Group:', g.name)

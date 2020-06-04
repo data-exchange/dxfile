@@ -28,7 +28,7 @@ def read_hdf5(fname, dataset):
                 if attr != None:
                     print(data.name, data[()][0], attr.decode('UTF-8'))
                 if not data:
-                     arr = data[()][0]
+                     arr = data[()]
                 arr = None
             except KeyError:
                 logger.error('Unrecognized hdf5 dataset: "%s"' % (str(dataset)))
@@ -37,12 +37,14 @@ def read_hdf5(fname, dataset):
         return None, None
     return arr
 
+
 def dump_hdf5_file_structure(file_name) :
     """Prints the HDF5 file structure"""
     filee = h5py.File(file_name, 'r') # open read-only
     item = filee #["/Configure:0000/Run:0000"]
     dump_hdf5_item_structure(item, file_name)
     filee.close()
+
  
 def dump_hdf5_item_structure(g, file_name, offset='    ') :
     """Prints the input file/group/dataset (g) name and begin iterations on its content"""

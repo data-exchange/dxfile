@@ -35,8 +35,8 @@
     <Attribute name="FilePath"                      type="EPICS_PV"     source="2bmbSP1:HDF1:FilePath_RBV"                 dbrtype="DBR_STRING"  description="File path"/>
     <Attribute name="HDFPluginVersion"              type="EPICS_PV"     source="2bmbSP1:HDF1:PluginType_RBV"               dbrtype="DBR_STRING"  description="File plugin type"/>
 
-    <Attribute name="DateTimeStart"                 type="EPICS_PV"     source="S:IOC:timeOfDayForm1SI"                    dbrtype="DBR_STRING"  description="Date and time at start"/>
-    <Attribute name="DateTimeEnd"                   type="EPICS_PV"     source="S:IOC:timeOfDayForm1SI"                    dbrtype="DBR_STRING"  description="Date and time at end"/>
+    <Attribute name="DateTimeStart"                 type="EPICS_PV"     source="S:IOC:timeOfDayISO8601"                    dbrtype="DBR_STRING"  description="Date and time at start"/>
+    <Attribute name="DateTimeEnd"                   type="EPICS_PV"     source="S:IOC:timeOfDayISO8601"                    dbrtype="DBR_STRING"  description="Date and time at end"/>
     <Attribute name="RingCurrent"                   type="EPICS_PV"     source="S:SRcurrentAI"                             dbrtype="DBR_NATIVE"  description="Ring current (mA)"/>
     <Attribute name="TopUpStatus"                   type="EPICS_PV"     source="S:TopUpStatus"                             dbrtype="DBR_STRING"  description="Top-up status"/>
     <Attribute name="BeamMode"                      type="EPICS_PV"     source="OPS:message3"                              dbrtype="DBR_STRING"  description="Beam mode"/>

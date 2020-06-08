@@ -46,8 +46,8 @@
     <Attribute name="FilePath"                      type="EPICS_PV"     source="PCOIOC2:HDF1:FilePath_RBV"                  dbrtype="DBR_STRING"/>
     <Attribute name="HDFPlufInVersion"              type="EPICS_PV"     source="PCOIOC2:HDF1:PluginType_RBV"                dbrtype="DBR_STRING"/>
 
-    <Attribute name="DateTimeStart"                 type="EPICS_PV"     source="S:IOC:timeOfDayForm1SI"                     dbrtype="DBR_STRING"/>
-    <Attribute name="DateTimeEnd"                   type="EPICS_PV"     source="S:IOC:timeOfDayForm1SI"                     dbrtype="DBR_STRING"/>
+    <Attribute name="DateTimeStart"                 type="EPICS_PV"     source="S:IOC:timeOfDayISO8601"                     dbrtype="DBR_STRING"/>
+    <Attribute name="DateTimeEnd"                   type="EPICS_PV"     source="S:IOC:timeOfDayISO8601"                     dbrtype="DBR_STRING"/>
     <Attribute name="Current"                       type="EPICS_PV"     source="S:SRcurrentAI"                              dbrtype="DBR_DOUBLE"/>
     <Attribute name="TopUpStatus"                   type="EPICS_PV"     source="S:TopUpStatus"                              dbrtype="DBR_STRING"/>
     <Attribute name="BeamMode"                      type="EPICS_PV"     source="OPS:message3"                               dbrtype="DBR_STRING"/>

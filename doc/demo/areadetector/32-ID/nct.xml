@@ -21,11 +21,11 @@
     </group><!-- /exchange -->
     <group name="measurement">
       <group name="instrument">
-        <dataset name="name" source="constant" value="Transmission X-Ray Microscope" type="string" when="OnFileClose"></dataset>        
+        <dataset name="instrument_name" source="constant" value="Transmission X-Ray Microscope" type="string" when="OnFileClose"></dataset>        
 
         <group name="source">
           <dataset name="beamline" source="constant" value="32-ID" type="string" when="OnFileClose"></dataset>        
-          <dataset name="name" source="constant" value="Advanced Photon Source" type="string" when="OnFileClose"></dataset>        
+          <dataset name="source_name" source="constant" value="Advanced Photon Source" type="string" when="OnFileClose"></dataset>        
           <dataset name="current" source="ndattribute" ndattribute="Current" when="OnFileClose">        
             <attribute name="units" source="constant" value="mA" type="string"></attribute>
           </dataset>
@@ -40,7 +40,7 @@
         </group><!-- /source -->
 
         <group name="slits">
-          <dataset name="name" source="constant" value="Slits" type="string" when="OnFileClose" />        
+          <dataset name="slits_name" source="constant" value="Slits" type="string" when="OnFileClose" />        
           <group name="setup">
           <dataset name="hslits_us_size" source="ndattribute" ndattribute="HSlitsSize" when="OnFileClose"> 
             <attribute name="units" source="constant" value="mm" type="string" />
@@ -58,7 +58,7 @@
         </group><!-- /slits -->
 
         <group name="mirror">
-          <dataset name="name" source="constant" value="32-ID Mirror" type="string" when="OnFileClose"></dataset>        
+          <dataset name="mirror_name" source="constant" value="32-ID Mirror" type="string" when="OnFileClose"></dataset>        
           <group name="setup">
              <dataset name="mirror_x" source="ndattribute" ndattribute="MirrorX" when="OnFileClose">       
                <attribute name="units" source="constant" value="mm" type="string"></attribute>
@@ -73,7 +73,7 @@
         </group><!-- /mirror -->
 
         <group name="monochromator">
-          <dataset name="name" source="constant" value="Si Double Crystal" type="string" when="OnFileClose"></dataset>        
+          <dataset name="monochromator_name" source="constant" value="Si Double Crystal" type="string" when="OnFileClose"></dataset>        
           <dataset name="energy" source="ndattribute" ndattribute="Energy" when="OnFileClose">       
             <attribute name="units" source="constant" value="keV" type="string"></attribute>
           </dataset>
@@ -137,7 +137,7 @@
         </group><!-- /monochromator -->
 
         <group name="crl">
-          <dataset name="name" source="constant" value="Compound Refractive Lenses" type="string" when="OnFileClose"></dataset>        
+          <dataset name="crl_name" source="constant" value="Compound Refractive Lenses" type="string" when="OnFileClose"></dataset>        
           <group name="setup">
             <dataset name="crl_x" source="ndattribute" ndattribute="CrlX" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
@@ -170,7 +170,7 @@
         </group><!-- /crl -->
 
         <group name="beam_monitor">
-          <dataset name="name" source="constant" value="Beam Monitor" type="string" when="OnFileClose"></dataset>        
+          <dataset name="beam_monitor_name" source="constant" value="Beam Monitor" type="string" when="OnFileClose"></dataset>        
           <group name="setup">
             <dataset name="beam_monitor_x" source="ndattribute" ndattribute="BeamMonitorX" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
@@ -188,7 +188,7 @@
         </group><!-- /beam_monitor -->
 
         <group name="attenuator">
-          <dataset name="name" source="constant" value="Filter" type="string" when="OnFileClose"></dataset>        
+          <dataset name="attenuator_name" source="constant" value="Filter" type="string" when="OnFileClose"></dataset>        
           <group name="setup">
             <dataset name="filter_x" source="ndattribute" ndattribute="FilterX" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
@@ -200,7 +200,7 @@
         </group><!-- /attenuator -->
 
         <group name="diffuser">
-          <dataset name="name" source="constant" value="TXM diffuser" type="string" when="OnFileClose"></dataset>        
+          <dataset name="diffuser_name" source="constant" value="TXM diffuser" type="string" when="OnFileClose"></dataset>        
           <group name="setup">
             <dataset name="diffuser" source="ndattribute" ndattribute="Diffuser" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
@@ -212,7 +212,7 @@
         </group><!-- /diffuser -->
 
         <group name="beam_stop">
-          <dataset name="name" source="constant" value="TXM beam stop" type="string" when="OnFileClose"></dataset>        
+          <dataset name="beam_stop_name" source="constant" value="TXM beam stop" type="string" when="OnFileClose"></dataset>        
           <group name="setup">
             <dataset name="beam_stop_x" source="ndattribute" ndattribute="BeamStopX" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
@@ -230,7 +230,7 @@
         </group><!-- /beam_stop -->
  
         <group name="condenser">
-          <dataset name="name" source="constant" value="TXM Condenser" type="string" when="OnFileClose"></dataset>        
+          <dataset name="condenser_name" source="constant" value="TXM Condenser" type="string" when="OnFileClose"></dataset>        
           <group name="setup">
             <dataset name="condenser_yaw" source="ndattribute" ndattribute="CondenserYaw" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
@@ -266,7 +266,7 @@
         </group><!-- /condenser -->
 
         <group name="pin_hole">
-          <dataset name="name" source="constant" value="TXM Pin Hole" type="string" when="OnFileClose"></dataset>        
+          <dataset name="pin_hole_name" source="constant" value="TXM Pin Hole" type="string" when="OnFileClose"></dataset>        
           <group name="setup">
             <dataset name="pin_hole_x" source="ndattribute" ndattribute="PinHoleX" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
@@ -283,9 +283,13 @@
           </group><!-- /setup -->
         </group><!-- /pin_hole -->
 
-        <group name="sample">
+        <group name="sample_environment">
           <dataset name="temperature" source="ndattribute" ndattribute="FurnaceTemperature" when="OnFileClose"></dataset>        
-          <dataset name="name" source="constant" value="TXM sample stages stack" type="string" when="OnFileClose"></dataset>        
+            <attribute name="units" source="constant" value="Celsius" type="string"></attribute>          
+        </group><!-- /sample_environment -->
+
+        <group name="sample_motor_stack">
+          <dataset name="sample_motor_stack_name" source="constant" value="TXM sample stages stack" type="string" when="OnFileClose"></dataset>        
           <group name="setup">
             <dataset name="sample_x" source="ndattribute" ndattribute="SampleX" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
@@ -322,7 +326,7 @@
         </group><!-- /sample -->
 
         <group name="zone_plate">
-          <dataset name="name" source="constant" value="TXM Zone Plate" type="string" when="OnFileClose"></dataset>        
+          <dataset name="zone_plate_name" source="constant" value="TXM Zone Plate" type="string" when="OnFileClose"></dataset>        
           <group name="setup">
             <dataset name="zone_plate_x" source="ndattribute" ndattribute="ZonePlateX" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
@@ -346,7 +350,7 @@
         </group><!-- /zone_plate -->
 
         <group name="phase_ring">
-          <dataset name="name" source="constant" value="TXM Phase Ring" type="string" when="OnFileClose"></dataset>        
+          <dataset name="phase_ring_name" source="constant" value="TXM Phase Ring" type="string" when="OnFileClose"></dataset>        
           <group name="setup">
             <dataset name="phase_ring_x" source="ndattribute" ndattribute="PhaseRingX" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
@@ -371,7 +375,7 @@
 
 
         <group name="flight_tube">
-          <dataset name="name" source="constant" value="Flight_tube" type="string" when="OnFileClose"></dataset>        
+          <dataset name="flight_tube_name" source="constant" value="Flight_tube" type="string" when="OnFileClose"></dataset>        
           <group name="setup">
             <dataset name="flight_tube_z" source="ndattribute" ndattribute="FlightTubeZ" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
@@ -447,7 +451,7 @@
           </group><!-- /objective -->
 
           <group name="scintillator">
-            <dataset name="name" source="ndattribute" ndattribute="ScintName" when="OnFileClose" />
+            <dataset name="scintillator_name" source="ndattribute" ndattribute="ScintName" when="OnFileClose" />
             <dataset name="scintillating_thickness" source="ndattribute" ndattribute="ScintThickness" when="OnFileClose" >
               <attribute name="units" source="constant" value="um" type="string" />            
             </dataset>
@@ -457,11 +461,11 @@
       </group><!-- /instrument -->
 
       <group name="sample">
-        <dataset name="name" source="ndattribute" ndattribute="SampleName" when="OnFileClose"></dataset>        
+        <dataset name="sample_name" source="ndattribute" ndattribute="SampleName" when="OnFileClose"></dataset>        
         <dataset name="full_file_name" source="ndattribute" ndattribute="FullFileName" when="OnFileClose"></dataset>        
         <dataset name="file_path" source="ndattribute" ndattribute="FilePath" when="OnFileClose"></dataset>        
         <group name="experimenter">
-           <dataset name="name" source="ndattribute" ndattribute="UserName" when="OnFileClose"></dataset>
+           <dataset name="experimenter_name" source="ndattribute" ndattribute="UserName" when="OnFileClose"></dataset>
            <dataset name="affiliation" source="ndattribute" ndattribute="UserAffiliation" when="OnFileClose"></dataset>
            <dataset name="email" source="ndattribute" ndattribute="UserEmail" when="OnFileClose"></dataset>
            <dataset name="facility_user_id" source="ndattribute" ndattribute="UserBadge" when="OnFileClose"></dataset>

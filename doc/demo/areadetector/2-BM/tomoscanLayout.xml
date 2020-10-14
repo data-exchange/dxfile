@@ -33,7 +33,7 @@
     
     <group name="measurement">
       <group name="instrument">
-        <dataset name="instrument_name" source="constant" value="2-BM-A Fast micro-tomography system using PG cameras" type="string" when="OnFileClose" />   
+        <dataset name="instrument_name" source="constant" value="2-BM-A Fast micro-tomography system using FLIR camera" type="string" when="OnFileClose" />   
              
         <group name="source">
           <dataset name="beamline" source="constant" value="2-BM" type="string" when="OnFileClose" />        

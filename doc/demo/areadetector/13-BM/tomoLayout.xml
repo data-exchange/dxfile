@@ -34,11 +34,11 @@
     
     <group name="measurement">
       <group name="instrument">
-        <dataset name="instrument_name" source="constant" value="13-BM-D micro-tomography system using PG cameras" type="string" when="OnFileClose" />   
+        <dataset name="name" source="constant" value="13-BM-D micro-tomography system using PG cameras" type="string" when="OnFileClose" />   
              
         <group name="source">
           <dataset name="beamline" source="constant" value="13-BM-D" type="string" when="OnFileClose" />        
-          <dataset name="source_name" source="constant" value="Advanced Photon Source" type="string" when="OnFileClose" />        
+          <dataset name="name" source="constant" value="Advanced Photon Source" type="string" when="OnFileClose" />        
           <dataset name="current" source="ndattribute" ndattribute="RingCurrent" when="OnFileClose">        
             <attribute name="units" source="constant" value="mA" type="string" />
           </dataset>    
@@ -47,7 +47,7 @@
         </group><!-- /source -->
         
         <group name="mirror">
-          <dataset name="mirror_name" source="constant" value="13-BM-D Mirror" type="string" when="OnFileClose" />        
+          <dataset name="name" source="constant" value="13-BM-D Mirror" type="string" when="OnFileClose" />        
           <group name="setup">
              <dataset name="mirror_x" source="ndattribute" ndattribute="MirrorHeight" when="OnFileClose">       
                <attribute name="units" source="constant" value="mm" type="string" />
@@ -65,7 +65,7 @@
         </group><!-- /mirror -->
         
         <group name="attenuator">
-          <dataset name="attenuator_name" source="constant" value="13-BM-D filters" type="string" when="OnFileClose" />  
+          <dataset name="name" source="constant" value="13-BM-D filters" type="string" when="OnFileClose" />  
           <group name="setup">
           <dataset name="user_filter_us" source="ndattribute" ndattribute="Filter" when="OnFileClose"> 
           </dataset>
@@ -76,7 +76,7 @@
         </group><!-- /attenuator -->
         
         <group name="monochromator">
-          <dataset name="monochromator_name" source="constant" value="13-BM-D DCM" type="string" when="OnFileClose" />   
+          <dataset name="name" source="constant" value="13-BM-D DCM" type="string" when="OnFileClose" />   
           <dataset name="energy" source="ndattribute" ndattribute="Energy" when="OnFileClose">
             <attribute name="units" source="constant" value="eV" type="string"></attribute>
           </dataset>
@@ -98,7 +98,7 @@
         </group><!-- /monochromator -->
         
         <group name="slits">
-          <dataset name="slits_name" source="constant" value="Slits" type="string" when="OnFileClose" />        
+          <dataset name="name" source="constant" value="Slits" type="string" when="OnFileClose" />        
           <group name="setup">
           <dataset name="hslits_ds_size" source="ndattribute" ndattribute="BMDSlitHSize" when="OnFileClose"> 
             <attribute name="units" source="constant" value="mm" type="string" />
@@ -116,7 +116,7 @@
         </group><!-- /slits -->
       
         <group name="sample">
-          <dataset name="sample_name" source="constant" value="microCT sample stages" type="string" when="OnFileClose" />        
+          <dataset name="name" source="constant" value="microCT sample stages" type="string" when="OnFileClose" />        
           <dataset name="detector_distance" source="ndattribute" ndattribute="CameraDistance" when="OnFileClose">        
             <attribute name="units" source="constant" value="mm" type="string" />
           </dataset>
@@ -140,7 +140,7 @@
         </group><!-- /sample -->
 
         <group name="lift_table">
-          <dataset name="lift_table_name" source="constant" value="Lift table" type="string" when="OnFileClose" />        
+          <dataset name="name" source="constant" value="Lift table" type="string" when="OnFileClose" />        
           <group name="setup">
             <dataset name="lift_height" source="ndattribute" ndattribute="LiftHeight" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string" />
@@ -167,7 +167,7 @@
         </group><!-- /lift table -->
         
         <group name="camera">
-          <dataset name="camera_name" source="constant" value="Camera motors" type="string" when="OnFileClose" />        
+          <dataset name="name" source="constant" value="Camera motors" type="string" when="OnFileClose" />        
           <group name="setup">
             <dataset name="camera_x" source="ndattribute" ndattribute="CameraX" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string" />
@@ -236,7 +236,7 @@
             </dataset>
           </group><!-- /objective -->
           <group name="scintillator">
-            <dataset name="scintillator_type" source="ndattribute" ndattribute="ScintillatorType" when="OnFileClose" />
+            <dataset name="name" source="ndattribute" ndattribute="ScintillatorType" when="OnFileClose" />
             <dataset name="scintillating_thickness" source="ndattribute" ndattribute="ScintillatorThickness" when="OnFileClose" >
               <attribute name="units" source="constant" value="microns" type="string" />            
             </dataset>
@@ -246,7 +246,7 @@
       </group><!-- /instrument -->
 
       <group name="sample">
-        <dataset name="sample_name" source="ndattribute" ndattribute="SampleName" when="OnFileClose" />        
+        <dataset name="name" source="ndattribute" ndattribute="SampleName" when="OnFileClose" />        
         <dataset name="description_1" source="ndattribute" ndattribute="SampleDescription1" when="OnFileClose" />        
         <dataset name="description_2" source="ndattribute" ndattribute="SampleDescription2" when="OnFileClose" />        
         <dataset name="description_3" source="ndattribute" ndattribute="SampleDescription3" when="OnFileClose" />        
@@ -254,7 +254,7 @@
         <dataset name="file_path" source="ndattribute" ndattribute="FilePath" when="OnFileClose" />        
         <dataset name="full_file_name" source="ndattribute" ndattribute="FullFileName" when="OnFileClose" />         
         <group name="experimenter">
-           <dataset name="experimenter_name" source="ndattribute" ndattribute="UserName" when="OnFileClose" />
+           <dataset name="name" source="ndattribute" ndattribute="UserName" when="OnFileClose" />
            <dataset name="institution" source="ndattribute" ndattribute="UserInstitution" when="OnFileClose" />
            <dataset name="email" source="ndattribute" ndattribute="UserEmail" when="OnFileClose" />
            <dataset name="facility_user_id" source="ndattribute" ndattribute="UserBadge" when="OnFileClose" />

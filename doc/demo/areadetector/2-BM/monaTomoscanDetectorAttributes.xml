@@ -101,7 +101,7 @@
 
     <Attribute name="NumFlatFields"                 type="EPICS_PV"     source="2bmb:TomoScan:NumFlatFields"               dbrtype="DBR_NATIVE"  description="Number of flat fields"/>
     <Attribute name="FlatFieldMode"                 type="EPICS_PV"     source="2bmb:TomoScan:FlatFieldMode"               dbrtype="DBR_STRING"  description="Flat field mode"/>
-    <Attribute name="FlatFieldValue"                type="EPICS_PV"     source="2bmb:TomoScan:latFieldValue"               dbrtype="DBR_NATIVE"  description="Flat field value"/>
+    <Attribute name="FlatFieldValue"                type="EPICS_PV"     source="2bmb:TomoScan:FlatFieldValue"              dbrtype="DBR_NATIVE"  description="Flat field value"/>
 
     <Attribute name="FlatFieldAxis"                 type="EPICS_PV"     source="2bmb:TomoScan:FlatFieldAxis"               dbrtype="DBR_STRING"  description="Flat field axis"/>
     <Attribute name="SampleInX"                     type="EPICS_PV"     source="2bmb:TomoScan:SampleInX"                   dbrtype="DBR_NATIVE"  description="Sample in X position (mm)"/>

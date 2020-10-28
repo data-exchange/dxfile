@@ -114,7 +114,7 @@
     <Attribute name="SampleDescription2"            type="EPICS_PV"     source="2bmb:TomoScan:SampleDescription2"          dbrtype="DBR_STRING"  description="Sample description 2"/>
     <Attribute name="SampleDescription3"            type="EPICS_PV"     source="2bmb:TomoScan:SampleDescription3"          dbrtype="DBR_STRING"  description="Sample description 3"/>
 
-    <Attribute name="UserName"                      type="EPICS_PV"     source="2bmb:TomoScan:UserName"                    dbrtype="DBR_STRING"  description="User name"/>
+    <Attribute name="UserLastName"                  type="EPICS_PV"     source="2bmb:TomoScan:UserLastName"                dbrtype="DBR_STRING"  description="User last name"/>
     <Attribute name="UserInstitution"               type="EPICS_PV"     source="2bmb:TomoScan:UserInstitution"             dbrtype="DBR_STRING"  description="User institution"/>
     <Attribute name="UserBadge"                     type="EPICS_PV"     source="2bmb:TomoScan:UserBadge"                   dbrtype="DBR_STRING"  description="User badge number"/>
     <Attribute name="UserEmail"                     type="EPICS_PV"     source="2bmb:TomoScan:UserEmail"                   dbrtype="DBR_STRING"  description="User e-mail"/>

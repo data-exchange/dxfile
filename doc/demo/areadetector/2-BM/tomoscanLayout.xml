@@ -259,7 +259,7 @@
         <dataset name="file_path" source="ndattribute" ndattribute="FilePath" when="OnFileClose" />        
         <dataset name="full_file_name" source="ndattribute" ndattribute="FullFileName" when="OnFileClose" />         
         <group name="experimenter">
-           <dataset name="experimenter_name" source="ndattribute" ndattribute="UserName" when="OnFileClose" />
+           <dataset name="experimenter_name" source="ndattribute" ndattribute="UserLastName" when="OnFileClose" />
            <dataset name="institution" source="ndattribute" ndattribute="UserInstitution" when="OnFileClose" />
            <dataset name="email" source="ndattribute" ndattribute="UserEmail" when="OnFileClose" />
            <dataset name="facility_user_id" source="ndattribute" ndattribute="UserBadge" when="OnFileClose" />

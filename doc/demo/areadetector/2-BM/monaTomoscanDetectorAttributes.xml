@@ -91,7 +91,7 @@
 
     <Attribute name="RotationStart"                 type="EPICS_PV"     source="2bmb:TomoScan:RotationStart"               dbrtype="DBR_NATIVE"  description="Rotation start position (deg)"/>
     <Attribute name="RotationStep"                  type="EPICS_PV"     source="2bmb:TomoScan:RotationStep"                dbrtype="DBR_NATIVE"  description="Rotation step size (deg)"/>
-    <Attribute name="RotationSpeed"                 type="EPICS_PV"     source="2bmb:m82.VELO"                             dbrtype="DBR_NATIVE"  description="Rotation speed (deg/s)"/>
+    <Attribute name="RotationSpeed"                 type="EPICS_PV"     source="2bmb:m100.VELO"                            dbrtype="DBR_NATIVE"  description="Rotation speed (deg/s)"/>
     <Attribute name="NumAngles"                     type="EPICS_PV"     source="2bmb:TomoScan:NumAngles"                   dbrtype="DBR_NATIVE"  description="Number of projections"/>
     <Attribute name="ReturnRotation"                type="EPICS_PV"     source="2bmb:TomoScan:ReturnRotation"              dbrtype="DBR_STRING"  description="Return rotation to start after scan"/>
 

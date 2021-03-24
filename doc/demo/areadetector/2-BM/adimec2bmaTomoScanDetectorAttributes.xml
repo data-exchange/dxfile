@@ -20,11 +20,9 @@
 
     <Attribute name="AcquireTime"                   type="EPICS_PV"     source="2BM_ADIMEC:cam1:AcquireTime_RBV"              dbrtype="DBR_NATIVE"  description="Exposure time"/>
     <Attribute name="AcquirePeriod"                 type="EPICS_PV"     source="2BM_ADIMEC:cam1:AcquirePeriod_RBV"            dbrtype="DBR_NATIVE"  description="Exposure period"/>
-    <Attribute name="FrameRate"                     type="EPICS_PV"     source="2BM_ADIMEC:cam1:FrameRate_RBV"                dbrtype="DBR_NATIVE"  description="Frame rate"/>
-    <Attribute name="FrameRateEnable"               type="EPICS_PV"     source="2BM_ADIMEC:cam1:FrameRateEnable_RBV"          dbrtype="DBR_STRING"  description="Frame rate enable"/>
+    <Attribute name="FrameRate"                     type="EPICS_PV"     source="2BM_ADIMEC:cam1:AcquisitionFrameRate_RBV"     dbrtype="DBR_NATIVE"  description="Frame rate"/>
     <Attribute name="Gain"                          type="EPICS_PV"     source="2BM_ADIMEC:cam1:Gain_RBV"                     dbrtype="DBR_NATIVE"  description="Gain"/>
-    <Attribute name="GainAuto"                      type="EPICS_PV"     source="2BM_ADIMEC:cam1:GainAuto_RBV"                 dbrtype="DBR_NATIVE"  description="Gain auto"/>
-    <Attribute name="PixelFormat"                   type="EPICS_PV"     source="2BM_ADIMEC:cam1:PixelFormat_RBV"              dbrtype="DBR_STRING"  description="Readout pixel format"/>
+    <Attribute name="DataType"                      type="EPICS_PV"     source="2BM_ADIMEC:cam1:DataType_RBV"                 dbrtype="DBR_STRING"  description="Data type"/>
     <Attribute name="ConvertPixelFormat"            type="EPICS_PV"     source="2BM_ADIMEC:cam1:ConvertPixelFormat_RBV"       dbrtype="DBR_STRING"  description="Converted pixel format"/>
     <Attribute name="ArrayCounter"                  type="EPICS_PV"     source="2BM_ADIMEC:cam1:ArrayCounter_RBV"             dbrtype="DBR_NATIVE"  description="Frames collected to date"/>
     <Attribute name="DetectorTemperature"           type="EPICS_PV"     source="2BM_ADIMEC:cam1:TemperatureActual"            dbrtype="DBR_NATIVE"  description="Detector temperature"/>

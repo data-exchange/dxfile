@@ -13,6 +13,9 @@ Here are the templates in use at the  Advanced Photon Source:
     - Dynamic Tomography Instrument: :download:`dyna_hdf_schema.xml <../../../doc/demo/areadetector/2-BM/PCOLayout.xml>` and :download:`dyna_detector_attributes.xml <../../../doc/demo/areadetector/2-BM/PCODetectorAttributes.xml>`
     - MONA project: :download:`mona_hdf_schema.xml <../../../doc/demo/areadetector/2-BM/monaLayout.xml>` and :download:`mona_detector_attributes.xml <../../../doc/demo/areadetector/2-BM/monaDetectorAttributes.xml>`
 
+- 6-BM
+    - Micro Tomography Instrument: :download:`TomoScanLayout.xml <../../../doc/demo/areadetector/6-BM/pg6bmTomoScanLayout.xml>` and :download:`TomoScanDetectorAttributes.xml <../../../doc/demo/areadetector/6-BM/pg6bmTomoScanDetectorAttributes.xml>`
+
 - 7-BM
     - Fast Micro Tomography Instrument: :download:`mct.xml <../../../doc/demo/areadetector/7-BM/mct3.xml>` and :download:`mct_attributes.xml <../../../doc/demo/areadetector/7-BM/mctDetectorAttributes1.xml>`
 

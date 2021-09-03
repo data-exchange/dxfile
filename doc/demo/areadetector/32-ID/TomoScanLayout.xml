@@ -284,8 +284,29 @@
         </group><!-- /pin_hole -->
 
         <group name="sample_environment">
-          <dataset name="temperature" source="ndattribute" ndattribute="FurnaceTemperature" when="OnFileClose"></dataset>        
-            <attribute name="units" source="constant" value="Celsius" type="string"></attribute>          
+          <group name="furnace">
+            <dataset name="furnace_temperature" source="ndattribute" ndattribute="FurnaceTemperature" when="OnFileClose">
+              <attribute name="units" source="constant" value="C" type="string"></attribute>
+            </dataset>
+            <dataset name="Furnace_pid_mode" source="ndattribute" ndattribute="FurnacePIDMode" when="OnFileClose"></dataset>
+            <dataset name="furnace_p" source="ndattribute" ndattribute="FurnaceP" when="OnFileClose"></dataset>
+            <dataset name="furnace_i" source="ndattribute" ndattribute="FurnaceI" when="OnFileClose"></dataset>
+            <dataset name="furnace_ramp_temperature" source="ndattribute" ndattribute="FurnaceRampTemperature" when="OnFileClose">
+              <attribute name="units" source="constant" value="C" type="string"></attribute>
+            </dataset>
+            <dataset name="furnace_set_point" source="ndattribute" ndattribute="FurnaceSetPoint" when="OnFileClose">
+              <attribute name="units" source="constant" value="C" type="string"></attribute>
+            </dataset>
+            <dataset name="furnace_ramp_rate" source="ndattribute" ndattribute="FurnaceRampRate" when="OnFileClose">
+              <attribute name="units" source="constant" value="C/s" type="string"></attribute>
+            </dataset>
+            <dataset name="furnace_update_rate" source="ndattribute" ndattribute="FurnaceUpdateRate" when="OnFileClose">
+              <attribute name="units" source="constant" value="s" type="string"></attribute>
+            </dataset>
+            <dataset name="furnace_thermocouple" source="ndattribute" ndattribute="FurnaceThermocouple" when="OnFileClose">
+              <attribute name="units" source="constant" value="C" type="string"></attribute>
+            </dataset>
+          </group><!-- /furnace -->
         </group><!-- /sample_environment -->
 
         <group name="sample_motor_stack">

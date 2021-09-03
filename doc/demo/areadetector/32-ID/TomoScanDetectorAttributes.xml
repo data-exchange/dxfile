@@ -196,7 +196,17 @@
          
     <Attribute name="HDF5FrameLocation"             type="EPICS_PV" source="$(TS)HDF5Location"                             dbrtype="DBR_STRING"  description="Where to store frame in HDF5 file"/>
 
-    <Attribute name="FurnaceTemperature"            type="EPICS_PV" source="32idcTEMP:tc1:heater:temperature"              dbrtype="DBR_DOUBLE"/>
+    <Attribute name="FurnaceTemperature"            type="EPICS_PV" source="32idcTEMP:tc1:heater:temperature"              dbrtype="DBR_NATIVE"  description="Furnace temperature (C)"/>
+    <Attribute name="FurnacePIDMode"                type="EPICS_PV" source="32idcTEMP:tc1:out:pid:mode_RBV"                dbrtype="DBR_NATIVE"  description="Furnace controller PID mode"/>
+    <Attribute name="FurnaceP"                      type="EPICS_PV" source="32idcTEMP:tc1:out:pid:P_RBV"                   dbrtype="DBR_NATIVE"  description="Furnace controller P value"/>
+    <Attribute name="FurnaceI"                      type="EPICS_PV" source="32idcTEMP:tc1:out:pid:I_RBV"                   dbrtype="DBR_NATIVE"  description="Furnace controller I value"/>
+    <Attribute name="FurnaceD"                      type="EPICS_PV" source="32idcTEMP:tc1:out:pid:D_RBV"                   dbrtype="DBR_NATIVE"  description="Furnace controller D value"/>
+    <Attribute name="FurnaceRampTemperature"        type="EPICS_PV" source="32idcTEMP:tc1:out:rampTemp_RBV"                dbrtype="DBR_NATIVE"  description="Furnace ramp temperature (C)"/>
+    <Attribute name="FurnaceSetPoint"               type="EPICS_PV" source="32idcTEMP:tc1:out:setPoint_RBV"                dbrtype="DBR_NATIVE"  description="Furnace set point (C)"/>
+    <Attribute name="FurnaceRampRate"               type="EPICS_PV" source="32idcTEMP:tc1:out:rampRate_RBV"                dbrtype="DBR_NATIVE"  description="Furnace ramp rate (C/s)"/>
+    <Attribute name="FurnaceUpdateRate"             type="EPICS_PV" source="32idcTEMP:tc1:out:poll.SCAN"                   dbrtype="DBR_NATIVE"  description="Furnace paramerter update rate (s)"/>
+    <Attribute name="FurnaceThermocouple"           type="EPICS_PV" source="32idcSOFT:adam1:tc0.VAL"                       dbrtype="DBR_NATIVE"  description="Furnace thermocouple reading (C)"/>
+
 
  <!--   <Attribute name="Theta"             type="EPICS_PV" source="32idcTXM:hydra:c0:m1.VAL"     dbrtype="DBR_DOUBLE"/> -->
 

@@ -1,0 +1,126 @@
+<?xml version="1.0" standalone="no" ?>
+<!-- Attributes -->
+<Attributes>
+    <Attribute name="DetectorManufacturer"          type="EPICS_PV"     source="$(DET)cam1:Manufacturer_RBV"             dbrtype="DBR_STRING"  description="Detector manufacturer"/>
+    <Attribute name="DetectorModel"                 type="EPICS_PV"     source="$(DET)cam1:Model_RBV"                    dbrtype="DBR_STRING"  description="Detector model"/>
+    <Attribute name="SerialNumber"                  type="EPICS_PV"     source="$(DET)cam1:SerialNumber_RBV"             dbrtype="DBR_STRING"  description="Detector serial number"/>
+    <Attribute name="FirmwareVersion"               type="EPICS_PV"     source="$(DET)cam1:FirmwareVersion_RBV"          dbrtype="DBR_STRING"  description="Detector firmware version"/>
+    <Attribute name="SDKVersion"                    type="EPICS_PV"     source="$(DET)cam1:SDKVersion_RBV"               dbrtype="DBR_STRING"  description="Detector vendor SDK version"/>
+    <Attribute name="DriverVersion"                 type="EPICS_PV"     source="$(DET)cam1:DriverVersion_RBV"            dbrtype="DBR_STRING"  description="areaDetector driver version"/>
+    <Attribute name="ADCoreVersion"                 type="EPICS_PV"     source="$(DET)cam1:ADCoreVersion_RBV"            dbrtype="DBR_STRING"  description="areaDetector ADCore version"/>
+
+    <Attribute name="MaxSizeX"                      type="EPICS_PV"     source="$(DET)cam1:MaxSizeX_RBV"                 dbrtype="DBR_NATIVE"  description="Detector total X pixels"/>
+    <Attribute name="MaxSizeY"                      type="EPICS_PV"     source="$(DET)cam1:MaxSizeY_RBV"                 dbrtype="DBR_NATIVE"  description="Detector total Y pixels"/>
+    <Attribute name="MinX"                          type="EPICS_PV"     source="$(DET)cam1:MinX"                         dbrtype="DBR_NATIVE"  description="Detector readout min X"/>
+    <Attribute name="MinY"                          type="EPICS_PV"     source="$(DET)cam1:MinY"                         dbrtype="DBR_NATIVE"  description="Detector readout min Y"/>
+    <Attribute name="SizeX"                         type="EPICS_PV"     source="$(DET)cam1:SizeX"                        dbrtype="DBR_NATIVE"  description="Detector readout size X"/>
+    <Attribute name="SizeY"                         type="EPICS_PV"     source="$(DET)cam1:SizeY"                        dbrtype="DBR_NATIVE"  description="Detector readout size Y"/>
+    <Attribute name="BinX"                          type="EPICS_PV"     source="$(DET)cam1:BinX"                         dbrtype="DBR_NATIVE"  description="Detector readout bin X"/>
+    <Attribute name="BinY"                          type="EPICS_PV"     source="$(DET)cam1:BinY"                         dbrtype="DBR_NATIVE"  description="Detector readout bin Y"/>
+
+    <Attribute name="AcquireTime"                   type="EPICS_PV"     source="$(DET)cam1:AcquireTime_RBV"              dbrtype="DBR_NATIVE"  description="Exposure time"/>
+    <Attribute name="AcquirePeriod"                 type="EPICS_PV"     source="$(DET)cam1:AcquirePeriod_RBV"            dbrtype="DBR_NATIVE"  description="Exposure period"/>
+    <Attribute name="FrameRate"                     type="EPICS_PV"     source="$(DET)cam1:FrameRate_RBV"                dbrtype="DBR_NATIVE"  description="Frame rate"/>
+    <Attribute name="FrameRateEnable"               type="EPICS_PV"     source="$(DET)cam1:FrameRateEnable_RBV"          dbrtype="DBR_STRING"  description="Frame rate enable"/>
+    <Attribute name="Gain"                          type="EPICS_PV"     source="$(DET)cam1:Gain_RBV"                     dbrtype="DBR_NATIVE"  description="Gain"/>
+    <Attribute name="GainAuto"                      type="EPICS_PV"     source="$(DET)cam1:GainAuto_RBV"                 dbrtype="DBR_NATIVE"  description="Gain auto"/>
+    <Attribute name="PixelFormat"                   type="EPICS_PV"     source="$(DET)cam1:PixelFormat_RBV"              dbrtype="DBR_STRING"  description="Readout pixel format"/>
+    <Attribute name="ConvertPixelFormat"            type="EPICS_PV"     source="$(DET)cam1:ConvertPixelFormat_RBV"       dbrtype="DBR_STRING"  description="Converted pixel format"/>
+    <Attribute name="ArrayCounter"                  type="EPICS_PV"     source="$(DET)cam1:ArrayCounter_RBV"             dbrtype="DBR_NATIVE"  description="Frames collected to date"/>
+    <Attribute name="DetectorTemperature"           type="EPICS_PV"     source="$(DET)cam1:TemperatureActual"            dbrtype="DBR_NATIVE"  description="Detector temperature"/>
+
+    <Attribute name="FileName"                      type="EPICS_PV"     source="$(DET)HDF1:FileName"                     dbrtype="DBR_STRING"  description="File name "/>
+    <Attribute name="FullFileName"                  type="EPICS_PV"     source="$(DET)HDF1:FullFileName_RBV"             dbrtype="DBR_STRING"  description="Full file name"/>
+    <Attribute name="FilePath"                      type="EPICS_PV"     source="$(DET)HDF1:FilePath_RBV"                 dbrtype="DBR_STRING"  description="File path"/>
+    <Attribute name="HDFPluginVersion"              type="EPICS_PV"     source="$(DET)HDF1:PluginType_RBV"               dbrtype="DBR_STRING"  description="File plugin type"/>
+
+    <Attribute name="DateTimeStart"                 type="EPICS_PV"     source="S:IOC:timeOfDayISO8601"                  dbrtype="DBR_STRING"  description="Date and time at start"/>
+    <Attribute name="DateTimeEnd"                   type="EPICS_PV"     source="S:IOC:timeOfDayISO8601"                  dbrtype="DBR_STRING"  description="Date and time at end"/>
+    <Attribute name="RingCurrent"                   type="EPICS_PV"     source="S:SRcurrentAI"                           dbrtype="DBR_NATIVE"  description="Ring current (mA)"/>
+    <Attribute name="TopUpStatus"                   type="EPICS_PV"     source="S:TopUpStatus"                           dbrtype="DBR_STRING"  description="Top-up status"/>
+    <Attribute name="BeamMode"                      type="EPICS_PV"     source="OPS:message3"                            dbrtype="DBR_STRING"  description="Beam mode"/>
+
+    <Attribute name="SampleX"                       type="EPICS_PV"     source="2bma:m49.RBV"                            dbrtype="DBR_NATIVE" description="Bottom X stage translation (mm)"/>
+    <Attribute name="SampleOmega"                   type="EPICS_PV"     source="2bma:m82.RBV"                            dbrtype="DBR_NATIVE" description="Sample rotation (deg)"/>
+    <Attribute name="SampleY"                       type="EPICS_PV"     source="2bma:m20.RBV"                            dbrtype="DBR_NATIVE" description="Sample vertical height (mm)"/>
+    <Attribute name="SampleXCent"                   type="EPICS_PV"     source="2bmS1:m2.VAL"                            dbrtype="DBR_NATIVE" description="Sample X centering (mm)"/>
+    <Attribute name="SampleZCent"                   type="EPICS_PV"     source="2bmS1:m1.VAL"                            dbrtype="DBR_NATIVE" description="Sample Z centering (mm)"/>
+    <Attribute name="SamplePitch"                   type="EPICS_PV"     source="2bma:m50.RBV"                            dbrtype="DBR_NATIVE" description="Sample pitch (deg)"/>
+    <Attribute name="SampleRoll"                    type="EPICS_PV"     source="2bma:m51.RBV"                            dbrtype="DBR_NATIVE" description="Sample roll (deg)"/>
+
+    <Attribute name="CameraDistance"                type="EPICS_PV"     source="2bma:m22.RBV"                            dbrtype="DBR_NATIVE"  description="Camera distance (mm)"/>
+
+    <Attribute name="ScintillatorType"              type="EPICS_PV"     source="$(TS)ScintillatorType"                   dbrtype="DBR_STRING"  description="Scintillator type"/>
+    <Attribute name="ScintillatorThickness"         type="EPICS_PV"     source="$(TS)ScintillatorThickness"              dbrtype="DBR_NATIVE"  description="Scintillator thickness (microns)"/>
+
+    <Attribute name="ImagePixelSize"                type="EPICS_PV"     source="$(TS)ImagePixelSize"                     dbrtype="DBR_NATIVE"  description="Pixel size on sample (microns)"/>
+    <Attribute name="DetectorPixelSize"             type="EPICS_PV"     source="$(TS)DetectorPixelSize"                  dbrtype="DBR_NATIVE"  description="Detector pixel size (microns)"/>
+    <Attribute name="CameraObjective"               type="EPICS_PV"     source="$(TS)CameraObjective"                    dbrtype="DBR_STRING"  description="Objective Magnification"/>
+    <Attribute name="CameraTubeLength"              type="EPICS_PV"     source="$(TS)CameraTubeLength"                   dbrtype="DBR_NATIVE"  description="Tube length (mm)"/>
+
+    <Attribute name="BeamlineFilterA"               type="EPICS_PV"     source="2bma:fltr1:select.VAL"                   dbrtype="DBR_NATIVE" description="Beamline filter A"/>
+    <Attribute name="BeamlineFilterB"               type="EPICS_PV"     source="2bma:fltr2:select.VAL"                   dbrtype="DBR_NATIVE" description="Beamline filter B"/>
+    <Attribute name="ManualFilters"                 type="EPICS_PV"     source="$(TS)Filters"                            dbrtype="DBR_STRING" description="Manual filters"/>
+
+    <Attribute name="Energy"                        type="EPICS_PV"     source="$(TS)Energy"                             dbrtype="DBR_NATIVE" description="Energy (keV)"/>
+    <Attribute name="EnergyMode"                    type="EPICS_PV"     source="$(TS)EnergyMode"                         dbrtype="DBR_NATIVE" description="Energy Mode"/>
+
+    <Attribute name="HSlitsUSCenter"                type="EPICS_PV"     source="2bma:Slit1Hcenter.VAL"                   dbrtype="DBR_NATIVE" description="Horizontal slits up stream center (mm)"/>
+    <Attribute name="HSlitsUSSize"                  type="EPICS_PV"     source="2bma:Slit1Hsize.VAL"                     dbrtype="DBR_NATIVE" description="Horizontal slits up stream size (mm)"/>
+    <Attribute name="VSlitsUSCenter"                type="EPICS_PV"     source="2bma:Slit1Vcenter.VAL"                   dbrtype="DBR_NATIVE" description="Vertical slits up stream center (mm)"/>
+    <Attribute name="VSlitsUSSize"                  type="EPICS_PV"     source="2bma:Slit1Vsize.VAL"                     dbrtype="DBR_NATIVE" description="Vertical slits up stream size (mm)"/>
+    <Attribute name="HSlitsDSCenter"                type="EPICS_PV"     source="2bma:Slit2Hcenter.VAL"                   dbrtype="DBR_NATIVE" description="Horizontal slits down stream center (mm)"/>
+    <Attribute name="HSlitsDSSize"                  type="EPICS_PV"     source="2bma:Slit2Hsize.VAL"                     dbrtype="DBR_NATIVE" description="Horizontal slits down stream size (mm)"/>
+    <Attribute name="VSlitsDSCenter"                type="EPICS_PV"     source="2bma:Slit2Vcenter.VAL"                   dbrtype="DBR_NATIVE" description="Vertical slits down stream center (mm)"/>
+    <Attribute name="VSlitsDSSize"                  type="EPICS_PV"     source="2bma:Slit2Vsize.VAL"                     dbrtype="DBR_NATIVE" description="Vertical slits down stream center (mm)"/>
+
+    <Attribute name="MirrorX"                       type="EPICS_PV"     source="2bma:m3.RBV"                             dbrtype="DBR_NATIVE" description="Mirror X (mm)"/>
+    <Attribute name="MirrorY"                       type="EPICS_PV"     source="2bma:M1t2.D"                             dbrtype="DBR_NATIVE" description="Mirror Y (mm)"/>
+    <Attribute name="MirrorUSY"                     type="EPICS_PV"     source="2bma:m5.RBV"                             dbrtype="DBR_NATIVE" description="Mirror USY (mm)"/>
+    <Attribute name="MirrorDSY"                     type="EPICS_PV"     source="2bma:m2.RBV"                             dbrtype="DBR_NATIVE" description="Mirror DSY (mm)"/>
+    <Attribute name="MirrorAngle"                   type="EPICS_PV"     source="2bma:M1t2.C"                             dbrtype="DBR_NATIVE" description="Mirror angle (mrad)"/>
+    <Attribute name="MirrorStripe"                  type="EPICS_PV"     source="2bma:mirror1:select.VAL"                 dbrtype="DBR_NATIVE" description="Mirror stripe"/>
+
+    <Attribute name="DMMUSArm"                     type="EPICS_PV"     source="2bma:m30.RBV"                             dbrtype="DBR_NATIVE" description="Multilayer up stream arm (mm)"/>
+    <Attribute name="DMMDSArm"                     type="EPICS_PV"     source="2bma:m31.RBV"                             dbrtype="DBR_NATIVE" description="Multilayer down stream arm (mm) "/>
+    <Attribute name="DMMM2Y"                       type="EPICS_PV"     source="2bma:m32.RBV"                             dbrtype="DBR_NATIVE" description="Multilayer M2 Y (mm)"/>
+    <Attribute name="DMMM2Z"                       type="EPICS_PV"     source="2bma:m8.RBV"                              dbrtype="DBR_NATIVE" description="Multilayer M2 Z (mm)"/>
+    <Attribute name="DMMTable_USY_OB"              type="EPICS_PV"     source="2bma:m26.RBV"                             dbrtype="DBR_NATIVE" description="Multilayer table up stream out board (mm)"/>
+    <Attribute name="DMMTable_USY_IB"              type="EPICS_PV"     source="2bma:m27.RBV"                             dbrtype="DBR_NATIVE" description="Multilayer table up stream in board (mm)"/>
+    <Attribute name="DMMTable_DSY"                 type="EPICS_PV"     source="2bma:m29.RBV"                             dbrtype="DBR_NATIVE" description="Multilayer table down stream Y(mm)"/>
+
+    <Attribute name="RotationStart"                 type="EPICS_PV"     source="$(TS)RotationStart"                      dbrtype="DBR_NATIVE"  description="Rotation start position (deg)"/>
+    <Attribute name="RotationStep"                  type="EPICS_PV"     source="$(TS)RotationStep"                       dbrtype="DBR_NATIVE"  description="Rotation step size (deg)"/>
+    <Attribute name="RotationSpeed"                 type="EPICS_PV"     source="2bma:m82.VELO"                           dbrtype="DBR_NATIVE"  description="Rotation speed (deg/s)"/>
+    <Attribute name="NumAngles"                     type="EPICS_PV"     source="$(TS)NumAngles"                          dbrtype="DBR_NATIVE"  description="Number of projections"/>
+    <Attribute name="ReturnRotation"                type="EPICS_PV"     source="$(TS)ReturnRotation"                     dbrtype="DBR_STRING"  description="Return rotation to start after scan"/>
+
+    <Attribute name="NumDarkFields"                 type="EPICS_PV"     source="$(TS)NumDarkFields"                      dbrtype="DBR_NATIVE"  description="Number of dark fields"/>
+    <Attribute name="DarkFieldMode"                 type="EPICS_PV"     source="$(TS)DarkFieldMode"                      dbrtype="DBR_STRING"  description="Dark field mode"/>
+    <Attribute name="DarkFieldValue"                type="EPICS_PV"     source="$(TS)DarkFieldValue"                     dbrtype="DBR_NATIVE"  description="Dark field value"/>
+
+    <Attribute name="NumFlatFields"                 type="EPICS_PV"     source="$(TS)NumFlatFields"                      dbrtype="DBR_NATIVE"  description="Number of flat fields"/>
+    <Attribute name="FlatFieldMode"                 type="EPICS_PV"     source="$(TS)FlatFieldMode"                      dbrtype="DBR_STRING"  description="Flat field mode"/>
+    <Attribute name="FlatFieldValue"                type="EPICS_PV"     source="$(TS)FlatFieldValue"                     dbrtype="DBR_NATIVE"  description="Flat field value"/>
+
+    <Attribute name="FlatFieldAxis"                 type="EPICS_PV"     source="$(TS)FlatFieldAxis"                      dbrtype="DBR_STRING"  description="Flat field axis"/>
+    <Attribute name="SampleInX"                     type="EPICS_PV"     source="$(TS)SampleInX"                          dbrtype="DBR_NATIVE"  description="Sample in X position (mm)"/>
+    <Attribute name="SampleOutX"                    type="EPICS_PV"     source="$(TS)SampleOutX"                         dbrtype="DBR_NATIVE"  description="Sample out X position (mm)"/>
+    <Attribute name="SampleInY"                     type="EPICS_PV"     source="$(TS)SampleInY"                          dbrtype="DBR_NATIVE"  description="Sample in Y position (mm)"/>
+    <Attribute name="SampleOutY"                    type="EPICS_PV"     source="$(TS)SampleOutY"                         dbrtype="DBR_NATIVE"  description="Sample out Y position (mm)"/>
+
+    <Attribute name="SampleName"                    type="EPICS_PV"     source="$(TS)SampleName"                         dbrtype="DBR_STRING"  description="Sample name"/>
+    <Attribute name="SampleDescription1"            type="EPICS_PV"     source="$(TS)SampleDescription1"                 dbrtype="DBR_STRING"  description="Sample description 1"/>
+    <Attribute name="SampleDescription2"            type="EPICS_PV"     source="$(TS)SampleDescription2"                 dbrtype="DBR_STRING"  description="Sample description 2"/>
+    <Attribute name="SampleDescription3"            type="EPICS_PV"     source="$(TS)SampleDescription3"                 dbrtype="DBR_STRING"  description="Sample description 3"/>
+
+    <Attribute name="UserLastName"                  type="EPICS_PV"     source="$(TS)UserLastName"                       dbrtype="DBR_STRING"  description="User last name"/>
+    <Attribute name="UserInstitution"               type="EPICS_PV"     source="$(TS)UserInstitution"                    dbrtype="DBR_STRING"  description="User institution"/>
+    <Attribute name="UserBadge"                     type="EPICS_PV"     source="$(TS)UserBadge"                          dbrtype="DBR_STRING"  description="User badge number"/>
+    <Attribute name="UserEmail"                     type="EPICS_PV"     source="$(TS)UserEmail"                          dbrtype="DBR_STRING"  description="User e-mail"/>
+    <Attribute name="ProposalNumber"                type="EPICS_PV"     source="$(TS)ProposalNumber"                     dbrtype="DBR_STRING"  description="Proposal number"/>
+    <Attribute name="ProposalTitle"                 type="EPICS_PV"     source="$(TS)ProposalTitle"                      dbrtype="DBR_STRING"  description="Proposal title"/>
+    <Attribute name="ESAFNumber"                    type="EPICS_PV"     source="$(TS)ESAFNumber"                         dbrtype="DBR_STRING"  description="ESAF number"/>
+    <Attribute name="HDF5FrameLocation"             type="EPICS_PV"     source="$(TS)HDF5Location"                       dbrtype="DBR_STRING"  description="Where to store frame in HDF5 file"/>
+
+</Attributes>

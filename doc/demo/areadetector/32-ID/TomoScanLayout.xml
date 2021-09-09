@@ -26,7 +26,7 @@
         <group name="source">
           <dataset name="beamline" source="constant" value="32-ID" type="string" when="OnFileClose"></dataset>        
           <dataset name="source_name" source="constant" value="Advanced Photon Source" type="string" when="OnFileClose"></dataset>        
-          <dataset name="current" source="ndattribute" ndattribute="Current" when="OnFileClose">        
+          <dataset name="current" source="ndattribute" ndattribute="RingCurrent" when="OnFileClose">        
             <attribute name="units" source="constant" value="mA" type="string"></attribute>
           </dataset>
           <dataset name="energy" source="ndattribute" ndattribute="SourceEnergy" when="OnFileClose">        
@@ -425,11 +425,11 @@
           <dataset name="binning_y" source="ndattribute" ndattribute="BinY" when="OnFileClose" />
           <dataset name="frame_rate" source="ndattribute" ndattribute="FrameRate" when="OnFileClose" /> 
           <dataset name="frame_rate_enable" source="ndattribute" ndattribute="FrameRateEnable" when="OnFileClose" /> 
-          <dataset name="exposure_time" source="ndattribute" ndattribute="AcqTime" when="OnFileClose" />
-          <dataset name="acquisition_period" source="ndattribute" ndattribute="AcqPeriod" when="OnFileClose" />
+          <dataset name="exposure_time" source="ndattribute" ndattribute="AcquireTime" when="OnFileClose" />
+          <dataset name="acquisition_period" source="ndattribute" ndattribute="AcquirePeriod" when="OnFileClose" />
           <dataset name="data_type" source="ndattribute" ndattribute="DataType" when="OnFileClose" />       
           <dataset name="array_counter" source="ndattribute" ndattribute="ArrayCounter" when="OnFileClose" />       
-          <dataset name="temperature" source="ndattribute" ndattribute="Temperature" when="OnFileClose">
+          <dataset name="temperature" source="ndattribute" ndattribute="DetectorTemperature" when="OnFileClose">
             <attribute name="units" source="constant" value="Celsius" type="string"></attribute>
           </dataset>
           <dataset name="pixel_size" source="ndattribute" ndattribute="DetectorPixelSize" when="OnFileClose">

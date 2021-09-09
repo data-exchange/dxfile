@@ -52,29 +52,29 @@
     <Attribute name="SDKVersion"                    type="EPICS_PV"     source="$(DET)cam1:SDKVersion_RBV"               dbrtype="DBR_STRING" description="Detector vendor SDK version"/>
     <Attribute name="DriverVersion"                 type="EPICS_PV"     source="$(DET)cam1:DriverVersion_RBV"            dbrtype="DBR_STRING" description="areaDetector driver version"/>
     <Attribute name="ADCoreVersion"                 type="EPICS_PV"     source="$(DET)cam1:ADCoreVersion_RBV"            dbrtype="DBR_STRING" description="areaDetector ADCore version"/>
+    <Attribute name="DetectorTemperature"           type="EPICS_PV"     source="$(DET)cam1:TemperatureActual"            dbrtype="DBR_NATIVE" description="Detector temperature"/>
+    <Attribute name="HDFPluginVersion"              type="EPICS_PV"     source="$(DET)HDF1:PluginType_RBV"               dbrtype="DBR_STRING" description="File plugin type"/>
+    <Attribute name="FrameRate"                     type="EPICS_PV"     source="$(DET)cam1:FrameRate_RBV"                dbrtype="DBR_NATIVE" description="Frame rate"/>
+    <Attribute name="FrameRateEnable"               type="EPICS_PV"     source="$(DET)cam1:FrameRateEnable_RBV"          dbrtype="DBR_STRING" description="Frame rate enable"/>
+    <Attribute name="AcquirePeriod"                 type="EPICS_PV"     source="$(DET)cam1:AcquirePeriod_RBV"            dbrtype="DBR_NATIVE" description="Exposure period"/>
+    <Attribute name="AcquireTime"                   type="EPICS_PV"     source="$(DET)cam1:AcquireTime_RBV"              dbrtype="DBR_NATIVE" description="Exposure time"/>
+    <Attribute name="ArrayCounter"                  type="EPICS_PV"     source="$(DET)cam1:ArrayCounter_RBV"             dbrtype="DBR_NATIVE" description="Frames collected to date"/>
+    <Attribute name="Gain"                          type="EPICS_PV"     source="$(DET)cam1:Gain_RBV"                     dbrtype="DBR_NATIVE" description="Gain"/>
+    <Attribute name="GainAuto"                      type="EPICS_PV"     source="$(DET)cam1:GainAuto_RBV"                 dbrtype="DBR_NATIVE" description="Gain auto"/>
+    <Attribute name="DataType"                      type="EPICS_PV"     source="$(DET)cam1:DataType_RBV"                 dbrtype="DBR_STRING"/>
+    <Attribute name="PixelFormat"                   type="EPICS_PV"     source="$(DET)cam1:PixelFormat_RBV"              dbrtype="DBR_STRING" description="Readout pixel format"/>
     <Attribute name="MaxSizeX"                      type="EPICS_PV"     source="$(DET)cam1:MaxSizeX_RBV"                 dbrtype="DBR_NATIVE" description="Detector total X pixels"/>
     <Attribute name="MaxSizeY"                      type="EPICS_PV"     source="$(DET)cam1:MaxSizeY_RBV"                 dbrtype="DBR_NATIVE" description="Detector total Y pixels"/>
+    <Attribute name="BinX"                          type="EPICS_PV"     source="$(DET)cam1:BinX"                         dbrtype="DBR_NATIVE" description="Detector readout bin X"/>
+    <Attribute name="BinY"                          type="EPICS_PV"     source="$(DET)cam1:BinY"                         dbrtype="DBR_NATIVE" description="Detector readout bin Y"/>
     <Attribute name="MinX"                          type="EPICS_PV"     source="$(DET)cam1:MinX"                         dbrtype="DBR_NATIVE" description="Detector readout min X"/>
     <Attribute name="MinY"                          type="EPICS_PV"     source="$(DET)cam1:MinY"                         dbrtype="DBR_NATIVE" description="Detector readout min Y"/>
     <Attribute name="SizeX"                         type="EPICS_PV"     source="$(DET)cam1:SizeX"                        dbrtype="DBR_NATIVE" description="Detector readout size X"/>
     <Attribute name="SizeY"                         type="EPICS_PV"     source="$(DET)cam1:SizeY"                        dbrtype="DBR_NATIVE" description="Detector readout size Y"/>
-    <Attribute name="BinX"                          type="EPICS_PV"     source="$(DET)cam1:BinX"                         dbrtype="DBR_NATIVE" description="Detector readout bin X"/>
-    <Attribute name="BinY"                          type="EPICS_PV"     source="$(DET)cam1:BinY"                         dbrtype="DBR_NATIVE" description="Detector readout bin Y"/>
-    <Attribute name="AcquireTime"                   type="EPICS_PV"     source="$(DET)cam1:AcquireTime_RBV"              dbrtype="DBR_NATIVE" description="Exposure time"/>
-    <Attribute name="AcquirePeriod"                 type="EPICS_PV"     source="$(DET)cam1:AcquirePeriod_RBV"            dbrtype="DBR_NATIVE" description="Exposure period"/>
-    <Attribute name="FrameRate"                     type="EPICS_PV"     source="$(DET)cam1:FrameRate_RBV"                dbrtype="DBR_NATIVE" description="Frame rate"/>
-    <Attribute name="FrameRateEnable"               type="EPICS_PV"     source="$(DET)cam1:FrameRateEnable_RBV"          dbrtype="DBR_STRING" description="Frame rate enable"/>
-    <Attribute name="Gain"                          type="EPICS_PV"     source="$(DET)cam1:Gain_RBV"                     dbrtype="DBR_NATIVE" description="Gain"/>
-    <Attribute name="GainAuto"                      type="EPICS_PV"     source="$(DET)cam1:GainAuto_RBV"                 dbrtype="DBR_NATIVE" description="Gain auto"/>
-    <Attribute name="ArrayCounter"                  type="EPICS_PV"     source="$(DET)cam1:ArrayCounter_RBV"             dbrtype="DBR_NATIVE" description="Frames collected to date"/>
-    <Attribute name="DetectorTemperature"           type="EPICS_PV"     source="$(DET)cam1:TemperatureActual"            dbrtype="DBR_NATIVE" description="Detector temperature"/>
+
     <Attribute name="FileName"                      type="EPICS_PV"     source="$(DET)HDF1:FileName"                     dbrtype="DBR_STRING" description="File name "/>
     <Attribute name="FilePath"                      type="EPICS_PV"     source="$(DET)HDF1:FilePath_RBV"                 dbrtype="DBR_STRING" description="File path"/>
     <Attribute name="FullFileName"                  type="EPICS_PV"     source="$(DET)HDF1:FullFileName_RBV"             dbrtype="DBR_STRING" description="Full file name"/>
-    <Attribute name="HDFPluginVersion"              type="EPICS_PV"     source="$(DET)HDF1:PluginType_RBV"               dbrtype="DBR_STRING" description="File plugin type"/>
-
-    <Attribute name="PixelFormat"                   type="EPICS_PV"     source="$(DET)cam1:PixelFormat_RBV"              dbrtype="DBR_STRING" description="Readout pixel format"/>
-    <Attribute name="ConvertPixelFormat"            type="EPICS_PV"     source="$(DET)cam1:ConvertPixelFormat_RBV"       dbrtype="DBR_STRING" description="Converted pixel format"/>
 
     <Attribute name="ScintillatorType"              type="EPICS_PV"     source="$(TS)ScintillatorType"                   dbrtype="DBR_STRING" description="Scintillator type"/>
     <Attribute name="ScintillatorThickness"         type="EPICS_PV"     source="$(TS)ScintillatorThickness"              dbrtype="DBR_NATIVE" description="Scintillator thickness (microns)"/>

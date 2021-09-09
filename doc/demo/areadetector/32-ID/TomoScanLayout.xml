@@ -415,32 +415,33 @@
           <dataset name="SDK_version" source="ndattribute" ndattribute="SDKVersion" when="OnFileClose" />
           <dataset name="driver_version" source="ndattribute" ndattribute="DriverVersion" when="OnFileClose" />
           <dataset name="ADcore_version" source="ndattribute" ndattribute="ADCoreVersion" when="OnFileClose" />
-          <dataset name="HDFplugin_version" source="ndattribute" ndattribute="HDFPlugInVersion" when="OnFileClose" />
-
-          <dataset name="dimension_x" source="ndattribute" ndattribute="MaxSizeX" when="OnFileClose" />
-          <dataset name="dimension_y" source="ndattribute" ndattribute="MaxSizeY" when="OnFileClose" />
-          <dataset name="gain" source="ndattribute" ndattribute="Gain" when="OnFileClose" />          
-          <dataset name="gain_auto" source="ndattribute" ndattribute="GainAuto" when="OnFileClose" />          
-          <dataset name="binning_x" source="ndattribute" ndattribute="BinX" when="OnFileClose" />
-          <dataset name="binning_y" source="ndattribute" ndattribute="BinY" when="OnFileClose" />
-          <dataset name="frame_rate" source="ndattribute" ndattribute="FrameRate" when="OnFileClose" /> 
-          <dataset name="frame_rate_enable" source="ndattribute" ndattribute="FrameRateEnable" when="OnFileClose" /> 
-          <dataset name="exposure_time" source="ndattribute" ndattribute="AcquireTime" when="OnFileClose" />
-          <dataset name="acquisition_period" source="ndattribute" ndattribute="AcquirePeriod" when="OnFileClose" />
-          <dataset name="data_type" source="ndattribute" ndattribute="DataType" when="OnFileClose" />       
-          <dataset name="array_counter" source="ndattribute" ndattribute="ArrayCounter" when="OnFileClose" />       
           <dataset name="temperature" source="ndattribute" ndattribute="DetectorTemperature" when="OnFileClose">
             <attribute name="units" source="constant" value="Celsius" type="string"></attribute>
           </dataset>
+          <dataset name="HDFplugin_version" source="ndattribute" ndattribute="HDFPluginVersion" when="OnFileClose" />
+          <dataset name="frame_rate" source="ndattribute" ndattribute="FrameRate" when="OnFileClose" /> 
+          <dataset name="frame_rate_enable" source="ndattribute" ndattribute="FrameRateEnable" when="OnFileClose" /> 
+          <dataset name="acquire_period" source="ndattribute" ndattribute="AcquirePeriod" when="OnFileClose" />
+          <dataset name="exposure_time" source="ndattribute" ndattribute="AcquireTime" when="OnFileClose" />
+          <dataset name="array_counter" source="ndattribute" ndattribute="ArrayCounter" when="OnFileClose" />       
+          <dataset name="gain" source="ndattribute" ndattribute="Gain" when="OnFileClose" />          
+          <dataset name="gain_auto" source="ndattribute" ndattribute="GainAuto" when="OnFileClose" />          
+          <dataset name="data_type" source="ndattribute" ndattribute="DataType" when="OnFileClose" />       
+          <dataset name="pixel_format" source="ndattribute" ndattribute="PixelFormat" when="OnFileClose" />       
+          <dataset name="dimension_x" source="ndattribute" ndattribute="MaxSizeX" when="OnFileClose" />
+          <dataset name="dimension_y" source="ndattribute" ndattribute="MaxSizeY" when="OnFileClose" />
+          <dataset name="binning_x" source="ndattribute" ndattribute="BinX" when="OnFileClose" />
+          <dataset name="binning_y" source="ndattribute" ndattribute="BinY" when="OnFileClose" />
+          <group name="roi">
+            <dataset name="min_x" source="ndattribute" ndattribute="MinX" when="OnFileClose" />
+            <dataset name="size_x" source="ndattribute" ndattribute="SizeX" when="OnFileClose" />
+            <dataset name="min_y" source="ndattribute" ndattribute="MinY" when="OnFileClose" />
+            <dataset name="size_y" source="ndattribute" ndattribute="SizeY" when="OnFileClose" />
+          </group><!-- /roi -->   
           <dataset name="pixel_size" source="ndattribute" ndattribute="DetectorPixelSize" when="OnFileClose">
             <attribute name="units" source="constant" value="microns" type="string"></attribute>
-          </dataset>          
-          <group name="roi">
-            <dataset name="min_x" source="ndattribute" ndattribute="MinX" when="OnFileClose"></dataset>
-            <dataset name="size_x" source="ndattribute" ndattribute="SizeX" when="OnFileClose"></dataset>
-            <dataset name="min_y" source="ndattribute" ndattribute="MinY" when="OnFileClose"></dataset>
-            <dataset name="size_y" source="ndattribute" ndattribute="SizeY" when="OnFileClose"></dataset>
-          </group><!-- /roi -->
+          </dataset>
+
           <group name="setup">
             <dataset name="ccd_camera_x" source="ndattribute" ndattribute="CcdCameraX" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>

@@ -291,6 +291,7 @@
             <dataset name="Furnace_pid_mode" source="ndattribute" ndattribute="FurnacePIDMode" when="OnFileClose"></dataset>
             <dataset name="furnace_p" source="ndattribute" ndattribute="FurnaceP" when="OnFileClose"></dataset>
             <dataset name="furnace_i" source="ndattribute" ndattribute="FurnaceI" when="OnFileClose"></dataset>
+            <dataset name="furnace_d" source="ndattribute" ndattribute="FurnaceD" when="OnFileClose"></dataset>
             <dataset name="furnace_ramp_temperature" source="ndattribute" ndattribute="FurnaceRampTemperature" when="OnFileClose">
               <attribute name="units" source="constant" value="C" type="string"></attribute>
             </dataset>
@@ -418,7 +419,7 @@
           <dataset name="temperature" source="ndattribute" ndattribute="DetectorTemperature" when="OnFileClose">
             <attribute name="units" source="constant" value="Celsius" type="string"></attribute>
           </dataset>
-          <dataset name="HDFplugin_version" source="ndattribute" ndattribute="HDFPluginVersion" when="OnFileClose" />
+          <dataset name="HDFplugin_version" source="ndattribute" ndattribute="HDFPlugInVersion" when="OnFileClose" />
           <dataset name="frame_rate" source="ndattribute" ndattribute="FrameRate" when="OnFileClose" /> 
           <dataset name="frame_rate_enable" source="ndattribute" ndattribute="FrameRateEnable" when="OnFileClose" /> 
           <dataset name="acquire_period" source="ndattribute" ndattribute="AcquirePeriod" when="OnFileClose" />

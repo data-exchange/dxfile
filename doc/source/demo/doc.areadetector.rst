@@ -25,3 +25,15 @@ Here are the templates in use at the  Advanced Photon Source:
 - 32-ID 
     - Transmission X-Ray Microscope: :download:`txm_hdf_schema.xml <../../../doc/demo/areadetector/32-ID/nct.xml>` and :download:`txm_detector_attribute.xml <../../../doc/demo/areadetector/32-ID/nctDetectorAttributes.xml>` and the generated HDF5 file: `txm.h5 <https://drive.google.com/open?id=0B78bW1AwveI_UmVvcHVTUzVBVXM>`_ .
     - Micro Tomography Instrument: :download:`mct_hdf_schema.xml <../../../doc/demo/areadetector/32-ID/mct.xml>` and :download:`mct_detector_attribute.xml <../../../doc/demo/areadetector/32-ID/mctDetectorAttributes.xml>`. 
+
+
+XML
+---
+
+To check that the areadetector attributes and layout XML contain a set of matching names run:
+
+::
+
+   $ bash
+   usertxm@txmtwo$ grep -oP 'name=\"\K[^\"]+' TomoScanDetectorAttributes.xml | while read -r line ; do echo -n "$line " ; grep -q "$line" TomoScanLayout.xml && echo true || echo false ; done | grep false
+   usertxm@txmtwo$ grep -oP 'ndattribute=\"\K[^\"]+' TomoScanLayout.xml | while read -r line; do echo -n "$line "; grep -q "$line" TomoScanDetectorAttributes.xml && echo true || echo false ; done |grep false

@@ -8,22 +8,8 @@
     <Attribute name="TopUpStatus"                   type="EPICS_PV"     source="S:TopUpStatus"                           dbrtype="DBR_STRING"  description="Top-up status"/>
     <Attribute name="BeamMode"                      type="EPICS_PV"     source="OPS:message3"                            dbrtype="DBR_STRING"  description="Beam mode"/>
 
-    <Attribute name="SampleX"                       type="EPICS_PV"     source="2bmb:m63.RBV"                            dbrtype="DBR_NATIVE" description="Bottom X stage translation (mm)"/>
-    <Attribute name="SampleOmega"                   type="EPICS_PV"     source="2bmb:m100.RBV"                           dbrtype="DBR_NATIVE" description="Sample rotation (deg)"/>
-    <Attribute name="SampleY"                       type="EPICS_PV"     source="2bmb:m57.RBV"                            dbrtype="DBR_NATIVE" description="Sample vertical height (mm)"/>
-    <Attribute name="SampleXCent"                   type="EPICS_PV"     source="2bmb:m76.RBV"                            dbrtype="DBR_NATIVE" description="Sample X centering (mm)"/>
-    <Attribute name="SampleZCent"                   type="EPICS_PV"     source="2bmb:m77.RBV"                            dbrtype="DBR_NATIVE" description="Sample Z centering (mm)"/>
-    <Attribute name="SamplePitch"                   type="EPICS_PV"     source="2bmb:m54.RBV"                            dbrtype="DBR_NATIVE" description="Sample pitch (deg)"/>
-    <Attribute name="SampleRoll"                    type="EPICS_PV"     source="2bmb:m52.RBV"                            dbrtype="DBR_NATIVE" description="Sample roll (deg)"/>
-
-    <Attribute name="CameraDistance"                type="EPICS_PV"     source="2bmb:m31.RBV"                            dbrtype="DBR_NATIVE"  description="Camera distance (mm)"/>
-
     <Attribute name="BeamlineFilterA"               type="EPICS_PV"     source="2bma:fltr1:select.VAL"                   dbrtype="DBR_NATIVE" description="Beamline filter A"/>
     <Attribute name="BeamlineFilterB"               type="EPICS_PV"     source="2bma:fltr2:select.VAL"                   dbrtype="DBR_NATIVE" description="Beamline filter B"/>
-    <Attribute name="ManualFilters"                 type="EPICS_PV"     source="$(TS)Filters"                            dbrtype="DBR_STRING" description="Manual filters"/>
-
-    <Attribute name="Energy"                        type="EPICS_PV"     source="$(TS)Energy"                             dbrtype="DBR_NATIVE" description="Energy (keV)"/>
-    <Attribute name="EnergyMode"                    type="EPICS_PV"     source="$(TS)EnergyMode"                         dbrtype="DBR_NATIVE" description="Energy Mode"/>
 
     <Attribute name="HSlitsUSCenter"                type="EPICS_PV"     source="2bma:Slit1Hcenter.VAL"                   dbrtype="DBR_NATIVE" description="Horizontal slits up stream center (mm)"/>
     <Attribute name="HSlitsUSSize"                  type="EPICS_PV"     source="2bma:Slit1Hsize.VAL"                     dbrtype="DBR_NATIVE" description="Horizontal slits up stream size (mm)"/>
@@ -48,6 +34,16 @@
     <Attribute name="DMMTable_USY_OB"               type="EPICS_PV"     source="2bma:m26.RBV"                            dbrtype="DBR_NATIVE" description="Multilayer table up stream out board (mm)"/>
     <Attribute name="DMMTable_USY_IB"               type="EPICS_PV"     source="2bma:m27.RBV"                            dbrtype="DBR_NATIVE" description="Multilayer table up stream in board (mm)"/>
     <Attribute name="DMMTable_DSY"                  type="EPICS_PV"     source="2bma:m29.RBV"                            dbrtype="DBR_NATIVE" description="Multilayer table down stream Y(mm)"/>
+
+    <Attribute name="SampleX"                       type="EPICS_PV"     source="2bmb:m63.RBV"                            dbrtype="DBR_NATIVE" description="Bottom X stage translation (mm)"/>
+    <Attribute name="SampleOmega"                   type="EPICS_PV"     source="2bmb:m100.RBV"                           dbrtype="DBR_NATIVE" description="Sample rotation (deg)"/>
+    <Attribute name="RotationSpeed"                 type="EPICS_PV"     source="2bma:m82.VELO"                           dbrtype="DBR_NATIVE" description="Rotation speed (deg/s)"/>
+    <Attribute name="SampleY"                       type="EPICS_PV"     source="2bmb:m57.RBV"                            dbrtype="DBR_NATIVE" description="Sample vertical height (mm)"/>
+    <Attribute name="SampleXCent"                   type="EPICS_PV"     source="2bmb:m76.RBV"                            dbrtype="DBR_NATIVE" description="Sample X centering (mm)"/>
+    <Attribute name="SampleZCent"                   type="EPICS_PV"     source="2bmb:m77.RBV"                            dbrtype="DBR_NATIVE" description="Sample Z centering (mm)"/>
+    <Attribute name="SamplePitch"                   type="EPICS_PV"     source="2bmb:m54.RBV"                            dbrtype="DBR_NATIVE" description="Sample pitch (deg)"/>
+    <Attribute name="SampleRoll"                    type="EPICS_PV"     source="2bmb:m52.RBV"                            dbrtype="DBR_NATIVE" description="Sample roll (deg)"/>
+    <Attribute name="CameraDistance"                type="EPICS_PV"     source="2bmb:m31.RBV"                            dbrtype="DBR_NATIVE"  description="Camera distance (mm)"/>
 
     <Attribute name="DetectorManufacturer"          type="EPICS_PV"     source="$(DET)cam1:Manufacturer_RBV"             dbrtype="DBR_STRING" description="Detector manufacturer"/>
     <Attribute name="DetectorModel"                 type="EPICS_PV"     source="$(DET)cam1:Model_RBV"                    dbrtype="DBR_STRING" description="Detector model"/>
@@ -86,32 +82,25 @@
     <Attribute name="DetectorPixelSize"             type="EPICS_PV"     source="$(TS)DetectorPixelSize"                  dbrtype="DBR_NATIVE" description="Detector pixel size (microns)"/>
     <Attribute name="CameraObjective"               type="EPICS_PV"     source="$(TS)CameraObjective"                    dbrtype="DBR_STRING" description="Objective Magnification"/>
     <Attribute name="CameraTubeLength"              type="EPICS_PV"     source="$(TS)CameraTubeLength"                   dbrtype="DBR_NATIVE" description="Tube length (mm)"/>
-
     <Attribute name="RotationStart"                 type="EPICS_PV"     source="$(TS)RotationStart"                      dbrtype="DBR_NATIVE" description="Rotation start position (deg)"/>
     <Attribute name="RotationStep"                  type="EPICS_PV"     source="$(TS)RotationStep"                       dbrtype="DBR_NATIVE" description="Rotation step size (deg)"/>
-    <Attribute name="RotationSpeed"                 type="EPICS_PV"     source="2bma:m82.VELO"                           dbrtype="DBR_NATIVE" description="Rotation speed (deg/s)"/>
     <Attribute name="NumAngles"                     type="EPICS_PV"     source="$(TS)NumAngles"                          dbrtype="DBR_NATIVE" description="Number of projections"/>
     <Attribute name="ReturnRotation"                type="EPICS_PV"     source="$(TS)ReturnRotation"                     dbrtype="DBR_STRING" description="Return rotation to start after scan"/>
-
     <Attribute name="NumDarkFields"                 type="EPICS_PV"     source="$(TS)NumDarkFields"                      dbrtype="DBR_NATIVE" description="Number of dark fields"/>
     <Attribute name="DarkFieldMode"                 type="EPICS_PV"     source="$(TS)DarkFieldMode"                      dbrtype="DBR_STRING" description="Dark field mode"/>
     <Attribute name="DarkFieldValue"                type="EPICS_PV"     source="$(TS)DarkFieldValue"                     dbrtype="DBR_NATIVE" description="Dark field value"/>
-
     <Attribute name="NumFlatFields"                 type="EPICS_PV"     source="$(TS)NumFlatFields"                      dbrtype="DBR_NATIVE" description="Number of flat fields"/>
     <Attribute name="FlatFieldMode"                 type="EPICS_PV"     source="$(TS)FlatFieldMode"                      dbrtype="DBR_STRING" description="Flat field mode"/>
     <Attribute name="FlatFieldValue"                type="EPICS_PV"     source="$(TS)FlatFieldValue"                     dbrtype="DBR_NATIVE" description="Flat field value"/>
-
     <Attribute name="FlatFieldAxis"                 type="EPICS_PV"     source="$(TS)FlatFieldAxis"                      dbrtype="DBR_STRING" description="Flat field axis"/>
     <Attribute name="SampleInX"                     type="EPICS_PV"     source="$(TS)SampleInX"                          dbrtype="DBR_NATIVE" description="Sample in X position (mm)"/>
     <Attribute name="SampleOutX"                    type="EPICS_PV"     source="$(TS)SampleOutX"                         dbrtype="DBR_NATIVE" description="Sample out X position (mm)"/>
     <Attribute name="SampleInY"                     type="EPICS_PV"     source="$(TS)SampleInY"                          dbrtype="DBR_NATIVE" description="Sample in Y position (mm)"/>
     <Attribute name="SampleOutY"                    type="EPICS_PV"     source="$(TS)SampleOutY"                         dbrtype="DBR_NATIVE" description="Sample out Y position (mm)"/>
-
     <Attribute name="SampleName"                    type="EPICS_PV"     source="$(TS)SampleName"                         dbrtype="DBR_STRING" description="Sample name"/>
     <Attribute name="SampleDescription1"            type="EPICS_PV"     source="$(TS)SampleDescription1"                 dbrtype="DBR_STRING" description="Sample description 1"/>
     <Attribute name="SampleDescription2"            type="EPICS_PV"     source="$(TS)SampleDescription2"                 dbrtype="DBR_STRING" description="Sample description 2"/>
     <Attribute name="SampleDescription3"            type="EPICS_PV"     source="$(TS)SampleDescription3"                 dbrtype="DBR_STRING" description="Sample description 3"/>
-
     <Attribute name="UserLastName"                  type="EPICS_PV"     source="$(TS)UserLastName"                       dbrtype="DBR_STRING" description="User last name"/>
     <Attribute name="UserInstitution"               type="EPICS_PV"     source="$(TS)UserInstitution"                    dbrtype="DBR_STRING" description="User institution"/>
     <Attribute name="UserBadge"                     type="EPICS_PV"     source="$(TS)UserBadge"                          dbrtype="DBR_STRING" description="User badge number"/>
@@ -119,7 +108,10 @@
     <Attribute name="ProposalNumber"                type="EPICS_PV"     source="$(TS)ProposalNumber"                     dbrtype="DBR_STRING" description="Proposal number"/>
     <Attribute name="ProposalTitle"                 type="EPICS_PV"     source="$(TS)ProposalTitle"                      dbrtype="DBR_STRING" description="Proposal title"/>
     <Attribute name="ESAFNumber"                    type="EPICS_PV"     source="$(TS)ESAFNumber"                         dbrtype="DBR_STRING" description="ESAF number"/>
-
     <Attribute name="HDF5FrameLocation"             type="EPICS_PV"     source="$(TS)HDF5Location"                       dbrtype="DBR_STRING" description="Where to store frame in HDF5 file"/>
+
+    <Attribute name="ManualFilters"                 type="EPICS_PV"     source="$(TS)Filters"                            dbrtype="DBR_STRING" description="Manual filters"/>
+    <Attribute name="Energy"                        type="EPICS_PV"     source="$(TS)Energy"                             dbrtype="DBR_NATIVE" description="Energy (keV)"/>
+    <Attribute name="EnergyMode"                    type="EPICS_PV"     source="$(TS)EnergyMode"                         dbrtype="DBR_NATIVE" description="Energy Mode"/>
 
 </Attributes>

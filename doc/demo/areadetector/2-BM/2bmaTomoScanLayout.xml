@@ -213,6 +213,7 @@
           <dataset name="gain_auto" source="ndattribute" ndattribute="GainAuto" when="OnFileClose" />          
           <dataset name="data_type" source="ndattribute" ndattribute="DataType" when="OnFileClose" />       
           <dataset name="pixel_format" source="ndattribute" ndattribute="PixelFormat" when="OnFileClose" />       
+          <dataset name="convert_pixel_format" source="ndattribute" ndattribute="ConvertPixelFormat" when="OnFileClose" />       
           <dataset name="dimension_x" source="ndattribute" ndattribute="MaxSizeX" when="OnFileClose" />
           <dataset name="dimension_y" source="ndattribute" ndattribute="MaxSizeY" when="OnFileClose" />
           <dataset name="binning_x" source="ndattribute" ndattribute="BinX" when="OnFileClose" />

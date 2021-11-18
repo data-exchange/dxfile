@@ -9,7 +9,7 @@ Here are the templates in use at the  Advanced Photon Source:
 
 
 - 2-BM-A/B
-    - Micro Tomography Instrument: :download:`A_station_hdf_schema.xml <../../../doc/demo/areadetector/2-BM/2bmaTomoScanLayout.xml>` plus :download:`A_station_detector_attributes.xml <../../../doc/demo/areadetector/2-BM/2bmaTomoScanDetectorAttributes.xml>` or B_station_detector_attributes.xml <../../../doc/demo/areadetector/2-BM/2bmbTomoScanDetectorAttributes.xml>`
+    - Micro Tomography Instrument: :download:`hdf_schema.xml <../../../doc/demo/areadetector/2-BM/2bmaTomoScanLayout.xml>` plus :download:`A_station_detector_attributes.xml <../../../doc/demo/areadetector/2-BM/2bmaTomoScanDetectorAttributes.xml>` or B_station_detector_attributes.xml <../../../doc/demo/areadetector/2-BM/2bmbTomoScanDetectorAttributes.xml>`
 
 - 6-BM
     - Micro Tomography Instrument: :download:`TomoScanLayout.xml <../../../doc/demo/areadetector/6-BM/pg6bmTomoScanLayout.xml>` and :download:`TomoScanDetectorAttributes.xml <../../../doc/demo/areadetector/6-BM/pg6bmTomoScanDetectorAttributes.xml>`
@@ -21,7 +21,7 @@ Here are the templates in use at the  Advanced Photon Source:
     - Micro-tomography system at 13-BM-D using PG cameras: :download:`tomoLayout.xml <../../../doc/demo/areadetector/13-BM/tomoLayout.xml>` and :download:`tomoDetectorAttributes.xml <../../../doc/demo/areadetector/13-BM/tomoDetectorAttributes.xml>`
 
 - 32-ID 
-    - Transmission X-Ray Microscope: :download:`txm_hdf_schema.xml <../../../doc/demo/areadetector/32-ID/nct.xml>` and :download:`txm_detector_attribute.xml <../../../doc/demo/areadetector/32-ID/nctDetectorAttributes.xml>` and the generated HDF5 file: `txm.h5 <https://drive.google.com/open?id=0B78bW1AwveI_UmVvcHVTUzVBVXM>`_ .
+    - Transmission X-Ray Microscope: :download:`hdf_schema.xml <../../../doc/demo/areadetector/32-ID/TomoScanLayout.xml>` and :download:`txm_detector_attribute.xml <../../../doc/demo/areadetector/32-ID/TomoScanDetectorAttributes.xml>`.
     - Micro Tomography Instrument: :download:`mct_hdf_schema.xml <../../../doc/demo/areadetector/32-ID/mct.xml>` and :download:`mct_detector_attribute.xml <../../../doc/demo/areadetector/32-ID/mctDetectorAttributes.xml>`. 
 
 

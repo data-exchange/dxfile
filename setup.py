@@ -16,6 +16,8 @@ setup(
         'Intended Audience :: Science/Research',
         'License :: BSD-3',
         'Natural Language :: English',
-        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
     ]
 )

@@ -9,13 +9,13 @@ Here are the templates in use at the  Advanced Photon Source:
 
 
 - 2-BM-A/B
-    - Micro Tomography Instrument: :download:`hdf_schema.xml <../../../doc/demo/areadetector/2-BM/2bmaTomoScanLayout.xml>` plus :download:`A_station_detector_attributes.xml <../../../doc/demo/areadetector/2-BM/2bmaTomoScanDetectorAttributes.xml>` or `B_station_detector_attributes.xml <../../../doc/demo/areadetector/2-BM/2bmbTomoScanDetectorAttributes.xml>`
+    - Micro Tomography Instrument: :download:`hdf_schema.xml <../../../doc/demo/areadetector/2-BM/2bmaTomoScanLayout.xml>` plus :download:`A_station_detector_attributes.xml <../../../doc/demo/areadetector/2-BM/2bmaTomoScanDetectorAttributes.xml>` or :download:`B_station_detector_attributes.xml <../../../doc/demo/areadetector/2-BM/2bmbTomoScanDetectorAttributes.xml>`
 
 - 6-BM
     - Micro Tomography Instrument: :download:`TomoScanLayout.xml <../../../doc/demo/areadetector/6-BM/pg6bmTomoScanLayout.xml>` and :download:`TomoScanDetectorAttributes.xml <../../../doc/demo/areadetector/6-BM/pg6bmTomoScanDetectorAttributes.xml>`
 
 - 7-BM
-    - Fast Micro Tomography Instrument: :download:`mct_hdf_schema.xml <../../../doc/demo/areadetector/7-BM/mct_Spinnaker.xml>` and :download:`mct_detector_attribute.xml <../../../doc/demo/areadetector/7-BM/mctDetectorAttributes_Spinnaker.xml>`
+    - Fast Micro Tomography Instrument: :download:`mct_hdf_schema.xml <../../../doc/demo/areadetector/7-BM/TomoScanLayout.xml>` and :download:`mct_detector_attribute.xml <../../../doc/demo/areadetector/7-BM/TomoScanDetectorAttributes.xml>`
 
 - 13-BM
     - Micro-tomography system at 13-BM-D using PG cameras: :download:`tomoLayout.xml <../../../doc/demo/areadetector/13-BM/tomoLayout.xml>` and :download:`tomoDetectorAttributes.xml <../../../doc/demo/areadetector/13-BM/tomoDetectorAttributes.xml>`

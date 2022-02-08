@@ -79,65 +79,65 @@
     <Attribute name="SampleDescription2"            type="EPICS_PV"     source="$(TC)SampleDescription2"                 dbrtype="DBR_STRING"  description="Sample description 2"/>
     <Attribute name="SampleDescription3"            type="EPICS_PV"     source="$(TC)SampleDescription3"                 dbrtype="DBR_STRING"  description="Sample description 3"/>
 
-    <Attribute name="UserName"                      type="EPICS_PV"     source="$(TC)UserName"                           dbrtype="DBR_STRING"  description="User names"/>
-    <Attribute name="UserAffiliation"               type="EPICS_PV"     source="$(TC)UserInstitution"                    dbrtype="DBR_STRING"  description="User institution"/>
+    <Attribute name="UserLastName"                  type="EPICS_PV"     source="$(TC)UserLastName"                           dbrtype="DBR_STRING"  description="User names"/>
+    <Attribute name="UserInstitution"               type="EPICS_PV"     source="$(TC)UserInstitution"                    dbrtype="DBR_STRING"  description="User institution"/>
     <Attribute name="UserBadge"                     type="EPICS_PV"     source="$(TC)UserBadge"                          dbrtype="DBR_STRING"  description="User badge number"/>
     <Attribute name="UserEmail"                     type="EPICS_PV"     source="$(TC)UserEmail"                          dbrtype="DBR_STRING"  description="User e-mail"/>
     <Attribute name="ProposalNumber"                type="EPICS_PV"     source="$(TC)ProposalNumber"                     dbrtype="DBR_STRING"  description="Proposal number"/>
     <Attribute name="ProposalTitle"                 type="EPICS_PV"     source="$(TC)ProposalTitle"                      dbrtype="DBR_STRING"  description="Proposal title"/>
     <Attribute name="ESAFNumber"                    type="EPICS_PV"     source="$(TC)ESAFNumber"                         dbrtype="DBR_STRING"  description="ESAF number"/>
 
-    <Attribute name="WB_Slit_V_Size"                  type="EPICS_PV" source="7bma1:Slit1Vt2.C"                          dbrtype="DBR_DOUBLE"/>
-    <Attribute name="WB_Slit_V_Center"                type="EPICS_PV" source="7bma1:Slit1Vt2.D"                          dbrtype="DBR_DOUBLE"/>
-    <Attribute name="WB_Slit_H_Size"                  type="EPICS_PV" source="7bma1:Slit1Ht2.C"                          dbrtype="DBR_DOUBLE"/>
-    <Attribute name="WB_Slit_H_Center"                type="EPICS_PV" source="7bma1:Slit1Ht2.D"                          dbrtype="DBR_DOUBLE"/>
-    <Attribute name="Filter_1_Material"               type="EPICS_PV" source="7bma1:filter1:Position"                    dbrtype="DBR_STRING"/>
-    <Attribute name="Filter_2_Material"               type="EPICS_PV" source="7bma1:filter2:Position"                    dbrtype="DBR_STRING"/>
+    <Attribute name="WB_Slit_V_Size"                type="EPICS_PV" source="7bma1:Slit1Vt2.C"                          dbrtype="DBR_DOUBLE"/>
+    <Attribute name="WB_Slit_V_Center"              type="EPICS_PV" source="7bma1:Slit1Vt2.D"                          dbrtype="DBR_DOUBLE"/>
+    <Attribute name="WB_Slit_H_Size"                type="EPICS_PV" source="7bma1:Slit1Ht2.C"                          dbrtype="DBR_DOUBLE"/>
+    <Attribute name="WB_Slit_H_Center"              type="EPICS_PV" source="7bma1:Slit1Ht2.D"                          dbrtype="DBR_DOUBLE"/>
+    <Attribute name="Filter_1_Material"             type="EPICS_PV" source="7bma1:filter1:Position"                    dbrtype="DBR_STRING"/>
+    <Attribute name="Filter_2_Material"             type="EPICS_PV" source="7bma1:filter2:Position"                    dbrtype="DBR_STRING"/>
 
-    <Attribute name="SampleX"                         type="EPICS_PV" source="7bmb1:aero:m2.RBV"                         dbrtype="DBR_DOUBLE"/>
-    <Attribute name="SampleY"                         type="EPICS_PV" source="7bmb1:aero:m1.RBV"                         dbrtype="DBR_DOUBLE"/>
-    <Attribute name="CameraX"                         type="EPICS_PV" source="7bmb1:m5.RBV"                              dbrtype="DBR_DOUBLE"/>
-    <Attribute name="CameraY"                         type="EPICS_PV" source="7bmb1:m6.RBV"                              dbrtype="DBR_DOUBLE"/>
-    <Attribute name="CameraRoll"                      type="EPICS_PV" source="7bmb1:m34.RBV"                             dbrtype="DBR_DOUBLE"/>
-    <Attribute name="CameraFocus"                     type="EPICS_PV" source="7bmb1:m38.RBV"                             dbrtype="DBR_DOUBLE"/>
-    <Attribute name="DS_Table_X0_Motor_Position"      type="EPICS_PV" source="7bmb1:m13.RBV"                             dbrtype="DBR_DOUBLE"/>
-    <Attribute name="DS_Table_X2_Motor_Position"      type="EPICS_PV" source="7bmb1:m14.RBV"                             dbrtype="DBR_DOUBLE"/>
-    <Attribute name="DS_Table_Y0_Motor_Position"      type="EPICS_PV" source="7bmb1:m16.RBV"                             dbrtype="DBR_DOUBLE"/>
-    <Attribute name="DS_Table_Y1_Motor_Position"      type="EPICS_PV" source="7bmb1:m17.RBV"                             dbrtype="DBR_DOUBLE"/>
-    <Attribute name="DS_Table_Y2_Motor_Position"      type="EPICS_PV" source="7bmb1:m18.RBV"                             dbrtype="DBR_DOUBLE"/>
-    <Attribute name="DS_Table_Z2_Motor_Position"      type="EPICS_PV" source="7bmb1:m15.RBV"                             dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleX"                       type="EPICS_PV" source="7bmb1:aero:m2.RBV"                         dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleY"                       type="EPICS_PV" source="7bmb1:aero:m1.RBV"                         dbrtype="DBR_DOUBLE"/>
+    <Attribute name="CameraX"                       type="EPICS_PV" source="7bmb1:m5.RBV"                              dbrtype="DBR_DOUBLE"/>
+    <Attribute name="CameraY"                       type="EPICS_PV" source="7bmb1:m6.RBV"                              dbrtype="DBR_DOUBLE"/>
+    <Attribute name="CameraRoll"                    type="EPICS_PV" source="7bmb1:m34.RBV"                             dbrtype="DBR_DOUBLE"/>
+    <Attribute name="CameraFocus"                   type="EPICS_PV" source="7bmb1:m38.RBV"                             dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DS_Table_X0_Motor_Position"    type="EPICS_PV" source="7bmb1:m13.RBV"                             dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DS_Table_X2_Motor_Position"    type="EPICS_PV" source="7bmb1:m14.RBV"                             dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DS_Table_Y0_Motor_Position"    type="EPICS_PV" source="7bmb1:m16.RBV"                             dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DS_Table_Y1_Motor_Position"    type="EPICS_PV" source="7bmb1:m17.RBV"                             dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DS_Table_Y2_Motor_Position"    type="EPICS_PV" source="7bmb1:m18.RBV"                             dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DS_Table_Z2_Motor_Position"    type="EPICS_PV" source="7bmb1:m15.RBV"                             dbrtype="DBR_DOUBLE"/>
 
-    <Attribute name="MW100_ADC_01"                    type="EPICS_PV" source="7bm_dau1:dau:001:ADC"                      dbrtype="DBR_DOUBLE"/>
-    <Attribute name="MW100_ADC_02"                    type="EPICS_PV" source="7bm_dau1:dau:002:ADC"                      dbrtype="DBR_DOUBLE"/>
-    <Attribute name="MW100_ADC_03"                    type="EPICS_PV" source="7bm_dau1:dau:003:ADC"                      dbrtype="DBR_DOUBLE"/>
-    <Attribute name="MW100_ADC_04"                    type="EPICS_PV" source="7bm_dau1:dau:004:ADC"                      dbrtype="DBR_DOUBLE"/>
-    <Attribute name="MW100_ADC_05"                    type="EPICS_PV" source="7bm_dau1:dau:005:ADC"                      dbrtype="DBR_DOUBLE"/>
-    <Attribute name="MW100_ADC_06"                    type="EPICS_PV" source="7bm_dau1:dau:006:ADC"                      dbrtype="DBR_DOUBLE"/>
-    <Attribute name="MW100_ADC_07"                    type="EPICS_PV" source="7bm_dau1:dau:007:ADC"                      dbrtype="DBR_DOUBLE"/>
-    <Attribute name="MW100_ADC_08"                    type="EPICS_PV" source="7bm_dau1:dau:008:ADC"                      dbrtype="DBR_DOUBLE"/>
-    <Attribute name="MW100_ADC_09"                    type="EPICS_PV" source="7bm_dau1:dau:009:ADC"                      dbrtype="DBR_DOUBLE"/>
-    <Attribute name="MW100_ADC_10"                    type="EPICS_PV" source="7bm_dau1:dau:010:ADC"                      dbrtype="DBR_DOUBLE"/>
-    <Attribute name="MW100_ADC_01_Unit"               type="EPICS_PV" source="7bm_dau1:dau:001:Unit"                     dbrtype="DBR_STRING"/>
-    <Attribute name="MW100_ADC_02_Unit"               type="EPICS_PV" source="7bm_dau1:dau:002:Unit"                     dbrtype="DBR_STRING"/>  
-    <Attribute name="MW100_ADC_03_Unit"               type="EPICS_PV" source="7bm_dau1:dau:003:Unit"                     dbrtype="DBR_STRING"/>  
-    <Attribute name="MW100_ADC_04_Unit"               type="EPICS_PV" source="7bm_dau1:dau:004:Unit"                     dbrtype="DBR_STRING"/>  
-    <Attribute name="MW100_ADC_05_Unit"               type="EPICS_PV" source="7bm_dau1:dau:005:Unit"                     dbrtype="DBR_STRING"/>  
-    <Attribute name="MW100_ADC_06_Unit"               type="EPICS_PV" source="7bm_dau1:dau:006:Unit"                     dbrtype="DBR_STRING"/>  
-    <Attribute name="MW100_ADC_07_Unit"               type="EPICS_PV" source="7bm_dau1:dau:007:Unit"                     dbrtype="DBR_STRING"/>  
-    <Attribute name="MW100_ADC_08_Unit"               type="EPICS_PV" source="7bm_dau1:dau:008:Unit"                     dbrtype="DBR_STRING"/>  
-    <Attribute name="MW100_ADC_09_Unit"               type="EPICS_PV" source="7bm_dau1:dau:009:Unit"                     dbrtype="DBR_STRING"/>  
-    <Attribute name="MW100_ADC_10_Unit"               type="EPICS_PV" source="7bm_dau1:dau:010:Unit"                     dbrtype="DBR_STRING"/>  
-    <Attribute name="MW100_ADC_01_Desc"               type="EPICS_PV" source="7bm_dau1:dau:001:Label"                    dbrtype="DBR_STRING"/>
-    <Attribute name="MW100_ADC_02_Desc"               type="EPICS_PV" source="7bm_dau1:dau:002:Label"                    dbrtype="DBR_STRING"/>
-    <Attribute name="MW100_ADC_03_Desc"               type="EPICS_PV" source="7bm_dau1:dau:003:Label"                    dbrtype="DBR_STRING"/>
-    <Attribute name="MW100_ADC_04_Desc"               type="EPICS_PV" source="7bm_dau1:dau:004:Label"                    dbrtype="DBR_STRING"/>
-    <Attribute name="MW100_ADC_05_Desc"               type="EPICS_PV" source="7bm_dau1:dau:005:Label"                    dbrtype="DBR_STRING"/>
-    <Attribute name="MW100_ADC_06_Desc"               type="EPICS_PV" source="7bm_dau1:dau:006:Label"                    dbrtype="DBR_STRING"/>
-    <Attribute name="MW100_ADC_07_Desc"               type="EPICS_PV" source="7bm_dau1:dau:007:Label"                    dbrtype="DBR_STRING"/>
-    <Attribute name="MW100_ADC_08_Desc"               type="EPICS_PV" source="7bm_dau1:dau:008:Label"                    dbrtype="DBR_STRING"/>
-    <Attribute name="MW100_ADC_09_Desc"               type="EPICS_PV" source="7bm_dau1:dau:009:Label"                    dbrtype="DBR_STRING"/> 
-    <Attribute name="MW100_ADC_10_Desc"               type="EPICS_PV" source="7bm_dau1:dau:010:Label"                    dbrtype="DBR_STRING"/>
-    <Attribute name="HDF5FrameLocation"               type="EPICS_PV" source="$(TC)HDF5Location"                         dbrtype="DBR_STRING"  description="where to store frame data"/>
+    <Attribute name="MW100_ADC_01"                  type="EPICS_PV" source="7bm_dau1:dau:001:ADC"                      dbrtype="DBR_DOUBLE"/>
+    <Attribute name="MW100_ADC_02"                  type="EPICS_PV" source="7bm_dau1:dau:002:ADC"                      dbrtype="DBR_DOUBLE"/>
+    <Attribute name="MW100_ADC_03"                  type="EPICS_PV" source="7bm_dau1:dau:003:ADC"                      dbrtype="DBR_DOUBLE"/>
+    <Attribute name="MW100_ADC_04"                  type="EPICS_PV" source="7bm_dau1:dau:004:ADC"                      dbrtype="DBR_DOUBLE"/>
+    <Attribute name="MW100_ADC_05"                  type="EPICS_PV" source="7bm_dau1:dau:005:ADC"                      dbrtype="DBR_DOUBLE"/>
+    <Attribute name="MW100_ADC_06"                  type="EPICS_PV" source="7bm_dau1:dau:006:ADC"                      dbrtype="DBR_DOUBLE"/>
+    <Attribute name="MW100_ADC_07"                  type="EPICS_PV" source="7bm_dau1:dau:007:ADC"                      dbrtype="DBR_DOUBLE"/>
+    <Attribute name="MW100_ADC_08"                  type="EPICS_PV" source="7bm_dau1:dau:008:ADC"                      dbrtype="DBR_DOUBLE"/>
+    <Attribute name="MW100_ADC_09"                  type="EPICS_PV" source="7bm_dau1:dau:009:ADC"                      dbrtype="DBR_DOUBLE"/>
+    <Attribute name="MW100_ADC_10"                  type="EPICS_PV" source="7bm_dau1:dau:010:ADC"                      dbrtype="DBR_DOUBLE"/>
+    <Attribute name="MW100_ADC_01_Unit"             type="EPICS_PV" source="7bm_dau1:dau:001:Unit"                     dbrtype="DBR_STRING"/>
+    <Attribute name="MW100_ADC_02_Unit"             type="EPICS_PV" source="7bm_dau1:dau:002:Unit"                     dbrtype="DBR_STRING"/>  
+    <Attribute name="MW100_ADC_03_Unit"             type="EPICS_PV" source="7bm_dau1:dau:003:Unit"                     dbrtype="DBR_STRING"/>  
+    <Attribute name="MW100_ADC_04_Unit"             type="EPICS_PV" source="7bm_dau1:dau:004:Unit"                     dbrtype="DBR_STRING"/>  
+    <Attribute name="MW100_ADC_05_Unit"             type="EPICS_PV" source="7bm_dau1:dau:005:Unit"                     dbrtype="DBR_STRING"/>  
+    <Attribute name="MW100_ADC_06_Unit"             type="EPICS_PV" source="7bm_dau1:dau:006:Unit"                     dbrtype="DBR_STRING"/>  
+    <Attribute name="MW100_ADC_07_Unit"             type="EPICS_PV" source="7bm_dau1:dau:007:Unit"                     dbrtype="DBR_STRING"/>  
+    <Attribute name="MW100_ADC_08_Unit"             type="EPICS_PV" source="7bm_dau1:dau:008:Unit"                     dbrtype="DBR_STRING"/>  
+    <Attribute name="MW100_ADC_09_Unit"             type="EPICS_PV" source="7bm_dau1:dau:009:Unit"                     dbrtype="DBR_STRING"/>  
+    <Attribute name="MW100_ADC_10_Unit"             type="EPICS_PV" source="7bm_dau1:dau:010:Unit"                     dbrtype="DBR_STRING"/>  
+    <Attribute name="MW100_ADC_01_Desc"             type="EPICS_PV" source="7bm_dau1:dau:001:Label"                    dbrtype="DBR_STRING"/>
+    <Attribute name="MW100_ADC_02_Desc"             type="EPICS_PV" source="7bm_dau1:dau:002:Label"                    dbrtype="DBR_STRING"/>
+    <Attribute name="MW100_ADC_03_Desc"             type="EPICS_PV" source="7bm_dau1:dau:003:Label"                    dbrtype="DBR_STRING"/>
+    <Attribute name="MW100_ADC_04_Desc"             type="EPICS_PV" source="7bm_dau1:dau:004:Label"                    dbrtype="DBR_STRING"/>
+    <Attribute name="MW100_ADC_05_Desc"             type="EPICS_PV" source="7bm_dau1:dau:005:Label"                    dbrtype="DBR_STRING"/>
+    <Attribute name="MW100_ADC_06_Desc"             type="EPICS_PV" source="7bm_dau1:dau:006:Label"                    dbrtype="DBR_STRING"/>
+    <Attribute name="MW100_ADC_07_Desc"             type="EPICS_PV" source="7bm_dau1:dau:007:Label"                    dbrtype="DBR_STRING"/>
+    <Attribute name="MW100_ADC_08_Desc"             type="EPICS_PV" source="7bm_dau1:dau:008:Label"                    dbrtype="DBR_STRING"/>
+    <Attribute name="MW100_ADC_09_Desc"             type="EPICS_PV" source="7bm_dau1:dau:009:Label"                    dbrtype="DBR_STRING"/> 
+    <Attribute name="MW100_ADC_10_Desc"             type="EPICS_PV" source="7bm_dau1:dau:010:Label"                    dbrtype="DBR_STRING"/>
+    <Attribute name="HDF5FrameLocation"             type="EPICS_PV" source="$(TC)HDF5Location"                         dbrtype="DBR_STRING"  description="where to store frame data"/>
 </Attributes>
     
     

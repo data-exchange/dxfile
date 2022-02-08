@@ -77,11 +77,11 @@ class File(h5py.File):
 
     Methods
     -------
-    create_top_level_group(self, group_name)
+    create_top_level_group(self, group_name):
         Helper function for creating a top level group which will 
         update the ``implements`` group automagically.
 
-    add_entry(self, dexen_ob, overwrite=False)
+    add_entry(self, dexen_ob, overwrite=False):
         This method is used to parse DataExchangeEntry objects and 
         add them to the DataExchangeFile.
 

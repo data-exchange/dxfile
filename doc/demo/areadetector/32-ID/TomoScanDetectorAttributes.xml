@@ -169,12 +169,13 @@
     <Attribute name="FullFileName"                  type="EPICS_PV" source="$(DET)HDF1:FullFileName_RBV"                   dbrtype="DBR_STRING"/>
 
 
-    <Attribute name="ScintillatorType"              type="EPICS_PV" source="$(TS)ScintillatorType"                         dbrtype="DBR_STRING"  description="Scintillator type"/>
-    <Attribute name="ScintillatorThickness"         type="EPICS_PV" source="$(TS)ScintillatorThickness"                    dbrtype="DBR_NATIVE"  description="Scintillator thickness (microns)"/>
-    <Attribute name="ImagePixelSize"                type="EPICS_PV" source="$(TS)ImagePixelSize"                           dbrtype="DBR_NATIVE"  description="Pixel size on sample (microns)"/>
-    <Attribute name="DetectorPixelSize"             type="EPICS_PV" source="$(TS)DetectorPixelSize"                        dbrtype="DBR_NATIVE"  description="Detector pixel size (microns)"/>
-    <Attribute name="CameraObjective"               type="EPICS_PV" source="$(TS)CameraObjective"                          dbrtype="DBR_STRING"  description="Objective Magnification"/>
-    <Attribute name="CameraTubeLength"              type="EPICS_PV" source="$(TS)CameraTubeLength"                         dbrtype="DBR_NATIVE"  description="Tube length (mm)"/>      
+    <Attribute name="ScintillatorType"              type="EPICS_PV" source="32id:TXMOptics:ScintillatorType"               dbrtype="DBR_STRING" description="Scintillator type"/>
+    <Attribute name="ScintillatorThickness"         type="EPICS_PV" source="32id:TXMOptics:ScintillatorThickness"          dbrtype="DBR_NATIVE" description="Scintillator thickness (microns)"/>
+    <Attribute name="ImagePixelSize"                type="EPICS_PV" source="32id:TXMOptics:ImagePixelSize"                 dbrtype="DBR_NATIVE" description="Pixel size on sample (microns)"/>
+    <Attribute name="DetectorPixelSize"             type="EPICS_PV" source="32id:TXMOptics:DetectorPixelSize"              dbrtype="DBR_NATIVE" description="Detector pixel size (microns)"/>
+    <Attribute name="CameraObjective"               type="EPICS_PV" source="32id:TXMOptics:CameraObjective"                dbrtype="DBR_STRING" description="Objective Magnification"/>
+    <Attribute name="CameraTubeLength"              type="EPICS_PV" source="32id:TXMOptics:CameraTubeLength"               dbrtype="DBR_NATIVE" description="Tube length (mm)"/>
+    
     <Attribute name="RotationStart"                 type="EPICS_PV" source="$(TS)RotationStart"                            dbrtype="DBR_NATIVE"  description="Rotation start position (deg)"/>
     <Attribute name="RotationStep"                  type="EPICS_PV" source="$(TS)RotationStep"                             dbrtype="DBR_NATIVE"  description="Rotation step size (deg)"/>
     <Attribute name="NumAngles"                     type="EPICS_PV" source="$(TS)NumAngles"                                dbrtype="DBR_NATIVE"  description="Number of projections"/>

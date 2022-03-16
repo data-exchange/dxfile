@@ -423,7 +423,9 @@
           <dataset name="frame_rate" source="ndattribute" ndattribute="FrameRate" when="OnFileClose" /> 
           <dataset name="frame_rate_enable" source="ndattribute" ndattribute="FrameRateEnable" when="OnFileClose" /> 
           <dataset name="acquire_period" source="ndattribute" ndattribute="AcquirePeriod" when="OnFileClose" />
-          <dataset name="exposure_time" source="ndattribute" ndattribute="AcquireTime" when="OnFileClose" />
+          <dataset name="exposure_time" source="ndattribute" ndattribute="AcquireTime" when="OnFileClose">
+            <attribute name="units" source="constant" value="s" type="string"></attribute>
+          </dataset>
           <dataset name="array_counter" source="ndattribute" ndattribute="ArrayCounter" when="OnFileClose" />       
           <dataset name="gain" source="ndattribute" ndattribute="Gain" when="OnFileClose" />          
           <dataset name="gain_auto" source="ndattribute" ndattribute="GainAuto" when="OnFileClose" />          

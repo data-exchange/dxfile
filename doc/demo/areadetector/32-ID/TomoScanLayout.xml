@@ -480,7 +480,7 @@
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
             <dataset name="resolution" source="ndattribute" ndattribute="ImagePixelSize" when="OnFileClose">
-              <attribute name="units" source="constant" value="microns" type="string"></attribute>
+              <attribute name="units" source="constant" value="nm" type="string"></attribute>
             </dataset>
           </group><!-- /objective -->
           <group name="scintillator">

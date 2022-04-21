@@ -14,12 +14,14 @@
 
     <Attribute name="MaxSizeX"              type="EPICS_PV" source="32idcPG3:cam1:MaxSizeX_RBV"                      dbrtype="DBR_LONG"/>
     <Attribute name="MaxSizeY"              type="EPICS_PV" source="32idcPG3:cam1:MaxSizeY_RBV"                      dbrtype="DBR_LONG"/>
-    <Attribute name="MinX"                  type="EPICS_PV" source="32idcPG3:cam1:MinX"                              dbrtype="DBR_LONG"/>
-    <Attribute name="MinY"                  type="EPICS_PV" source="32idcPG3:cam1:MinY"                              dbrtype="DBR_LONG"/>
-    <Attribute name="SizeX"                 type="EPICS_PV" source="32idcPG3:cam1:SizeX"                             dbrtype="DBR_LONG"/>
-    <Attribute name="SizeY"                 type="EPICS_PV" source="32idcPG3:cam1:SizeY"                             dbrtype="DBR_LONG"/>
-    <Attribute name="BinX"                  type="EPICS_PV" source="32idcPG3:cam1:BinX"                              dbrtype="DBR_LONG"/>
-    <Attribute name="BinY"                  type="EPICS_PV" source="32idcPG3:cam1:BinY"                              dbrtype="DBR_LONG"/>
+    <Attribute name="MinX"                  type="EPICS_PV" source="32idcPG3:cam1:MinX_RBV"                          dbrtype="DBR_LONG"/>
+    <Attribute name="MinY"                  type="EPICS_PV" source="32idcPG3:cam1:MinY_RBV"                          dbrtype="DBR_LONG"/>
+    <Attribute name="SizeX"                 type="EPICS_PV" source="32idcPG3:cam1:SizeX_RBV"                         dbrtype="DBR_LONG"/>
+    <Attribute name="SizeY"                 type="EPICS_PV" source="32idcPG3:cam1:SizeY_RBV"                         dbrtype="DBR_LONG"/>
+    <Attribute name="BinX"                  type="EPICS_PV" source="32idcPG3:cam1:BinX_RBV"                          dbrtype="DBR_LONG"/>
+    <Attribute name="BinY"                  type="EPICS_PV" source="32idcPG3:cam1:BinY_RBV"                          dbrtype="DBR_LONG"/>
+    <Attribute name="ArraySizeX"            type="EPICS_PV" source="32idcPG3:cam1:ArraySizeX_RBV"                    dbrtype="DBR_LONG"/>
+    <Attribute name="ArraySizeY"            type="EPICS_PV" source="32idcPG3:cam1:ArraySizeY_RBV"                    dbrtype="DBR_LONG"/>
 
     <Attribute name="AcqTime"               type="EPICS_PV" source="32idcPG3:cam1:AcquireTime_RBV"                   dbrtype="DBR_DOUBLE"/>
     <Attribute name="AcqPeriod"             type="EPICS_PV" source="32idcPG3:cam1:AcquirePeriod_RBV"                 dbrtype="DBR_DOUBLE"/>

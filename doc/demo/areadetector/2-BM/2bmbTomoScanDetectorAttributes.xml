@@ -71,6 +71,8 @@
     <Attribute name="MinY"                          type="EPICS_PV"     source="$(DET)cam1:MinY"                         dbrtype="DBR_NATIVE" description="Detector readout min Y"/>
     <Attribute name="SizeX"                         type="EPICS_PV"     source="$(DET)cam1:SizeX"                        dbrtype="DBR_NATIVE" description="Detector readout size X"/>
     <Attribute name="SizeY"                         type="EPICS_PV"     source="$(DET)cam1:SizeY"                        dbrtype="DBR_NATIVE" description="Detector readout size Y"/>
+    <Attribute name="ArraySizeX"                    type="EPICS_PV"     source="$(DET)cam1:ArraySizeX_RBV"               dbrtype="DBR_LONG"/>
+    <Attribute name="ArraySizeY"                    type="EPICS_PV"     source="$(DET)cam1:ArraySizeY_RBV"               dbrtype="DBR_LONG"/>
 
     <Attribute name="FileName"                      type="EPICS_PV"     source="$(DET)HDF1:FileName"                     dbrtype="DBR_STRING" description="File name "/>
     <Attribute name="FilePath"                      type="EPICS_PV"     source="$(DET)HDF1:FilePath_RBV"                 dbrtype="DBR_STRING" description="File path"/>

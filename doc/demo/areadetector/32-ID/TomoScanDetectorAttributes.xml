@@ -157,12 +157,14 @@
     <Attribute name="PixelFormat"                   type="EPICS_PV" source="$(DET)cam1:PixelFormat_RBV"                    dbrtype="DBR_STRING" description="Readout pixel format"/>
     <Attribute name="MaxSizeX"                      type="EPICS_PV" source="$(DET)cam1:MaxSizeX_RBV"                       dbrtype="DBR_LONG"/>
     <Attribute name="MaxSizeY"                      type="EPICS_PV" source="$(DET)cam1:MaxSizeY_RBV"                       dbrtype="DBR_LONG"/>
-    <Attribute name="BinX"                          type="EPICS_PV" source="$(DET)cam1:BinX"                               dbrtype="DBR_LONG"/>
-    <Attribute name="BinY"                          type="EPICS_PV" source="$(DET)cam1:BinY"                               dbrtype="DBR_LONG"/>
-    <Attribute name="MinX"                          type="EPICS_PV" source="$(DET)cam1:MinX"                               dbrtype="DBR_LONG"/>
-    <Attribute name="MinY"                          type="EPICS_PV" source="$(DET)cam1:MinY"                               dbrtype="DBR_LONG"/>
-    <Attribute name="SizeX"                         type="EPICS_PV" source="$(DET)cam1:SizeX"                              dbrtype="DBR_LONG"/>
-    <Attribute name="SizeY"                         type="EPICS_PV" source="$(DET)cam1:SizeY"                              dbrtype="DBR_LONG"/>
+    <Attribute name="BinX"                          type="EPICS_PV" source="$(DET)cam1:BinX_RBV"                           dbrtype="DBR_LONG"/>
+    <Attribute name="BinY"                          type="EPICS_PV" source="$(DET)cam1:BinY_RBV"                           dbrtype="DBR_LONG"/>
+    <Attribute name="MinX"                          type="EPICS_PV" source="$(DET)cam1:MinX_RBV"                           dbrtype="DBR_LONG"/>
+    <Attribute name="MinY"                          type="EPICS_PV" source="$(DET)cam1:MinY_RBV"                           dbrtype="DBR_LONG"/>
+    <Attribute name="SizeX"                         type="EPICS_PV" source="$(DET)cam1:SizeX_RBV"                          dbrtype="DBR_LONG"/>
+    <Attribute name="SizeY"                         type="EPICS_PV" source="$(DET)cam1:SizeY_RBV"                          dbrtype="DBR_LONG"/>
+    <Attribute name="ArraySizeX"                    type="EPICS_PV" source="$(DET)cam1:ArraySizeX_RBV"                     dbrtype="DBR_LONG"/>
+    <Attribute name="ArraySizeY"                    type="EPICS_PV" source="$(DET)cam1:ArraySizeY_RBV"                     dbrtype="DBR_LONG"/>
 
     <Attribute name="FileName"                      type="EPICS_PV" source="$(DET)HDF1:FileName"                           dbrtype="DBR_STRING" description="File name "/>
     <Attribute name="FilePath"                      type="EPICS_PV" source="$(DET)HDF1:FilePath_RBV"                       dbrtype="DBR_STRING"/>

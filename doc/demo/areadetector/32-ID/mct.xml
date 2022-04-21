@@ -215,6 +215,8 @@
           <dataset name="gain_auto" source="ndattribute" ndattribute="GainAuto" when="OnFileClose" />          
           <dataset name="binning_x" source="ndattribute" ndattribute="BinX" when="OnFileClose" />
           <dataset name="binning_y" source="ndattribute" ndattribute="BinY" when="OnFileClose" />
+          <dataset name="array_size_x" source="ndattribute" ndattribute="ArraySizeX" when="OnFileClose" />
+          <dataset name="array_size_y" source="ndattribute" ndattribute="ArraySizeY" when="OnFileClose" />
           <dataset name="frame_rate" source="ndattribute" ndattribute="FrameRate" when="OnFileClose" /> 
           <dataset name="frame_rate_enable" source="ndattribute" ndattribute="FrameRateEnable" when="OnFileClose" /> 
           <dataset name="exposure_time" source="ndattribute" ndattribute="AcqTime" when="OnFileClose" />

@@ -65,12 +65,12 @@
     <Attribute name="PixelFormat"                   type="EPICS_PV"     source="$(DET)cam1:PixelFormat_RBV"              dbrtype="DBR_STRING" description="Readout pixel format"/>
     <Attribute name="MaxSizeX"                      type="EPICS_PV"     source="$(DET)cam1:MaxSizeX_RBV"                 dbrtype="DBR_NATIVE" description="Detector total X pixels"/>
     <Attribute name="MaxSizeY"                      type="EPICS_PV"     source="$(DET)cam1:MaxSizeY_RBV"                 dbrtype="DBR_NATIVE" description="Detector total Y pixels"/>
-    <Attribute name="BinX"                          type="EPICS_PV"     source="$(DET)cam1:BinX"                         dbrtype="DBR_NATIVE" description="Detector readout bin X"/>
-    <Attribute name="BinY"                          type="EPICS_PV"     source="$(DET)cam1:BinY"                         dbrtype="DBR_NATIVE" description="Detector readout bin Y"/>
-    <Attribute name="MinX"                          type="EPICS_PV"     source="$(DET)cam1:MinX"                         dbrtype="DBR_NATIVE" description="Detector readout min X"/>
-    <Attribute name="MinY"                          type="EPICS_PV"     source="$(DET)cam1:MinY"                         dbrtype="DBR_NATIVE" description="Detector readout min Y"/>
-    <Attribute name="SizeX"                         type="EPICS_PV"     source="$(DET)cam1:SizeX"                        dbrtype="DBR_NATIVE" description="Detector readout size X"/>
-    <Attribute name="SizeY"                         type="EPICS_PV"     source="$(DET)cam1:SizeY"                        dbrtype="DBR_NATIVE" description="Detector readout size Y"/>
+    <Attribute name="BinX"                          type="EPICS_PV"     source="$(DET)cam1:BinX_RBV"                     dbrtype="DBR_NATIVE" description="Detector readout bin X"/>
+    <Attribute name="BinY"                          type="EPICS_PV"     source="$(DET)cam1:BinY_RBV"                     dbrtype="DBR_NATIVE" description="Detector readout bin Y"/>
+    <Attribute name="MinX"                          type="EPICS_PV"     source="$(DET)cam1:MinX_RBV"                     dbrtype="DBR_NATIVE" description="Detector readout min X"/>
+    <Attribute name="MinY"                          type="EPICS_PV"     source="$(DET)cam1:MinY_RBV"                     dbrtype="DBR_NATIVE" description="Detector readout min Y"/>
+    <Attribute name="SizeX"                         type="EPICS_PV"     source="$(DET)cam1:SizeX_RBV"                    dbrtype="DBR_NATIVE" description="Detector readout size X"/>
+    <Attribute name="SizeY"                         type="EPICS_PV"     source="$(DET)cam1:SizeY_RBV"                    dbrtype="DBR_NATIVE" description="Detector readout size Y"/>
     <Attribute name="ArraySizeX"                    type="EPICS_PV"     source="$(DET)cam1:ArraySizeX_RBV"               dbrtype="DBR_LONG"/>
     <Attribute name="ArraySizeY"                    type="EPICS_PV"     source="$(DET)cam1:ArraySizeY_RBV"               dbrtype="DBR_LONG"/>
 

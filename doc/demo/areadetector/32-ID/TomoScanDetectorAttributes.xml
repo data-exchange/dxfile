@@ -117,8 +117,8 @@
     <Attribute name="ZonePlateYDial"                type="EPICS_PV" source="32idcTXM:mcs:c2:m2.DVAL"                       dbrtype="DBR_DOUBLE"/>
     <Attribute name="ZonePlateZDial"                type="EPICS_PV" source="32idcTXM:mcs:c2:m3.DVAL"                       dbrtype="DBR_DOUBLE"/>
 
-    <Attribute name="PhaseRingX"                    type="EPICS_PV" source="32idcSOFT:mmc:c1:m2.VAL"                       dbrtype="DBR_DOUBLE"/>
-    <Attribute name="PhaseRingY"                    type="EPICS_PV" source="32idcSOFT:mmc:c1:m1.VAL"                       dbrtype="DBR_DOUBLE"/>
+    <Attribute name="PhaseRingX"                    type="EPICS_PV" source="32idcSOFT:nf:c0:m3.VAL"                        dbrtype="DBR_DOUBLE"/>
+    <Attribute name="PhaseRingY"                    type="EPICS_PV" source="32idcTXM:mcs:c0:m1.VAL"                        dbrtype="DBR_DOUBLE"/>
     <Attribute name="PhaseRingZ"                    type="EPICS_PV" source="32idcTXM:mxv:c1:m8.VAL"                        dbrtype="DBR_DOUBLE"/>
     <Attribute name="PhaseRingXDial"                type="EPICS_PV" source="32idcSOFT:mmc:c1:m2.DVAL"                      dbrtype="DBR_DOUBLE"/>
     <Attribute name="PhaseRingYDial"                type="EPICS_PV" source="32idcSOFT:mmc:c1:m1.DVAL"                      dbrtype="DBR_DOUBLE"/>

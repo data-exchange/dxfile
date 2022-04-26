@@ -49,12 +49,9 @@
     <Attribute name="CrlPitchDial"                  type="EPICS_PV" source="32idb:m26.DVAL"                                dbrtype="DBR_DOUBLE"/>
     <Attribute name="CrlYawDial"                    type="EPICS_PV" source="32idb:m27.DVAL"                                dbrtype="DBR_DOUBLE"/>
 
-    <Attribute name="MirrorX"                       type="EPICS_PV" source="32idbMIR:m1.RBV"                               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="MirrorY"                       type="EPICS_PV" source="32idbMIR:m2.RBV"                               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="MirrorStripe"                  type="EPICS_PV" source="32idbMIR:seq01:text.VAL"                       dbrtype="DBR_STRING"/>
-
-    <Attribute name="FilterX"                       type="EPICS_PV" source="32idcTXM:xps:c2:m1.VAL"                        dbrtype="DBR_DOUBLE"/>
-    <Attribute name="FilterXDial"                   type="EPICS_PV" source="32idcTXM:xps:c2:m1.DVAL"                       dbrtype="DBR_DOUBLE"/>
+    <Attribute name="MirrorX"                       type="EPICS_PV" source="32idb:m56.RBV"                                 dbrtype="DBR_DOUBLE"/>
+    <Attribute name="MirrorY"                       type="EPICS_PV" source="32idb:m105.RBV"                                dbrtype="DBR_DOUBLE"/>
+    <Attribute name="MirrorStripe"                  type="EPICS_PV" source="32idb:seq01:text.VAL"                          dbrtype="DBR_STRING"/>
 
     <Attribute name="BeamMonitorX"                  type="EPICS_PV" source="32idcTXM:xps:c1:m1.VAL"                        dbrtype="DBR_DOUBLE"/>
     <Attribute name="BeamMonitorY"                  type="EPICS_PV" source="32idcTXM:nf:c0:m3.VAL"                         dbrtype="DBR_DOUBLE"/>
@@ -146,8 +143,8 @@
     <Attribute name="ADCoreVersion"                 type="EPICS_PV" source="$(DET)cam1:ADCoreVersion_RBV"                  dbrtype="DBR_STRING"/>
     <Attribute name="DetectorTemperature"           type="EPICS_PV" source="$(DET)cam1:TemperatureActual"                  dbrtype="DBR_DOUBLE"/>
     <Attribute name="HDFPlugInVersion"              type="EPICS_PV" source="$(DET)HDF1:PluginType_RBV"                     dbrtype="DBR_STRING"/>
-    <Attribute name="FrameRate"                     type="EPICS_PV" source="$(DET)cam1:FrameRateValAbs_RBV"                dbrtype="DBR_DOUBLE"/>
-    <Attribute name="FrameRateEnable"               type="EPICS_PV" source="$(DET)cam1:FrameRateOnOff_RBV"                 dbrtype="DBR_ENUM"/>
+    <Attribute name="FrameRate"                     type="EPICS_PV" source="$(DET)cam1:FrameRate_RBV"                      dbrtype="DBR_DOUBLE"/>
+    <Attribute name="FrameRateEnable"               type="EPICS_PV" source="$(DET)cam1:FrameRateEnable_RBV"                dbrtype="DBR_ENUM"/>
     <Attribute name="AcquirePeriod"                 type="EPICS_PV" source="$(DET)cam1:AcquirePeriod_RBV"                  dbrtype="DBR_DOUBLE"/>
     <Attribute name="AcquireTime"                   type="EPICS_PV" source="$(DET)cam1:AcquireTime_RBV"                    dbrtype="DBR_DOUBLE"/>
     <Attribute name="ArrayCounter"                  type="EPICS_PV" source="$(DET)cam1:ArrayCounter_RBV"                   dbrtype="DBR_LONG"/>

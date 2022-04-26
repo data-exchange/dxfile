@@ -63,7 +63,7 @@
              <dataset name="mirror_x" source="ndattribute" ndattribute="MirrorX" when="OnFileClose">       
                <attribute name="units" source="constant" value="mm" type="string"></attribute>
              </dataset>
-             <dataset name="vertical_steering" source="ndattribute" ndattribute="MirrorY" when="OnFileClose">       
+             <dataset name="mirror_y" source="ndattribute" ndattribute="MirrorY" when="OnFileClose">       
                <attribute name="units" source="constant" value="um" type="string"></attribute>
              </dataset>
              <dataset name="stripe" source="ndattribute" ndattribute="MirrorStripe" when="OnFileClose">       
@@ -186,18 +186,6 @@
             </dataset>
           </group><!-- /setup -->
         </group><!-- /beam_monitor -->
-
-        <group name="attenuator">
-          <dataset name="attenuator_name" source="constant" value="Filter" type="string" when="OnFileClose"></dataset>        
-          <group name="setup">
-            <dataset name="filter_x" source="ndattribute" ndattribute="FilterX" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string"></attribute>
-            </dataset>
-            <dataset name="filter_x_dial" source="ndattribute" ndattribute="FilterXDial" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string"></attribute>
-            </dataset>
-          </group><!-- /setup-->
-        </group><!-- /attenuator -->
 
         <group name="diffuser">
           <dataset name="diffuser_name" source="constant" value="TXM diffuser" type="string" when="OnFileClose"></dataset>        
@@ -420,9 +408,13 @@
             <attribute name="units" source="constant" value="Celsius" type="string"></attribute>
           </dataset>
           <dataset name="HDFplugin_version" source="ndattribute" ndattribute="HDFPlugInVersion" when="OnFileClose" />
-          <dataset name="frame_rate" source="ndattribute" ndattribute="FrameRate" when="OnFileClose" /> 
+          <dataset name="frame_rate" source="ndattribute" ndattribute="FrameRate" when="OnFileClose">
+            <attribute name="units" source="constant" value="fps" type="string"></attribute>
+          </dataset> 
           <dataset name="frame_rate_enable" source="ndattribute" ndattribute="FrameRateEnable" when="OnFileClose" /> 
-          <dataset name="acquire_period" source="ndattribute" ndattribute="AcquirePeriod" when="OnFileClose" />
+          <dataset name="acquire_period" source="ndattribute" ndattribute="AcquirePeriod" when="OnFileClose">
+            <attribute name="units" source="constant" value="s" type="string"></attribute>
+          </dataset>
           <dataset name="exposure_time" source="ndattribute" ndattribute="AcquireTime" when="OnFileClose">
             <attribute name="units" source="constant" value="s" type="string"></attribute>
           </dataset>

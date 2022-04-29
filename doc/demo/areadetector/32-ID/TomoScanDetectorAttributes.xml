@@ -58,8 +58,8 @@
     <Attribute name="BeamMonitorXDial"              type="EPICS_PV" source="32idcTXM:xps:c1:m1.DVAL"                       dbrtype="DBR_DOUBLE"/>
     <Attribute name="BeamMonitorYDial"              type="EPICS_PV" source="32idcTXM:nf:c0:m3.DVAL"                        dbrtype="DBR_DOUBLE"/>
 
-    <Attribute name="Diffuser"                      type="EPICS_PV" source="32idcTXM:xps:c1:m2.VAL"                        dbrtype="DBR_DOUBLE"/>
-    <Attribute name="DiffuserDial"                  type="EPICS_PV" source="32idcTXM:xps:c1:m2.DVAL"                       dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DiffuserX"                     type="EPICS_PV" source="32idcTXM:xps:c1:m2.VAL"                        dbrtype="DBR_DOUBLE"/>
+    <Attribute name="DiffuserXDial"                 type="EPICS_PV" source="32idcTXM:xps:c1:m2.DVAL"                       dbrtype="DBR_DOUBLE"/>
 
     <Attribute name="BeamStopX"                     type="EPICS_PV" source="32idcTXM:mcs:c3:m3.VAL"                        dbrtype="DBR_DOUBLE"/>
     <Attribute name="BeamStopY"                     type="EPICS_PV" source="32idcTXM:mcs:c3:m6.VAL"                        dbrtype="DBR_DOUBLE"/>

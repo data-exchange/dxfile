@@ -174,6 +174,8 @@
     <Attribute name="DetectorPixelSize"             type="EPICS_PV" source="32id:TXMOptics:DetectorPixelSize"              dbrtype="DBR_NATIVE" description="Detector pixel size (microns)"/>
     <Attribute name="CameraObjective"               type="EPICS_PV" source="32id:TXMOptics:CameraObjective"                dbrtype="DBR_STRING" description="Objective Magnification"/>
     <Attribute name="CameraTubeLength"              type="EPICS_PV" source="32id:TXMOptics:CameraTubeLength"               dbrtype="DBR_NATIVE" description="Tube length (mm)"/>
+    <Attribute name="ZonePlateResolution"           type="EPICS_PV" source="32id:TXMOptics:ZonePlateResolution"            dbrtype="DBR_STRING" description="Zone plate resolution (nm)"/>
+    <Attribute name="ZonePlateDescription"          type="EPICS_PV" source="32id:TXMOptics:ZonePlateDescription"           dbrtype="DBR_NATIVE" description="Zone plate description"/>
     
     <Attribute name="RotationStart"                 type="EPICS_PV" source="$(TS)RotationStart"                            dbrtype="DBR_NATIVE"  description="Rotation start position (deg)"/>
     <Attribute name="RotationStep"                  type="EPICS_PV" source="$(TS)RotationStep"                             dbrtype="DBR_NATIVE"  description="Rotation step size (deg)"/>

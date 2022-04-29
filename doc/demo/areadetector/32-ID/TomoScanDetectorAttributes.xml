@@ -106,7 +106,6 @@
     <Attribute name="FurnaceUpdateRate"             type="EPICS_PV" source="32idcTEMP:tc1:out:poll.SCAN"                   dbrtype="DBR_NATIVE"  description="Furnace paramerter update rate (s)"/>
     <Attribute name="FurnaceThermocouple"           type="EPICS_PV" source="32idcSOFT:adam1:tc0.VAL"                       dbrtype="DBR_NATIVE"  description="Furnace thermocouple reading (C)"/>
 
-
     <Attribute name="ZonePlateX"                    type="EPICS_PV" source="32idcTXM:mcs:c2:m1.VAL"                        dbrtype="DBR_DOUBLE"/>
     <Attribute name="ZonePlateY"                    type="EPICS_PV" source="32idcTXM:mcs:c2:m2.VAL"                        dbrtype="DBR_DOUBLE"/>
     <Attribute name="ZonePlateZ"                    type="EPICS_PV" source="32idcTXM:mcs:c2:m3.VAL"                        dbrtype="DBR_DOUBLE"/>
@@ -117,8 +116,8 @@
     <Attribute name="PhaseRingX"                    type="EPICS_PV" source="32idcSOFT:nf:c0:m3.VAL"                        dbrtype="DBR_DOUBLE"/>
     <Attribute name="PhaseRingY"                    type="EPICS_PV" source="32idcTXM:mcs:c0:m1.VAL"                        dbrtype="DBR_DOUBLE"/>
     <Attribute name="PhaseRingZ"                    type="EPICS_PV" source="32idcTXM:mxv:c1:m8.VAL"                        dbrtype="DBR_DOUBLE"/>
-    <Attribute name="PhaseRingXDial"                type="EPICS_PV" source="32idcSOFT:nf:c0:m3.DVAL"                      dbrtype="DBR_DOUBLE"/>
-    <Attribute name="PhaseRingYDial"                type="EPICS_PV" source="32idcTXM:mcs:c0:m1.DVAL"                      dbrtype="DBR_DOUBLE"/>
+    <Attribute name="PhaseRingXDial"                type="EPICS_PV" source="32idcSOFT:nf:c0:m3.DVAL"                       dbrtype="DBR_DOUBLE"/>
+    <Attribute name="PhaseRingYDial"                type="EPICS_PV" source="32idcTXM:mcs:c0:m1.DVAL"                       dbrtype="DBR_DOUBLE"/>
     <Attribute name="PhaseRingZDial"                type="EPICS_PV" source="32idcTXM:mxv:c1:m8.DVAL"                       dbrtype="DBR_DOUBLE"/>
 
     <Attribute name="FlightTubeZ"                   type="EPICS_PV" source="32idcTXM:mxv:c1:m8.VAL"                        dbrtype="DBR_DOUBLE"/>
@@ -167,14 +166,13 @@
     <Attribute name="FilePath"                      type="EPICS_PV" source="$(DET)HDF1:FilePath_RBV"                       dbrtype="DBR_STRING"/>
     <Attribute name="FullFileName"                  type="EPICS_PV" source="$(DET)HDF1:FullFileName_RBV"                   dbrtype="DBR_STRING"/>
 
-
     <Attribute name="ScintillatorType"              type="EPICS_PV" source="32id:TXMOptics:ScintillatorType"               dbrtype="DBR_STRING" description="Scintillator type"/>
     <Attribute name="ScintillatorThickness"         type="EPICS_PV" source="32id:TXMOptics:ScintillatorThickness"          dbrtype="DBR_NATIVE" description="Scintillator thickness (microns)"/>
     <Attribute name="ImagePixelSize"                type="EPICS_PV" source="32id:TXMOptics:ImagePixelSize"                 dbrtype="DBR_NATIVE" description="Pixel size on sample (microns)"/>
     <Attribute name="DetectorPixelSize"             type="EPICS_PV" source="32id:TXMOptics:DetectorPixelSize"              dbrtype="DBR_NATIVE" description="Detector pixel size (microns)"/>
     <Attribute name="CameraObjective"               type="EPICS_PV" source="32id:TXMOptics:CameraObjective"                dbrtype="DBR_STRING" description="Objective Magnification"/>
     <Attribute name="CameraTubeLength"              type="EPICS_PV" source="32id:TXMOptics:CameraTubeLength"               dbrtype="DBR_NATIVE" description="Tube length (mm)"/>
-    <Attribute name="OutermostZoneWidth"           type="EPICS_PV" source="32id:TXMOptics:ZPOutermostZoneWidth"            dbrtype="DBR_STRING" description="Zone outermost zone width (nm)"/>
+    <Attribute name="OutermostZoneWidth"            type="EPICS_PV" source="32id:TXMOptics:ZPOutermostZoneWidth"            dbrtype="DBR_STRING" description="Zone outermost zone width (nm)"/>
     <Attribute name="ZonePlateDescription"          type="EPICS_PV" source="32id:TXMOptics:ZPDescription"                  dbrtype="DBR_NATIVE" description="Zone plate description"/>
     
     <Attribute name="RotationStart"                 type="EPICS_PV" source="$(TS)RotationStart"                            dbrtype="DBR_NATIVE"  description="Rotation start position (deg)"/>

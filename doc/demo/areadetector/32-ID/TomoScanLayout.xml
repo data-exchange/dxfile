@@ -341,7 +341,7 @@
         </group><!-- /sample -->
 
         <group name="zone_plate">
-          <dataset name="resolution" source="ndattribute" ndattribute="ZonePlateResolution" when="OnFileClose"> 
+          <dataset name="outermost_zone_width" source="ndattribute" ndattribute="OutermostZoneWidth" when="OnFileClose"> 
             <attribute name="units" source="constant" value="nm" type="string"></attribute>
           </dataset>      
           <dataset name="description" source="ndattribute" ndattribute="ZonePlateDescription" when="OnFileClose" />        

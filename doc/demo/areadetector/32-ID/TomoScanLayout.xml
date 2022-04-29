@@ -341,7 +341,6 @@
         </group><!-- /sample -->
 
         <group name="zone_plate">
-          <dataset name="name" source="constant" value="TXM Zone Plate" type="string" when="OnFileClose"></dataset>        
           <dataset name="resolution" source="ndattribute" ndattribute="ZonePlateResolution" when="OnFileClose"> 
             <attribute name="units" source="constant" value="nm" type="string"></attribute>
           </dataset>      

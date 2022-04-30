@@ -299,17 +299,17 @@
         <dataset name="start_date" source="ndattribute" ndattribute="DateTimeStart" when="OnFileOpen" />
         <dataset name="end_date" source="ndattribute" ndattribute="DateTimeEnd" when="OnFileClose" />
         <group name="rotation">
-          <dataset name="rotation_start" source="ndattribute" ndattribute="RotationStart" when="OnFileClose">
+          <dataset name="start" source="ndattribute" ndattribute="RotationStart" when="OnFileClose">
                 <attribute name="units" source="constant" value="degrees" type="string" />
           </dataset>
-          <dataset name="rotation_step" source="ndattribute" ndattribute="RotationStep" when="OnFileClose">
+          <dataset name="step" source="ndattribute" ndattribute="RotationStep" when="OnFileClose">
                 <attribute name="units" source="constant" value="degrees" type="string" />
           </dataset>
-          <dataset name="rotation_speed" source="ndattribute" ndattribute="RotationSpeed" when="OnFileClose">
+          <dataset name="speed" source="ndattribute" ndattribute="RotationSpeed" when="OnFileClose">
                 <attribute name="units" source="constant" value="degrees/s" type="string" />
           </dataset>
           <dataset name="num_angles" source="ndattribute" ndattribute="NumAngles" when="OnFileClose" />
-          <dataset name="return_rotation" source="ndattribute" ndattribute="ReturnRotation" when="OnFileClose" />
+          <dataset name="return" source="ndattribute" ndattribute="ReturnRotation" when="OnFileClose" />
        </group><!-- /rotation -->
         <group name="dark_fields">
           <dataset name="number" source="ndattribute" ndattribute="NumDarkFields" when="OnFileClose" />

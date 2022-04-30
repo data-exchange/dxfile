@@ -534,7 +534,7 @@
                 <attribute name="units" source="constant" value="degrees/s" type="string" />
           </dataset>
           <dataset name="num_angles" source="ndattribute" ndattribute="NumAngles" when="OnFileClose" />
-          <dataset name="return_rotation" source="ndattribute" ndattribute="ReturnRotation" when="OnFileClose" />
+          <dataset name="return" source="ndattribute" ndattribute="ReturnRotation" when="OnFileClose" />
        </group><!-- /rotation -->
         <group name="dark_fields">
           <dataset name="number" source="ndattribute" ndattribute="NumDarkFields" when="OnFileClose" />

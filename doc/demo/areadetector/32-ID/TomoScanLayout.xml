@@ -514,7 +514,7 @@
         <group name="experiment">
            <dataset name="proposal" source="ndattribute" ndattribute="ProposalNumber" when="OnFileClose" />
            <dataset name="title" source="ndattribute" ndattribute="ProposalTitle" when="OnFileClose" />
-           <dataset name="ESAF_number" source="ndattribute" ndattribute="ESAFNumber" when="OnFileClose" />
+           <dataset name="safety_id" source="ndattribute" ndattribute="ESAFNumber" when="OnFileClose" />
         </group><!-- /experiment -->
       </group><!-- /sample -->
     </group><!-- /measurement -->

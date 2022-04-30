@@ -36,11 +36,11 @@
     <Attribute name="DMMTable_DSY"                  type="EPICS_PV"     source="2bma:m29.RBV"                            dbrtype="DBR_NATIVE" description="Multilayer table down stream Y(mm)"/>
 
     <Attribute name="SampleX"                       type="EPICS_PV"     source="2bma:m49.RBV"                            dbrtype="DBR_NATIVE" description="Bottom X stage translation (mm)"/>
-    <Attribute name="SampleOmega"                   type="EPICS_PV"     source="2bma:m82.RBV"                            dbrtype="DBR_NATIVE" description="Sample rotation (deg)"/>
-    <Attribute name="RotationSpeed"                 type="EPICS_PV"     source="2bma:m82.VELO"                           dbrtype="DBR_NATIVE" description="Rotation speed (deg/s)"/>
     <Attribute name="SampleY"                       type="EPICS_PV"     source="2bma:m20.RBV"                            dbrtype="DBR_NATIVE" description="Sample vertical height (mm)"/>
-    <Attribute name="SampleXCent"                   type="EPICS_PV"     source="2bmS1:m2.VAL"                            dbrtype="DBR_NATIVE" description="Sample X centering (mm)"/>
-    <Attribute name="SampleZCent"                   type="EPICS_PV"     source="2bmS1:m1.VAL"                            dbrtype="DBR_NATIVE" description="Sample Z centering (mm)"/>
+    <Attribute name="SampleRotary"                  type="EPICS_PV"     source="2bma:m82.RBV"                            dbrtype="DBR_NATIVE" description="Sample rotation (deg)"/>
+    <Attribute name="RotationSpeed"                 type="EPICS_PV"     source="2bma:m82.VELO"                           dbrtype="DBR_NATIVE" description="Rotation speed (deg/s)"/>
+    <Attribute name="SampleTopX"                    type="EPICS_PV"     source="2bmS1:m2.VAL"                            dbrtype="DBR_NATIVE" description="Sample X centering (mm)"/>
+    <Attribute name="SampleTopZ"                    type="EPICS_PV"     source="2bmS1:m1.VAL"                            dbrtype="DBR_NATIVE" description="Sample Z centering (mm)"/>
     <Attribute name="SamplePitch"                   type="EPICS_PV"     source="2bma:m50.RBV"                            dbrtype="DBR_NATIVE" description="Sample pitch (deg)"/>
     <Attribute name="SampleRoll"                    type="EPICS_PV"     source="2bma:m51.RBV"                            dbrtype="DBR_NATIVE" description="Sample roll (deg)"/>
     <Attribute name="CameraDistance"                type="EPICS_PV"     source="2bma:m22.RBV"                            dbrtype="DBR_NATIVE" description="Camera distance (mm)"/>

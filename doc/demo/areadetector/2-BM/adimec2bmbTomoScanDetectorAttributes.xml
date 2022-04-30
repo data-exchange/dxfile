@@ -27,18 +27,18 @@
     <Attribute name="MirrorAngle"                   type="EPICS_PV"     source="2bma:M1t2.C"                             dbrtype="DBR_NATIVE" description="Mirror angle (mrad)"/>
     <Attribute name="MirrorStripe"                  type="EPICS_PV"     source="2bma:mirror1:select.VAL"                 dbrtype="DBR_NATIVE" description="Mirror stripe"/>
 
-    <Attribute name="DMMUSArm"                     type="EPICS_PV"     source="2bma:m30.RBV"                             dbrtype="DBR_NATIVE" description="Multilayer up stream arm (mm)"/>
-    <Attribute name="DMMDSArm"                     type="EPICS_PV"     source="2bma:m31.RBV"                             dbrtype="DBR_NATIVE" description="Multilayer down stream arm (mm) "/>
-    <Attribute name="DMMM2Y"                       type="EPICS_PV"     source="2bma:m32.RBV"                             dbrtype="DBR_NATIVE" description="Multilayer M2 Y (mm)"/>
-    <Attribute name="DMMM2Z"                       type="EPICS_PV"     source="2bma:m8.RBV"                              dbrtype="DBR_NATIVE" description="Multilayer M2 Z (mm)"/>
-    <Attribute name="DMMTable_USY_OB"              type="EPICS_PV"     source="2bma:m26.RBV"                             dbrtype="DBR_NATIVE" description="Multilayer table up stream out board (mm)"/>
-    <Attribute name="DMMTable_USY_IB"              type="EPICS_PV"     source="2bma:m27.RBV"                             dbrtype="DBR_NATIVE" description="Multilayer table up stream in board (mm)"/>
-    <Attribute name="DMMTable_DSY"                 type="EPICS_PV"     source="2bma:m29.RBV"                             dbrtype="DBR_NATIVE" description="Multilayer table down stream Y(mm)"/>
+    <Attribute name="DMMUSArm"                      type="EPICS_PV"     source="2bma:m30.RBV"                            dbrtype="DBR_NATIVE" description="Multilayer up stream arm (mm)"/>
+    <Attribute name="DMMDSArm"                      type="EPICS_PV"     source="2bma:m31.RBV"                            dbrtype="DBR_NATIVE" description="Multilayer down stream arm (mm) "/>
+    <Attribute name="DMMM2Y"                        type="EPICS_PV"     source="2bma:m32.RBV"                            dbrtype="DBR_NATIVE" description="Multilayer M2 Y (mm)"/>
+    <Attribute name="DMMM2Z"                        type="EPICS_PV"     source="2bma:m8.RBV"                             dbrtype="DBR_NATIVE" description="Multilayer M2 Z (mm)"/>
+    <Attribute name="DMMTable_USY_OB"               type="EPICS_PV"     source="2bma:m26.RBV"                            dbrtype="DBR_NATIVE" description="Multilayer table up stream out board (mm)"/>
+    <Attribute name="DMMTable_USY_IB"               type="EPICS_PV"     source="2bma:m27.RBV"                            dbrtype="DBR_NATIVE" description="Multilayer table up stream in board (mm)"/>
+    <Attribute name="DMMTable_DSY"                  type="EPICS_PV"     source="2bma:m29.RBV"                            dbrtype="DBR_NATIVE" description="Multilayer table down stream Y(mm)"/>
 
     <Attribute name="SampleX"                       type="EPICS_PV"     source="2bmb:m63.RBV"                            dbrtype="DBR_NATIVE" description="Bottom X stage translation (mm)"/>
-    <Attribute name="SampleOmega"                   type="EPICS_PV"     source="2bmb:m100.RBV"                           dbrtype="DBR_NATIVE" description="Sample rotation (deg)"/>
-    <Attribute name="RotationSpeed"                 type="EPICS_PV"     source="2bmb:m100.VELO"                          dbrtype="DBR_NATIVE"  description="Rotation speed (deg/s)"/>
     <Attribute name="SampleY"                       type="EPICS_PV"     source="2bmb:m25.RBV"                            dbrtype="DBR_NATIVE" description="Sample vertical height (mm)"/>
+    <Attribute name="SampleRotary"                  type="EPICS_PV"     source="2bmb:m100.RBV"                           dbrtype="DBR_NATIVE" description="Sample rotation (deg)"/>
+    <Attribute name="RotationSpeed"                 type="EPICS_PV"     source="2bmb:m100.VELO"                          dbrtype="DBR_NATIVE"  description="Rotation speed (deg/s)"/>
     <Attribute name="SampleXCent"                   type="EPICS_PV"     source="2bmS1:m2.RBV"                            dbrtype="DBR_NATIVE" description="Sample X centering (mm)"/>
     <Attribute name="SampleZCent"                   type="EPICS_PV"     source="2bmS1:m1.RBV"                            dbrtype="DBR_NATIVE" description="Sample Z centering (mm)"/>
     <Attribute name="SamplePitch"                   type="EPICS_PV"     source="2bmb:m54.RBV"                            dbrtype="DBR_NATIVE" description="Sample pitch (deg)"/>

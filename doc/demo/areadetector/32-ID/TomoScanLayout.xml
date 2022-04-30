@@ -40,25 +40,27 @@
         </group><!-- /source -->
 
         <group name="slits">
-          <dataset name="name" source="constant" value="Slits" type="string" when="OnFileClose" />        
-          <group name="setup">
-            <group name="hslits">
-              <dataset name="us_size" source="ndattribute" ndattribute="HSlitsSize" when="OnFileClose"> 
+          <dataset name="name" source="constant" value="32-ID slits" type="string" when="OnFileClose" />        
+          <group name="horizontal">
+            <group name="setup">
+              <dataset name="size" source="ndattribute" ndattribute="HSlitsSize" when="OnFileClose"> 
                 <attribute name="units" source="constant" value="mm" type="string" />
               </dataset>
-              <dataset name="us_center" source="ndattribute" ndattribute="HSlitsCenter" when="OnFileClose"> 
+              <dataset name="Center" source="ndattribute" ndattribute="HSlitsCenter" when="OnFileClose"> 
                 <attribute name="units" source="constant" value="mm" type="string" />
               </dataset>
-            </group><!-- /hslits -->
-            <group name="vslits">
-              <dataset name="us_size" source="ndattribute" ndattribute="VSlitsSize" when="OnFileClose"> 
+            </group><!-- /setup -->
+          </group><!-- /horizontal -->
+          <group name="vertical">
+            <group name="setup">
+              <dataset name="size" source="ndattribute" ndattribute="VSlitsSize" when="OnFileClose"> 
                 <attribute name="units" source="constant" value="mm" type="string" />
               </dataset>
-              <dataset name="us_center" source="ndattribute" ndattribute="VSlitsCenter" when="OnFileClose"> 
+              <dataset name="center" source="ndattribute" ndattribute="VSlitsCenter" when="OnFileClose"> 
                 <attribute name="units" source="constant" value="mm" type="string" />
               </dataset>
-           </group><!-- /vslits -->
-          </group><!-- /setup -->
+            </group><!-- /setup -->
+          </group><!-- /vertical -->
         </group><!-- /slits -->
 
         <group name="mirror">
@@ -391,7 +393,6 @@
           </group><!-- /setup -->
         </group><!-- /phase_ring -->
 
-
         <group name="flight_tube">
           <dataset name="name" source="constant" value="Flight_tube" type="string" when="OnFileClose"></dataset>        
           <group name="setup">
@@ -492,8 +493,6 @@
             </dataset>
           </group><!-- /scintillator -->
         </group><!-- /detection_system -->
-
-
       </group><!-- /instrument -->
 
       <group name="sample">

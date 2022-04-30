@@ -39,8 +39,8 @@
     <Attribute name="SampleY"                       type="EPICS_PV"     source="2bmb:m25.RBV"                            dbrtype="DBR_NATIVE" description="Sample vertical height (mm)"/>
     <Attribute name="SampleRotary"                  type="EPICS_PV"     source="2bmb:m100.RBV"                           dbrtype="DBR_NATIVE" description="Sample rotation (deg)"/>
     <Attribute name="RotationSpeed"                 type="EPICS_PV"     source="2bmb:m100.VELO"                          dbrtype="DBR_NATIVE"  description="Rotation speed (deg/s)"/>
-    <Attribute name="SampleXCent"                   type="EPICS_PV"     source="2bmS1:m2.RBV"                            dbrtype="DBR_NATIVE" description="Sample X centering (mm)"/>
-    <Attribute name="SampleZCent"                   type="EPICS_PV"     source="2bmS1:m1.RBV"                            dbrtype="DBR_NATIVE" description="Sample Z centering (mm)"/>
+    <Attribute name="SampleTopX"                    type="EPICS_PV"     source="2bmS1:m2.RBV"                            dbrtype="DBR_NATIVE" description="Sample X centering (mm)"/>
+    <Attribute name="SampleTopZ"                    type="EPICS_PV"     source="2bmS1:m1.RBV"                            dbrtype="DBR_NATIVE" description="Sample Z centering (mm)"/>
     <Attribute name="SamplePitch"                   type="EPICS_PV"     source="2bmb:m54.RBV"                            dbrtype="DBR_NATIVE" description="Sample pitch (deg)"/>
     <Attribute name="SampleRoll"                    type="EPICS_PV"     source="2bmb:m7.RBV"                             dbrtype="DBR_NATIVE" description="Sample roll (deg)"/>
     <Attribute name="CameraDistance"                type="EPICS_PV"     source="2bmbAERO:m1.VAL"                         dbrtype="DBR_NATIVE"  description="Camera distance (mm)"/>
@@ -92,6 +92,8 @@
     <Attribute name="FlatFieldMode"                 type="EPICS_PV"     source="$(TS)FlatFieldMode"                      dbrtype="DBR_STRING" description="Flat field mode"/>
     <Attribute name="FlatFieldValue"                type="EPICS_PV"     source="$(TS)FlatFieldValue"                     dbrtype="DBR_NATIVE" description="Flat field value"/>
     <Attribute name="FlatFieldAxis"                 type="EPICS_PV"     source="$(TS)FlatFieldAxis"                      dbrtype="DBR_STRING" description="Flat field axis"/>
+    <Attribute name="FlatExposureTime"              type="EPICS_PV"     source="$(TS)FlatExposureTime"                   dbrtype="DBR_NATIVE" description="Flat field exposure time"/>
+    <Attribute name="DifferentFlatExposure"         type="EPICS_PV"     source="$(TS)DifferentFlatExposure"              dbrtype="DBR_STRING" description="Use normal or different flat exposure time"/>
     <Attribute name="SampleInX"                     type="EPICS_PV"     source="$(TS)SampleInX"                          dbrtype="DBR_NATIVE" description="Sample in X position (mm)"/>
     <Attribute name="SampleOutX"                    type="EPICS_PV"     source="$(TS)SampleOutX"                         dbrtype="DBR_NATIVE" description="Sample out X position (mm)"/>
     <Attribute name="SampleInY"                     type="EPICS_PV"     source="$(TS)SampleInY"                          dbrtype="DBR_NATIVE" description="Sample in Y position (mm)"/>

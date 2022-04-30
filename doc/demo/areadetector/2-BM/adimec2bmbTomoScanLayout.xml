@@ -203,7 +203,7 @@
         <group name="camera_motor_stack">
           <dataset name="name" source="constant" value="2-BM-A camera motor stack" type="string" when="OnFileClose" />        
           <group name="setup">
-            <dataset name="camera_distance" source="ndattribute" ndattribute="CameraDistance" when="OnFileClose"> 
+            <dataset name="z" source="ndattribute" ndattribute="CameraDistance" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string" />
             </dataset>
           </group><!-- /setup -->
@@ -221,7 +221,7 @@
             <attribute name="units" source="constant" value="Celsius" type="string"></attribute>
           </dataset>
           <dataset name="hdfplugin_version" source="ndattribute" ndattribute="HDFPluginVersion" when="OnFileClose" />
-          <dataset name="framerate" source="ndattribute" ndattribute="FrameRate" when="OnFileClose" /> 
+          <dataset name="frame_rate" source="ndattribute" ndattribute="FrameRate" when="OnFileClose" /> 
           <dataset name="acquire_period" source="ndattribute" ndattribute="AcquirePeriod" when="OnFileClose" />
           <dataset name="exposure_period" source="ndattribute" ndattribute="ExposurePeriod" when="OnFileClose" />
           <dataset name="exposure_time" source="ndattribute" ndattribute="AcquireTime" when="OnFileClose">
@@ -322,6 +322,8 @@
                 <attribute name="units" source="constant" value="counts" type="string" />
           </dataset>
           <dataset name="axis" source="ndattribute" ndattribute="FlatFieldAxis" when="OnFileClose" />
+          <dataset name="flat_exposure_time" source="ndattribute" ndattribute="FlatExposureTime" when="OnFileClose" />
+          <dataset name="different_flat_exposure" source="ndattribute" ndattribute="DifferentFlatExposure" when="OnFileClose" />
           <group name="sample">
             <dataset name="in_x" source="ndattribute" ndattribute="SampleInX" when="OnFileClose">
                   <attribute name="units" source="constant" value="mm" type="string" />

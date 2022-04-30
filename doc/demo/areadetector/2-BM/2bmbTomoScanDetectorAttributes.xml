@@ -40,7 +40,7 @@
     <Attribute name="SampleRotary"                  type="EPICS_PV"     source="2bmb:m100.RBV"                           dbrtype="DBR_NATIVE" description="Sample rotation (deg)"/>
     <Attribute name="RotationSpeed"                 type="EPICS_PV"     source="2bmb:m100.VELO"                          dbrtype="DBR_NATIVE" description="Rotation speed (deg/s)"/>
     <Attribute name="SampleTopX"                    type="EPICS_PV"     source="2bmS1:m2.RBV"                            dbrtype="DBR_NATIVE" description="Sample X centering (mm)"/>
-    <Attribute name="SampleTopY"                    type="EPICS_PV"     source="2bmS1:m1.RBV"                            dbrtype="DBR_NATIVE" description="Sample Z centering (mm)"/>
+    <Attribute name="SampleTopZ"                    type="EPICS_PV"     source="2bmS1:m1.RBV"                            dbrtype="DBR_NATIVE" description="Sample Z centering (mm)"/>
     <Attribute name="SamplePitch"                   type="EPICS_PV"     source="2bmb:m54.RBV"                            dbrtype="DBR_NATIVE" description="Sample pitch (deg)"/>
     <Attribute name="SampleRoll"                    type="EPICS_PV"     source="2bmb:m7.RBV"                             dbrtype="DBR_NATIVE" description="Sample roll (deg)"/>
     <Attribute name="CameraDistance"                type="EPICS_PV"     source="2bmbAERO:m1.VAL"                         dbrtype="DBR_NATIVE"  description="Camera distance (mm)"/>

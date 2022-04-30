@@ -66,7 +66,7 @@
              <dataset name="stripe_legend" source="constant" value="0:Cr; 1:Pt" type="string" when="OnFileClose" /> 
           </group><!-- /setup -->
         </group><!-- /mirror -->
-        
+
         <group name="attenuator">
           <dataset name="name" source="constant" value="2-BM-A filters" type="string" when="OnFileClose" />  
           <group name="setup">
@@ -119,7 +119,7 @@
             </dataset>
           </group><!-- /setup -->
         </group><!-- /monochromator -->
-        
+
         <group name="slits">
           <dataset name="name" source="constant" value="2-BM slits" type="string" when="OnFileClose" />        
           <group name="upstream">
@@ -267,7 +267,7 @@
             </dataset>
           </group><!-- /scintillator -->
         </group><!-- /detection_system -->
-
+        
       </group><!-- /instrument -->
 
       <group name="sample">
@@ -279,17 +279,17 @@
           <dataset name="name" source="ndattribute" ndattribute="FileName" when="OnFileClose" />         
           <dataset name="path" source="ndattribute" ndattribute="FilePath" when="OnFileClose" />        
           <dataset name="full_name" source="ndattribute" ndattribute="FullFileName" when="OnFileClose" />         
-        </group><!-- /file -->     
+        </group><!-- /file -->
         <group name="experimenter">
-           <dataset name="experimenter_name" source="ndattribute" ndattribute="UserLastName" when="OnFileClose" />
+           <dataset name="name" source="ndattribute" ndattribute="UserLastName" when="OnFileClose" />
            <dataset name="institution" source="ndattribute" ndattribute="UserInstitution" when="OnFileClose" />
+           <dataset name="user_id" source="ndattribute" ndattribute="UserBadge" when="OnFileClose" />
            <dataset name="email" source="ndattribute" ndattribute="UserEmail" when="OnFileClose" />
-           <dataset name="facility_user_id" source="ndattribute" ndattribute="UserBadge" when="OnFileClose" />
         </group><!-- /experimenter -->
         <group name="experiment">
            <dataset name="proposal" source="ndattribute" ndattribute="ProposalNumber" when="OnFileClose" />
            <dataset name="title" source="ndattribute" ndattribute="ProposalTitle" when="OnFileClose" />
-           <dataset name="ESAF_number" source="ndattribute" ndattribute="ESAFNumber" when="OnFileClose" />
+           <dataset name="safety_id" source="ndattribute" ndattribute="ESAFNumber" when="OnFileClose" />
         </group><!-- /experiment -->
       </group><!-- /sample -->
   </group><!-- /measurement -->
@@ -338,8 +338,8 @@
             <dataset name="out_y" source="ndattribute" ndattribute="SampleOutY" when="OnFileClose">
                   <attribute name="units" source="constant" value="mm" type="string" />
             </dataset>
-         </group><!-- /sample -->
-       </group><!-- /flat_fields -->
+          </group><!-- /sample -->
+        </group><!-- /flat_fields -->
       </group><!-- /acquisition -->
     </group><!-- /process -->
 

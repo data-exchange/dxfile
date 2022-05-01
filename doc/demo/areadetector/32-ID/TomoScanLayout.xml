@@ -550,6 +550,10 @@
                 <attribute name="units" source="constant" value="counts" type="string" />
           </dataset>
           <dataset name="axis" source="ndattribute" ndattribute="FlatFieldAxis" when="OnFileClose" />
+          <dataset name="flat_exposure_time" source="ndattribute" ndattribute="FlatExposureTime" when="OnFileClose">
+            <attribute name="units" source="constant" value="s" type="string"></attribute>
+          </dataset>
+          <dataset name="different_flat_exposure" source="ndattribute" ndattribute="DifferentFlatExposure" when="OnFileClose" />
           <group name="sample">
             <dataset name="in_x" source="ndattribute" ndattribute="SampleInX" when="OnFileClose">
                   <attribute name="units" source="constant" value="mm" type="string" />

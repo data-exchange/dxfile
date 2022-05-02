@@ -276,13 +276,13 @@
         <dataset name="end_date" source="ndattribute" ndattribute="DateTimeEnd" when="OnFileClose" />
         <group name="rotation">
           <dataset name="rotation_start" source="ndattribute" ndattribute="RotationStart" when="OnFileClose">
-                <attribute name="units" source="constant" value="degrees" type="string" />
+                <attribute name="units" source="constant" value="degree" type="string" />
           </dataset>
           <dataset name="rotation_step" source="ndattribute" ndattribute="RotationStep" when="OnFileClose">
-                <attribute name="units" source="constant" value="degrees" type="string" />
+                <attribute name="units" source="constant" value="degree" type="string" />
           </dataset>
           <dataset name="rotation_speed" source="ndattribute" ndattribute="RotationSpeed" when="OnFileClose">
-                <attribute name="units" source="constant" value="degrees/s" type="string" />
+                <attribute name="units" source="constant" value="degree/s" type="string" />
           </dataset>
           <dataset name="num_angles" source="ndattribute" ndattribute="NumAngles" when="OnFileClose" />
           <dataset name="return_rotation" source="ndattribute" ndattribute="ReturnRotation" when="OnFileClose" />

@@ -152,7 +152,7 @@
           <dataset name="sdk_version" source="ndattribute" ndattribute="SDKVersion" when="OnFileClose" />
           <dataset name="driver_version" source="ndattribute" ndattribute="DriverVersion" when="OnFileClose" />
           <dataset name="adcore_version" source="ndattribute" ndattribute="ADCoreVersion" when="OnFileClose" />
-          <dataset name="hdfplugin_version" source="ndattribute" ndattribute="HDFPluginVersion" when="OnFileClose" />
+          <dataset name="hdf_plugin_version" source="ndattribute" ndattribute="HDFPluginVersion" when="OnFileClose" />
 
           <dataset name="maxsize_x" source="ndattribute" ndattribute="MaxSizeX" when="OnFileClose" />
           <dataset name="maxsize_y" source="ndattribute" ndattribute="MaxSizeY" when="OnFileClose" />

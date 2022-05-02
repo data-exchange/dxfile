@@ -220,7 +220,7 @@
           <dataset name="temperature" source="ndattribute" ndattribute="DetectorTemperature" when="OnFileClose">
             <attribute name="units" source="constant" value="Celsius" type="string"></attribute>
           </dataset>
-          <dataset name="hdfplugin_version" source="ndattribute" ndattribute="HDFPluginVersion" when="OnFileClose" />
+          <dataset name="hdf_plugin_version" source="ndattribute" ndattribute="HDFPluginVersion" when="OnFileClose" />
           <dataset name="frame_rate" source="ndattribute" ndattribute="FrameRate" when="OnFileClose" /> 
           <dataset name="frame_rate_enable" source="ndattribute" ndattribute="FrameRateEnable" when="OnFileClose" /> 
           <dataset name="acquire_period" source="ndattribute" ndattribute="AcquirePeriod" when="OnFileClose" />

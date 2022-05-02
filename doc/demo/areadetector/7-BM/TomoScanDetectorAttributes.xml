@@ -14,21 +14,23 @@
 
     <Attribute name="MaxSizeX"                      type="EPICS_PV"     source="$(DET)cam1:MaxSizeX_RBV"                 dbrtype="DBR_NATIVE"  description="Detector total X pixels"/>
     <Attribute name="MaxSizeY"                      type="EPICS_PV"     source="$(DET)cam1:MaxSizeY_RBV"                 dbrtype="DBR_NATIVE"  description="Detector total Y pixels"/>
+    <Attribute name="ArraySizeX"                    type="EPICS_PV"     source="$(DET)cam1:ArraySizeX_RBV"               dbrtype="DBR_LONG"/>
+    <Attribute name="ArraySizeY"                    type="EPICS_PV"     source="$(DET)cam1:ArraySizeY_RBV"               dbrtype="DBR_LONG"/>
     <Attribute name="MinX"                          type="EPICS_PV"     source="$(DET)cam1:MinX"                         dbrtype="DBR_NATIVE"  description="Detector readout min X"/>
     <Attribute name="MinY"                          type="EPICS_PV"     source="$(DET)cam1:MinY"                         dbrtype="DBR_NATIVE"  description="Detector readout min Y"/>
     <Attribute name="SizeX"                         type="EPICS_PV"     source="$(DET)cam1:SizeX"                        dbrtype="DBR_NATIVE"  description="Detector readout size X"/>
     <Attribute name="SizeY"                         type="EPICS_PV"     source="$(DET)cam1:SizeY"                        dbrtype="DBR_NATIVE"  description="Detector readout size Y"/>
     <Attribute name="BinX"                          type="EPICS_PV"     source="$(DET)cam1:BinX"                         dbrtype="DBR_NATIVE"  description="Detector readout bin X"/>
     <Attribute name="BinY"                          type="EPICS_PV"     source="$(DET)cam1:BinY"                         dbrtype="DBR_NATIVE"  description="Detector readout bin Y"/>
-    <Attribute name="ArraySizeX"                    type="EPICS_PV"     source="$(DET)cam1:ArraySizeX_RBV"               dbrtype="DBR_LONG"/>
-    <Attribute name="ArraySizeY"                    type="EPICS_PV"     source="$(DET)cam1:ArraySizeY_RBV"               dbrtype="DBR_LONG"/>
 
     <Attribute name="AcquireTime"                   type="EPICS_PV"     source="$(DET)cam1:AcquireTime_RBV"              dbrtype="DBR_NATIVE"  description="Exposure time"/>
+    <Attribute name="ExposureAuto"                  type="EPICS_PV"     source="$(DET)cam1:ExposureAuto_RBV"             dbrtype="DBR_NATIVE" description="Exposure auto"/>
     <Attribute name="AcquirePeriod"                 type="EPICS_PV"     source="$(DET)cam1:AcquirePeriod_RBV"            dbrtype="DBR_NATIVE"  description="Exposure period"/>
     <Attribute name="FrameRate"                     type="EPICS_PV"     source="$(DET)cam1:FrameRate_RBV"                dbrtype="DBR_NATIVE"  description="Frame rate"/>
     <Attribute name="FrameRateEnable"               type="EPICS_PV"     source="$(DET)cam1:FrameRateEnable_RBV"          dbrtype="DBR_STRING"  description="Frame rate enable"/>
     <Attribute name="Gain"                          type="EPICS_PV"     source="$(DET)cam1:Gain_RBV"                     dbrtype="DBR_NATIVE"  description="Gain"/>
     <Attribute name="GainAuto"                      type="EPICS_PV"     source="$(DET)cam1:GainAuto_RBV"                 dbrtype="DBR_NATIVE"  description="Gain auto"/>
+    <Attribute name="DataType"                      type="EPICS_PV"     source="$(DET)cam1:DataType_RBV"                 dbrtype="DBR_STRING"/>
     <Attribute name="PixelFormat"                   type="EPICS_PV"     source="$(DET)cam1:PixelFormat_RBV"              dbrtype="DBR_STRING"  description="Readout pixel format"/>
     <Attribute name="ConvertPixelFormat"            type="EPICS_PV"     source="$(DET)cam1:ConvertPixelFormat_RBV"       dbrtype="DBR_STRING"  description="Converted pixel format"/>
     <Attribute name="ArrayCounter"                  type="EPICS_PV"     source="$(DET)cam1:ArrayCounter_RBV"             dbrtype="DBR_NATIVE"  description="Frames collected to date"/>

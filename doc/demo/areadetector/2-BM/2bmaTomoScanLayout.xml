@@ -87,7 +87,7 @@
         </group><!-- /attenuator_1 -->
 
         <group name="monochromator">
-          <dataset name="name" source="constant" value="2-BM DMM" type="string" when="OnFileClose" />   
+          <dataset name="name" source="constant" value="2-BM-A double multilayer monochromator" type="string" when="OnFileClose" />   
 
           <dataset name="energy" source="ndattribute" ndattribute="Energy" when="OnFileClose">
             <attribute name="units" source="constant" value="keV" type="string"></attribute>

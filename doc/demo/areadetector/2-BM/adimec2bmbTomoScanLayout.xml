@@ -218,15 +218,31 @@
           <dataset name="driver_version" source="ndattribute" ndattribute="DriverVersion" when="OnFileClose" />
           <dataset name="adcore_version" source="ndattribute" ndattribute="ADCoreVersion" when="OnFileClose" />
           <dataset name="hdfplugin_version" source="ndattribute" ndattribute="HDFPluginVersion" when="OnFileClose" />
-          <dataset name="max_size_x" source="ndattribute" ndattribute="MaxSizeX" when="OnFileClose" />
-          <dataset name="max_size_y" source="ndattribute" ndattribute="MaxSizeY" when="OnFileClose" />
-          <dataset name="array_size_x" source="ndattribute" ndattribute="ArraySizeX" when="OnFileClose" />
-          <dataset name="array_size_y" source="ndattribute" ndattribute="ArraySizeY" when="OnFileClose" />
+          <dataset name="max_size_x" source="ndattribute" ndattribute="MaxSizeX" when="OnFileClose"> 
+            <attribute name="units" source="constant" value="pixel" type="string" />
+          </dataset>
+          <dataset name="max_size_y" source="ndattribute" ndattribute="MaxSizeY" when="OnFileClose"> 
+            <attribute name="units" source="constant" value="pixel" type="string" />
+          </dataset>
+          <dataset name="array_size_x" source="ndattribute" ndattribute="ArraySizeX" when="OnFileClose"> 
+            <attribute name="units" source="constant" value="pixel" type="string" />
+          </dataset>
+          <dataset name="array_size_y" source="ndattribute" ndattribute="ArraySizeY" when="OnFileClose"> 
+            <attribute name="units" source="constant" value="pixel" type="string" />
+          </dataset>
           <group name="roi">
-            <dataset name="min_x" source="ndattribute" ndattribute="MinX" when="OnFileClose" />
-            <dataset name="size_x" source="ndattribute" ndattribute="SizeX" when="OnFileClose" />
-            <dataset name="min_y" source="ndattribute" ndattribute="MinY" when="OnFileClose" />
-            <dataset name="size_y" source="ndattribute" ndattribute="SizeY" when="OnFileClose" />
+            <dataset name="min_x" source="ndattribute" ndattribute="MinX" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="pixel" type="string" />
+            </dataset>
+            <dataset name="size_x" source="ndattribute" ndattribute="SizeX" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="pixel" type="string" />
+            </dataset>
+            <dataset name="min_y" source="ndattribute" ndattribute="MinY" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="pixel" type="string" />
+            </dataset>
+            <dataset name="size_y" source="ndattribute" ndattribute="SizeY" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="pixel" type="string" />
+            </dataset>
           </group><!-- /roi -->    
           <dataset name="binning_x" source="ndattribute" ndattribute="BinX" when="OnFileClose" />
           <dataset name="binning_y" source="ndattribute" ndattribute="BinY" when="OnFileClose" />

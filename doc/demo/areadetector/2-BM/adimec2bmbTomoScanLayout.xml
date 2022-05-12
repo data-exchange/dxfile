@@ -257,7 +257,7 @@
           <dataset name="data_type" source="ndattribute" ndattribute="DataType" when="OnFileClose" />       
           <dataset name="array_counter" source="ndattribute" ndattribute="ArrayCounter" when="OnFileClose" />       
           <dataset name="temperature" source="ndattribute" ndattribute="DetectorTemperature" when="OnFileClose">
-            <attribute name="units" source="constant" value="Celsius" type="string"></attribute>
+            <attribute name="units" source="constant" value="°C" type="string"></attribute>
           </dataset>
           <dataset name="pixel_size" source="ndattribute" ndattribute="DetectorPixelSize" when="OnFileClose">
             <attribute name="units" source="constant" value="μm" type="string"></attribute>

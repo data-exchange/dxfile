@@ -280,26 +280,26 @@
         <group name="sample_environment">
           <group name="furnace">
             <dataset name="temperature" source="ndattribute" ndattribute="FurnaceTemperature" when="OnFileClose">
-              <attribute name="units" source="constant" value="C" type="string"></attribute>
+              <attribute name="units" source="constant" value="°C" type="string"></attribute>
             </dataset>
             <dataset name="pid_mode" source="ndattribute" ndattribute="FurnacePIDMode" when="OnFileClose"></dataset>
             <dataset name="p" source="ndattribute" ndattribute="FurnaceP" when="OnFileClose"></dataset>
             <dataset name="i" source="ndattribute" ndattribute="FurnaceI" when="OnFileClose"></dataset>
             <dataset name="d" source="ndattribute" ndattribute="FurnaceD" when="OnFileClose"></dataset>
             <dataset name="ramp_temperature" source="ndattribute" ndattribute="FurnaceRampTemperature" when="OnFileClose">
-              <attribute name="units" source="constant" value="C" type="string"></attribute>
+              <attribute name="units" source="constant" value="°C" type="string"></attribute>
             </dataset>
             <dataset name="set_point" source="ndattribute" ndattribute="FurnaceSetPoint" when="OnFileClose">
-              <attribute name="units" source="constant" value="C" type="string"></attribute>
+              <attribute name="units" source="constant" value="°C" type="string"></attribute>
             </dataset>
             <dataset name="ramp_rate" source="ndattribute" ndattribute="FurnaceRampRate" when="OnFileClose">
-              <attribute name="units" source="constant" value="C/s" type="string"></attribute>
+              <attribute name="units" source="constant" value="°C/s" type="string"></attribute>
             </dataset>
             <dataset name="update_rate" source="ndattribute" ndattribute="FurnaceUpdateRate" when="OnFileClose">
               <attribute name="units" source="constant" value="s" type="string"></attribute>
             </dataset>
             <dataset name="thermocouple" source="ndattribute" ndattribute="FurnaceThermocouple" when="OnFileClose">
-              <attribute name="units" source="constant" value="C" type="string"></attribute>
+              <attribute name="units" source="constant" value="°C" type="string"></attribute>
             </dataset>
           </group><!-- /furnace -->
         </group><!-- /sample_environment -->
@@ -460,7 +460,7 @@
           <dataset name="convert_pixel_format" source="ndattribute" ndattribute="ConvertPixelFormat" when="OnFileClose" /> 
           <dataset name="array_counter" source="ndattribute" ndattribute="ArrayCounter" when="OnFileClose" />       
           <dataset name="temperature" source="ndattribute" ndattribute="DetectorTemperature" when="OnFileClose">
-            <attribute name="units" source="constant" value="Celsius" type="string"></attribute>
+            <attribute name="units" source="constant" value="°C" type="string"></attribute>
           </dataset>
           <dataset name="pixel_size" source="ndattribute" ndattribute="DetectorPixelSize" when="OnFileClose">
             <attribute name="units" source="constant" value="μm" type="string"></attribute>

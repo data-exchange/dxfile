@@ -97,10 +97,10 @@
 
           <group name="setup">
            <dataset name="us_arm" source="ndattribute" ndattribute="DMMUSArm" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="degree" type="string" />
+              <attribute name="units" source="constant" value="°" type="string" />
             </dataset>
             <dataset name="ds_arm" source="ndattribute" ndattribute="DMMDSArm" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="degree" type="string" />
+              <attribute name="units" source="constant" value="°" type="string" />
             </dataset>
             <dataset name="m2_y" source="ndattribute" ndattribute="DMMM2Y" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string" />
@@ -175,10 +175,10 @@
           </dataset>
           <group name="setup">
             <dataset name="pitch" source="ndattribute" ndattribute="SamplePitch" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="deg" type="string" />
+              <attribute name="units" source="constant" value="°" type="string" />
             </dataset>
             <dataset name="roll" source="ndattribute" ndattribute="SampleRoll" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="deg" type="string" />
+              <attribute name="units" source="constant" value="°" type="string" />
             </dataset>
             <dataset name="x" source="ndattribute" ndattribute="SampleX" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string" />
@@ -187,7 +187,7 @@
               <attribute name="units" source="constant" value="mm" type="string" />
             </dataset>
             <dataset name="rotary" source="ndattribute" ndattribute="SampleRotary" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="deg" type="string" />
+              <attribute name="units" source="constant" value="°" type="string" />
             </dataset>
             <group name="top">
               <dataset name="x" source="ndattribute" ndattribute="SampleTopX" when="OnFileClose"> 
@@ -260,7 +260,7 @@
             <attribute name="units" source="constant" value="Celsius" type="string"></attribute>
           </dataset>
           <dataset name="pixel_size" source="ndattribute" ndattribute="DetectorPixelSize" when="OnFileClose">
-            <attribute name="units" source="constant" value="microns" type="string"></attribute>
+            <attribute name="units" source="constant" value="μm" type="string"></attribute>
           </dataset>
         </group><!-- /detector -->        
 
@@ -271,13 +271,13 @@
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
             <dataset name="resolution" source="ndattribute" ndattribute="ImagePixelSize" when="OnFileClose">
-              <attribute name="units" source="constant" value="microns" type="string"></attribute>
+              <attribute name="units" source="constant" value="μm" type="string"></attribute>
             </dataset>
           </group><!-- /objective -->
           <group name="scintillator">
             <dataset name="type" source="ndattribute" ndattribute="ScintillatorType" when="OnFileClose" />
             <dataset name="active_thickness" source="ndattribute" ndattribute="ScintillatorThickness" when="OnFileClose" >
-              <attribute name="units" source="constant" value="microns" type="string" />            
+              <attribute name="units" source="constant" value="μm" type="string" />            
             </dataset>
           </group><!-- /scintillator -->
         </group><!-- /detection_system -->

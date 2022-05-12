@@ -55,7 +55,7 @@
               <attribute name="units" source="constant" value="mm" type="string" />
             </dataset>
             <dataset name="rotation" source="ndattribute" ndattribute="CameraRoll" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="deg" type="string" />
+              <attribute name="units" source="constant" value="°" type="string" />
             </dataset>
             <dataset name="focus" source="ndattribute" ndattribute="CameraFocus" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string" />
@@ -185,7 +185,7 @@
             <attribute name="units" source="constant" value="Celsius" type="string"></attribute>
           </dataset>
           <dataset name="pixel_size" source="ndattribute" ndattribute="DetectorPixelSize" when="OnFileClose">
-            <attribute name="units" source="constant" value="microns" type="string"></attribute>
+            <attribute name="units" source="constant" value="μm" type="string"></attribute>
           </dataset>
         </group><!-- /detector -->
 
@@ -196,13 +196,13 @@
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
             </dataset>
             <dataset name="resolution" source="ndattribute" ndattribute="ImagePixelSize" when="OnFileClose">
-              <attribute name="units" source="constant" value="microns" type="string"></attribute>
+              <attribute name="units" source="constant" value="μm" type="string"></attribute>
             </dataset>
           </group><!-- /objective -->
           <group name="scintillator">
             <dataset name="type" source="ndattribute" ndattribute="ScintillatorType" when="OnFileClose" />
             <dataset name="active_thickness" source="ndattribute" ndattribute="ScintillatorThickness" when="OnFileClose" >
-              <attribute name="units" source="constant" value="microns" type="string" />            
+              <attribute name="units" source="constant" value="μm" type="string" />            
             </dataset>
           </group><!-- /scintillator -->
         </group><!-- /detection_system -->
@@ -284,13 +284,13 @@
         <dataset name="end_date" source="ndattribute" ndattribute="DateTimeEnd" when="OnFileClose" />
         <group name="rotation">
           <dataset name="start" source="ndattribute" ndattribute="RotationStart" when="OnFileClose">
-                <attribute name="units" source="constant" value="degree" type="string" />
+                <attribute name="units" source="constant" value="°" type="string" />
           </dataset>
           <dataset name="step" source="ndattribute" ndattribute="RotationStep" when="OnFileClose">
-                <attribute name="units" source="constant" value="degree" type="string" />
+                <attribute name="units" source="constant" value="°" type="string" />
           </dataset>
           <dataset name="speed" source="ndattribute" ndattribute="RotationSpeed" when="OnFileClose">
-                <attribute name="units" source="constant" value="degree/s" type="string" />
+                <attribute name="units" source="constant" value="°/s" type="string" />
           </dataset>
           <dataset name="num_angles" source="ndattribute" ndattribute="NumAngles" when="OnFileClose" />
           <dataset name="return" source="ndattribute" ndattribute="ReturnRotation" when="OnFileClose" />

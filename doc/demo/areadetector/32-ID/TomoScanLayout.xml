@@ -85,13 +85,13 @@
           </dataset>
           <group name="setup">
             <dataset name="theta" source="ndattribute" ndattribute="DCMTheta" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="degree" type="string"></attribute>
+              <attribute name="units" source="constant" value="°" type="string"></attribute>
             </dataset>
             <dataset name="theta2" source="ndattribute" ndattribute="DCMTheta2" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="degree" type="string"></attribute>
+              <attribute name="units" source="constant" value="°" type="string"></attribute>
             </dataset>
             <dataset name="chi2" source="ndattribute" ndattribute="DCMChi2" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="degree" type="string"></attribute>
+              <attribute name="units" source="constant" value="°" type="string"></attribute>
             </dataset>
             <dataset name="x" source="ndattribute" ndattribute="DCMX" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
@@ -113,13 +113,13 @@
             </dataset>
 
             <dataset name="theta_dial" source="ndattribute" ndattribute="DCMThetaDial" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="degree" type="string"></attribute>
+              <attribute name="units" source="constant" value="°" type="string"></attribute>
             </dataset>
             <dataset name="theta2_dial" source="ndattribute" ndattribute="DCMTheta2Dial" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="degree" type="string"></attribute>
+              <attribute name="units" source="constant" value="°" type="string"></attribute>
             </dataset>
             <dataset name="chi2_dial" source="ndattribute" ndattribute="DCMChi2Dial" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="degree" type="string"></attribute>
+              <attribute name="units" source="constant" value="°" type="string"></attribute>
             </dataset>
             <dataset name="x_dial" source="ndattribute" ndattribute="DCMXDial" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string"></attribute>
@@ -447,7 +447,7 @@
             <attribute name="units" source="constant" value="Celsius" type="string"></attribute>
           </dataset>
           <dataset name="pixel_size" source="ndattribute" ndattribute="DetectorPixelSize" when="OnFileClose">
-            <attribute name="units" source="constant" value="microns" type="string"></attribute>
+            <attribute name="units" source="constant" value="μm" type="string"></attribute>
           </dataset>
         </group><!-- /detector -->
 
@@ -494,7 +494,7 @@
           <group name="scintillator">
             <dataset name="type" source="ndattribute" ndattribute="ScintillatorType" when="OnFileClose" />
             <dataset name="active_thickness" source="ndattribute" ndattribute="ScintillatorThickness" when="OnFileClose" >
-              <attribute name="units" source="constant" value="microns" type="string" />            
+              <attribute name="units" source="constant" value="μm" type="string" />            
             </dataset>
           </group><!-- /scintillator -->
         </group><!-- /detection_system -->
@@ -530,13 +530,13 @@
         <dataset name="end_date" source="ndattribute" ndattribute="DateTimeEnd" when="OnFileClose" />
         <group name="rotation">
           <dataset name="start" source="ndattribute" ndattribute="RotationStart" when="OnFileClose">
-                <attribute name="units" source="constant" value="degree" type="string" />
+                <attribute name="units" source="constant" value="°" type="string" />
           </dataset>
           <dataset name="step" source="ndattribute" ndattribute="RotationStep" when="OnFileClose">
-                <attribute name="units" source="constant" value="degree" type="string" />
+                <attribute name="units" source="constant" value="°" type="string" />
           </dataset>
           <dataset name="speed" source="ndattribute" ndattribute="RotationSpeed" when="OnFileClose">
-                <attribute name="units" source="constant" value="degree/s" type="string" />
+                <attribute name="units" source="constant" value="°/s" type="string" />
           </dataset>
           <dataset name="num_angles" source="ndattribute" ndattribute="NumAngles" when="OnFileClose" />
           <dataset name="return" source="ndattribute" ndattribute="ReturnRotation" when="OnFileClose" />

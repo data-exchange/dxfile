@@ -118,4 +118,7 @@
     <Attribute name="Energy"                        type="EPICS_PV"     source="$(TS)Energy"                             dbrtype="DBR_NATIVE" description="Energy (keV)"/>
     <Attribute name="EnergyMode"                    type="EPICS_PV"     source="$(TS)EnergyMode"                         dbrtype="DBR_NATIVE" description="Energy Mode"/>
 
+    <Attribute name="ScanType"                      type="EPICS_PV"     source="$(TS)ScanType"                           dbrtype="DBR_STRING" description="Scan type"/>
+    <Attribute name="FlipStitch"                    type="EPICS_PV"     source="$(TS)FlipStitch"                         dbrtype="DBR_STRING" description="Flip and stitch"/>
+
 </Attributes>

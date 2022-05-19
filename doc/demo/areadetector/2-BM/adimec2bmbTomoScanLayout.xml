@@ -310,6 +310,8 @@
          
     <group name="process">
       <group name="acquisition">
+        <dataset name="scan_type" source="ndattribute" ndattribute="ScanType" when="OnFileOpen" />
+        <dataset name="flip_stitch" source="ndattribute" ndattribute="FlipStitch" when="OnFileOpen" />
         <dataset name="start_date" source="ndattribute" ndattribute="DateTimeStart" when="OnFileOpen" />
         <dataset name="end_date" source="ndattribute" ndattribute="DateTimeEnd" when="OnFileClose" />
         <group name="rotation">

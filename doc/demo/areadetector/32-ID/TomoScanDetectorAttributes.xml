@@ -209,6 +209,9 @@
     <Attribute name="ESAFNumber"                    type="EPICS_PV" source="$(TS)ESAFNumber"                               dbrtype="DBR_STRING"  description="ESAF number"/>
     <Attribute name="HDF5FrameLocation"             type="EPICS_PV" source="$(TS)HDF5Location"                             dbrtype="DBR_STRING"  description="Where to store frame in HDF5 file"/>
 
+    <Attribute name="ScanType"                      type="EPICS_PV" source="$(TS)ScanType"                                 dbrtype="DBR_STRING" description="Scan type"/>
+    <Attribute name="FlipStitch"                    type="EPICS_PV" source="$(TS)FlipStitch"                               dbrtype="DBR_STRING" description="Flip and stitch"/>
+
  <!--   <Attribute name="Theta"             type="EPICS_PV" source="32idcTXM:hydra:c0:m1.VAL"     dbrtype="DBR_DOUBLE"/> -->
 
 </Attributes>

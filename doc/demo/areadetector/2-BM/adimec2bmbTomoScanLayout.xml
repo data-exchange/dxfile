@@ -343,6 +343,10 @@
           <dataset name="axis" source="ndattribute" ndattribute="FlatFieldAxis" when="OnFileClose" />
           <dataset name="flat_exposure_time" source="ndattribute" ndattribute="FlatExposureTime" when="OnFileClose" />
           <dataset name="different_flat_exposure" source="ndattribute" ndattribute="DifferentFlatExposure" when="OnFileClose" />
+          <dataset name="sample_out_angle_enable" source="ndattribute" ndattribute="SampleOutAngleEnable" when="OnFileClose" />
+          <dataset name="sample_out_angle" source="ndattribute" ndattribute="SampleOutAngle" when="OnFileClose">
+            <attribute name="units" source="constant" value="°" type="string"></attribute>
+          </dataset>
           <group name="sample">
             <dataset name="in_x" source="ndattribute" ndattribute="SampleInX" when="OnFileClose">
                   <attribute name="units" source="constant" value="mm" type="string" />

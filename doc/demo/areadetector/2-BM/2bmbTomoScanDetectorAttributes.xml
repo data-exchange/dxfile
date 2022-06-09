@@ -42,8 +42,11 @@
     <Attribute name="SampleTopX"                    type="EPICS_PV"     source="2bmS1:m2.RBV"                            dbrtype="DBR_NATIVE" description="Sample X centering (mm)"/>
     <Attribute name="SampleTopZ"                    type="EPICS_PV"     source="2bmS1:m1.RBV"                            dbrtype="DBR_NATIVE" description="Sample Z centering (mm)"/>
     <Attribute name="SamplePitch"                   type="EPICS_PV"     source="2bmb:m54.RBV"                            dbrtype="DBR_NATIVE" description="Sample pitch (deg)"/>
-    <Attribute name="SampleRoll"                    type="EPICS_PV"     source="2bmb:m7.RBV"                             dbrtype="DBR_NATIVE" description="Sample roll (deg)"/>
+    <Attribute name="SampleRoll"                    type="EPICS_PV"     source="2bmb:m53.RBV"                            dbrtype="DBR_NATIVE" description="Sample roll (deg)"/>
     <Attribute name="CameraDistance"                type="EPICS_PV"     source="2bmbAERO:m1.VAL"                         dbrtype="DBR_NATIVE"  description="Camera distance (mm)"/>
+    <Attribute name="CameraRoll"                    type="EPICS_PV"     source="2bmb:m7.RBV"                             dbrtype="DBR_NATIVE"  description="Camera distance (mm)"/>
+
+
 
     <Attribute name="DetectorManufacturer"          type="EPICS_PV"     source="$(DET)cam1:Manufacturer_RBV"             dbrtype="DBR_STRING" description="Detector manufacturer"/>
     <Attribute name="DetectorModel"                 type="EPICS_PV"     source="$(DET)cam1:Model_RBV"                    dbrtype="DBR_STRING" description="Detector model"/>

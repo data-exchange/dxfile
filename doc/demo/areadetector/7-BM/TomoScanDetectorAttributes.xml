@@ -147,6 +147,7 @@
 
     <Attribute name="ScanType"                      type="EPICS_PV" source="$(TS)ScanType"                             dbrtype="DBR_STRING" description="Scan type"/>
     <Attribute name="FlipStitch"                    type="EPICS_PV" source="$(TS)FlipStitch"                           dbrtype="DBR_STRING" description="Flip and stitch"/>
+    <Attribute name="PixelsYPer360Deg"              type="EPICS_PV" source="$(SL)PixelsYPer360Deg"                     dbrtype="DBR_DOUBLE" description="Vertical motion for helical scans "/>
 
 </Attributes>
     

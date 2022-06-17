@@ -145,8 +145,9 @@
     <Attribute name="MW100_ADC_10_Desc"             type="EPICS_PV" source="7bm_dau1:dau:010:Label"                    dbrtype="DBR_STRING"/>
     <Attribute name="HDF5FrameLocation"             type="EPICS_PV" source="$(TC)HDF5Location"                         dbrtype="DBR_STRING"  description="where to store frame data"/>
 
-    <Attribute name="ScanType"                      type="EPICS_PV" source="$(TS)ScanType"                             dbrtype="DBR_STRING" description="Scan type"/>
-    <Attribute name="FlipStitch"                    type="EPICS_PV" source="$(TS)FlipStitch"                           dbrtype="DBR_STRING" description="Flip and stitch"/>
+    <Attribute name="ScanType"                      type="EPICS_PV" source="$(TC)ScanType"                             dbrtype="DBR_STRING" description="Scan type"/>
+    <Attribute name="FlipStitch"                    type="EPICS_PV" source="$(TC)FlipStitch"                           dbrtype="DBR_STRING" description="Flip and stitch"/>
+    <Attribute name="CameraDistance"                type="EPICS_PV" source="$(TC)CameraDistance"                       dbrtype="DBR_NATIVE"  description="Camera distance (mm)"/>
     <Attribute name="PixelsYPer360Deg"              type="EPICS_PV" source="$(SL)PixelsYPer360Deg"                     dbrtype="DBR_DOUBLE" description="Vertical motion for helical scans "/>
 
 </Attributes>

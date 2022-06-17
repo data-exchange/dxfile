@@ -103,6 +103,9 @@
 
         <group name="sample_motor_stack">
           <dataset name="name" source="constant" value="microCT sample stages" type="string" when="OnFileClose" />        
+          <dataset name="detector_distance" source="ndattribute" ndattribute="CameraDistance" when="OnFileClose">        
+            <attribute name="units" source="constant" value="mm" type="string" />
+          </dataset>
           <group name="setup">
             <dataset name="x" source="ndattribute" ndattribute="SampleX" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string" />

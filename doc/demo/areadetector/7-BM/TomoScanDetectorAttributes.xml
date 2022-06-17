@@ -72,8 +72,8 @@
     <Attribute name="FlatFieldAxis"                 type="EPICS_PV"     source="$(TC)FlatFieldAxis"                    dbrtype="DBR_STRING"  description="Flat field axis"/>
     <Attribute name="FlatExposureTime"              type="EPICS_PV"     source="$(TC)FlatExposureTime"                 dbrtype="DBR_NATIVE"  description="Flat field exposure time"/>
     <Attribute name="DifferentFlatExposure"         type="EPICS_PV"     source="$(TC)DifferentFlatExposure"            dbrtype="DBR_STRING"  description="Use normal or different flat exposure time"/>
-    <Attribute name="SampleOutAngleEnable"          type="EPICS_PV"     source="$(TS)SampleOutAngleEnable"             dbrtype="DBR_STRING" description="Enable sample out at a specific angle"/>
-    <Attribute name="SampleOutAngle"                type="EPICS_PV"     source="$(TS)SampleOutAngle"                   dbrtype="DBR_STRING" description="Angle where to take the flat field"/>
+    <Attribute name="SampleOutAngleEnable"          type="EPICS_PV"     source="$(TC)SampleOutAngleEnable"             dbrtype="DBR_STRING" description="Enable sample out at a specific angle"/>
+    <Attribute name="SampleOutAngle"                type="EPICS_PV"     source="$(TC)SampleOutAngle"                   dbrtype="DBR_STRING" description="Angle where to take the flat field"/>
 
     <Attribute name="SampleInX"                     type="EPICS_PV"     source="$(TC)SampleInX"                        dbrtype="DBR_NATIVE"  description="Sample in X position"/>
     <Attribute name="SampleOutX"                    type="EPICS_PV"     source="$(TC)SampleOutX"                       dbrtype="DBR_NATIVE"  description="Sample out X position"/>

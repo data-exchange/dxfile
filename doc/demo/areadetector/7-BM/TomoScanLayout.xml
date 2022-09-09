@@ -20,6 +20,12 @@
         <attribute name="axes" source="constant" value="theta:y:x" type="string" />
         <attribute name="units" source="constant" value="counts" type="string" />
       </dataset>
+      <dataset name="data_gains" source="detector">
+        <!-- SaveDest = 3 : /exchange/data_gains -->
+        <attribute name="description" source="constant" value="GainsData" type="string" />
+        <attribute name="axes" source="constant" value="theta:y:x" type="string" />
+        <attribute name="units" source="constant" value="counts" type="string" />
+      </dataset>
       <!-- theta: 
             after the file is written, Python will add this new dataset
             the values will be the (computed) rotation angles for images in data
@@ -111,6 +117,12 @@
               <attribute name="units" source="constant" value="mm" type="string" />
             </dataset>
             <dataset name="y" source="ndattribute" ndattribute="SampleY" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string" />
+            </dataset>
+            <dataset name="Center0Deg" source="ndattribute" ndattribute="Center0Deg" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string" />
+            </dataset>
+            <dataset name="Center90Deg" source="ndattribute" ndattribute="Center90Deg" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string" />
             </dataset>
           </group><!-- /setup -->

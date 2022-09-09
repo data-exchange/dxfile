@@ -102,10 +102,12 @@
 
     <Attribute name="SampleX"                       type="EPICS_PV" source="7bmb1:aero:m2.RBV"                         dbrtype="DBR_DOUBLE"/>
     <Attribute name="SampleY"                       type="EPICS_PV" source="7bmb1:aero:m1.RBV"                         dbrtype="DBR_DOUBLE"/>
-    <Attribute name="CameraX"                       type="EPICS_PV" source="7bmb1:m5.RBV"                              dbrtype="DBR_DOUBLE"/>
-    <Attribute name="CameraY"                       type="EPICS_PV" source="7bmb1:m6.RBV"                              dbrtype="DBR_DOUBLE"/>
-    <Attribute name="CameraRoll"                    type="EPICS_PV" source="7bmb1:m34.RBV"                             dbrtype="DBR_DOUBLE"/>
-    <Attribute name="CameraFocus"                   type="EPICS_PV" source="7bmb1:m38.RBV"                             dbrtype="DBR_DOUBLE"/>
+    <Attribute name="CameraX"                       type="EPICS_PV" source="7bmb1:m2.RBV"                              dbrtype="DBR_DOUBLE"/>
+    <Attribute name="CameraY"                       type="EPICS_PV" source="7bmb1:m28.RBV"                              dbrtype="DBR_DOUBLE"/>
+    <Attribute name="CameraRoll"                    type="EPICS_PV" source="7bmb1:m36.RBV"                             dbrtype="DBR_DOUBLE"/>
+    <Attribute name="CameraFocus"                   type="EPICS_PV" source="7bmb1:m35.RBV"                             dbrtype="DBR_DOUBLE"/>
+    <Attribute name="Center0Deg"                    type="EPICS_PV" source="7bmb1:m34.RBV"                             dbrtype="DBR_DOUBLE"/>
+    <Attribute name="Center90Deg"                   type="EPICS_PV" source="7bmb1:m33.RBV"                             dbrtype="DBR_DOUBLE"/>
     <Attribute name="DS_Table_X0_Motor_Position"    type="EPICS_PV" source="7bmb1:m13.RBV"                             dbrtype="DBR_DOUBLE"/>
     <Attribute name="DS_Table_X2_Motor_Position"    type="EPICS_PV" source="7bmb1:m14.RBV"                             dbrtype="DBR_DOUBLE"/>
     <Attribute name="DS_Table_Y0_Motor_Position"    type="EPICS_PV" source="7bmb1:m16.RBV"                             dbrtype="DBR_DOUBLE"/>

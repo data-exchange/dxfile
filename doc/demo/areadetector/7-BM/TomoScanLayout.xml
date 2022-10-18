@@ -23,7 +23,7 @@
       <dataset name="data_gains" source="detector">
         <!-- SaveDest = 3 : /exchange/data_gains -->
         <attribute name="description" source="constant" value="GainsData" type="string" />
-        <attribute name="axes" source="constant" value="theta:y:x" type="string" />
+        <attribute name="axes" source="constant" value="exp_time:y:x" type="string" />
         <attribute name="units" source="constant" value="counts" type="string" />
       </dataset>
       <!-- theta: 
@@ -34,6 +34,15 @@
                 theta:float64[1500] = [0.0, 0.12008005336891261, 0.24016010673782523, '...', 180.0]
                   @units = degrees
                   @description = computed rotation stage angle
+      -->
+      <!-- gains_exp_time: 
+            after the file is written, Python will add this new dataset
+            the values will be the exposure times used for the gain images
+            
+            Looks like this:
+                gains_exp_time:float64[11] = [0.0, 0.005, 0.010, ... , 0.05]
+                  @units = s
+                  @description = exposure times for data_gains
       -->
     </group><!-- /exchange -->
 

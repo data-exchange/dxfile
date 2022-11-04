@@ -317,6 +317,14 @@
            <dataset name="title" source="ndattribute" ndattribute="ProposalTitle" when="OnFileClose" />
            <dataset name="safety_id" source="ndattribute" ndattribute="ESAFNumber" when="OnFileClose" />
         </group><!-- /experiment -->
+        <group name="environment">
+          <dataset name="load_calc" source="ndattribute" ndattribute="SampleLoadCalc" when="OnFileClose">  
+            <attribute name="units" source="constant" value="N" type="string"></attribute>       
+          </dataset>
+          <dataset name="load_raw" source="ndattribute" ndattribute="SampleLoadRaw" when="OnFileClose">       
+            <attribute name="units" source="constant" value="V" type="string"></attribute>       
+          </dataset>
+        </group><!-- /environment -->
       </group><!-- /sample -->
   </group><!-- /measurement -->
          

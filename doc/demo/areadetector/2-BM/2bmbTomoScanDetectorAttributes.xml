@@ -132,4 +132,7 @@
     <Attribute name="ScanType"                      type="EPICS_PV"     source="$(TS)ScanType"                           dbrtype="DBR_STRING" description="Scan type"/>
     <Attribute name="FlipStitch"                    type="EPICS_PV"     source="$(TS)FlipStitch"                         dbrtype="DBR_STRING" description="Flip and stitch"/>
 
+    <Attribute name="SampleLoadCalc"                type="EPICS_PV"     source="2bmb:D4Ch12_calc.VAL"                    dbrtype="DBR_NATIVE" description="Load Cell Calc (N)"/>
+    <Attribute name="SampleLoadRaw"                 type="EPICS_PV"     source="2bmb:D4Ch12_raw.VAL"                     dbrtype="DBR_NATIVE" description="Load Cell Raw  (V)"/>
+
 </Attributes>

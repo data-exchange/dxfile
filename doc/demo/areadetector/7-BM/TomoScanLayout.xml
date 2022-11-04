@@ -20,6 +20,12 @@
         <attribute name="axes" source="constant" value="theta:y:x" type="string" />
         <attribute name="units" source="constant" value="counts" type="string" />
       </dataset>
+      <dataset name="data_gains" source="detector">
+        <!-- SaveDest = 3 : /exchange/data_gains -->
+        <attribute name="description" source="constant" value="GainsData" type="string" />
+        <attribute name="axes" source="constant" value="exp_time:y:x" type="string" />
+        <attribute name="units" source="constant" value="counts" type="string" />
+      </dataset>
       <!-- theta: 
             after the file is written, Python will add this new dataset
             the values will be the (computed) rotation angles for images in data
@@ -28,6 +34,15 @@
                 theta:float64[1500] = [0.0, 0.12008005336891261, 0.24016010673782523, '...', 180.0]
                   @units = degrees
                   @description = computed rotation stage angle
+      -->
+      <!-- gains_exp_time: 
+            after the file is written, Python will add this new dataset
+            the values will be the exposure times used for the gain images
+            
+            Looks like this:
+                gains_exp_time:float64[11] = [0.0, 0.005, 0.010, ... , 0.05]
+                  @units = s
+                  @description = exposure times for data_gains
       -->
     </group><!-- /exchange -->
 
@@ -111,6 +126,12 @@
               <attribute name="units" source="constant" value="mm" type="string" />
             </dataset>
             <dataset name="y" source="ndattribute" ndattribute="SampleY" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string" />
+            </dataset>
+            <dataset name="Center0Deg" source="ndattribute" ndattribute="Center0Deg" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string" />
+            </dataset>
+            <dataset name="Center90Deg" source="ndattribute" ndattribute="Center90Deg" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string" />
             </dataset>
           </group><!-- /setup -->
@@ -285,6 +306,7 @@
       <group name="acquisition">
         <dataset name="scan_type" source="ndattribute" ndattribute="ScanType" when="OnFileOpen" />
         <dataset name="pixels_y_per_360_deg" source="ndattribute" ndattribute="PixelsYPer360Deg" when="OnFileOpen" />
+        <dataset name="helical_misalignment" source="ndattribute" ndattribute="HelicalMisalignment" when="OnFileOpen" />
         <dataset name="flip_stitch" source="ndattribute" ndattribute="FlipStitch" when="OnFileOpen" />
         <dataset name="start_date" source="ndattribute" ndattribute="DateTimeStart" when="OnFileOpen" />
         <dataset name="end_date" source="ndattribute" ndattribute="DateTimeEnd" when="OnFileClose" />

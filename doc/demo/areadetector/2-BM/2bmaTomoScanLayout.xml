@@ -318,12 +318,58 @@
            <dataset name="safety_id" source="ndattribute" ndattribute="ESAFNumber" when="OnFileClose" />
         </group><!-- /experiment -->
         <group name="environment">
-          <dataset name="load_calc" source="ndattribute" ndattribute="SampleLoadCalc" when="OnFileClose">  
-            <attribute name="units" source="constant" value="N" type="string"></attribute>       
-          </dataset>
-          <dataset name="load_raw" source="ndattribute" ndattribute="SampleLoadRaw" when="OnFileClose">       
-            <attribute name="units" source="constant" value="V" type="string"></attribute>       
-          </dataset>
+          <group name="eurotherm1">
+            <dataset name="status" source="ndattribute" ndattribute="Furnace1Status" when="OnFileClose"></dataset>
+            <dataset name="pid_mode" source="ndattribute" ndattribute="Furnace1Mode" when="OnFileClose"></dataset>
+            <dataset name="p" source="ndattribute" ndattribute="Furnace1P" when="OnFileClose"></dataset>
+            <dataset name="i" source="ndattribute" ndattribute="Furnace1I" when="OnFileClose"></dataset>
+            <dataset name="d" source="ndattribute" ndattribute="Furnace1D" when="OnFileClose"></dataset>
+            <dataset name="set_point" source="ndattribute" ndattribute="Furnace1SetPoint" when="OnFileClose">
+              <attribute name="units" source="constant" value="°C" type="string"></attribute>
+            </dataset>
+            <dataset name="ramp_rate" source="ndattribute" ndattribute="Furnace1RampRate" when="OnFileClose">
+              <attribute name="units" source="constant" value="°C/s" type="string"></attribute>
+            </dataset>
+            <dataset name="update_rate" source="ndattribute" ndattribute="Furnace1UpdateRate" when="OnFileClose">
+              <attribute name="units" source="constant" value="s" type="string"></attribute>
+            </dataset>
+            <dataset name="pid_update_rate" source="ndattribute" ndattribute="Furnace1PIDUpdateRate" when="OnFileClose">
+              <attribute name="units" source="constant" value="s" type="string"></attribute>
+            </dataset>
+            <dataset name="thermocouple" source="ndattribute" ndattribute="Furnace1Thermocouple" when="OnFileClose">
+              <attribute name="units" source="constant" value="°C" type="string"></attribute>
+            </dataset>
+          </group><!-- /eurotherm1 -->
+          <group name="eurotherm2">
+            <dataset name="status" source="ndattribute" ndattribute="Furnace2Status" when="OnFileClose"></dataset>
+            <dataset name="pid_mode" source="ndattribute" ndattribute="Furnace2Mode" when="OnFileClose"></dataset>
+            <dataset name="p" source="ndattribute" ndattribute="Furnace2P" when="OnFileClose"></dataset>
+            <dataset name="i" source="ndattribute" ndattribute="Furnace2I" when="OnFileClose"></dataset>
+            <dataset name="d" source="ndattribute" ndattribute="Furnace2D" when="OnFileClose"></dataset>
+            <dataset name="set_point" source="ndattribute" ndattribute="Furnace2SetPoint" when="OnFileClose">
+              <attribute name="units" source="constant" value="°C" type="string"></attribute>
+            </dataset>
+            <dataset name="ramp_rate" source="ndattribute" ndattribute="Furnace2RampRate" when="OnFileClose">
+              <attribute name="units" source="constant" value="°C/s" type="string"></attribute>
+            </dataset>
+            <dataset name="update_rate" source="ndattribute" ndattribute="Furnace2UpdateRate" when="OnFileClose">
+              <attribute name="units" source="constant" value="s" type="string"></attribute>
+            </dataset>
+            <dataset name="pid_update_rate" source="ndattribute" ndattribute="Furnace2PIDUpdateRate" when="OnFileClose">
+              <attribute name="units" source="constant" value="s" type="string"></attribute>
+            </dataset>
+            <dataset name="thermocouple" source="ndattribute" ndattribute="Furnace2Thermocouple" when="OnFileClose">
+              <attribute name="units" source="constant" value="°C" type="string"></attribute>
+            </dataset>
+          </group><!-- /eurotherm2 -->
+          <group name="load_cell">
+            <dataset name="load_calc" source="ndattribute" ndattribute="SampleLoadCalc" when="OnFileClose">  
+              <attribute name="units" source="constant" value="N" type="string"></attribute>       
+            </dataset>
+            <dataset name="load_raw" source="ndattribute" ndattribute="SampleLoadRaw" when="OnFileClose">       
+              <attribute name="units" source="constant" value="V" type="string"></attribute>       
+            </dataset>
+          </group><!-- /load_cell -->
         </group><!-- /environment -->
       </group><!-- /sample -->
   </group><!-- /measurement -->

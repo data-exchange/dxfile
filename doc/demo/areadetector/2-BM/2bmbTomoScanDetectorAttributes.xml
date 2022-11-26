@@ -135,4 +135,26 @@
     <Attribute name="SampleLoadCalc"                type="EPICS_PV"     source="2bmb:D4Ch12_calc.VAL"                    dbrtype="DBR_NATIVE" description="Load Cell Calc (N)"/>
     <Attribute name="SampleLoadRaw"                 type="EPICS_PV"     source="2bmb:D4Ch12_raw.VAL"                     dbrtype="DBR_NATIVE" description="Load Cell Raw  (V)"/>
 
+    <Attribute name="Furnace1Status"                 type="EPICS_PV" source="2bmEuroTherm1:1:SP:RBV.SEVR"                 dbrtype="DBR_NATIVE" description="Furnace controller PID mode"/>
+    <Attribute name="Furnace1Mode"                   type="EPICS_PV" source="2bmEuroTherm1:1:MAN"                         dbrtype="DBR_NATIVE" description="Furnace controller PID mode"/>
+    <Attribute name="Furnace1SetPoint"               type="EPICS_PV" source="2bmEuroTherm1:1:SP:RBV"                      dbrtype="DBR_NATIVE" description="Furnace set point (C)"/>
+    <Attribute name="Furnace1RampRate"               type="EPICS_PV" source="2bmEuroTherm1:1:RR:RBV"                      dbrtype="DBR_NATIVE" description="Furnace ramp rate (C/s)"/>
+    <Attribute name="Furnace1UpdateRate"             type="EPICS_PV" source="2bmEuroTherm1:1:UPDATE.SCAN"                 dbrtype="DBR_NATIVE" description="Furnace paramerter update rate (s)"/>
+    <Attribute name="Furnace1Thermocouple"           type="EPICS_PV" source="2bmEuroTherm1:1:PV:RBV"                      dbrtype="DBR_NATIVE" description="Furnace thermocouple reading (C)"/>
+    <Attribute name="Furnace1P"                      type="EPICS_PV" source="2bmEuroTherm1:1:P:RBV"                       dbrtype="DBR_NATIVE" description="Furnace controller P value"/>
+    <Attribute name="Furnace1I"                      type="EPICS_PV" source="2bmEuroTherm1:1:I:RBV"                       dbrtype="DBR_NATIVE" description="Furnace controller I value"/>
+    <Attribute name="Furnace1D"                      type="EPICS_PV" source="2bmEuroTherm1:1:D:RBV"                       dbrtype="DBR_NATIVE" description="Furnace controller D value"/>
+    <Attribute name="Furnace1PIDUpdateRate"          type="EPICS_PV" source="2bmEuroTherm1:1:PID.SCAN"                    dbrtype="DBR_NATIVE" description="Furnace paramerter update rate (s)"/>
+
+    <Attribute name="Furnace2Status"                 type="EPICS_PV" source="2bmEuroTherm2:1:SP:RBV.SEVR"                 dbrtype="DBR_NATIVE" description="Furnace controller PID mode"/>
+    <Attribute name="Furnace2Mode"                   type="EPICS_PV" source="2bmEuroTherm2:1:MAN"                         dbrtype="DBR_NATIVE" description="Furnace controller PID mode"/>
+    <Attribute name="Furnace2SetPoint"               type="EPICS_PV" source="2bmEuroTherm2:1:SP:RBV"                      dbrtype="DBR_NATIVE" description="Furnace set point (C)"/>
+    <Attribute name="Furnace2RampRate"               type="EPICS_PV" source="2bmEuroTherm2:1:RR:RBV"                      dbrtype="DBR_NATIVE" description="Furnace ramp rate (C/s)"/>
+    <Attribute name="Furnace2UpdateRate"             type="EPICS_PV" source="2bmEuroTherm2:1:UPDATE.SCAN"                 dbrtype="DBR_NATIVE" description="Furnace paramerter update rate (s)"/>
+    <Attribute name="Furnace2Thermocouple"           type="EPICS_PV" source="2bmEuroTherm2:1:PV:RBV"                      dbrtype="DBR_NATIVE" description="Furnace thermocouple reading (C)"/>
+    <Attribute name="Furnace2P"                      type="EPICS_PV" source="2bmEuroTherm2:1:P:RBV"                       dbrtype="DBR_NATIVE" description="Furnace controller P value"/>
+    <Attribute name="Furnace2I"                      type="EPICS_PV" source="2bmEuroTherm2:1:I:RBV"                       dbrtype="DBR_NATIVE" description="Furnace controller I value"/>
+    <Attribute name="Furnace2D"                      type="EPICS_PV" source="2bmEuroTherm2:1:D:RBV"                       dbrtype="DBR_NATIVE" description="Furnace controller D value"/>
+    <Attribute name="Furnace2PIDUpdateRate"          type="EPICS_PV" source="2bmEuroTherm2:1:PID.SCAN"                    dbrtype="DBR_NATIVE" description="Furnace paramerter update rate (s)"/>
+
 </Attributes>

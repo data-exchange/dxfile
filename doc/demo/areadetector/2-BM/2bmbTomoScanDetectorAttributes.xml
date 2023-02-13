@@ -125,9 +125,9 @@
     <Attribute name="ESAFNumber"                    type="EPICS_PV"     source="$(TS)ESAFNumber"                         dbrtype="DBR_STRING" description="ESAF number"/>
     <Attribute name="HDF5FrameLocation"             type="EPICS_PV"     source="$(TS)HDF5Location"                       dbrtype="DBR_STRING" description="Where to store frame in HDF5 file"/>
 
-    <Attribute name="ManualFilters"                 type="EPICS_PV"     source="2bm:MCTOptics:Filters"                   dbrtype="DBR_STRING" description="Manual filters"/>
-    <Attribute name="Energy"                        type="EPICS_PV"     source="2bm:MCTOptics:Energy"                    dbrtype="DBR_NATIVE" description="Energy (keV)"/>
-    <Attribute name="EnergyMode"                    type="EPICS_PV"     source="2bm:MCTOptics:EnergyMode"                dbrtype="DBR_NATIVE" description="Energy Mode"/>
+    <Attribute name="ManualFilters"                 type="EPICS_PV"     source="2bm:Energy:Filters"                      dbrtype="DBR_STRING" description="Manual filters"/>
+    <Attribute name="Energy"                        type="EPICS_PV"     source="2bm:Energy:Energy"                       dbrtype="DBR_NATIVE" description="Energy (keV)"/>
+    <Attribute name="EnergyMode"                    type="EPICS_PV"     source="2bm:Energy:EnergyMode"                   dbrtype="DBR_NATIVE" description="Energy Mode"/>
 
     <Attribute name="ScanType"                      type="EPICS_PV"     source="$(TS)ScanType"                           dbrtype="DBR_STRING" description="Scan type"/>
     <Attribute name="FlipStitch"                    type="EPICS_PV"     source="$(TS)FlipStitch"                         dbrtype="DBR_STRING" description="Flip and stitch"/>

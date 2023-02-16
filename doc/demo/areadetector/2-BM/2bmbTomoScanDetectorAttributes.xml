@@ -125,11 +125,36 @@
     <Attribute name="ESAFNumber"                    type="EPICS_PV"     source="$(TS)ESAFNumber"                         dbrtype="DBR_STRING" description="ESAF number"/>
     <Attribute name="HDF5FrameLocation"             type="EPICS_PV"     source="$(TS)HDF5Location"                       dbrtype="DBR_STRING" description="Where to store frame in HDF5 file"/>
 
-    <Attribute name="ManualFilters"                 type="EPICS_PV"     source="2bm:MCTOptics:Filters"                   dbrtype="DBR_STRING" description="Manual filters"/>
-    <Attribute name="Energy"                        type="EPICS_PV"     source="2bm:MCTOptics:Energy"                    dbrtype="DBR_NATIVE" description="Energy (keV)"/>
-    <Attribute name="EnergyMode"                    type="EPICS_PV"     source="2bm:MCTOptics:EnergyMode"                dbrtype="DBR_NATIVE" description="Energy Mode"/>
+    <Attribute name="ManualFilters"                 type="EPICS_PV"     source="2bm:Energy:Filters"                      dbrtype="DBR_STRING" description="Manual filters"/>
+    <Attribute name="Energy"                        type="EPICS_PV"     source="2bm:Energy:Energy"                       dbrtype="DBR_NATIVE" description="Energy (keV)"/>
+    <Attribute name="EnergyMode"                    type="EPICS_PV"     source="2bm:Energy:EnergyMode"                   dbrtype="DBR_NATIVE" description="Energy Mode"/>
 
     <Attribute name="ScanType"                      type="EPICS_PV"     source="$(TS)ScanType"                           dbrtype="DBR_STRING" description="Scan type"/>
     <Attribute name="FlipStitch"                    type="EPICS_PV"     source="$(TS)FlipStitch"                         dbrtype="DBR_STRING" description="Flip and stitch"/>
+
+    <Attribute name="SampleLoadCalc"                type="EPICS_PV"     source="2bmb:D4Ch12_calc.VAL"                    dbrtype="DBR_NATIVE" description="Load Cell Calc (N)"/>
+    <Attribute name="SampleLoadRaw"                 type="EPICS_PV"     source="2bmb:D4Ch12_raw.VAL"                     dbrtype="DBR_NATIVE" description="Load Cell Raw  (V)"/>
+
+    <Attribute name="Furnace1Status"                 type="EPICS_PV" source="2bmEuroTherm1:1:SP:RBV.SEVR"                 dbrtype="DBR_NATIVE" description="Furnace controller PID mode"/>
+    <Attribute name="Furnace1Mode"                   type="EPICS_PV" source="2bmEuroTherm1:1:MAN"                         dbrtype="DBR_NATIVE" description="Furnace controller PID mode"/>
+    <Attribute name="Furnace1SetPoint"               type="EPICS_PV" source="2bmEuroTherm1:1:SP:RBV"                      dbrtype="DBR_NATIVE" description="Furnace set point (C)"/>
+    <Attribute name="Furnace1RampRate"               type="EPICS_PV" source="2bmEuroTherm1:1:RR:RBV"                      dbrtype="DBR_NATIVE" description="Furnace ramp rate (C/s)"/>
+    <Attribute name="Furnace1UpdateRate"             type="EPICS_PV" source="2bmEuroTherm1:1:UPDATE.SCAN"                 dbrtype="DBR_NATIVE" description="Furnace paramerter update rate (s)"/>
+    <Attribute name="Furnace1Thermocouple"           type="EPICS_PV" source="2bmEuroTherm1:1:PV:RBV"                      dbrtype="DBR_NATIVE" description="Furnace thermocouple reading (C)"/>
+    <Attribute name="Furnace1P"                      type="EPICS_PV" source="2bmEuroTherm1:1:P:RBV"                       dbrtype="DBR_NATIVE" description="Furnace controller P value"/>
+    <Attribute name="Furnace1I"                      type="EPICS_PV" source="2bmEuroTherm1:1:I:RBV"                       dbrtype="DBR_NATIVE" description="Furnace controller I value"/>
+    <Attribute name="Furnace1D"                      type="EPICS_PV" source="2bmEuroTherm1:1:D:RBV"                       dbrtype="DBR_NATIVE" description="Furnace controller D value"/>
+    <Attribute name="Furnace1PIDUpdateRate"          type="EPICS_PV" source="2bmEuroTherm1:1:PID.SCAN"                    dbrtype="DBR_NATIVE" description="Furnace paramerter update rate (s)"/>
+
+    <Attribute name="Furnace2Status"                 type="EPICS_PV" source="2bmEuroTherm2:1:SP:RBV.SEVR"                 dbrtype="DBR_NATIVE" description="Furnace controller PID mode"/>
+    <Attribute name="Furnace2Mode"                   type="EPICS_PV" source="2bmEuroTherm2:1:MAN"                         dbrtype="DBR_NATIVE" description="Furnace controller PID mode"/>
+    <Attribute name="Furnace2SetPoint"               type="EPICS_PV" source="2bmEuroTherm2:1:SP:RBV"                      dbrtype="DBR_NATIVE" description="Furnace set point (C)"/>
+    <Attribute name="Furnace2RampRate"               type="EPICS_PV" source="2bmEuroTherm2:1:RR:RBV"                      dbrtype="DBR_NATIVE" description="Furnace ramp rate (C/s)"/>
+    <Attribute name="Furnace2UpdateRate"             type="EPICS_PV" source="2bmEuroTherm2:1:UPDATE.SCAN"                 dbrtype="DBR_NATIVE" description="Furnace paramerter update rate (s)"/>
+    <Attribute name="Furnace2Thermocouple"           type="EPICS_PV" source="2bmEuroTherm2:1:PV:RBV"                      dbrtype="DBR_NATIVE" description="Furnace thermocouple reading (C)"/>
+    <Attribute name="Furnace2P"                      type="EPICS_PV" source="2bmEuroTherm2:1:P:RBV"                       dbrtype="DBR_NATIVE" description="Furnace controller P value"/>
+    <Attribute name="Furnace2I"                      type="EPICS_PV" source="2bmEuroTherm2:1:I:RBV"                       dbrtype="DBR_NATIVE" description="Furnace controller I value"/>
+    <Attribute name="Furnace2D"                      type="EPICS_PV" source="2bmEuroTherm2:1:D:RBV"                       dbrtype="DBR_NATIVE" description="Furnace controller D value"/>
+    <Attribute name="Furnace2PIDUpdateRate"          type="EPICS_PV" source="2bmEuroTherm2:1:PID.SCAN"                    dbrtype="DBR_NATIVE" description="Furnace paramerter update rate (s)"/>
 
 </Attributes>

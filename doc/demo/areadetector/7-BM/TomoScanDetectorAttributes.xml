@@ -23,7 +23,7 @@
     <Attribute name="BinX"                          type="EPICS_PV"     source="$(DET)cam1:BinX"                       dbrtype="DBR_NATIVE"  description="Detector readout bin X"/>
     <Attribute name="BinY"                          type="EPICS_PV"     source="$(DET)cam1:BinY"                       dbrtype="DBR_NATIVE"  description="Detector readout bin Y"/>
 
-    <Attribute name="AcquireTime"                   type="EPICS_PV"     source="$(DET)cam1:AcquireTime_RBV"            dbrtype="DBR_NATIVE"  description="Exposure time"/>
+    <Attribute name="AcquireTime"                   type="EPICS_PV"     source="$(TC)ExposureTime"                     dbrtype="DBR_NATIVE"  description="Exposure time"/>
     <Attribute name="ExposureAuto"                  type="EPICS_PV"     source="$(DET)cam1:ExposureAuto_RBV"           dbrtype="DBR_NATIVE" description="Exposure auto"/>
     <Attribute name="AcquirePeriod"                 type="EPICS_PV"     source="$(DET)cam1:AcquirePeriod_RBV"          dbrtype="DBR_NATIVE"  description="Exposure period"/>
     <Attribute name="FrameRate"                     type="EPICS_PV"     source="$(DET)cam1:FrameRate_RBV"              dbrtype="DBR_NATIVE"  description="Frame rate"/>

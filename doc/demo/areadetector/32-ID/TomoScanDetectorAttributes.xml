@@ -39,10 +39,10 @@
     <Attribute name="DCMZ2Dial"                     type="EPICS_PV" source="32ida:m8.DVAL"                                 dbrtype="DBR_DOUBLE"/>
     <Attribute name="DCMFlagDial"                   type="EPICS_PV" source="32idb:m5.DVAL"                                 dbrtype="DBR_DOUBLE"/>
 
-    <Attribute name="BeamMonitorX"                  type="EPICS_PV" source="32idc02:m21.VAL"                               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="BeamMonitorY"                  type="EPICS_PV" source="32idcSOFT:nf:c1:m1.VAL"                        dbrtype="DBR_DOUBLE"/>
-    <Attribute name="BeamMonitorXDial"              type="EPICS_PV" source="32idc02:m21.DVAL"                              dbrtype="DBR_DOUBLE"/>
-    <Attribute name="BeamMonitorYDial"              type="EPICS_PV" source="32idcSOFT:nf:c1:m1.DVAL"                       dbrtype="DBR_DOUBLE"/>
+    <Attribute name="BeamMonitorX"                  type="EPICS_PV" source="32idbTXM:mcs2:c1:m7.RBV"                       dbrtype="DBR_DOUBLE"/>
+    <Attribute name="BeamMonitorY"                  type="EPICS_PV" source="32idbTXM:mcs2:c1:m8.RBV"                       dbrtype="DBR_DOUBLE"/>
+    <Attribute name="BeamMonitorXDial"              type="EPICS_PV" source="32idbTXM:mcs2:c1:m7.DRBV"                      dbrtype="DBR_DOUBLE"/>
+    <Attribute name="BeamMonitorYDial"              type="EPICS_PV" source="32idbTXM:mcs2:c1:m8.DRBV"                      dbrtype="DBR_DOUBLE"/>
 
     <Attribute name="DiffuserX"                     type="EPICS_PV" source="32idc01:m33.VAL"                               dbrtype="DBR_DOUBLE"/>
     <Attribute name="DiffuserXDial"                 type="EPICS_PV" source="32idc01:m33.DVAL"                              dbrtype="DBR_DOUBLE"/>

@@ -69,17 +69,17 @@
     <Attribute name="PinHoleXDial"                  type="EPICS_PV" source="32idbTXM:mcs2:c1:m4.DRBV"                              dbrtype="DBR_DOUBLE"/>
     <Attribute name="PinHoleYDial"                  type="EPICS_PV" source="32idbTXM:mcs2:c1:m5.DRBV"                              dbrtype="DBR_DOUBLE"/>
 
-    <Attribute name="SampleX"                       type="EPICS_PV" source="32idcTXM:nf:c0:m1.VAL"                         dbrtype="DBR_DOUBLE"/>
-    <Attribute name="SampleY"                       type="EPICS_PV" source="32idcTXM:mxv:c1:m1.VAL"                        dbrtype="DBR_DOUBLE"/>
-    <Attribute name="SampleRotary"                  type="EPICS_PV" source="32idcTXM:ens:c1:m1.VAL"                        dbrtype="DBR_DOUBLE"/>
-    <Attribute name="RotationSpeed"                 type="EPICS_PV" source="32idcTXM:ens:c1:m1.VELO"                       dbrtype="DBR_NATIVE"  description="Rotation speed (deg/s)"/>
-    <Attribute name="SampleXDial"                   type="EPICS_PV" source="32idcTXM:nf:c0:m1.DVAL"                        dbrtype="DBR_DOUBLE"/>
-    <Attribute name="SampleYDial"                   type="EPICS_PV" source="32idcTXM:mxv:c1:m1.DVAL"                       dbrtype="DBR_DOUBLE"/>
-    <Attribute name="SampleRotaryDial"              type="EPICS_PV" source="32idcTXM:ens:c1:m1.DVAL"                       dbrtype="DBR_DOUBLE"/>
-    <Attribute name="SampleTopX"                    type="EPICS_PV" source="32idcTXM:mcs:c3:m7.VAL"                        dbrtype="DBR_DOUBLE"/>
-    <Attribute name="SampleTopZ"                    type="EPICS_PV" source="32idcTXM:mcs:c3:m8.VAL"                        dbrtype="DBR_DOUBLE"/>
-    <Attribute name="SampleTopXDial"                type="EPICS_PV" source="32idcTXM:mcs:c3:m7.DVAL"                       dbrtype="DBR_DOUBLE"/>
-    <Attribute name="SampleTopZDial"                type="EPICS_PV" source="32idcTXM:mcs:c3:m8.DVAL"                       dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleX"                       type="EPICS_PV" source="32idbTXM:nf:m4.RBV"                         dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleY"                       type="EPICS_PV" source="32idbSoft:m5.RBV"                        dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleRotary"                  type="EPICS_PV" source="32idbTXM:ens:c1:m1.RBV"                        dbrtype="DBR_DOUBLE"/>
+    <Attribute name="RotationSpeed"                 type="EPICS_PV" source="32idbTXM:ens:c1:m1.VELO"                       dbrtype="DBR_NATIVE"  description="Rotation speed (deg/s)"/>
+    <Attribute name="SampleXDial"                   type="EPICS_PV" source="32idbTXM:nf:m4.DRBV"                        dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleYDial"                   type="EPICS_PV" source="32idbSoft:m5.DRBV"                       dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleRotaryDial"              type="EPICS_PV" source="32idbTXM:ens:c1:m1.DRBV"                       dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleTopX"                    type="EPICS_PV" source="32idbTXM:mcs:c2:m7.RBV"                        dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleTopZ"                    type="EPICS_PV" source="32idbTXM:mcs:c2:m8.RBV"                        dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleTopXDial"                type="EPICS_PV" source="32idbTXM:mcs:c2:m7.DRBV"                       dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleTopZDial"                type="EPICS_PV" source="32idbTXM:mcs:c2:m8.DRBV"                       dbrtype="DBR_DOUBLE"/>
 
     <Attribute name="FurnaceTemperature"            type="EPICS_PV" source="32idcTEMP:tc1:heater:temperature"              dbrtype="DBR_NATIVE"  description="Furnace temperature (C)"/>
     <Attribute name="FurnacePIDMode"                type="EPICS_PV" source="32idcTEMP:tc1:out:pid:mode_RBV"                dbrtype="DBR_NATIVE"  description="Furnace controller PID mode"/>

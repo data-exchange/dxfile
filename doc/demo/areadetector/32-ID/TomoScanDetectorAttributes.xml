@@ -52,17 +52,17 @@
     <Attribute name="BeamStopXDial"                 type="EPICS_PV" source="32idbTXM:mcs2:c1:m12.DRBV"                       dbrtype="DBR_DOUBLE"/>
     <Attribute name="BeamStopYDial"                 type="EPICS_PV" source="32idbTXM:mcs2:c1:m3.DRBV"                       dbrtype="DBR_DOUBLE"/>
 
-    <Attribute name="CondenserYaw"                  type="EPICS_PV" source="32idcTXM:mcs:c3:m2.VAL"                        dbrtype="DBR_DOUBLE"/>
-    <Attribute name="CondenserPitch"                type="EPICS_PV" source="32idcTXM:mcs:c3:m4.VAL"                        dbrtype="DBR_DOUBLE"/>
-    <Attribute name="CondenserYawDial"              type="EPICS_PV" source="32idcTXM:mcs:c3:m2.DVAL"                       dbrtype="DBR_DOUBLE"/>
-    <Attribute name="CondenserPitchDial"            type="EPICS_PV" source="32idcTXM:mcs:c3:m4.DVAL"                       dbrtype="DBR_DOUBLE"/>
+    <Attribute name="CondenserYaw"                  type="EPICS_PV" source="32idbTXM:mcs2:c1:m11.RBV"                       dbrtype="DBR_DOUBLE"/>
+    <Attribute name="CondenserPitch"                type="EPICS_PV" source="32idbTXM:mcs2:c1:m1.RBV"                        dbrtype="DBR_DOUBLE"/>
+    <Attribute name="CondenserYawDial"              type="EPICS_PV" source="32idbTXM:mcs2:c1:m11.DRBV"                       dbrtype="DBR_DOUBLE"/>
+    <Attribute name="CondenserPitchDial"            type="EPICS_PV" source="32idbTXM:mcs2:c1:m1.DRBV"                       dbrtype="DBR_DOUBLE"/>
 
-    <Attribute name="CondenserX"                    type="EPICS_PV" source="32idcTXM:mcs:c3:m1.VAL"                        dbrtype="DBR_DOUBLE"/>
-    <Attribute name="CondenserY"                    type="EPICS_PV" source="32idcTXM:mcs:c3:m5.VAL"                        dbrtype="DBR_DOUBLE"/>
-    <Attribute name="CondenserZ"                    type="EPICS_PV" source="32idcTXM:mxv:c1:m5.VAL"                        dbrtype="DBR_DOUBLE"/>
-    <Attribute name="CondenserXDial"                type="EPICS_PV" source="32idcTXM:mcs:c3:m1.DVAL"                       dbrtype="DBR_DOUBLE"/>
-    <Attribute name="CondenserYDial"                type="EPICS_PV" source="32idcTXM:mcs:c3:m5.DVAL"                       dbrtype="DBR_DOUBLE"/>
-    <Attribute name="CondenserZDial"                type="EPICS_PV" source="32idcTXM:mxv:c1:m5.DVAL"                       dbrtype="DBR_DOUBLE"/>
+    <Attribute name="CondenserX"                    type="EPICS_PV" source="32idbTXM:mcs2:c1:m10.RBV"                        dbrtype="DBR_DOUBLE"/>
+    <Attribute name="CondenserY"                    type="EPICS_PV" source="32idbTXM:mcs2:c1:m2.RBV"                        dbrtype="DBR_DOUBLE"/>
+    <Attribute name="CondenserZ"                    type="EPICS_PV" source="32idbSoft:m6.RBV"                        dbrtype="DBR_DOUBLE"/>
+    <Attribute name="CondenserXDial"                type="EPICS_PV" source="32idbTXM:mcs2:c1:m10.DRBV"                       dbrtype="DBR_DOUBLE"/>
+    <Attribute name="CondenserYDial"                type="EPICS_PV" source="32idbTXM:mcs2:c1:m2.DRBV"                       dbrtype="DBR_DOUBLE"/>
+    <Attribute name="CondenserZDial"                type="EPICS_PV" source="32idbSoft:m6.DRBV"                       dbrtype="DBR_DOUBLE"/>
 
     <Attribute name="PinHoleX"                      type="EPICS_PV" source="32idc01:m35.VAL"                               dbrtype="DBR_DOUBLE"/>
     <Attribute name="PinHoleY"                      type="EPICS_PV" source="32idc01:m34.VAL"                               dbrtype="DBR_DOUBLE"/>

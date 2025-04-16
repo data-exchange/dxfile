@@ -109,15 +109,15 @@
     <Attribute name="FlightTubeZ"                   type="EPICS_PV" source="32idcTXM:mxv:c1:m8.VAL"                        dbrtype="DBR_DOUBLE"/>
     <Attribute name="FlightTubeZDial"               type="EPICS_PV" source="32idcTXM:mxv:c1:m8.DVAL"                       dbrtype="DBR_DOUBLE"/>
 
-    <Attribute name="CcdCameraX"                    type="EPICS_PV" source="32idcTXM:mxv:c1:m3.VAL"                        dbrtype="DBR_DOUBLE"/>
-    <Attribute name="CcdCameraY"                    type="EPICS_PV" source="32idcTXM:mxv:c1:m4.VAL"                        dbrtype="DBR_DOUBLE"/>
-    <Attribute name="CcdCameraZ"                    type="EPICS_PV" source="32idcTXM:mxv:c1:m6.VAL"                        dbrtype="DBR_DOUBLE"/>
-    <Attribute name="CcdCameraXDial"                type="EPICS_PV" source="32idcTXM:mxv:c1:m3.DVAL"                       dbrtype="DBR_DOUBLE"/>
-    <Attribute name="CcdCameraYDial"                type="EPICS_PV" source="32idcTXM:mxv:c1:m4.DVAL"                       dbrtype="DBR_DOUBLE"/>
-    <Attribute name="CcdCameraZDial"                type="EPICS_PV" source="32idcTXM:mxv:c1:m6.DVAL"                       dbrtype="DBR_DOUBLE"/>
+    <Attribute name="CcdCameraX"                    type="EPICS_PV" source="32idbSoft:m3.RBV"                        dbrtype="DBR_DOUBLE"/>
+    <Attribute name="CcdCameraY"                    type="EPICS_PV" source="32idbSoft:m4.RBV"                        dbrtype="DBR_DOUBLE"/>
+    <Attribute name="CcdCameraZ"                    type="EPICS_PV" source="32idbSoft:m1.RBV"                        dbrtype="DBR_DOUBLE"/>
+    <Attribute name="CcdCameraXDial"                type="EPICS_PV" source="32idbSoft:m3.DRBV"                       dbrtype="DBR_DOUBLE"/>
+    <Attribute name="CcdCameraYDial"                type="EPICS_PV" source="32idbSoft:m4.DRBV"                       dbrtype="DBR_DOUBLE"/>
+    <Attribute name="CcdCameraZDial"                type="EPICS_PV" source="32idbSoft:m1.DRBV"                       dbrtype="DBR_DOUBLE"/>
 
-    <Attribute name="CcdYaw"                        type="EPICS_PV" source="32idc02:m11.VAL"                               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="CcdYawDial"                    type="EPICS_PV" source="32idc02:m11.DVAL"                              dbrtype="DBR_DOUBLE"/>
+    <Attribute name="CcdYaw"                        type="EPICS_PV" source="32idbTXM:nf:m2.RBV"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="CcdYawDial"                    type="EPICS_PV" source="32idbTXM:nf:m2.DRBV"                              dbrtype="DBR_DOUBLE"/>
 
     <Attribute name="DetectorManufacturer"          type="EPICS_PV" source="$(DET)cam1:Manufacturer_RBV"                   dbrtype="DBR_STRING"/>
     <Attribute name="DetectorModel"                 type="EPICS_PV" source="$(DET)cam1:Model_RBV"                          dbrtype="DBR_STRING"/>

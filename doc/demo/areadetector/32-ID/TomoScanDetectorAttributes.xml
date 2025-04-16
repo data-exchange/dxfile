@@ -92,12 +92,12 @@
     <Attribute name="FurnaceUpdateRate"             type="EPICS_PV" source="32idcTEMP:tc1:out:poll.SCAN"                   dbrtype="DBR_NATIVE"  description="Furnace paramerter update rate (s)"/>
     <Attribute name="FurnaceThermocouple"           type="EPICS_PV" source="32idcSOFT:adam1:tc0.VAL"                       dbrtype="DBR_NATIVE"  description="Furnace thermocouple reading (C)"/>
 
-    <Attribute name="ZonePlateX"                    type="EPICS_PV" source="32idcTXM:mcs:c2:m1.VAL"                        dbrtype="DBR_DOUBLE"/>
-    <Attribute name="ZonePlateY"                    type="EPICS_PV" source="32idcTXM:mcs:c2:m2.VAL"                        dbrtype="DBR_DOUBLE"/>
-    <Attribute name="ZonePlateZ"                    type="EPICS_PV" source="32idcTXM:mcs:c2:m3.VAL"                        dbrtype="DBR_DOUBLE"/>
-    <Attribute name="ZonePlateXDial"                type="EPICS_PV" source="32idcTXM:mcs:c2:m1.DVAL"                       dbrtype="DBR_DOUBLE"/>
-    <Attribute name="ZonePlateYDial"                type="EPICS_PV" source="32idcTXM:mcs:c2:m2.DVAL"                       dbrtype="DBR_DOUBLE"/>
-    <Attribute name="ZonePlateZDial"                type="EPICS_PV" source="32idcTXM:mcs:c2:m3.DVAL"                       dbrtype="DBR_DOUBLE"/>
+    <Attribute name="ZonePlateX"                    type="EPICS_PV" source="32idbTXM:mcs:c1:m1.RBV"                        dbrtype="DBR_DOUBLE"/>
+    <Attribute name="ZonePlateY"                    type="EPICS_PV" source="32idbTXM:mcs:c1:m2.RBV"                        dbrtype="DBR_DOUBLE"/>
+    <Attribute name="ZonePlateZ"                    type="EPICS_PV" source="32idbTXM:mcs:c1:m3.RBV"                        dbrtype="DBR_DOUBLE"/>
+    <Attribute name="ZonePlateXDial"                type="EPICS_PV" source="32idbTXM:mcs:c1:m1.DRBV"                       dbrtype="DBR_DOUBLE"/>
+    <Attribute name="ZonePlateYDial"                type="EPICS_PV" source="32idbTXM:mcs:c1:m2.DRBV"                       dbrtype="DBR_DOUBLE"/>
+    <Attribute name="ZonePlateZDial"                type="EPICS_PV" source="32idbTXM:mcs:c1:m3.DRBV"                       dbrtype="DBR_DOUBLE"/>
 
     <Attribute name="PhaseRingX"                    type="EPICS_PV" source="32idcSOFT:nf:c0:m3.VAL"                        dbrtype="DBR_DOUBLE"/>
     <Attribute name="PhaseRingY"                    type="EPICS_PV" source="32idcTXM:mcs:c0:m1.VAL"                        dbrtype="DBR_DOUBLE"/>

@@ -21,7 +21,7 @@
     </group><!-- /exchange -->
     <group name="measurement">
       <group name="instrument">
-        <dataset name="name" source="constant" value="Transmission X-Ray Microscope" type="string" when="OnFileClose"></dataset>        
+        <dataset name="name" source="constant" value="TXM" type="string" when="OnFileClose"></dataset>        
 
         <group name="source">
           <dataset name="name" source="constant" value="Advanced Photon Source" type="string" when="OnFileClose"></dataset>        
@@ -141,39 +141,6 @@
             </dataset>
           </group><!-- /setup -->
         </group><!-- /monochromator -->
-
-        <group name="crl">
-          <dataset name="name" source="constant" value="Compound Refractive Lenses" type="string" when="OnFileClose"></dataset>        
-          <group name="setup">
-            <dataset name="x" source="ndattribute" ndattribute="CrlX" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string"></attribute>
-            </dataset>
-            <dataset name="y" source="ndattribute" ndattribute="CrlY" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string"></attribute>
-            </dataset>
-            <dataset name="pitch" source="ndattribute" ndattribute="CrlPitch" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string"></attribute>
-            </dataset>
-            <dataset name="yaw" source="ndattribute" ndattribute="CrlYaw" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string"></attribute>
-            </dataset>
-            <dataset name="table_y" source="ndattribute" ndattribute="CrlTableY" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string"></attribute>
-            </dataset>
-            <dataset name="x_dial" source="ndattribute" ndattribute="CrlXDial" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string"></attribute>
-            </dataset>
-            <dataset name="y_dial" source="ndattribute" ndattribute="CrlYDial" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string"></attribute>
-            </dataset>
-            <dataset name="pitch_dial" source="ndattribute" ndattribute="CrlPitchDial" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string"></attribute>
-            </dataset>
-            <dataset name="yaw_dial" source="ndattribute" ndattribute="CrlYawDial" when="OnFileClose"> 
-              <attribute name="units" source="constant" value="mm" type="string"></attribute>
-            </dataset>
-          </group><!-- /setup -->
-        </group><!-- /crl -->
 
         <group name="beam_monitor">
           <dataset name="name" source="constant" value="Beam Monitor" type="string" when="OnFileClose"></dataset>        

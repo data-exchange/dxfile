@@ -47,10 +47,10 @@
     <Attribute name="DiffuserX"                     type="EPICS_PV" source="32idbTXM:mcs2:c1:m9.RBV"                               dbrtype="DBR_DOUBLE"/>
     <Attribute name="DiffuserXDial"                 type="EPICS_PV" source="32idbTXM:mcs2:c1:m9.DRBV"                              dbrtype="DBR_DOUBLE"/>
 
-    <Attribute name="BeamStopX"                     type="EPICS_PV" source="32idcTXM:mcs:c3:m3.VAL"                        dbrtype="DBR_DOUBLE"/>
-    <Attribute name="BeamStopY"                     type="EPICS_PV" source="32idcTXM:mcs:c3:m6.VAL"                        dbrtype="DBR_DOUBLE"/>
-    <Attribute name="BeamStopXDial"                 type="EPICS_PV" source="32idcTXM:mcs:c3:m3.DVAL"                       dbrtype="DBR_DOUBLE"/>
-    <Attribute name="BeamStopYDial"                 type="EPICS_PV" source="32idcTXM:mcs:c3:m6.DVAL"                       dbrtype="DBR_DOUBLE"/>
+    <Attribute name="BeamStopX"                     type="EPICS_PV" source="32idbTXM:mcs2:c1:m12.RBV"                        dbrtype="DBR_DOUBLE"/>
+    <Attribute name="BeamStopY"                     type="EPICS_PV" source="32idbTXM:mcs2:c1:m3.RBV"                        dbrtype="DBR_DOUBLE"/>
+    <Attribute name="BeamStopXDial"                 type="EPICS_PV" source="32idbTXM:mcs2:c1:m12.DRBV"                       dbrtype="DBR_DOUBLE"/>
+    <Attribute name="BeamStopYDial"                 type="EPICS_PV" source="32idbTXM:mcs2:c1:m3.DRBV"                       dbrtype="DBR_DOUBLE"/>
 
     <Attribute name="CondenserYaw"                  type="EPICS_PV" source="32idcTXM:mcs:c3:m2.VAL"                        dbrtype="DBR_DOUBLE"/>
     <Attribute name="CondenserPitch"                type="EPICS_PV" source="32idcTXM:mcs:c3:m4.VAL"                        dbrtype="DBR_DOUBLE"/>

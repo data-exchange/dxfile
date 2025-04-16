@@ -11,8 +11,8 @@
     <Attribute name="TopUpStatus"                   type="EPICS_PV" source="S:TopUpStatus"                                 dbrtype="DBR_STRING"/>
     <Attribute name="BeamMode"                      type="EPICS_PV" source="OPS:message3"                                  dbrtype="DBR_STRING"/>
 
-    <Attribute name="SourceEnergy"                  type="EPICS_PV" source="ID32ds:Energy.VAL"                             dbrtype="DBR_DOUBLE"/>
-    <Attribute name="SourceGap"                     type="EPICS_PV" source="ID32ds:Gap.VAL"                                dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SourceEnergy"                  type="EPICS_PV" source="S32ID:USID:EnergyM.VAL"                             dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SourceGap"                     type="EPICS_PV" source="S32ID:USID:GapM.VAL"                                dbrtype="DBR_DOUBLE"/>
     <Attribute name="Energy"                        type="EPICS_PV" source="32ida:BraggEAO.VAL"                            dbrtype="DBR_DOUBLE"/>
 
     <Attribute name="HSlitsSize"                    type="EPICS_PV" source="32idb:Slit1Hsize.VAL"                          dbrtype="DBR_DOUBLE"/>

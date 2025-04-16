@@ -64,10 +64,10 @@
     <Attribute name="CondenserYDial"                type="EPICS_PV" source="32idbTXM:mcs2:c1:m2.DRBV"                       dbrtype="DBR_DOUBLE"/>
     <Attribute name="CondenserZDial"                type="EPICS_PV" source="32idbSoft:m6.DRBV"                       dbrtype="DBR_DOUBLE"/>
 
-    <Attribute name="PinHoleX"                      type="EPICS_PV" source="32idc01:m35.VAL"                               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="PinHoleY"                      type="EPICS_PV" source="32idc01:m34.VAL"                               dbrtype="DBR_DOUBLE"/>
-    <Attribute name="PinHoleXDial"                  type="EPICS_PV" source="32idc01:m35.DVAL"                              dbrtype="DBR_DOUBLE"/>
-    <Attribute name="PinHoleYDial"                  type="EPICS_PV" source="32idc01:m34.DVAL"                              dbrtype="DBR_DOUBLE"/>
+    <Attribute name="PinHoleX"                      type="EPICS_PV" source="32idbTXM:mcs2:c1:m4.RBV"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="PinHoleY"                      type="EPICS_PV" source="32idbTXM:mcs2:c1:m5.RBV"                               dbrtype="DBR_DOUBLE"/>
+    <Attribute name="PinHoleXDial"                  type="EPICS_PV" source="32idbTXM:mcs2:c1:m4.DRBV"                              dbrtype="DBR_DOUBLE"/>
+    <Attribute name="PinHoleYDial"                  type="EPICS_PV" source="32idbTXM:mcs2:c1:m5.DRBV"                              dbrtype="DBR_DOUBLE"/>
 
     <Attribute name="SampleX"                       type="EPICS_PV" source="32idcTXM:nf:c0:m1.VAL"                         dbrtype="DBR_DOUBLE"/>
     <Attribute name="SampleY"                       type="EPICS_PV" source="32idcTXM:mxv:c1:m1.VAL"                        dbrtype="DBR_DOUBLE"/>

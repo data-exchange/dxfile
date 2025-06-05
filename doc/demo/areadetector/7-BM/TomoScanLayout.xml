@@ -69,6 +69,8 @@
             <dataset name="y" source="ndattribute" ndattribute="CameraY" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string" />
             </dataset>
+            <dataset name="z" source="ndattribute" ndattribute="CameraZ" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string" />
             <dataset name="rotation" source="ndattribute" ndattribute="CameraRoll" when="OnFileClose"> 
               <attribute name="units" source="constant" value="°" type="string" />
             </dataset>

@@ -273,10 +273,10 @@
             <dataset name="z" source="ndattribute" ndattribute="CameraDistance" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string" />
             </dataset>
-            <dataset name="rotl_cam1" source="ndattribute" ndattribute="Camera1Roll" when="OnFileClose"> 
+            <dataset name="roll_cam1" source="ndattribute" ndattribute="Camera1Roll" when="OnFileClose"> 
               <attribute name="units" source="constant" value="°" type="string" />
             </dataset>
-            <dataset name="rotl_cam22" source="ndattribute" ndattribute="Camera2Roll" when="OnFileClose"> 
+            <dataset name="roll_cam2" source="ndattribute" ndattribute="Camera2Roll" when="OnFileClose"> 
               <attribute name="units" source="constant" value="°" type="string" />
             </dataset>
           </group><!-- /setup -->

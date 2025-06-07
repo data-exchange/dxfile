@@ -131,6 +131,9 @@
             <dataset name="y" source="ndattribute" ndattribute="SampleY" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string" />
             </dataset>
+            <dataset name="base_y" source="ndattribute" ndattribute="SampleBaseY" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string" />
+            </dataset>
             <dataset name="z" source="ndattribute" ndattribute="SampleZ" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string" />
             </dataset>

@@ -102,6 +102,7 @@
 
     <Attribute name="SampleX"                       type="EPICS_PV" source="7bmbHXP:m2.RBV"                            dbrtype="DBR_DOUBLE"/>
     <Attribute name="SampleY"                       type="EPICS_PV" source="7bmbHXP:m3.RBV"                            dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleBaseY"                   type="EPICS_PV" source="7bmb1:m26.RBV"                             dbrtype="DBR_DOUBLE"/>
     <Attribute name="SampleZ"                       type="EPICS_PV" source="7bmbHXP:m1.RBV"                            dbrtype="DBR_DOUBLE"/>
     <Attribute name="SampleAX"                      type="EPICS_PV" source="7bmbHXP:m5.RBV"                            dbrtype="DBR_DOUBLE"/>
     <Attribute name="SampleAY"                      type="EPICS_PV" source="7bmbHXP:m6.RBV"                            dbrtype="DBR_DOUBLE"/>

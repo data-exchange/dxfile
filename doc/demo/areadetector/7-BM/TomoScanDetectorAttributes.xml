@@ -102,6 +102,10 @@
 
     <Attribute name="SampleX"                       type="EPICS_PV" source="7bmbHXP:m2.RBV"                            dbrtype="DBR_DOUBLE"/>
     <Attribute name="SampleY"                       type="EPICS_PV" source="7bmbHXP:m3.RBV"                            dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleZ"                       type="EPICS_PV" source="7bmbHXP:m1.RBV"                            dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleAX"                      type="EPICS_PV" source="7bmbHXP:m5.RBV"                            dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleAY"                      type="EPICS_PV" source="7bmbHXP:m6.RBV"                            dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleAZ"                      type="EPICS_PV" source="7bmbHXP:m4.RBV"                            dbrtype="DBR_DOUBLE"/>
     <Attribute name="CameraX"                       type="EPICS_PV" source="7bmb1:m28.RBV"                             dbrtype="DBR_DOUBLE"/>
     <Attribute name="CameraY"                       type="EPICS_PV" source="7bmb1:m7.RBV"                              dbrtype="DBR_DOUBLE"/>
     <Attribute name="CameraZ"                       type="EPICS_PV" source="7bmb1:aero:m4.RBV"                         dbrtype="DBR_DOUBLE"/>

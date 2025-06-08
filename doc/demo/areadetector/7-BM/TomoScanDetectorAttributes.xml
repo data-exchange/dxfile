@@ -100,14 +100,20 @@
     <Attribute name="Filter_1_Material"             type="EPICS_PV" source="7bma1:filter1:Position"                    dbrtype="DBR_STRING"/>
     <Attribute name="Filter_2_Material"             type="EPICS_PV" source="7bma1:filter2:Position"                    dbrtype="DBR_STRING"/>
 
-    <Attribute name="SampleX"                       type="EPICS_PV" source="7bmb1:aero:m2.RBV"                         dbrtype="DBR_DOUBLE"/>
-    <Attribute name="SampleY"                       type="EPICS_PV" source="7bmb1:aero:m1.RBV"                         dbrtype="DBR_DOUBLE"/>
-    <Attribute name="CameraX"                       type="EPICS_PV" source="7bmb1:m2.RBV"                              dbrtype="DBR_DOUBLE"/>
-    <Attribute name="CameraY"                       type="EPICS_PV" source="7bmb1:m28.RBV"                              dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleX"                       type="EPICS_PV" source="7bmbHXP:m2.RBV"                            dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleY"                       type="EPICS_PV" source="7bmbHXP:m3.RBV"                            dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleBaseY"                   type="EPICS_PV" source="7bmb1:m26.RBV"                             dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleZ"                       type="EPICS_PV" source="7bmbHXP:m1.RBV"                            dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleAX"                      type="EPICS_PV" source="7bmbHXP:m5.RBV"                            dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleAY"                      type="EPICS_PV" source="7bmbHXP:m6.RBV"                            dbrtype="DBR_DOUBLE"/>
+    <Attribute name="SampleAZ"                      type="EPICS_PV" source="7bmbHXP:m4.RBV"                            dbrtype="DBR_DOUBLE"/>
+    <Attribute name="CameraX"                       type="EPICS_PV" source="7bmb1:m28.RBV"                             dbrtype="DBR_DOUBLE"/>
+    <Attribute name="CameraY"                       type="EPICS_PV" source="7bmb1:m7.RBV"                              dbrtype="DBR_DOUBLE"/>
+    <Attribute name="CameraZ"                       type="EPICS_PV" source="7bmb1:aero:m4.RBV"                         dbrtype="DBR_DOUBLE"/>
     <Attribute name="CameraRoll"                    type="EPICS_PV" source="7bmb1:m36.RBV"                             dbrtype="DBR_DOUBLE"/>
     <Attribute name="CameraFocus"                   type="EPICS_PV" source="7bmb1:m35.RBV"                             dbrtype="DBR_DOUBLE"/>
-    <Attribute name="Center0Deg"                    type="EPICS_PV" source="7bmb1:m34.RBV"                             dbrtype="DBR_DOUBLE"/>
-    <Attribute name="Center90Deg"                   type="EPICS_PV" source="7bmb1:m33.RBV"                             dbrtype="DBR_DOUBLE"/>
+    <Attribute name="Center0Deg"                    type="EPICS_PV" source="7bmb1:m33.RBV"                             dbrtype="DBR_DOUBLE"/>
+    <Attribute name="Center90Deg"                   type="EPICS_PV" source="7bmb1:m34.RBV"                             dbrtype="DBR_DOUBLE"/>
     <Attribute name="DS_Table_X0_Motor_Position"    type="EPICS_PV" source="7bmb1:m13.RBV"                             dbrtype="DBR_DOUBLE"/>
     <Attribute name="DS_Table_X2_Motor_Position"    type="EPICS_PV" source="7bmb1:m14.RBV"                             dbrtype="DBR_DOUBLE"/>
     <Attribute name="DS_Table_Y0_Motor_Position"    type="EPICS_PV" source="7bmb1:m16.RBV"                             dbrtype="DBR_DOUBLE"/>

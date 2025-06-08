@@ -69,6 +69,9 @@
             <dataset name="y" source="ndattribute" ndattribute="CameraY" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string" />
             </dataset>
+            <dataset name="z" source="ndattribute" ndattribute="CameraZ" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string" />
+            </dataset>
             <dataset name="rotation" source="ndattribute" ndattribute="CameraRoll" when="OnFileClose"> 
               <attribute name="units" source="constant" value="°" type="string" />
             </dataset>
@@ -126,6 +129,21 @@
               <attribute name="units" source="constant" value="mm" type="string" />
             </dataset>
             <dataset name="y" source="ndattribute" ndattribute="SampleY" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string" />
+            </dataset>
+            <dataset name="base_y" source="ndattribute" ndattribute="SampleBaseY" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string" />
+            </dataset>
+            <dataset name="z" source="ndattribute" ndattribute="SampleZ" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string" />
+            </dataset>
+            <dataset name="theta_x" source="ndattribute" ndattribute="SampleAX" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string" />
+            </dataset>
+            <dataset name="theta_y" source="ndattribute" ndattribute="SampleAY" when="OnFileClose"> 
+              <attribute name="units" source="constant" value="mm" type="string" />
+            </dataset>
+            <dataset name="theta_z" source="ndattribute" ndattribute="SampleAZ" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string" />
             </dataset>
             <dataset name="Center0Deg" source="ndattribute" ndattribute="Center0Deg" when="OnFileClose"> 

@@ -155,7 +155,7 @@
 
     <Attribute name="ScanType"                      type="EPICS_PV" source="$(TC)ScanType"                             dbrtype="DBR_STRING" description="Scan type"/>
     <Attribute name="FlipStitch"                    type="EPICS_PV" source="$(TC)FlipStitch"                           dbrtype="DBR_STRING" description="Flip and stitch"/>
-    <Attribute name="CameraDistance"                type="EPICS_PV" source="$(TC)CameraDistance"                       dbrtype="DBR_NATIVE"  description="Camera distance (mm)"/>
+    <Attribute name="CameraDistance"                type="EPICS_PV" source="7bmb1:aero:m4.RBV"                         dbrtype="DBR_NATIVE"  description="Camera distance (mm)"/>
     <Attribute name="PixelsYPer360Deg"              type="EPICS_PV" source="$(TC)PixelsYPer360Deg"                     dbrtype="DBR_DOUBLE" description="Vertical motion for helical scans "/>
     <Attribute name="HelicalMisalignment"           type="EPICS_PV" source="$(TC)HelicalMisalignment"                  dbrtype="DBR_DOUBLE" description="Helical misalignment in mrad "/>
 

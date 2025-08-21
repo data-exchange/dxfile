@@ -323,6 +323,8 @@
     <group name="process">
       <group name="acquisition">
         <dataset name="scan_type" source="ndattribute" ndattribute="ScanType" when="OnFileOpen" />
+        <dataset name="scan_UUID" source="ndattribute" ndattribute="ScanUUID" when="OnFileClose" />
+        <dataset name="min_frame_time" source="ndattribute" ndattribute="MinFrameTime" when="OnFileClose" />
         <dataset name="pixels_y_per_360_deg" source="ndattribute" ndattribute="PixelsYPer360Deg" when="OnFileOpen" />
         <dataset name="helical_misalignment" source="ndattribute" ndattribute="HelicalMisalignment" when="OnFileOpen" />
         <dataset name="flip_stitch" source="ndattribute" ndattribute="FlipStitch" when="OnFileOpen" />

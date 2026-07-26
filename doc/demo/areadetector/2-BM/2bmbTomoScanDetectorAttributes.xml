@@ -35,8 +35,10 @@
     <Attribute name="DMMTable_USY_IB"               type="EPICS_PV"     source="2bma:m27.RBV"                            dbrtype="DBR_NATIVE" description="Multilayer table up stream in board (mm)"/>
     <Attribute name="DMMTable_DSY"                  type="EPICS_PV"     source="2bma:m29.RBV"                            dbrtype="DBR_NATIVE" description="Multilayer table down stream Y(mm)"/>
 
-    <Attribute name="SampleX"                       type="EPICS_PV"     source="2bmHXP:m1.RBV"                           dbrtype="DBR_NATIVE" description="Hexapod X translation (mm)"/>
-    <Attribute name="SampleY"                       type="EPICS_PV"     source="2bmHXP:m3.RBV"                           dbrtype="DBR_NATIVE" description="Hexapod Y vertical height (mm)"/>
+    <Attribute name="SampleX"                       type="EPICS_PV"     source="$(TS)SampleInX"                          dbrtype="DBR_NATIVE" description="Sample X in-beam position (mm)"/>
+    <Attribute name="SampleY"                       type="EPICS_PV"     source="$(TS)SampleInY"                          dbrtype="DBR_NATIVE" description="Sample Y in-beam position (mm)"/>
+    <Attribute name="HexapodX"                      type="EPICS_PV"     source="2bmHXP:m1.RBV"                           dbrtype="DBR_NATIVE" description="Hexapod X translation (mm)"/>
+    <Attribute name="HexapodY"                      type="EPICS_PV"     source="2bmHXP:m3.RBV"                           dbrtype="DBR_NATIVE" description="Hexapod Y vertical height (mm)"/>
     <Attribute name="SampleZ"                       type="EPICS_PV"     source="2bmHXP:m2.RBV"                           dbrtype="DBR_NATIVE" description="Hexapod Z translation (mm)"/>
     <Attribute name="SampleRotary"                  type="EPICS_PV"     source="2bmb:m102.RBV"                           dbrtype="DBR_NATIVE" description="Sample rotation (deg)"/>
     <Attribute name="RotationSpeed"                 type="EPICS_PV"     source="2bmb:m102.VELO"                          dbrtype="DBR_NATIVE" description="Rotation speed (deg/s)"/>

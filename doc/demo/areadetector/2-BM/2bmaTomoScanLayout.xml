@@ -183,7 +183,13 @@
             <dataset name="x" source="ndattribute" ndattribute="SampleX" when="OnFileClose"> 
               <attribute name="units" source="constant" value="mm" type="string" />
             </dataset>
-            <dataset name="y" source="ndattribute" ndattribute="SampleY" when="OnFileClose"> 
+            <dataset name="y" source="ndattribute" ndattribute="SampleY" when="OnFileClose">
+              <attribute name="units" source="constant" value="mm" type="string" />
+            </dataset>
+            <dataset name="hexapod_x" source="ndattribute" ndattribute="HexapodX" when="OnFileClose">
+              <attribute name="units" source="constant" value="mm" type="string" />
+            </dataset>
+            <dataset name="hexapod_y" source="ndattribute" ndattribute="HexapodY" when="OnFileClose">
               <attribute name="units" source="constant" value="mm" type="string" />
             </dataset>
             <dataset name="z" source="ndattribute" ndattribute="SampleZ" when="OnFileClose"> 

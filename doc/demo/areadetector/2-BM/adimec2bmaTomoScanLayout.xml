@@ -272,6 +272,7 @@
          
     <group name="process">
       <group name="acquisition">
+        <dataset name="start_date" source="ndattribute" ndattribute="DateTimeStart" when="OnFileOpen" />
         <dataset name="end_date" source="ndattribute" ndattribute="DateTimeEnd" when="OnFileClose" />
         <group name="rotation">
           <dataset name="rotation_start" source="ndattribute" ndattribute="RotationStart" when="OnFileClose">

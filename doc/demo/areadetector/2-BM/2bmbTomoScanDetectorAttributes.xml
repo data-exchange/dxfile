@@ -2,6 +2,7 @@
 <!-- Attributes -->
 <Attributes>
 
+    <Attribute name="DateTimeStart"                 type="EPICS_PV"     source="S:IOC:timeOfDayISO8601"                  dbrtype="DBR_STRING"  description="Date and time at start"/>
     <Attribute name="DateTimeEnd"                   type="EPICS_PV"     source="S:IOC:timeOfDayISO8601"                  dbrtype="DBR_STRING"  description="Date and time at end"/>
     <Attribute name="RingCurrent"                   type="EPICS_PV"     source="S:SRcurrentAI"                           dbrtype="DBR_NATIVE"  description="Ring current (mA)"/>
     <Attribute name="TopUpStatus"                   type="EPICS_PV"     source="S:TopUpStatus"                           dbrtype="DBR_STRING"  description="Top-up status"/>

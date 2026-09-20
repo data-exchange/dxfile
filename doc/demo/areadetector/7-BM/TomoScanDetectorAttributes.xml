@@ -41,10 +41,13 @@
     <Attribute name="FilePath"                      type="EPICS_PV"     source="$(DET)HDF1:FilePath_RBV"               dbrtype="DBR_STRING"  description="File path"/>
     <Attribute name="HDFPluginVersion"              type="EPICS_PV"     source="$(DET)HDF1:PluginType_RBV"             dbrtype="DBR_STRING"  description="File plugin type"/>
 
-    <Attribute name="DateTimeStart"                 type="EPICS_PV"     source="S:IOC:timeOfDayForm1SI"                dbrtype="DBR_STRING"  description="Date and time at start"/>
-    <Attribute name="DateTimeEnd"                   type="EPICS_PV"     source="S:IOC:timeOfDayForm1SI"                dbrtype="DBR_STRING"  description="Date and time at end"/>
-    <Attribute name="RingCurrent"                   type="EPICS_PV"     source="S:SRcurrentAI"                         dbrtype="DBR_NATIVE"  description="Ring current"/>
-    <Attribute name="TopUpStatus"                   type="EPICS_PV"     source="S:TopUpStatus"                         dbrtype="DBR_STRING"  description="Top-up status"/>
+    <Attribute name="DateTimeStart"                 type="EPICS_PV"     source="S:IOC:timeOfDayISO8601"                dbrtype="DBR_STRING"  description="Date and time at start"/>
+    <Attribute name="DateTimeEnd"                   type="EPICS_PV"     source="S:IOC:timeOfDayISO8601"                dbrtype="DBR_STRING"  description="Date and time at end"/>
+    <Attribute name="RingCurrent"                   type="EPICS_PV"     source="S-DCCT:CurrentM"                       dbrtype="DBR_NATIVE"  description="Ring current"/>
+    <Attribute name="RingLifetime"                  type="EPICS_PV"     source="S-DCCT:LifetimeM"                      dbrtype="DBR_NATIVE"  description="Ring lifetime (min)"/>
+    <Attribute name="MachineStatus"                 type="EPICS_PV"     source="S:DesiredMode"                         dbrtype="DBR_STRING"  description="Machine status"/>
+    <Attribute name="OperatingMode"                 type="EPICS_PV"     source="S:ActualMode"                          dbrtype="DBR_STRING"  description="Operating mode"/>
+    <Attribute name="InjectionStatus"               type="EPICS_PV"     source="S-INJ:InjectionOperationM.VAL"         dbrtype="DBR_STRING"  description="Injection / swap-out operation"/>
     <Attribute name="BeamMode"                      type="EPICS_PV"     source="OPS:message3"                          dbrtype="DBR_STRING"  description="Beam mode"/>
     <Attribute name="BarometricPressure"            type="EPICS_PV"     source="APS:BarometricPressure:MBR"            dbrtype="DBR_DOUBLE"  description="Barometric pressure"/>
 

@@ -4,8 +4,11 @@
 
     <Attribute name="DateTimeStart"                 type="EPICS_PV"     source="S:IOC:timeOfDayISO8601"                  dbrtype="DBR_STRING"  description="Date and time at start"/>
     <Attribute name="DateTimeEnd"                   type="EPICS_PV"     source="S:IOC:timeOfDayISO8601"                  dbrtype="DBR_STRING"  description="Date and time at end"/>
-    <Attribute name="RingCurrent"                   type="EPICS_PV"     source="S:SRcurrentAI"                           dbrtype="DBR_NATIVE"  description="Ring current (mA)"/>
-    <Attribute name="TopUpStatus"                   type="EPICS_PV"     source="S:TopUpStatus"                           dbrtype="DBR_STRING"  description="Top-up status"/>
+    <Attribute name="RingCurrent"                   type="EPICS_PV"     source="S-DCCT:CurrentM"                         dbrtype="DBR_NATIVE"  description="Ring current (mA)"/>
+    <Attribute name="RingLifetime"                  type="EPICS_PV"     source="S-DCCT:LifetimeM"                        dbrtype="DBR_NATIVE"  description="Ring lifetime (min)"/>
+    <Attribute name="MachineStatus"                 type="EPICS_PV"     source="S:DesiredMode"                           dbrtype="DBR_STRING"  description="Machine status"/>
+    <Attribute name="OperatingMode"                 type="EPICS_PV"     source="S:ActualMode"                            dbrtype="DBR_STRING"  description="Operating mode"/>
+    <Attribute name="InjectionStatus"               type="EPICS_PV"     source="S-INJ:InjectionOperationM.VAL"           dbrtype="DBR_STRING"  description="Injection / swap-out operation"/>
     <Attribute name="BeamMode"                      type="EPICS_PV"     source="OPS:message3"                            dbrtype="DBR_STRING"  description="Beam mode"/>
 
     <Attribute name="BeamlineFilterA"               type="EPICS_PV"     source="2bma:fltr1:select.VAL"                   dbrtype="DBR_NATIVE" description="Beamline filter A"/>

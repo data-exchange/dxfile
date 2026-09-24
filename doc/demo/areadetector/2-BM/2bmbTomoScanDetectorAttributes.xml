@@ -129,6 +129,7 @@
     <Attribute name="ProposalNumber"                type="EPICS_PV"     source="$(TS)ProposalNumber"                     dbrtype="DBR_STRING" description="Proposal number"/>
     <Attribute name="ProposalTitle"                 type="EPICS_PV"     source="$(TS)ProposalTitle"                      dbrtype="DBR_STRING" description="Proposal title"/>
     <Attribute name="ESAFNumber"                    type="EPICS_PV"     source="$(TS)ESAFNumber"                         dbrtype="DBR_STRING" description="ESAF number"/>
+    <Attribute name="ESAFDOINumber"                 type="EPICS_PV"     source="2bmb:TomoScan:ESAFDOINumber"             dbrtype="DBR_STRING" description="ESAF DOI number"/>
     <Attribute name="HDF5FrameLocation"             type="EPICS_PV"     source="$(TS)HDF5Location"                       dbrtype="DBR_STRING" description="Where to store frame in HDF5 file"/>
 
     <Attribute name="ManualFilters"                 type="EPICS_PV"     source="2bm:Energy:Filters"                      dbrtype="DBR_STRING" description="Manual filters"/>

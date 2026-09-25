@@ -228,12 +228,9 @@
     <group name="process">
       <group name="acquisition">
         <dataset name="scan_type" source="ndattribute" ndattribute="ScanType" when="OnFileClose" />
+        <dataset name="scan_UUID" source="ndattribute" ndattribute="ScanUUID" when="OnFileClose" />
         <dataset name="flip_stitch" source="ndattribute" ndattribute="FlipStitch" when="OnFileClose" />
-        <!-- start_date must be captured OnFileOpen.  Both attributes read the
-             same clock PV, so writing both at close stores the end time twice
-             and start_date silently becomes a duplicate of end_date.  Every
-             other station's layout does it this way. -->
-        <dataset name="start_date" source="ndattribute" ndattribute="DateTimeStart" when="OnFileOpen" />
+        <dataset name="start_date" source="ndattribute" ndattribute="DateTimeStart" when="OnFileClose" />
         <dataset name="end_date" source="ndattribute" ndattribute="DateTimeEnd" when="OnFileClose" />
         <group name="rotation">
           <dataset name="start" source="ndattribute" ndattribute="RotationStart" when="OnFileClose">

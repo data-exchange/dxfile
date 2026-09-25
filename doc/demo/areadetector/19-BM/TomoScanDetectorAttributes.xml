@@ -152,6 +152,7 @@
 
     <!-- Scan type -->
     <Attribute name="ScanType"                      type="EPICS_PV" source="$(TC)ScanType"                     dbrtype="DBR_STRING"  description="Scan type"/>
+    <Attribute name="ScanUUID"                      type="EPICS_PV" source="$(TC)ScanUUID"                     dbrtype="DBR_STRING"  description="Scan UUID"/>
     <Attribute name="FlipStitch"                    type="EPICS_PV" source="$(TC)FlipStitch"                   dbrtype="DBR_STRING"  description="Flip and stitch"/>
 
     <!-- Frame routing.  This drives detector_data_destination in the layout

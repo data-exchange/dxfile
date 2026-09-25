@@ -130,6 +130,7 @@
     <Attribute name="EnergyMode"                    type="EPICS_PV"     source="2bm:MCTOptics:EnergyMode"                dbrtype="DBR_NATIVE" description="Energy Mode"/>
 
     <Attribute name="ScanType"                      type="EPICS_PV"     source="$(TS)ScanType"                           dbrtype="DBR_STRING" description="Scan type"/>
+    <Attribute name="ScanUUID"                      type="EPICS_PV"     source="$(TS)ScanUUID"                           dbrtype="DBR_STRING" description="Scan UUID"/>
     <Attribute name="FlipStitch"                    type="EPICS_PV"     source="$(TS)FlipStitch"                         dbrtype="DBR_STRING" description="Flip and stitch"/>
 
 </Attributes>

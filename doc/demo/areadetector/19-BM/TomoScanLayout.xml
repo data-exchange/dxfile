@@ -110,8 +110,59 @@
             <dataset name="theta" source="ndattribute" ndattribute="SampleRotary" when="OnFileClose">
               <attribute name="units" source="constant" value="degrees" type="string" />
             </dataset>
+            <dataset name="x" source="ndattribute" ndattribute="SampleX" when="OnFileClose">
+              <attribute name="units" source="constant" value="mm" type="string" />
+            </dataset>
+            <dataset name="y" source="ndattribute" ndattribute="SampleY" when="OnFileClose">
+              <attribute name="units" source="constant" value="mm" type="string" />
+            </dataset>
+            <dataset name="z" source="ndattribute" ndattribute="SampleZ" when="OnFileClose">
+              <attribute name="units" source="constant" value="mm" type="string" />
+            </dataset>
+            <!-- 7-BM labels these three "mm"; they are angles.  Corrected here. -->
+            <dataset name="theta_x" source="ndattribute" ndattribute="SampleAX" when="OnFileClose">
+              <attribute name="units" source="constant" value="degrees" type="string" />
+            </dataset>
+            <dataset name="theta_y" source="ndattribute" ndattribute="SampleAY" when="OnFileClose">
+              <attribute name="units" source="constant" value="degrees" type="string" />
+            </dataset>
+            <dataset name="theta_z" source="ndattribute" ndattribute="SampleAZ" when="OnFileClose">
+              <attribute name="units" source="constant" value="degrees" type="string" />
+            </dataset>
+            <dataset name="base_y" source="ndattribute" ndattribute="SampleBaseY" when="OnFileClose">
+              <attribute name="units" source="constant" value="mm" type="string" />
+            </dataset>
+            <dataset name="Center0Deg" source="ndattribute" ndattribute="Center0Deg" when="OnFileClose">
+              <attribute name="units" source="constant" value="mm" type="string" />
+            </dataset>
+            <dataset name="Center90Deg" source="ndattribute" ndattribute="Center90Deg" when="OnFileClose">
+              <attribute name="units" source="constant" value="mm" type="string" />
+            </dataset>
           </group><!-- /setup -->
         </group><!-- /sample_motor_stack -->
+
+        <group name="detector_motor_stack">
+          <dataset name="name" source="constant" value="19-BM-D detector optics stages" type="string" when="OnFileClose"></dataset>
+          <group name="setup">
+            <dataset name="x" source="ndattribute" ndattribute="OpticsX" when="OnFileClose">
+              <attribute name="units" source="constant" value="mm" type="string" />
+            </dataset>
+            <dataset name="y" source="ndattribute" ndattribute="OpticsY" when="OnFileClose">
+              <attribute name="units" source="constant" value="mm" type="string" />
+            </dataset>
+            <!-- Same PV as sample_motor_stack/detector_distance above: this is
+                 the stage coordinate, that is the physics input. -->
+            <dataset name="z" source="ndattribute" ndattribute="OpticsZ" when="OnFileClose">
+              <attribute name="units" source="constant" value="mm" type="string" />
+            </dataset>
+            <dataset name="focus_high_mag" source="ndattribute" ndattribute="FocusHighMag" when="OnFileClose">
+              <attribute name="units" source="constant" value="mm" type="string" />
+            </dataset>
+            <dataset name="rotation_high_mag" source="ndattribute" ndattribute="RotHighMag" when="OnFileClose">
+              <attribute name="units" source="constant" value="mrad" type="string" />
+            </dataset>
+          </group><!-- /setup -->
+        </group><!-- /detector_motor_stack -->
 
         <group name="detector">
           <dataset name="manufacturer" source="ndattribute" ndattribute="DetectorManufacturer" when="OnFileClose" />

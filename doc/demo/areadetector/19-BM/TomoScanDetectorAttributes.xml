@@ -98,7 +98,7 @@
     <Attribute name="DetectorPixelSize"             type="EPICS_PV" source="$(TC)DetectorPixelSize"            dbrtype="DBR_NATIVE"  description="Detector pixel size (microns)"/>
     <Attribute name="CameraObjective"               type="EPICS_PV" source="$(TC)CameraObjective"              dbrtype="DBR_STRING"  description="Objective type"/>
     <Attribute name="CameraTubeLength"              type="EPICS_PV" source="$(TC)CameraTubeLength"             dbrtype="DBR_NATIVE"  description="Tube length (mm)"/>
-    <Attribute name="CameraDistance"                type="EPICS_PV" source="$(TC)CameraDistance"               dbrtype="DBR_NATIVE"  description="Sample to detector distance (mm)"/>
+    <Attribute name="CameraDistance"                type="EPICS_PV" source="19bmSoft:aero:m2.RBV"              dbrtype="DBR_DOUBLE"  description="Sample to detector distance (mm)"/>
 
     <!-- Energy.  Filtered white beam; the mode record records which. -->
     <Attribute name="Energy"                        type="EPICS_PV" source="$(TC)Energy"                       dbrtype="DBR_NATIVE"  description="Energy (keV)"/>
@@ -109,6 +109,32 @@
     <Attribute name="RotationStep"                  type="EPICS_PV" source="$(TC)RotationStep"                 dbrtype="DBR_NATIVE"  description="Rotation step size (deg)"/>
     <Attribute name="RotationSpeed"                 type="EPICS_PV" source="19bmSoft:aero:m1.VELO"             dbrtype="DBR_NATIVE"  description="Rotation speed (deg/s)"/>
     <Attribute name="SampleRotary"                  type="EPICS_PV" source="19bmSoft:aero:m1.RBV"              dbrtype="DBR_NATIVE"  description="Sample rotation readback (deg)"/>
+
+    <!-- Sample stack beneath the rotary: the hexapod (19bmHXP:), its base lift,
+         and the centering pair on top of the rotary.  Attribute names follow
+         7-BM so files from the two stations have the same shape, but the
+         hexapod axis order differs: 7-BM is m1 Z / m2 X / m3 Y, 19-BM is
+         m1 X / m2 Y / m3 Z.  Do not copy 7-BM's sources. -->
+    <Attribute name="SampleX"                       type="EPICS_PV" source="19bmHXP:m1.RBV"                   dbrtype="DBR_DOUBLE"  description="Hexapod X (mm)"/>
+    <Attribute name="SampleY"                       type="EPICS_PV" source="19bmHXP:m2.RBV"                   dbrtype="DBR_DOUBLE"  description="Hexapod Y (mm)"/>
+    <Attribute name="SampleZ"                       type="EPICS_PV" source="19bmHXP:m3.RBV"                   dbrtype="DBR_DOUBLE"  description="Hexapod Z (mm)"/>
+    <Attribute name="SampleAX"                      type="EPICS_PV" source="19bmHXP:m4.RBV"                   dbrtype="DBR_DOUBLE"  description="Hexapod AX (deg)"/>
+    <Attribute name="SampleAY"                      type="EPICS_PV" source="19bmHXP:m5.RBV"                   dbrtype="DBR_DOUBLE"  description="Hexapod AY (deg)"/>
+    <Attribute name="SampleAZ"                      type="EPICS_PV" source="19bmHXP:m6.RBV"                   dbrtype="DBR_DOUBLE"  description="Hexapod AZ (deg)"/>
+    <Attribute name="SampleBaseY"                   type="EPICS_PV" source="19bmSoft:m23.RBV"                 dbrtype="DBR_DOUBLE"  description="Hexapod base lift (mm)"/>
+    <Attribute name="Center0Deg"                    type="EPICS_PV" source="19bmSoft:m21.RBV"                 dbrtype="DBR_DOUBLE"  description="Centering stage at 0 deg (mm)"/>
+    <Attribute name="Center90Deg"                   type="EPICS_PV" source="19bmSoft:m22.RBV"                 dbrtype="DBR_DOUBLE"  description="Centering stage at 90 deg (mm)"/>
+
+    <!-- Detector-side optics stages.  No 7-BM equivalent: 7-BM reads its optics
+         from mctOptics, which 19-BM does not run.  OpticsZ is the same PV as
+         CameraDistance above; it is both the stage coordinate and, because
+         the stage is calibrated so RBV=0 is scintillator touching sample, the
+         sample-to-detector distance used for phase retrieval. -->
+    <Attribute name="OpticsX"                       type="EPICS_PV" source="19bmSoft:m24.RBV"                 dbrtype="DBR_DOUBLE"  description="Optics X (mm)"/>
+    <Attribute name="OpticsY"                       type="EPICS_PV" source="19bmSoft:m11.RBV"                 dbrtype="DBR_DOUBLE"  description="Optics Y (mm)"/>
+    <Attribute name="OpticsZ"                       type="EPICS_PV" source="19bmSoft:aero:m2.RBV"             dbrtype="DBR_DOUBLE"  description="Optics Z / detector distance (mm)"/>
+    <Attribute name="FocusHighMag"                  type="EPICS_PV" source="19bmSoft:m17.RBV"                 dbrtype="DBR_DOUBLE"  description="High-magnification focus (mm)"/>
+    <Attribute name="RotHighMag"                    type="EPICS_PV" source="19bmSoft:m18.RBV"                 dbrtype="DBR_DOUBLE"  description="High-magnification camera rotation (mrad)"/>
     <Attribute name="NumAngles"                     type="EPICS_PV" source="$(TC)NumAngles"                    dbrtype="DBR_NATIVE"  description="Number of projections"/>
     <Attribute name="ReturnRotation"                type="EPICS_PV" source="$(TC)ReturnRotation"               dbrtype="DBR_STRING"  description="Return rotation to start after scan"/>
 
